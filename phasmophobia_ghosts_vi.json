@@ -846,8 +846,8 @@
     ],
     "hunt_sanity": 50,
     "speed": {
-      "base": 1.7,
-      "max_los": 3.0,
+      "base": 3.0,
+      "max_los": 0.4,
       "bpm_base": 120,
       "bpm_max": 180,
       "description": "Tốc độ cố định 0.4–3.0 m/s tùy số đồ vật đã bị xê dịch (KHÔNG tăng tốc theo LOS)."
@@ -879,7 +879,7 @@
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
-      "max_los": 2.8,
+      "max_los": 1.955,
       "bpm_base": 130,
       "bpm_max": 170,
       "description": "1.7 m/s (bình thường), 1.96 m/s (Enraged), 1.36 m/s (Weakened), cộng thêm tăng tốc LOS chuẩn."
@@ -942,8 +942,8 @@
     ],
     "hunt_sanity": 65,
     "speed": {
-      "base": 1.7,
-      "max_los": 1.96,
+      "base": 1.445,
+      "max_los": 1.955,
       "bpm_base": 120,
       "bpm_max": 160,
       "description": "1.96 m/s khi Aggressive, 1.45 m/s khi Calm."
