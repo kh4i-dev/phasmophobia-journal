@@ -980,8 +980,8 @@
     }
 
     /* ĐẢM BẢO TẤT CẢ CÁC TRANG CON ĐỀU XẾP DỌC (FLEX COLUMN), KHÔNG BỊ TRÀN NGANG */
-    #leftViewEvidence, #leftViewGhostInfo, #leftViewItems, #leftViewCursed, #leftViewVoice, #leftViewAudio,
-    #rightViewGhosts, #rightViewGhostInfo, #rightViewItems, #rightViewCursed, #rightViewVoice, #rightViewAudio {
+    #leftViewEvidence, #leftViewGhostInfo, #leftViewItems, #leftViewCursed, #leftViewVoice, #leftViewAudio, #leftViewReference,
+    #rightViewGhosts, #rightViewGhostInfo, #rightViewItems, #rightViewCursed, #rightViewVoice, #rightViewAudio, #rightViewReference {
       display: flex;
       flex-direction: column !important;
       height: 100%;
@@ -1183,10 +1183,37 @@
 
     .slot-name-en {
       font-family: var(--font-hand);
-      font-size: 1.28rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: #24201a;
       line-height: 1;
+    }
+
+    .slot-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .slot-attr {
+      flex: 0 0 auto;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: #8f1d1d;
+      background: rgba(143, 29, 29, 0.08);
+      border: 1px solid rgba(143, 29, 29, 0.22);
+      border-radius: 999px;
+      padding: 1px 6px;
+      line-height: 1.25;
+      white-space: nowrap;
+      max-width: 60%;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .slot-name-vi {
@@ -2671,6 +2698,13 @@
           <span class="j-tab-sub">Phòng Thử Âm</span>
         </div>
       </div>
+      <div class="j-tab" data-tab="reference">
+        <span class="j-tab-badge">07</span>
+        <div class="j-tab-content">
+          <span class="j-tab-title">REFERENCE</span>
+          <span class="j-tab-sub">Độ Khó &amp; Map</span>
+        </div>
+      </div>
     </div>
 
     <!-- DOUBLE-PAGE BOOK -->
@@ -2749,6 +2783,16 @@
             <p class="page-subtitle">Thử nghe âm lượng &amp; nhịp bước chân thực chiến của các loài ma:</p>
             <div class="scrollable-page-content" id="audioFootstepPresets"></div>
           </div>
+        </div>
+
+        <!-- View 7: Difficulty Left Page (Tab 07) -->
+        <div id="leftViewReference" style="display: none; height: 100%;">
+          <div class="page-title">
+            <span>Difficulty</span>
+            <small>(Độ Khó Chuẩn 2026)</small>
+          </div>
+          <p class="page-subtitle">Amateur → Insanity: reward, setup, grace, sanity drain &amp; số bằng chứng:</p>
+          <div class="scrollable-page-content" id="leftDifficultyContent"></div>
         </div>
 
         <div class="page-number" id="leftPageNum">23</div>
@@ -2833,6 +2877,16 @@
           </div>
           <p class="page-subtitle">Câu hỏi bàn cầu cơ &amp; Điều ước bàn tay khỉ:</p>
           <div class="scrollable-page-content" id="rightCursedContent"></div>
+        </div>
+
+        <!-- View 7: Maps Right Page (Tab 07) -->
+        <div id="rightViewReference" style="display: none; height: 100%;">
+          <div class="page-title">
+            <span>Maps</span>
+            <small>(Bản Đồ &amp; Kích Cỡ)</small>
+          </div>
+          <p class="page-subtitle">Phân loại Nhỏ / Trung bình / Lớn — số phòng, tầng, level mở khóa:</p>
+          <div class="scrollable-page-content" id="rightMapsContent"></div>
         </div>
 
         <!-- View 5: Trigger Phrases (Tab 05) -->
@@ -3407,6 +3461,7 @@
 
     let ghostsData = [];
     let toolsAndCursedData = null;
+    let referenceData = null;
     let pinnedGhostId = null; // CHỈ KHOANH KHI NGƯỜI DÙNG BẤM
     let selectedGhostId = "the_mimic"; // Ghost active trong dossier modal
     let currentTab = "main-journal";
@@ -3465,18 +3520,21 @@
        ============================================================== */
     async function loadData() {
       try {
-        const [gRes, tRes] = await Promise.all([
+        const [gRes, tRes, rRes] = await Promise.all([
           fetch("phasmophobia_ghosts_vi.json"),
-          fetch("phasmophobia_tools_and_cursed_vi.json")
+          fetch("phasmophobia_tools_and_cursed_vi.json"),
+          fetch("phasmophobia_reference_vi.json")
         ]);
         ghostsData = await gRes.json();
         toolsAndCursedData = await tRes.json();
+        referenceData = await rRes.json();
 
         renderEvidenceList();
         renderGhostsGrid();
         renderGhostInfoCatalog();
         renderItemsTab();
         renderCursedTab();
+        renderReferenceTab();
         renderVoiceTab();
         renderFootstepPresets();
         updateQuickActionBar();
@@ -3581,6 +3639,40 @@
       "gallu": "Quỷ Địa Ngục (2026)",
       "kormos": "Ác Thú Hắc Ám (2026)",
       "obambo": "Oan Linh Phiêu Bạt (2026)"
+    };
+
+    // THUỘC TÍNH NHẬN DIỆN NHANH — HIỂN THỊ ĐỒNG BỘ TRÊN CẢ 30 THẺ MA
+    const GHOST_ROSTER_ATTRS = {
+      "spirit":      { tag: "Nhang 180s",   full: "Đốt nhang khóa đi săn 180 giây — gấp đôi ma thường" },
+      "wraith":      { tag: "Khoá muối",    full: "Giẫm muối không để lại dấu chân; bay xuyên tường" },
+      "phantom":     { tag: "Ảnh trống",    full: "Chụp ảnh lúc biến mất ra ảnh trống; tàng hình lâu khi hunt" },
+      "poltergeist": { tag: "Vứt đồ",       full: "Ném/vứt đồ dồn dập tỉ lệ cao (Polty Bomb) khi hunt" },
+      "banshee":     { tag: "1 mục tiêu",   full: "Chỉ nhắm duy nhất 1 người chơi; thét trên Paramic" },
+      "jinn":        { tag: "Điện nhanh",   full: "Tăng tốc khi cầu dao bật; không tự ngắt cầu dao" },
+      "mare":        { tag: "Phá đèn",      full: "Hay phá/tắt đèn tức thì; săn 60% khi tối" },
+      "revenant":    { tag: "Lao nhanh",    full: "Không thấy: bò 1.0 m/s — thấy: lao 3.0 m/s" },
+      "shade":       { tag: "Nhút nhát",    full: "Không săn/event khi có người cùng phòng; chỉ săn khi <35%" },
+      "demon":       { tag: "Săn 100%",     full: "Săn sớm ở 100% Sanity; nhang chỉ chặn 60 giây" },
+      "yurei":       { tag: "Đóng cửa",     full: "Đóng sầm cửa tụt 15% Sanity; bị nhang nhốt 90 giây" },
+      "oni":         { tag: "Hung hãn",     full: "Rất hung hãn, hiện hình rõ khi hunt, không air-ball" },
+      "yokai":       { tag: "Săn khi ồn",   full: "Nói/đài gần sẽ kích săn ở 80% Sanity" },
+      "hantu":       { tag: "Phòng lạnh",   full: "Nhanh ở phòng lạnh, chậm ở phòng ấm, không tăng tốc LOS" },
+      "goryo":       { tag: "D.O.T.S cam",  full: "D.O.T.S chỉ thấy qua video camera, phòng không người" },
+      "myling":      { tag: "Chân gần",     full: "Tiếng bước chân chỉ nghe khi rất gần (<10m)" },
+      "onryo":       { tag: "3 nến",        full: "Thổi tắt ngọn nến thứ 3 kích đi săn ngay" },
+      "the_twins":   { tag: "2 tốc độ",     full: "Hai tốc độ săn luân phiên 90% / 110%" },
+      "raiju":       { tag: "Gần điện",     full: "Tăng tốc gần thiết bị điện; nhiễu từ 15m" },
+      "obake":       { tag: "6 ngón",       full: "Dấu tay UV 6 ngón hoặc tự biến mất; biến hình khi hunt" },
+      "the_mimic":   { tag: "Orb giả",      full: "Luôn có Ghost Orb giả (thành 4 bằng chứng); bắt chước ma khác" },
+      "moroi":       { tag: "Nhanh nhất",   full: "Sanity thấp chạy nhanh nhất game (tới 3.71 m/s); nhang mù 12s" },
+      "deogen":      { tag: "Thấy bạn",     full: "Luôn biết vị trí bạn; xa lao nhanh, gần <2.5m bò 0.4 m/s" },
+      "thaye":       { tag: "Trẻ→già",      full: "Mới vào săn 75% chạy nhanh; càng già càng yếu/chậm" },
+      "aswang":      { tag: "Số người",     full: "Tốc độ săn tăng theo số người trong phòng; sợ muối" },
+      "dayan":       { tag: "Chân ngược",   full: "Dấu chân UV quay ngược 180°; nhanh khi bạn quay lưng" },
+      "deildegast":  { tag: "Qua cửa",      full: "Bước qua ngưỡng cửa phòng ma là kích đi săn" },
+      "gallu":       { tag: "Săn 65%",      full: "Săn sớm 65%; cắn thánh giá từ xa; ảo ảnh phân thân" },
+      "kormos":      { tag: "Tối nhanh",    full: "Càng trong bóng tối chạy càng nhanh; đèn rọi thì khựng" },
+      "obambo":      { tag: "Chân giả",     full: "Tạo tiếng chân giả nhiều hướng trước khi lao tới" }
     };
 
     // RENDER 30 GHOSTS GRID (3 CỘT X 10 HÀNG ĐỒNG BỘ CÂN ĐỐI)
@@ -4305,6 +4397,94 @@
       }
     }
 
+    function renderReferenceTab() {
+      if (!referenceData) return;
+      const leftC = document.getElementById("leftDifficultyContent");
+      const rightC = document.getElementById("rightMapsContent");
+      if (leftC) leftC.innerHTML = "";
+      if (rightC) rightC.innerHTML = "";
+
+      const diffColors = {
+        amateur: "#15803d",
+        intermediate: "#0e7490",
+        professional: "#b45309",
+        nightmare: "#9a3412",
+        insanity: "#8f2020"
+      };
+
+      if (leftC && referenceData.difficulties) {
+        referenceData.difficulties.forEach(d => {
+          const box = document.createElement("div");
+          box.style.marginBottom = "10px";
+          box.style.background = "rgba(255,255,255,0.45)";
+          box.style.padding = "8px 10px";
+          box.style.borderRadius = "5px";
+          box.style.borderLeft = `4px solid ${diffColors[d.id] || "#8f2020"}`;
+          box.innerHTML = `
+            <div style="font-family: var(--font-hand); font-size: 1.4rem; font-weight: bold; color: ${diffColors[d.id] || "#8f2020"}; line-height: 1.1;">
+              ${d.name_en} <span style="font-size: 1rem; color: #5a4b37;">(${d.name_vi})</span>
+            </div>
+            <div style="font-size: 0.82rem; line-height: 1.45; margin-top: 4px;">
+              Mở khóa: <strong>${d.unlock_level}</strong> • Thưởng: <strong>${d.reward}</strong> • Bảo hiểm: ${d.insurance}<br>
+              Setup: <strong>${d.setup_time}</strong> • Grace: <strong>${d.grace_period}</strong> • Hunt: ${d.hunt_duration}<br>
+              Sanity đầu: ${d.starting_sanity} • Thuốc hồi: ${d.sanity_pill} • Tốc độ tụt: ${d.sanity_drain}<br>
+              Bằng chứng: <strong>${d.evidence_given}</strong> • Chỗ ẩn: ${d.hiding_places} • Cầu dao: ${d.fuse_box}<br>
+              Cursed: ${d.cursed_count} • ${d.monitors}<br>
+              <em style="color: #5a4b37;">${d.notes}</em>
+            </div>
+          `;
+          leftC.appendChild(box);
+        });
+
+        if (referenceData.custom_note) {
+          const note = document.createElement("div");
+          note.style.fontSize = "0.8rem";
+          note.style.fontStyle = "italic";
+          note.style.color = "#5a4b37";
+          note.style.marginTop = "6px";
+          note.textContent = referenceData.custom_note;
+          leftC.appendChild(note);
+        }
+      }
+
+      if (rightC && referenceData.maps) {
+        const sizeColor = { "Nhỏ": "#15803d", "Trung bình": "#b45309", "Lớn": "#8f2020" };
+        let currentSize = null;
+        referenceData.maps.forEach(m => {
+          if (m.size !== currentSize) {
+            currentSize = m.size;
+            const head = document.createElement("div");
+            head.style.fontFamily = "var(--font-hand)";
+            head.style.fontSize = "1.35rem";
+            head.style.fontWeight = "bold";
+            head.style.color = sizeColor[m.size] || "#8f2020";
+            head.style.margin = "8px 0 4px";
+            head.textContent = `Map ${m.size}`;
+            rightC.appendChild(head);
+          }
+          const row = document.createElement("div");
+          row.style.fontSize = "0.84rem";
+          row.style.lineHeight = "1.35";
+          row.style.marginBottom = "4px";
+          row.innerHTML = `
+            <strong>${m.name}</strong> — ${m.rooms} phòng, ${m.floors} tầng
+            <span style="color: #5a4b37;">• ${m.unlock} • Hunt ${m.hunt_length}</span>
+          `;
+          rightC.appendChild(row);
+        });
+
+        if (referenceData.maps_note) {
+          const note = document.createElement("div");
+          note.style.fontSize = "0.8rem";
+          note.style.fontStyle = "italic";
+          note.style.color = "#5a4b37";
+          note.style.marginTop = "8px";
+          note.textContent = referenceData.maps_note;
+          rightC.appendChild(note);
+        }
+      }
+    }
+
     function renderVoiceTab() {
       if (!toolsAndCursedData) return;
       const leftC = document.getElementById("leftVoiceContent");
@@ -4454,7 +4634,8 @@
       "items-tier": { left: "leftViewItems", right: "rightViewItems", leftNum: 27, rightNum: 28 },
       "cursed-possessions": { left: "leftViewCursed", right: "rightViewCursed", leftNum: 29, rightNum: 30 },
       "voice-commands": { left: "leftViewVoice", right: "rightViewVoice", leftNum: 31, rightNum: 32 },
-      "audio-studio": { left: "leftViewAudio", right: "rightViewAudio", leftNum: 33, rightNum: 34 }
+      "audio-studio": { left: "leftViewAudio", right: "rightViewAudio", leftNum: 33, rightNum: 34 },
+      "reference": { left: "leftViewReference", right: "rightViewReference", leftNum: 35, rightNum: 36 }
     };
 
     function switchTab(tabKey) {
@@ -4468,12 +4649,12 @@
       const config = TABS_CONFIG[tabKey];
       if (!config) return;
 
-      ["leftViewEvidence", "leftViewGhostInfo", "leftViewItems", "leftViewCursed", "leftViewVoice", "leftViewAudio"].forEach(id => {
+      ["leftViewEvidence", "leftViewGhostInfo", "leftViewItems", "leftViewCursed", "leftViewVoice", "leftViewAudio", "leftViewReference"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.display = "none";
       });
 
-      ["rightViewGhosts", "rightViewGhostInfo", "rightViewItems", "rightViewCursed", "rightViewVoice", "rightViewAudio"].forEach(id => {
+      ["rightViewGhosts", "rightViewGhostInfo", "rightViewItems", "rightViewCursed", "rightViewVoice", "rightViewAudio", "rightViewReference"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.display = "none";
       });
@@ -4493,7 +4674,7 @@
       tab.addEventListener("click", () => switchTab(tab.dataset.tab));
     });
 
-    const TAB_KEYS = ["main-journal", "ghost-info", "items-tier", "cursed-possessions", "voice-commands", "audio-studio"];
+    const TAB_KEYS = ["main-journal", "ghost-info", "items-tier", "cursed-possessions", "voice-commands", "audio-studio", "reference"];
     document.getElementById("btnNextPage").addEventListener("click", () => {
       let idx = (TAB_KEYS.indexOf(currentTab) + 1) % TAB_KEYS.length;
       switchTab(TAB_KEYS[idx]);
