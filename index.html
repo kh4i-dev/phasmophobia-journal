@@ -3690,14 +3690,18 @@
         slot.dataset.id = gid;
 
         const viName = GHOST_ROSTER_VI_NAMES[gid] || (ghostObj ? ghostObj.name_vi.replace(/\s*\([^)]*\)/g, '').trim() : name);
+        const attr = GHOST_ROSTER_ATTRS[gid];
 
         slot.innerHTML = `
-          <div class="slot-name-en-wrap">
-            <span class="slot-name-en">${name}</span>
-            <svg class="pencil-name-circle" viewBox="0 0 80 30" preserveAspectRatio="none">
-              <path d="M 6,15 C 4,5 20,2 40,2 C 62,2 76,6 77,15 C 78,25 60,29 38,29 C 14,29 2,24 3,13 C 4,6 16,2.5 32,2" 
-                    fill="none" stroke="#9e1c1c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.92" />
-            </svg>
+          <div class="slot-top">
+            <div class="slot-name-en-wrap">
+              <span class="slot-name-en">${name}</span>
+              <svg class="pencil-name-circle" viewBox="0 0 80 30" preserveAspectRatio="none">
+                <path d="M 6,15 C 4,5 20,2 40,2 C 62,2 76,6 77,15 C 78,25 60,29 38,29 C 14,29 2,24 3,13 C 4,6 16,2.5 32,2" 
+                      fill="none" stroke="#9e1c1c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.92" />
+              </svg>
+            </div>
+            ${attr ? `<span class="slot-attr" title="${attr.full.replace(/"/g, '&quot;')}">${attr.tag}</span>` : ''}
           </div>
           <div class="slot-name-vi">${viName}</div>
         `;

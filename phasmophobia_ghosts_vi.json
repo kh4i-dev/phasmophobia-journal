@@ -3,9 +3,16 @@
     "id": "spirit",
     "name_en": "Spirit",
     "name_vi": "Linh Hồn (Spirit)",
-    "alias": ["Ma thường", "Linh hồn cơ bản"],
+    "alias": [
+      "Ma thường",
+      "Linh hồn cơ bản"
+    ],
     "danger_level": "Trung Bình",
-    "evidences": ["EMF 5", "Spirit Box", "Ghost Writing"],
+    "evidences": [
+      "EMF 5",
+      "Spirit Box",
+      "Ghost Writing"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
@@ -27,9 +34,16 @@
     "id": "wraith",
     "name_en": "Wraith",
     "name_vi": "Oan Hồn / Ma Bay (Wraith)",
-    "alias": ["Ma không dẫm muối", "Ma dịch chuyển tức thời"],
+    "alias": [
+      "Ma không dẫm muối",
+      "Ma dịch chuyển tức thời"
+    ],
     "danger_level": "Cao",
-    "evidences": ["EMF 5", "Spirit Box", "D.O.T.S Projector"],
+    "evidences": [
+      "EMF 5",
+      "Spirit Box",
+      "D.O.T.S Projector"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
@@ -51,9 +65,17 @@
     "id": "phantom",
     "name_en": "Phantom",
     "name_vi": "Bóng Ma Biến Hình (Phantom)",
-    "alias": ["Ma tàng hình trong ảnh", "Ma làm tụt sanity", "Ma nhấp nháy lâu"],
+    "alias": [
+      "Ma tàng hình trong ảnh",
+      "Ma làm tụt sanity",
+      "Ma nhấp nháy lâu"
+    ],
     "danger_level": "Cao",
-    "evidences": ["Spirit Box", "Ultraviolet", "D.O.T.S Projector"],
+    "evidences": [
+      "Spirit Box",
+      "Ultraviolet",
+      "D.O.T.S Projector"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
@@ -75,9 +97,17 @@
     "id": "poltergeist",
     "name_en": "Poltergeist",
     "name_vi": "Yêu Tinh Quậy Phá (Poltergeist)",
-    "alias": ["Ma ném đồ", "Polty bomb", "Thánh quậy phá"],
+    "alias": [
+      "Ma ném đồ",
+      "Polty bomb",
+      "Thánh quậy phá"
+    ],
     "danger_level": "Trung Bình",
-    "evidences": ["Spirit Box", "Ultraviolet", "Ghost Writing"],
+    "evidences": [
+      "Spirit Box",
+      "Ultraviolet",
+      "Ghost Writing"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
@@ -99,9 +129,18 @@
     "id": "banshee",
     "name_en": "Banshee",
     "name_vi": "Nữ Thần Báo Tử / Ma Hú (Banshee)",
-    "alias": ["Ma hú", "Ma đè hú", "Nữ thần báo tử", "Ma rình rập"],
+    "alias": [
+      "Ma hú",
+      "Ma đè hú",
+      "Nữ thần báo tử",
+      "Ma rình rập"
+    ],
     "danger_level": "Cực Cao (với mục tiêu)",
-    "evidences": ["Ultraviolet", "Ghost Orb", "D.O.T.S Projector"],
+    "evidences": [
+      "Ultraviolet",
+      "Ghost Orb",
+      "D.O.T.S Projector"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
@@ -123,9 +162,16 @@
     "id": "jinn",
     "name_en": "Jinn",
     "name_vi": "Thần Đèn Jinn (Jinn)",
-    "alias": ["Ma điện", "Ma chạy nhanh theo cầu dao"],
+    "alias": [
+      "Ma điện",
+      "Ma chạy nhanh theo cầu dao"
+    ],
     "danger_level": "Cao",
-    "evidences": ["EMF 5", "Ultraviolet", "Freezing Temperatures"],
+    "evidences": [
+      "EMF 5",
+      "Ultraviolet",
+      "Freezing Temperatures"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
@@ -147,9 +193,17 @@
     "id": "mare",
     "name_en": "Mare",
     "name_vi": "Ác Mộng Bóng Đêm (Mare)",
-    "alias": ["Ma sợ ánh sáng", "Ma tắt đèn", "Ác mộng bóng tối"],
+    "alias": [
+      "Ma sợ ánh sáng",
+      "Ma tắt đèn",
+      "Ác mộng bóng tối"
+    ],
     "danger_level": "Cao (trong bóng tối)",
-    "evidences": ["Spirit Box", "Ghost Orb", "Ghost Writing"],
+    "evidences": [
+      "Spirit Box",
+      "Ghost Orb",
+      "Ghost Writing"
+    ],
     "hunt_sanity": 60,
     "speed": {
       "base": 1.7,
@@ -171,9 +225,17 @@
     "id": "revenant",
     "name_en": "Revenant",
     "name_vi": "Báo Oán / Kẻ Hủy Diệt (Revenant)",
-    "alias": ["Rev", "Ma chạy nhanh nhất khi thấy người", "Kẻ rùa bò"],
+    "alias": [
+      "Rev",
+      "Ma chạy nhanh nhất khi thấy người",
+      "Kẻ rùa bò"
+    ],
     "danger_level": "Cực Kỳ Nguy Hiểm",
-    "evidences": ["Ghost Orb", "Ghost Writing", "Freezing Temperatures"],
+    "evidences": [
+      "Ghost Orb",
+      "Ghost Writing",
+      "Freezing Temperatures"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.0,
@@ -195,9 +257,17 @@
     "id": "shade",
     "name_en": "Shade",
     "name_vi": "Bóng Đen Nhút Nhát (Shade)",
-    "alias": ["Ma trầm cảm", "Ma nhát gan", "Ma lười tương tác"],
+    "alias": [
+      "Ma trầm cảm",
+      "Ma nhát gan",
+      "Ma lười tương tác"
+    ],
     "danger_level": "Thấp",
-    "evidences": ["EMF 5", "Ghost Writing", "Freezing Temperatures"],
+    "evidences": [
+      "EMF 5",
+      "Ghost Writing",
+      "Freezing Temperatures"
+    ],
     "hunt_sanity": 35,
     "speed": {
       "base": 1.7,
@@ -219,9 +289,17 @@
     "id": "demon",
     "name_en": "Demon",
     "name_vi": "Ác Quỷ Săn Sớm (Demon)",
-    "alias": ["Ma cắn trộm", "Ma săn 100% sanity", "Ác quỷ"],
+    "alias": [
+      "Ma cắn trộm",
+      "Ma săn 100% sanity",
+      "Ác quỷ"
+    ],
     "danger_level": "Cực Kỳ Nguy Hiểm",
-    "evidences": ["Ultraviolet", "Ghost Writing", "Freezing Temperatures"],
+    "evidences": [
+      "Ultraviolet",
+      "Ghost Writing",
+      "Freezing Temperatures"
+    ],
     "hunt_sanity": 70,
     "speed": {
       "base": 1.7,
@@ -243,9 +321,16 @@
     "id": "yurei",
     "name_en": "Yurei",
     "name_vi": "U Hồn Cửa (Yurei)",
-    "alias": ["Ma đóng sập cửa", "Ma trừ sanity cửa"],
+    "alias": [
+      "Ma đóng sập cửa",
+      "Ma trừ sanity cửa"
+    ],
     "danger_level": "Trung Bình",
-    "evidences": ["Ghost Orb", "Freezing Temperatures", "D.O.T.S Projector"],
+    "evidences": [
+      "Ghost Orb",
+      "Freezing Temperatures",
+      "D.O.T.S Projector"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
@@ -267,9 +352,17 @@
     "id": "oni",
     "name_en": "Oni",
     "name_vi": "Quỷ Mặt Đỏ Hiếu Động (Oni)",
-    "alias": ["Ma tăng động", "Ma ném đồ xa", "Ma hiện hình liên tục"],
+    "alias": [
+      "Ma tăng động",
+      "Ma ném đồ xa",
+      "Ma hiện hình liên tục"
+    ],
     "danger_level": "Cao",
-    "evidences": ["EMF 5", "Freezing Temperatures", "D.O.T.S Projector"],
+    "evidences": [
+      "EMF 5",
+      "Freezing Temperatures",
+      "D.O.T.S Projector"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
@@ -291,9 +384,16 @@
     "id": "yokai",
     "name_en": "Yokai",
     "name_vi": "Yêu Quái Ghét Tiếng Ồn (Yokai)",
-    "alias": ["Ma điếc", "Ma cấm nói chuyện"],
+    "alias": [
+      "Ma điếc",
+      "Ma cấm nói chuyện"
+    ],
     "danger_level": "Cao (khi nói chuyện)",
-    "evidences": ["Spirit Box", "Ghost Orb", "D.O.T.S Projector"],
+    "evidences": [
+      "Spirit Box",
+      "Ghost Orb",
+      "D.O.T.S Projector"
+    ],
     "hunt_sanity": 80,
     "speed": {
       "base": 1.7,
@@ -315,9 +415,17 @@
     "id": "hantu",
     "name_en": "Hantu",
     "name_vi": "Hồn Ma Xứ Lạnh (Hantu)",
-    "alias": ["Ma thở ra khói", "Ma chạy nhanh phòng lạnh", "Ma sợ nóng"],
+    "alias": [
+      "Ma thở ra khói",
+      "Ma chạy nhanh phòng lạnh",
+      "Ma sợ nóng"
+    ],
     "danger_level": "Cực Cao (khi tắt cầu dao)",
-    "evidences": ["Ultraviolet", "Ghost Orb", "Freezing Temperatures"],
+    "evidences": [
+      "Ultraviolet",
+      "Ghost Orb",
+      "Freezing Temperatures"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.4,
@@ -339,9 +447,16 @@
     "id": "goryo",
     "name_en": "Goryo",
     "name_vi": "Oan Hồn Ẩn Dật (Goryo)",
-    "alias": ["Ma DOTS camera", "Ma không đổi phòng"],
+    "alias": [
+      "Ma DOTS camera",
+      "Ma không đổi phòng"
+    ],
     "danger_level": "Trung Bình",
-    "evidences": ["EMF 5", "Ultraviolet", "D.O.T.S Projector"],
+    "evidences": [
+      "EMF 5",
+      "Ultraviolet",
+      "D.O.T.S Projector"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
@@ -363,9 +478,16 @@
     "id": "myling",
     "name_en": "Myling",
     "name_vi": "Hài Nhi Yên Lặng (Myling)",
-    "alias": ["Ma bước chân im lặng", "Ma test đèn pin"],
+    "alias": [
+      "Ma bước chân im lặng",
+      "Ma test đèn pin"
+    ],
     "danger_level": "Cực Cao (dễ bị móc lốp)",
-    "evidences": ["EMF 5", "Ultraviolet", "Ghost Writing"],
+    "evidences": [
+      "EMF 5",
+      "Ultraviolet",
+      "Ghost Writing"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
@@ -387,9 +509,17 @@
     "id": "onryo",
     "name_en": "Onryo",
     "name_vi": "Oan Hồn Sợ Lửa (Onryo)",
-    "alias": ["Ma thổi nến", "Ma sợ nến", "Ma hunt nến"],
+    "alias": [
+      "Ma thổi nến",
+      "Ma sợ nến",
+      "Ma hunt nến"
+    ],
     "danger_level": "Cực Cao (khi hết nến)",
-    "evidences": ["Spirit Box", "Ghost Orb", "Freezing Temperatures"],
+    "evidences": [
+      "Spirit Box",
+      "Ghost Orb",
+      "Freezing Temperatures"
+    ],
     "hunt_sanity": 60,
     "speed": {
       "base": 1.7,
@@ -411,9 +541,17 @@
     "id": "the_twins",
     "name_en": "The Twins",
     "name_vi": "Cặp Song Sinh (The Twins)",
-    "alias": ["Ma sinh đôi", "Con nhanh con chậm", "Hai con ma"],
+    "alias": [
+      "Ma sinh đôi",
+      "Con nhanh con chậm",
+      "Hai con ma"
+    ],
     "danger_level": "Cao",
-    "evidences": ["EMF 5", "Spirit Box", "Freezing Temperatures"],
+    "evidences": [
+      "EMF 5",
+      "Spirit Box",
+      "Freezing Temperatures"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.53,
@@ -435,9 +573,17 @@
     "id": "raiju",
     "name_en": "Raiju",
     "name_vi": "Lôi Thú Hút Điện (Raiju)",
-    "alias": ["Ma điện tử", "Ma chạy nhanh gần đồ điện", "Lôi thú"],
+    "alias": [
+      "Ma điện tử",
+      "Ma chạy nhanh gần đồ điện",
+      "Lôi thú"
+    ],
     "danger_level": "Cực Kỳ Nguy Hiểm",
-    "evidences": ["EMF 5", "Ghost Orb", "D.O.T.S Projector"],
+    "evidences": [
+      "EMF 5",
+      "Ghost Orb",
+      "D.O.T.S Projector"
+    ],
     "hunt_sanity": 65,
     "speed": {
       "base": 1.7,
@@ -459,9 +605,17 @@
     "id": "obake",
     "name_en": "Obake",
     "name_vi": "Yêu Quái Biến Hình / Ma 6 Ngón (Obake)",
-    "alias": ["Ma 6 ngón tay", "Ma đổi hình dạng", "Ma giấu vân tay"],
+    "alias": [
+      "Ma 6 ngón tay",
+      "Ma đổi hình dạng",
+      "Ma giấu vân tay"
+    ],
     "danger_level": "Cao",
-    "evidences": ["EMF 5", "Ultraviolet", "D.O.T.S Projector"],
+    "evidences": [
+      "EMF 5",
+      "Ultraviolet",
+      "Ghost Orb"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
@@ -483,9 +637,18 @@
     "id": "the_mimic",
     "name_en": "The Mimic",
     "name_vi": "Ma Lừa / Ma Bắt Chước (The Mimic)",
-    "alias": ["Ma lừa", "Ma 4 bằng chứng", "The Mimic", "Bậc thầy sao chép"],
+    "alias": [
+      "Ma lừa",
+      "Ma 4 bằng chứng",
+      "The Mimic",
+      "Bậc thầy sao chép"
+    ],
     "danger_level": "Biến Thiên Khó Lường",
-    "evidences": ["Spirit Box", "Ultraviolet", "Freezing Temperatures"],
+    "evidences": [
+      "Spirit Box",
+      "Ultraviolet",
+      "Freezing Temperatures"
+    ],
     "fake_evidence": "Ghost Orb (Quả cầu ma giả - LUÔN XUẤT HIỆN Ở MỌI ĐỘ KHÓ)",
     "hunt_sanity": "Thay đổi liên tục (tùy con bắt chước: 0% - 100%)",
     "speed": {
@@ -508,9 +671,17 @@
     "id": "moroi",
     "name_en": "Moroi",
     "name_vi": "Nguyền Hồn Khát Máu (Moroi)",
-    "alias": ["Ma nguyền rủa", "Ma chạy siêu nhanh 0% sanity", "Ma sợ nhang 12s"],
+    "alias": [
+      "Ma nguyền rủa",
+      "Ma chạy siêu nhanh 0% sanity",
+      "Ma sợ nhang 12s"
+    ],
     "danger_level": "Cực Kỳ Nguy Hiểm",
-    "evidences": ["Spirit Box", "Ghost Writing", "Freezing Temperatures"],
+    "evidences": [
+      "Spirit Box",
+      "Ghost Writing",
+      "Freezing Temperatures"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.5,
@@ -532,9 +703,19 @@
     "id": "deogen",
     "name_en": "Deogen",
     "name_vi": "Deogen (Ma Thở Dốc • Luôn Biết Chỗ Trốn)",
-    "alias": ["Deogen", "Ma thở dốc", "Ma biết chỗ trốn", "Ma dắt bộ", "Kẻ săn đuổi"],
+    "alias": [
+      "Deogen",
+      "Ma thở dốc",
+      "Ma biết chỗ trốn",
+      "Ma dắt bộ",
+      "Kẻ săn đuổi"
+    ],
     "danger_level": "Cực Cao (nếu trốn tủ) / Cực Dễ (nếu dắt bộ)",
-    "evidences": ["Spirit Box", "Ghost Writing", "D.O.T.S Projector"],
+    "evidences": [
+      "Spirit Box",
+      "Ghost Writing",
+      "D.O.T.S Projector"
+    ],
     "hunt_sanity": 40,
     "speed": {
       "base": 3.0,
@@ -556,9 +737,17 @@
     "id": "thaye",
     "name_en": "Thaye",
     "name_vi": "Lão Quỷ Trẻ Hóa (Thaye)",
-    "alias": ["Ma lão hóa", "Ma già đi", "Ma chạy nhanh lúc đầu"],
+    "alias": [
+      "Ma lão hóa",
+      "Ma già đi",
+      "Ma chạy nhanh lúc đầu"
+    ],
     "danger_level": "Cực Cao (đầu game) -> Thấp (cuối game)",
-    "evidences": ["Ghost Orb", "Ghost Writing", "D.O.T.S Projector"],
+    "evidences": [
+      "Ghost Orb",
+      "Ghost Writing",
+      "D.O.T.S Projector"
+    ],
     "hunt_sanity": 75,
     "speed": {
       "base": 2.75,
@@ -580,9 +769,17 @@
     "id": "aswang",
     "name_en": "Aswang",
     "name_vi": "Quỷ Hút Máu Biến Hình (Aswang)",
-    "alias": ["Ma hút máu", "Quỷ biến hình Philippines", "Aswang 2026"],
+    "alias": [
+      "Ma hút máu",
+      "Quỷ biến hình Philippines",
+      "Aswang 2026"
+    ],
     "danger_level": "Cao",
-    "evidences": ["Ultraviolet", "Freezing Temperatures", "D.O.T.S Projector"],
+    "evidences": [
+      "Ghost Writing",
+      "Freezing Temperatures",
+      "D.O.T.S Projector"
+    ],
     "hunt_sanity": 60,
     "speed": {
       "base": 1.8,
@@ -604,9 +801,17 @@
     "id": "dayan",
     "name_en": "Dayan",
     "name_vi": "Phù Thủy Chân Ngược (Dayan / Daayan)",
-    "alias": ["Phù thủy ma Ấn Độ", "Ma chân ngược", "Daayan"],
+    "alias": [
+      "Phù thủy ma Ấn Độ",
+      "Ma chân ngược",
+      "Daayan"
+    ],
     "danger_level": "Cao",
-    "evidences": ["EMF 5", "Spirit Box", "Ghost Writing"],
+    "evidences": [
+      "EMF 5",
+      "Spirit Box",
+      "Ghost Orb"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
@@ -628,9 +833,17 @@
     "id": "deildegast",
     "name_en": "Deildegast",
     "name_vi": "Hồn Ma Ranh Giới (Deildegast)",
-    "alias": ["Ma ranh giới", "Ma đá Bắc Âu", "Deildegast"],
+    "alias": [
+      "Ma ranh giới",
+      "Ma đá Bắc Âu",
+      "Deildegast"
+    ],
     "danger_level": "Trung Bình",
-    "evidences": ["Ghost Orb", "Ghost Writing", "Freezing Temperatures"],
+    "evidences": [
+      "EMF 5",
+      "Ghost Writing",
+      "D.O.T.S Projector"
+    ],
     "hunt_sanity": 45,
     "speed": {
       "base": 1.7,
@@ -652,9 +865,17 @@
     "id": "gallu",
     "name_en": "Gallu",
     "name_vi": "Quỷ Đoạt Hồn Địa Ngục (Gallu)",
-    "alias": ["Quỷ Sumer", "Quỷ lôi kéo linh hồn", "Gallu"],
+    "alias": [
+      "Quỷ Sumer",
+      "Quỷ lôi kéo linh hồn",
+      "Gallu"
+    ],
     "danger_level": "Cao",
-    "evidences": ["EMF 5", "Ultraviolet", "Freezing Temperatures"],
+    "evidences": [
+      "EMF 5",
+      "Spirit Box",
+      "Ultraviolet"
+    ],
     "hunt_sanity": 65,
     "speed": {
       "base": 1.85,
@@ -676,9 +897,17 @@
     "id": "kormos",
     "name_en": "Kormos",
     "name_vi": "Ác Thú Hắc Ám (Kormos)",
-    "alias": ["Ma bóng đêm", "Ma ghét ánh sáng", "Kormos"],
+    "alias": [
+      "Ma bóng đêm",
+      "Ma ghét ánh sáng",
+      "Kormos"
+    ],
     "danger_level": "Cực Cao (trong bóng tối)",
-    "evidences": ["Spirit Box", "Ultraviolet", "D.O.T.S Projector"],
+    "evidences": [
+      "Spirit Box",
+      "Ultraviolet",
+      "Ghost Orb"
+    ],
     "hunt_sanity": 55,
     "speed": {
       "base": 1.4,
@@ -700,9 +929,17 @@
     "id": "obambo",
     "name_en": "Obambo",
     "name_vi": "Oan Linh Phiêu Bạt (Obambo)",
-    "alias": ["Ma lang thang", "Linh hồn rừng thiêng", "Obambo"],
+    "alias": [
+      "Ma lang thang",
+      "Linh hồn rừng thiêng",
+      "Obambo"
+    ],
     "danger_level": "Trung Bình",
-    "evidences": ["EMF 5", "Ghost Orb", "D.O.T.S Projector"],
+    "evidences": [
+      "Ultraviolet",
+      "Ghost Writing",
+      "D.O.T.S Projector"
+    ],
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
