@@ -16,10 +16,10 @@
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s, tăng tốc dần khi nhìn thấy người chơi (LOS) lên 2.25 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Không có điểm mạnh nguy hiểm đặc thù. Thường rất hung hãn và đi săn đều đặn khi Sanity dưới 50%.",
@@ -47,10 +47,10 @@
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Bay lơ lửng trên mặt đất. Có kỹ năng dịch chuyển tức thời (Teleport) xuyên tường đến ngay vị trí của một người chơi ngẫu nhiên, để lại chỉ số EMF 2 hoặc EMF 5 tại điểm đến.",
@@ -79,10 +79,10 @@
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Ánh nhìn tử thần: Nhìn trực diện vào Phantom sẽ khiến Sanity của bạn tụt dốc cực nhanh với tốc độ 0.5% mỗi giây.",
@@ -111,10 +111,10 @@
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Vụ nổ Poltergeist (Polty Bomb): Có khả năng ném đồng loạt nhiều đồ vật (5-10 món) cùng một lúc với lực cực mạnh. Mỗi món đồ ném trúng người chơi sẽ trừ 2% Sanity x số lượng đồ vật.",
@@ -144,10 +144,10 @@
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Khóa mục tiêu duy nhất (Target Lock): Chọn ngẫu nhiên 1 người chơi làm 'con mồi' và CHỈ kiểm tra Sanity của con mồi đó để đi săn. Nếu con mồi còn 100% Sanity dù 3 đồng đội còn lại 0% Sanity, Banshee VẪN KHÔNG THỂ HUNT. Khi Hunt, nó đi xuyên qua người các đồng đội khác mà không giết.",
@@ -207,10 +207,10 @@
     "hunt_sanity": 60,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Chúa tể bóng tối: Trong phòng tối, Mare có thể đi săn ở ngưỡng 60% Sanity và có xu hướng tấn công hung hãn hơn rất nhiều.",
@@ -271,10 +271,10 @@
     "hunt_sanity": 35,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Rất khó tìm kiếm bằng chứng vì nó hầu như không tương tác khi có nhiều người ở gần phòng của nó.",
@@ -303,10 +303,10 @@
     "hunt_sanity": 70,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Kỹ năng cắn trộm bất ngờ (Early Hunt Ability): Ngưỡng hunt tự nhiên là 70% Sanity. ĐẶC BIỆT: Demon sở hữu kỹ năng hiếm có thể kích hoạt cuộc săn ở BẤT KỲ MỨC SANITY NÀO (kể cả 100% Sanity ngay khi vừa mở cửa bước vào nhà 10 giây). Thời gian hồi giữa 2 đợt hunt chỉ có 20 giây (ma khác là 25s).",
@@ -334,10 +334,10 @@
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Đóng sập cửa trừ Sanity: Có kỹ năng đóng sập hoàn toàn một cánh cửa đang mở (kèm âm thanh click đúp) và trừ lập tức 15% Sanity của tất cả người chơi ở gần trong phạm vi 7.5m.",
@@ -366,10 +366,10 @@
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Cực kỳ hung hăng và hiếu động khi có nhiều người ở gần. Khi làm Ghost Event chạm vào người chơi sẽ trừ 20% Sanity (gấp đôi bình thường).",
@@ -397,10 +397,10 @@
     "hunt_sanity": 80,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Thính tai khi ở ngoài cuộc săn: Nếu người chơi nói chuyện bằng Micro gần Yokai, nó có thể đi săn ở mức Sanity lên tới 80%.",
@@ -460,10 +460,10 @@
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Ẩn mình trước mắt thường: Chỉ có thể nhìn thấy bóng ma D.O.T.S qua màn hình Video Camera, và TUYỆT ĐỐI KHÔNG HIỆN nếu có người chơi đứng cùng trong phòng.",
@@ -491,10 +491,10 @@
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Bước chân sát thủ vô thanh: Khi đi săn, tiếng bước chân và tiếng rên rỉ của Myling cực kỳ êm ái, chỉ có thể nghe thấy ở cự ly dưới 10m (ngang bằng với tầm làm nhấp nháy đèn pin).",
@@ -523,10 +523,10 @@
     "hunt_sanity": 60,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Săn sớm khi không có lửa: Nếu không có ngọn lửa nào xung quanh, Onryo có thể đi săn ở mức 60% Sanity. Cứ mỗi 3 lần thổi tắt nến, Onryo sẽ LẬP TỨC ĐI SĂN ở bất kỳ mức Sanity nào.",
@@ -555,10 +555,10 @@
     "hunt_sanity": 50,
     "speed": {
       "base": 1.53,
-      "max_los": 2.25,
+      "max_los": 2.52,
       "bpm_base": 110,
       "bpm_max": 140,
-      "description": "Có 2 tốc độ: Con chính chạy 1.53 m/s (90%), Con phụ chạy 1.87 m/s (110%)."
+      "description": "Con chính (Main) 1.53 m/s và con phụ (Decoy) nhanh hơn (~1.9 m/s), đều cộng thêm tăng tốc theo LOS (tối đa ~2.52 m/s)."
     },
     "traits": {
       "strength": "Phân thân tương tác 2 nơi: Con chính ở phòng ma, con phụ đi phá ở phòng khác cách xa. Bất kỳ con nào cũng có thể bắt đầu cuộc săn (50/50 cơ hội).",
@@ -619,10 +619,10 @@
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Giấu vân tay: Có 25% tỉ lệ chạm vào cửa mà không để lại dấu vân tay UV. Dấu vân tay biến mất nhanh gấp đôi bình thường (sau 1 phút thay vì 2 phút).",
@@ -653,10 +653,10 @@
     "hunt_sanity": "Thay đổi liên tục (tùy con bắt chước: 0% - 100%)",
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 2.8,
       "bpm_base": 120,
       "bpm_max": 210,
-      "description": "Sao chép tốc độ của con ma nó bắt chước: Có thể chậm như Revenant (1.0 m/s), phóng như Thaye/Deogen (3.0 m/s), hoặc lạch bạch như Hantu."
+      "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
       "strength": "Sao chép hoàn hảo mọi loài ma: Cứ sau mỗi 30 giây đến 2 phút, Mimic sẽ chọn một loài ma ngẫu nhiên để sao chép toàn bộ hành vi, tốc độ và ngưỡng săn (kể cả Demon săn 100%, Deogen thở dốc, Revenant phi nước đại).",
@@ -780,13 +780,13 @@
       "Freezing Temperatures",
       "D.O.T.S Projector"
     ],
-    "hunt_sanity": 60,
+    "hunt_sanity": 50,
     "speed": {
-      "base": 1.8,
-      "max_los": 2.6,
+      "base": 1.53,
+      "max_los": 2.52,
       "bpm_base": 125,
       "bpm_max": 185,
-      "description": "Tốc độ 1.8 m/s, tăng lên 2.6 m/s khi con mồi đứng một mình trong bóng tối."
+      "description": "Base 1.53 m/s (chậm hơn chuẩn) nhưng tăng tốc theo LOS NHANH nhất game (tối đa ~2.52 m/s). Có thể hunt với grace period = 0."
     },
     "traits": {
       "strength": "Săn mồi đơn độc: Rất hung dữ khi người chơi ở một mình. Có khả năng tạo ra âm thanh giả tiếng động vật (chó sủa, mèo kêu, chim vỗ cánh) để dụ người chơi.",
@@ -815,10 +815,10 @@
     "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
-      "max_los": 2.4,
+      "max_los": 2.25,
       "bpm_base": 120,
       "bpm_max": 170,
-      "description": "Tốc độ 1.7 m/s, tăng vọt lên 2.4 m/s khi người chơi quay lưng bỏ chạy."
+      "description": "Tốc độ cố định: 2.25 m/s khi người chơi di chuyển trong 10m, 1.2 m/s khi người chơi đứng yên, và 1.7 m/s khi không có ai trong 10m (bỏ qua tăng tốc LOS)."
     },
     "traits": {
       "strength": "Ảo ảnh mê hoặc: Làm lệch hướng kim la bàn và di chuyển đồ vật sau lưng người chơi. Dấu chân UV có ngón chân QUAY NGƯỢC 180 ĐỘ!",
@@ -844,13 +844,13 @@
       "Ghost Writing",
       "D.O.T.S Projector"
     ],
-    "hunt_sanity": 45,
+    "hunt_sanity": 50,
     "speed": {
       "base": 1.7,
-      "max_los": 2.5,
+      "max_los": 3.0,
       "bpm_base": 120,
       "bpm_max": 180,
-      "description": "Tốc độ 1.7 m/s, tăng lên 2.5 m/s khi người chơi vượt qua ngưỡng cửa phòng ma."
+      "description": "Tốc độ cố định 0.4–3.0 m/s tùy số đồ vật đã bị xê dịch (KHÔNG tăng tốc theo LOS)."
     },
     "traits": {
       "strength": "Luồng hàn khí di động: Tạo ra các dải nhiệt độ âm (-°C) di chuyển dọc theo ngưỡng cửa. Ném đồ kim loại nặng với lực cực mạnh.",
@@ -876,13 +876,13 @@
       "Spirit Box",
       "Ultraviolet"
     ],
-    "hunt_sanity": 65,
+    "hunt_sanity": 50,
     "speed": {
-      "base": 1.85,
-      "max_los": 2.4,
+      "base": 1.7,
+      "max_los": 2.8,
       "bpm_base": 130,
       "bpm_max": 170,
-      "description": "Tốc độ tuần tra 1.85 m/s (nhanh hơn ma thường một chút)."
+      "description": "1.7 m/s (bình thường), 1.96 m/s (Enraged), 1.36 m/s (Weakened), cộng thêm tăng tốc LOS chuẩn."
     },
     "traits": {
       "strength": "Săn sớm ở mức 65% Sanity. Có khả năng tạo ra các ảo ảnh phân thân (Ghost Event giả lập 2 bóng đen cùng lúc) làm người chơi hoảng loạn.",
@@ -908,13 +908,13 @@
       "Ultraviolet",
       "Ghost Orb"
     ],
-    "hunt_sanity": 55,
+    "hunt_sanity": 50,
     "speed": {
-      "base": 1.4,
-      "max_los": 2.4,
+      "base": 1.7,
+      "max_los": 2.21,
       "bpm_base": 95,
       "bpm_max": 170,
-      "description": "Trong bóng tối chạy như bay 2.4 m/s. Khi bị chiếu đèn pin chạy chậm lại 1.4 m/s."
+      "description": "Base 1.7 m/s; nhanh hơn (tới ~2.21 m/s) khi lao tới điểm phát hiện mà không có LOS."
     },
     "traits": {
       "strength": "Sát thủ bóng đêm: Rất thích dập cầu dao điện. Một khi căn nhà mất điện, Kormos trở thành một cỗ máy săn mồi chạy cực nhanh 2.4 m/s.",
@@ -940,13 +940,13 @@
       "Ghost Writing",
       "D.O.T.S Projector"
     ],
-    "hunt_sanity": 50,
+    "hunt_sanity": 65,
     "speed": {
       "base": 1.7,
-      "max_los": 2.25,
+      "max_los": 1.96,
       "bpm_base": 120,
       "bpm_max": 160,
-      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+      "description": "1.96 m/s khi Aggressive, 1.45 m/s khi Calm."
     },
     "traits": {
       "strength": "Âm thanh đánh lạc hướng: Tạo ra âm thanh tiếng bước chân giả ở căn phòng cách xa nơi nó đang đứng. Thích mở vòi nước bẩn đổi màu đen.",
