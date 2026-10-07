@@ -558,28 +558,37 @@
 
     /* COMPENDIUM NAVIGATION TABS */
     .compendium-tabs-nav {
-      display: flex;
-      gap: 6px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding-bottom: 8px;
+      padding-bottom: 12px;
       margin-bottom: 16px;
-      overflow-x: auto;
     }
 
     .comp-tab-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-width: 0;
       background: rgba(15, 23, 42, 0.7);
       border: 1px solid #1e293b;
-      border-radius: 6px;
-      padding: 6px 14px;
+      border-radius: 9px;
+      padding: 9px 12px;
       font-size: 0.84rem;
       font-weight: 600;
       color: #94a3b8;
       cursor: pointer;
       transition: all 0.15s;
+    }
+
+    .comp-tab-ico { font-size: 1rem; line-height: 1; flex-shrink: 0; }
+
+    .comp-tab-txt {
       white-space: nowrap;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .comp-tab-btn:hover {
@@ -593,6 +602,10 @@
       border-color: #38bdf8;
       color: #38bdf8;
       box-shadow: 0 0 8px rgba(56, 189, 248, 0.2);
+    }
+
+    @media (max-width: 820px) {
+      .compendium-tabs-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     /* PANES */
@@ -874,13 +887,15 @@
 
     .j-tab-badge {
       font-family: var(--font-hand);
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: #78644e;
       border: 1px solid #4a3a29;
-      border-radius: 3px;
-      padding: 0 4px;
+      border-radius: 5px;
+      padding: 1px 5px;
       line-height: 1;
+      min-width: 22px;
+      text-align: center;
     }
 
     .j-tab.active .j-tab-badge {
@@ -2203,7 +2218,7 @@
       <div class="hud-left">
         <div class="hud-label">
           <span class="hud-radar-dot"></span>
-          <span>BỘ LỌC DANH SÁCH:</span>
+          <span>BỘ LỌC:</span>
         </div>
         <div class="hud-chips-container">
           <div class="filter-chip active" data-filter="all">
@@ -2228,8 +2243,8 @@
           <!-- COMPENDIUM TOGGLE BUTTON (GHÉP CHUNG MÂM VỚI TẤT CẢ) -->
           <button class="compendium-toggle-chip" id="btnToggleCompendium" type="button" title="Mở cẩm nang toàn diện, bảng ký hiệu &amp; mẹo bắt thóp khoa học">
             <svg class="svg-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-            <span class="chip-text">Cẩm Nang &amp; Chú Thích</span>
-            <span class="chip-badge manual-badge">FIELD MANUAL</span>
+            <span class="chip-text">Cẩm Nang</span>
+            <span class="chip-badge manual-badge">MANUAL</span>
             <span class="toggle-indicator" id="compendiumArrow">▾</span>
           </button>
         </div>
@@ -2263,17 +2278,17 @@
 
     <!-- Navigation Tabs -->
     <div class="compendium-tabs-nav">
-      <button class="comp-tab-btn active" data-target="compPaneRookie">
-        🔰 1. Tân Thủ &amp; Bảng Ký Hiệu
+      <button class="comp-tab-btn active" data-target="compPaneRookie" title="Tân thủ &amp; bảng giải mã ký hiệu giao diện">
+        <span class="comp-tab-ico">🔰</span><span class="comp-tab-txt">Tân Thủ &amp; Ký Hiệu</span>
       </button>
-      <button class="comp-tab-btn" data-target="compPaneSanity">
-        ⚡ 2. Ngưỡng Sanity Đi Săn (Hunt Matrix)
+      <button class="comp-tab-btn" data-target="compPaneSanity" title="Ngưỡng Sanity đi săn (Hunt Matrix)">
+        <span class="comp-tab-ico">⚡</span><span class="comp-tab-txt">Ngưỡng Sanity Hunt</span>
       </button>
-      <button class="comp-tab-btn" data-target="compPaneSpeed">
-        🧪 3. Vận Tốc &amp; Gia Tốc LOS (Speed/BPM)
+      <button class="comp-tab-btn" data-target="compPaneSpeed" title="Vận tốc &amp; gia tốc LOS (Speed/BPM)">
+        <span class="comp-tab-ico">🧪</span><span class="comp-tab-txt">Vận Tốc &amp; LOS</span>
       </button>
-      <button class="comp-tab-btn" data-target="compPaneBusters">
-        🎯 4. Tuyệt Chiêu 0-Evidence (30 Loài Ma)
+      <button class="comp-tab-btn" data-target="compPaneBusters" title="Tuyệt chiêu 0-Evidence cho 30 loài ma">
+        <span class="comp-tab-ico">🎯</span><span class="comp-tab-txt">Mẹo 0-Evidence</span>
       </button>
     </div>
 
