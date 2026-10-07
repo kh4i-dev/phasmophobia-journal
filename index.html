@@ -1,0 +1,4647 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phasmophobia Investigation Journal - Cuốn Sổ Tay Thợ Săn Ma Pro 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --desk-bg: #07090d;
+      --paper-bg: #e3d3b6;
+      --paper-texture: #ebe0ca;
+      --paper-line: #c8b593;
+      --ink-dark: #1b1915;
+      --ink-red: #8f1d1d;
+      --ink-blue: #1c3d5a;
+      --ink-pencil: #44413c;
+      --accent: #38bdf8;
+      --font-hand: 'Caveat', cursive, sans-serif;
+      --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--desk-bg);
+      background-image: 
+        radial-gradient(circle at 50% 25%, rgba(26, 38, 57, 0.45) 0%, rgba(7, 9, 13, 0.98) 85%),
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 2px, transparent 2px, transparent 4px);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 12px 10px 40px;
+      font-family: var(--font-body);
+      color: var(--ink-dark);
+      overflow-x: hidden;
+      user-select: none;
+    }
+
+    .screen-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      box-shadow: inset 0 0 120px rgba(0,0,0,0.85);
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    /* SVG ICON UTILITY */
+    .svg-icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* ==============================================================
+       ★ TOP DASHBOARD BAR: INTEGRATED COMPACT CONTROL CLUSTER ★
+       ============================================================== */
+    .truck-dashboard {
+      width: 100%;
+      max-width: 1140px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      background: linear-gradient(180deg, rgba(19, 26, 37, 0.94) 0%, rgba(12, 17, 24, 0.94) 100%);
+      border: 1px solid rgba(43, 62, 86, 0.65);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      position: relative;
+      z-index: 50;
+    }
+
+    .top-bar-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .truck-title {
+      color: #94a3b8;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .truck-title span.rec-dot {
+      width: 9px; height: 9px;
+      background: #ef4444;
+      border-radius: 50%;
+      display: inline-block;
+      animation: blink 1.2s infinite;
+    }
+
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+    /* GOM NHÓM ĐIỀU KHIỂN: Ô TÌM KIẾM + ĐỒNG HỒ NHANG HÀI HÒA */
+    .top-controls-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      justify-content: flex-end;
+      max-width: 780px;
+    }
+
+    .search-container {
+      position: relative;
+      flex: 1;
+      max-width: 420px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 8px 34px 8px 36px;
+      background: #121822;
+      border: 1px solid #28374a;
+      border-radius: 20px;
+      color: #f1f5f9;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+      background: #17212e;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+      display: flex;
+      align-items: center;
+    }
+
+    .clear-search-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+      color: #64748b;
+      cursor: pointer;
+      display: none;
+    }
+    .clear-search-btn:hover { color: #ef4444; }
+
+    /* SEARCH DROPDOWN */
+    .search-results-dropdown {
+      position: absolute;
+      top: 105%;
+      left: 0; right: 0;
+      background: #0f1622;
+      border: 1px solid #28374a;
+      border-radius: 10px;
+      max-height: 440px;
+      overflow-y: auto;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.9);
+      display: none;
+      z-index: 1000;
+      padding: 8px;
+    }
+
+    .search-category-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+      margin: 6px 6px 4px;
+      font-weight: 700;
+    }
+
+    .search-result-item {
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: #16202c;
+      margin-bottom: 5px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.15s;
+    }
+
+    .search-result-item:hover {
+      background: #1e2c3d;
+      border-left: 3px solid #38bdf8;
+      transform: translateX(2px);
+    }
+
+    .result-name { font-size: 1rem; font-weight: 700; color: #f1f5f9; }
+    .result-name small { color: #94a3b8; font-size: 0.82rem; margin-left: 6px; font-weight: normal; }
+    .result-snippet { font-size: 0.82rem; color: #cbd5e1; margin-top: 2px; }
+    .result-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #1e293b;
+      color: #38bdf8;
+      white-space: nowrap;
+    }
+
+    /* MASTER SMUDGE TIMER WIDGET (MÀU ĐỒNG VINTAGE TRẦM ẤM, KHÔNG CHÓI LỌI) */
+    .smudge-timer-widget {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #121822;
+      border: 1px solid #28374a;
+      border-radius: 20px;
+      padding: 3px 12px 3px 6px;
+      white-space: nowrap;
+    }
+
+    .timer-btn {
+      background: #2b2218;
+      color: #e2d7c5;
+      border: 1px solid #574431;
+      border-radius: 14px;
+      padding: 4px 12px;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s;
+    }
+    .timer-btn:hover { background: #3d3023; color: #fff; border-color: #7d6349; }
+    .timer-btn.running {
+      background: #8f1d1d;
+      color: #fff;
+      border-color: #b91c1c;
+      animation: pulseBtn 1.5s infinite;
+    }
+
+    @keyframes pulseBtn {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(1.2); }
+    }
+
+    .timer-display {
+      font-family: monospace;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #f8fafc;
+      min-width: 52px;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+
+    .timer-phase {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      border-left: 1px solid #2c394b;
+      padding-left: 8px;
+    }
+    .timer-phase strong { color: #38bdf8; }
+
+    /* ==============================================================
+       ★ TACTICAL GROUP FILTER HUD: 4 NHÓM LỌC DANH SÁCH THỰC THỤ ★
+       ============================================================== */
+    .quick-filter-hud {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 2px 0;
+      border-top: 1px solid rgba(56, 189, 248, 0.14);
+    }
+
+    .hud-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .hud-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: #64748b;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .hud-radar-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 6px #38bdf8;
+      animation: radarPulse 2s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes radarPulse {
+      0%, 100% { opacity: 0.35; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.15); box-shadow: 0 0 10px #38bdf8; }
+    }
+
+    .hud-chips-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(22, 32, 48, 0.85);
+      border: 1px solid rgba(52, 73, 102, 0.55);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.82rem;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .filter-chip:hover {
+      background: rgba(30, 44, 66, 0.95);
+      border-color: rgba(56, 189, 248, 0.45);
+      color: #f1f5f9;
+    }
+
+    .filter-chip.active {
+      background: #14283d;
+      border-color: #38bdf8;
+      color: #38bdf8;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.22);
+    }
+
+    .chip-text { font-weight: 600; letter-spacing: 0.02em; }
+    .chip-badge {
+      background: #1e293b;
+      color: #38bdf8;
+      font-size: 0.72rem;
+      font-weight: bold;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .hud-filter-status {
+      font-size: 0.8rem;
+      color: #7dd3fc;
+      font-weight: 500;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ==============================================================
+       ★ TACTICAL FIELD COMPENDIUM (CẨM NANG TOÀN DIỆN & BẢNG KÝ HIỆU) ★
+       ============================================================== */
+    .hud-chip-separator {
+      width: 1px;
+      height: 18px;
+      background: rgba(56, 189, 248, 0.25);
+      margin: 0 4px;
+    }
+
+    .compendium-toggle-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #38bdf8;
+      cursor: pointer;
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+      white-space: nowrap;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .compendium-toggle-chip:hover {
+      background: rgba(14, 116, 144, 0.25);
+      border-color: #38bdf8;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+    }
+
+    .compendium-toggle-chip.active {
+      background: #0369a1;
+      border-color: #38bdf8;
+      color: #fff;
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.5);
+    }
+
+    .compendium-toggle-chip .manual-badge {
+      background: #0284c7;
+      color: #f0f9ff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+    }
+
+    .compendium-toggle-chip.active .manual-badge {
+      background: #fff;
+      color: #0369a1;
+    }
+
+    .compendium-toggle-chip .toggle-indicator {
+      font-size: 0.72rem;
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .compendium-toggle-chip.active .toggle-indicator {
+      transform: rotate(180deg);
+    }
+
+    /* COMPENDIUM CONTAINER */
+    .compendium-container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto 16px;
+      background: linear-gradient(180deg, #0e1522 0%, #080c14 100%);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 12px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.08);
+      padding: 16px 22px;
+      box-sizing: border-box;
+      animation: compendiumSlide 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes compendiumSlide {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .compendium-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .compendium-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .comp-beacon-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(14, 116, 144, 0.25);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .compendium-main-title {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .compendium-subtitle {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .btn-close-compendium {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      color: #fca5a5;
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn-close-compendium:hover {
+      background: #dc2626;
+      color: #fff;
+      border-color: #ef4444;
+    }
+
+    /* COMPENDIUM NAVIGATION TABS */
+    .compendium-tabs-nav {
+      display: flex;
+      gap: 6px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      overflow-x: auto;
+    }
+
+    .comp-tab-btn {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid #1e293b;
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .comp-tab-btn:hover {
+      background: #1e293b;
+      color: #f8fafc;
+      border-color: #38bdf8;
+    }
+
+    .comp-tab-btn.active {
+      background: rgba(14, 116, 144, 0.25);
+      border-color: #38bdf8;
+      color: #38bdf8;
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.2);
+    }
+
+    /* PANES */
+    .comp-pane {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .comp-pane.active {
+      display: flex;
+    }
+
+    /* CARDS & GRIDS INSIDE COMPENDIUM */
+    .comp-grid-2col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .comp-grid-2col { grid-template-columns: 1fr; }
+    }
+
+    .comp-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .comp-card.highlight-cyan {
+      border-color: rgba(56, 189, 248, 0.35);
+      background: rgba(14, 116, 144, 0.08);
+    }
+
+    .comp-card.highlight-emerald {
+      border-color: rgba(16, 185, 129, 0.35);
+      background: rgba(16, 185, 129, 0.06);
+    }
+
+    .comp-card.highlight-amber {
+      border-color: rgba(245, 158, 11, 0.35);
+      background: rgba(245, 158, 11, 0.06);
+    }
+
+    .comp-card.highlight-rose {
+      border-color: rgba(244, 63, 94, 0.35);
+      background: rgba(244, 63, 94, 0.06);
+    }
+
+    .comp-card-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      letter-spacing: 0.02em;
+    }
+
+    .comp-card-title span.badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    .comp-card p, .comp-card ul {
+      font-size: 0.84rem;
+      color: #cbd5e1;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .comp-card ul {
+      padding-left: 18px;
+    }
+
+    .comp-card li {
+      margin-bottom: 4px;
+    }
+
+    .comp-card strong {
+      color: #f8fafc;
+    }
+
+    /* LEGEND BADGES GRID */
+    .legend-badges-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 800px) {
+      .legend-badges-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .legend-badge-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 8px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .legend-badge-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #f1f5f9;
+    }
+
+    .legend-badge-desc {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      line-height: 1.3;
+    }
+
+    /* TELEMETRY MATRIX TABLE */
+    .comp-matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      background: rgba(10, 15, 24, 0.6);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #1e293b;
+    }
+
+    .comp-matrix-table th {
+      background: #111a28;
+      color: #94a3b8;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      padding: 8px 12px;
+      text-align: left;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .comp-matrix-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: middle;
+    }
+
+    .comp-matrix-table tr:hover td {
+      background: rgba(56, 189, 248, 0.05);
+    }
+
+    .comp-matrix-table strong { color: #f8fafc; }
+    .comp-matrix-table .tag-red { color: #f87171; font-weight: 700; }
+    .comp-matrix-table .tag-cyan { color: #38bdf8; font-weight: 700; }
+    .comp-matrix-table .tag-amber { color: #fbbf24; font-weight: 700; }
+    .comp-matrix-table .tag-emerald { color: #34d399; font-weight: 700; }
+
+    /* 0-EVIDENCE QUICK CARDS GRID */
+    .quick-buster-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    @media (max-width: 960px) {
+      .quick-buster-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .quick-buster-grid { grid-template-columns: 1fr; }
+    }
+
+    .buster-item {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid #1e293b;
+      border-radius: 6px;
+      padding: 9px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: all 0.15s;
+    }
+
+    .buster-item:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      background: rgba(30, 41, 59, 0.5);
+    }
+
+    .buster-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .buster-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .buster-badge {
+      font-size: 0.68rem;
+      padding: 1px 5px;
+      border-radius: 3px;
+      background: #1e293b;
+      color: #94a3b8;
+    }
+
+    .buster-tip {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      line-height: 1.35;
+    }
+
+    /* ==============================================================
+       ★ THE JOURNAL BOOK: 6 DIVIDER TABS & DOUBLE-PAGE LAYOUT ★
+       ============================================================== */
+    .journal-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1140px;
+    }
+
+    /* 6 TABS TRÊN GÁY SỔ - TÊN ANH CHÍNH, TIẾNG VIỆT PHỤ ĐỀ */
+    .journal-tabs {
+      display: flex;
+      gap: 5px;
+      margin-left: 20px;
+      position: relative;
+      z-index: 5;
+      margin-bottom: -1px;
+      flex-wrap: wrap;
+    }
+
+    .j-tab {
+      background: linear-gradient(180deg, #241c15 0%, #17120e 100%);
+      border: 1px solid #483928;
+      border-bottom: none;
+      padding: 6px 14px 7px;
+      border-radius: 8px 8px 0 0;
+      color: #9c8975;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 -2px 6px rgba(0,0,0,0.5);
+      user-select: none;
+    }
+
+    .j-tab:hover {
+      background: linear-gradient(180deg, #33271d 0%, #1e1711 100%);
+      color: #ded1c1;
+      border-color: #665039;
+      transform: translateY(-2px);
+    }
+
+    .j-tab.active {
+      background: linear-gradient(180deg, #ebd8b6 0%, var(--paper-bg) 100%);
+      border-color: #7d6545;
+      border-bottom: 1px solid var(--paper-bg);
+      color: #1b1915;
+      padding-top: 7px;
+      padding-bottom: 8px;
+      margin-top: -2px;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.6);
+      z-index: 6;
+    }
+
+    .j-tab-badge {
+      font-family: var(--font-hand);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #78644e;
+      border: 1px solid #4a3a29;
+      border-radius: 3px;
+      padding: 0 4px;
+      line-height: 1;
+    }
+
+    .j-tab.active .j-tab-badge {
+      color: #8f1d1d;
+      border-color: #a82424;
+      background: rgba(143, 29, 29, 0.08);
+    }
+
+    .j-tab-content {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .j-tab-title {
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: inherit;
+    }
+
+    .j-tab-sub {
+      font-size: 0.76rem;
+      color: #7a6a57;
+      margin-top: 1px;
+    }
+
+    .j-tab.active .j-tab-sub {
+      color: #5a4b37;
+      font-weight: 600;
+    }
+
+    /* THE BOOK */
+    .book {
+      background: #211913;
+      border: 6px solid #140f0c;
+      border-radius: 12px;
+      box-shadow: 
+        0 18px 45px rgba(0,0,0,0.9),
+        0 0 0 1px rgba(255,255,255,0.05);
+      display: flex;
+      min-height: 650px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .book::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: 8px;
+      box-shadow: inset 0 0 25px rgba(0,0,0,0.8);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .page {
+      flex: 1;
+      background-color: var(--paper-bg);
+      background-image: 
+        radial-gradient(ellipse at center, var(--paper-texture) 0%, var(--paper-bg) 85%),
+        repeating-linear-gradient(transparent, transparent 27px, var(--paper-line) 28px);
+      padding: 24px 30px 40px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: inset 0 0 60px rgba(130, 100, 60, 0.18);
+    }
+
+    .page.left-page {
+      border-right: 1px solid rgba(0, 0, 0, 0.22);
+      box-shadow: 
+        inset -15px 0 25px rgba(0,0,0,0.2),
+        inset 0 0 50px rgba(130, 100, 60, 0.15);
+    }
+
+    .page.right-page {
+      border-left: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 
+        inset 15px 0 25px rgba(0,0,0,0.2),
+        inset 0 0 50px rgba(130, 100, 60, 0.15);
+    }
+
+    /* ĐẢM BẢO TẤT CẢ CÁC TRANG CON ĐỀU XẾP DỌC (FLEX COLUMN), KHÔNG BỊ TRÀN NGANG */
+    #leftViewEvidence, #leftViewGhostInfo, #leftViewItems, #leftViewCursed, #leftViewVoice, #leftViewAudio,
+    #rightViewGhosts, #rightViewGhostInfo, #rightViewItems, #rightViewCursed, #rightViewVoice, #rightViewAudio {
+      display: flex;
+      flex-direction: column !important;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      min-height: 0;
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 12px;
+      font-family: var(--font-hand);
+      font-size: 1.35rem;
+      color: #7e6f54;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .page-turn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px; height: 56px;
+      background: #c2ad87;
+      border: 1px solid #8c7855;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: #3b3020;
+      cursor: pointer;
+      z-index: 20;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.15s;
+    }
+    .page-turn:hover { background: #dcd0b7; }
+    .page-turn.prev { left: -2px; border-radius: 0 8px 8px 0; }
+    .page-turn.next { right: -2px; border-radius: 8px 0 0 8px; }
+
+    .page-title {
+      font-family: var(--font-hand);
+      font-size: 2.2rem;
+      color: #8f1d1d;
+      border-bottom: 2px solid #5a4b37;
+      padding-bottom: 2px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      line-height: 1.1;
+    }
+
+    .page-title span {
+      white-space: nowrap;
+    }
+
+    .page-title small {
+      font-size: 1.15rem;
+      color: #5a4b37;
+      font-family: var(--font-hand);
+      font-weight: normal;
+      white-space: nowrap;
+    }
+
+    .page-subtitle {
+      font-size: 0.92rem;
+      color: var(--ink-pencil);
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    /* ==============================================================
+       ★ EVIDENCE LIST (LEFT PAGE): 3-STATE EVIDENCE TOGGLE ★
+       ============================================================== */
+    .evidence-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-top: 4px;
+    }
+
+    .evidence-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background 0.12s;
+    }
+    .evidence-item:hover { background: rgba(0,0,0,0.05); }
+
+    .hand-checkbox {
+      width: 24px; height: 24px;
+      border: 2px solid #2b251e;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-hand);
+      font-size: 1.5rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+      background: #f1e6d0;
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+      font-weight: 700;
+    }
+
+    .evidence-item.found .hand-checkbox {
+      color: #065f46; background: #d1fae5; border-color: #065f46;
+    }
+    .evidence-item.rejected .hand-checkbox {
+      color: #991b1b; background: #fee2e2; border-color: #991b1b;
+    }
+
+    .evidence-text-block { display: flex; flex-direction: column; }
+    .evidence-name {
+      font-family: var(--font-hand);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ink-dark);
+      line-height: 1.1;
+    }
+    .evidence-item.found .evidence-name { color: #0f766e; }
+    .evidence-item.rejected .evidence-name { text-decoration: line-through 2px #991b1b; color: #78716c; }
+
+    .evidence-desc {
+      font-size: 0.88rem;
+      color: #574f44;
+      line-height: 1.25;
+      margin-top: 1px;
+    }
+
+    .journal-btn {
+      align-self: flex-start;
+      margin-top: auto;
+      background: transparent;
+      border: 1px dashed #6b5b45;
+      font-size: 0.92rem;
+      color: #574b39;
+      padding: 5px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-weight: 600;
+    }
+    .journal-btn:hover { background: rgba(0,0,0,0.06); color: #1b160f; border-color: #1b160f; }
+
+    /* ==============================================================
+       ★ 30 GHOSTS GRID (RIGHT PAGE): 3-STATE EXCLUSIVE LOGIC ★
+       NORMAL (SÁNG) | RULED-OUT (GẠCH ĐẬM NÉT) | PINNED (KHOANH ĐỎ)
+       ============================================================== */
+    .ghosts-table-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 44px;
+      align-content: start;
+      gap: 3px 6px;
+      margin-top: 3px;
+      margin-bottom: 4px;
+      flex-grow: 1;
+    }
+
+    .ghost-slot {
+      border: 1px solid rgba(85, 65, 45, 0.15);
+      border-radius: 5px;
+      padding: 3px 8px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+      background: rgba(255, 255, 255, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 44px;
+      box-sizing: border-box;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+
+    .ghost-slot:hover {
+      background: rgba(255, 255, 255, 0.85);
+      border-color: rgba(143, 29, 29, 0.35);
+      transform: translateY(-1px);
+      box-shadow: 0 3px 8px rgba(80, 50, 20, 0.1), inset 0 1px 0 #fff;
+    }
+
+    .ghost-slot:active {
+      transform: scale(0.98);
+    }
+
+    .ghost-slot.highlighted {
+      background: rgba(14, 116, 144, 0.08);
+      border-color: #0284c7;
+      box-shadow: 0 0 0 1px rgba(2, 132, 199, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+    .ghost-slot.highlighted .slot-name-en {
+      color: #0369a1 !important;
+    }
+
+    .slot-name-en {
+      font-family: var(--font-hand);
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: #24201a;
+      line-height: 1;
+    }
+
+    .slot-name-vi {
+      font-size: 0.72rem;
+      color: #5a4b37;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 2px;
+      line-height: 1.15;
+    }
+
+    .slot-badge-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 1px 4px;
+      border-radius: 3px;
+      background: #1e293b;
+      color: #38bdf8;
+      line-height: 1;
+    }
+
+    /* TRẠNG THÁI 2: RULED-OUT (GẠCH NGANG TƯƠNG PHẢN CAO, ĐẬM NÉT ĐỎ THẪM) */
+    .ghost-slot.ruled-out {
+      opacity: 0.48;
+      background: rgba(0,0,0,0.02);
+      border-color: transparent;
+    }
+    .ghost-slot.ruled-out .slot-name-en {
+      text-decoration: line-through 2px #8f1d1d;
+      color: #5c4f3f !important;
+    }
+    .ghost-slot.ruled-out .slot-name-vi {
+      text-decoration: line-through 1px #8f1d1d;
+      color: #8c7e6c !important;
+    }
+
+    /* TRẠNG THÁI 3: PINNED (KHOANH BÚT CHÌ ĐỎ THẬT TỰ NHIÊN, KHÔNG LỆCH) */
+    .ghost-slot.pinned {
+      background: rgba(143, 29, 29, 0.07);
+      border-color: rgba(143, 29, 29, 0.4);
+      box-shadow: 0 0 0 1px rgba(143, 29, 29, 0.12), 0 2px 5px rgba(143, 29, 29, 0.06);
+    }
+    .ghost-slot.pinned .slot-name-en {
+      color: #8f1d1d !important;
+    }
+    .ghost-slot.pinned .slot-name-vi {
+      color: #6b1d1d !important;
+      font-weight: 600;
+    }
+
+    .slot-name-en-wrap {
+      position: relative;
+      display: inline-block;
+      width: fit-content;
+      line-height: 1;
+    }
+
+    .pencil-name-circle {
+      display: none;
+      position: absolute;
+      top: -2px; left: -5px;
+      width: calc(100% + 10px);
+      height: calc(100% + 5px);
+      pointer-events: none;
+      overflow: visible;
+      filter: drop-shadow(0 0 0.5px rgba(158, 28, 28, 0.35));
+    }
+
+    .ghost-slot.pinned .pencil-name-circle {
+      display: block;
+      animation: rough-name-draw 0.16s ease-out;
+    }
+
+    @keyframes rough-name-draw {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* ==============================================================
+       ★ BOTTOM QUICK ACTION BAR: THẺ THÔNG TIN DƯỚI CÙNG TRANG PHẢI ★
+       ============================================================== */
+    .quick-action-bar {
+      margin-top: auto;
+      background: #ebdcc3;
+      border: 1px solid #bfaf92;
+      border-radius: 8px;
+      padding: 6px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      gap: 10px;
+    }
+
+    .action-ghost-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .action-ghost-name {
+      font-family: var(--font-hand);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: #8f1d1d;
+      line-height: 1;
+    }
+    .action-ghost-name small {
+      font-size: 1.05rem;
+      color: #4a3e2e;
+      margin-left: 6px;
+      font-weight: normal;
+    }
+
+    .action-ghost-meta {
+      font-size: 0.88rem;
+      color: #4a3e2e;
+    }
+
+    .btn-zoom-dossier {
+      background: #8f1d1d;
+      color: #fff;
+      border: none;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 8px rgba(143, 29, 29, 0.4);
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .btn-zoom-dossier:hover {
+      background: #a82424;
+      transform: scale(1.03);
+    }
+    .btn-zoom-dossier.secondary {
+      background: #2b2218;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+    .btn-zoom-dossier.secondary:hover { background: #423527; }
+
+    /* ==============================================================
+       ★ TAB 02: GHOST DIRECTORY (TRANG TRÁI 2 CỘT CÂN ĐỐI) ★
+       ============================================================== */
+    .ghost-directory-layout {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .directory-search-mini {
+      width: 100%;
+      padding: 6px 12px;
+      background: #f7eee0;
+      border: 1px solid #c2b193;
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+      outline: none;
+    }
+
+    .directory-grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: minmax(min-content, max-content);
+      gap: 8px 10px;
+      max-height: 480px;
+      overflow-y: auto;
+      padding-right: 6px;
+      align-content: start;
+    }
+
+    .directory-grid-2col::-webkit-scrollbar { width: 5px; }
+    .directory-grid-2col::-webkit-scrollbar-thumb { background: #b8a584; border-radius: 3px; }
+
+    .dir-card {
+      background: rgba(255,255,255,0.45);
+      border: 1px solid #c9b99e;
+      border-radius: 6px;
+      padding: 6px 10px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      transition: all 0.12s;
+    }
+    .dir-card:hover {
+      background: rgba(255,255,255,0.85);
+      border-color: #8f2020;
+      transform: translateY(-1px);
+    }
+    .dir-card.active {
+      background: #fdf5e6;
+      border: 2px solid #8f2020;
+      box-shadow: 0 2px 6px rgba(143, 32, 32, 0.15);
+    }
+
+    .dir-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .dir-name-en {
+      font-family: var(--font-hand);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #8f2020;
+      line-height: 1;
+    }
+
+    .dir-hunt-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: #1e293b;
+      color: #38bdf8;
+      padding: 1px 5px;
+      border-radius: 3px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .dir-name-vi {
+      font-size: 0.78rem;
+      color: #5a4b37;
+      line-height: 1.2;
+    }
+
+    .dir-speed-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #78644e;
+      margin-top: 1px;
+    }
+
+    /* DEEP DIVE VIEW (RIGHT PAGE ON TAB 02) */
+    .info-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid #5a4b37;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+    }
+
+    .info-name-vi {
+      font-family: var(--font-hand);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #8f1d1d;
+      line-height: 1;
+    }
+
+    .info-name-en {
+      font-size: 0.95rem;
+      color: #5a4b37;
+      margin-top: 2px;
+    }
+
+    .info-meta-chips {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .info-chip {
+      background: rgba(255,255,255,0.6);
+      border: 1px solid #c2b192;
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-size: 0.82rem;
+      color: #2b2319;
+    }
+    .info-chip strong { color: #8f1d1d; }
+
+    .info-evidences-bar {
+      background: #e6d3b3;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      color: #1e293b;
+      margin-bottom: 8px;
+      border-left: 3px solid #1e3a8a;
+    }
+
+    .info-section {
+      background: rgba(255,255,255,0.4);
+      border-left: 3px solid #8f1d1d;
+      padding: 6px 10px;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+    .info-section.weakness { border-left-color: #059669; }
+    .info-section.test { border-left-color: #d97706; background: #fffcf0; }
+
+    .info-section-title {
+      font-family: var(--font-hand);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #1a150e;
+      margin-bottom: 2px;
+    }
+
+    .warning-badge {
+      background: #fee2e2;
+      border: 1px solid #f87171;
+      color: #991b1b;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      line-height: 1.3;
+      margin-top: 6px;
+    }
+
+    /* ==============================================================
+       ★ TAB 06: AUDIO STUDIO (PHÒNG THỬ ÂM THANH & BƯỚC CHÂN) ★
+       ============================================================== */
+    .audio-studio-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: 100%;
+    }
+
+    .footstep-preset-card {
+      background: rgba(255,255,255,0.45);
+      border: 1px solid #c9b99e;
+      border-radius: 6px;
+      padding: 8px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+    .footstep-preset-card:hover {
+      background: rgba(255,255,255,0.85);
+      border-color: #8f2020;
+    }
+    .footstep-preset-card.playing {
+      background: #fdf2f2;
+      border-color: #ef4444;
+      box-shadow: 0 0 8px rgba(239, 68, 68, 0.2);
+    }
+
+    .preset-info-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .preset-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #1b1915;
+    }
+
+    .preset-desc {
+      font-size: 0.8rem;
+      color: #574b39;
+    }
+
+    .preset-btn-play {
+      background: #2b2218;
+      color: #fff;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s;
+    }
+    .preset-btn-play:hover { background: #0284c7; }
+    .footstep-preset-card.playing .preset-btn-play {
+      background: #ef4444;
+    }
+
+    /* RIGHT PAGE SOUNDBOARD CONTROLS */
+    .audio-fx-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .fx-button {
+      background: rgba(255,255,255,0.5);
+      border: 1px solid #c9b99e;
+      border-radius: 6px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: var(--font-body);
+      text-align: left;
+    }
+    .fx-button:hover {
+      background: #fff;
+      border-color: #8f2020;
+      transform: translateY(-1px);
+    }
+    .fx-button-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #1b1915;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .fx-button-desc {
+      font-size: 0.78rem;
+      color: #64748b;
+    }
+
+    .volume-control-box {
+      background: rgba(0,0,0,0.06);
+      border: 1px solid #bfaf92;
+      border-radius: 6px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .volume-slider-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .volume-slider {
+      flex: 1;
+      accent-color: #8f1d1d;
+      cursor: pointer;
+    }
+
+    /* SCROLLABLE PAGE CONTENT */
+    .scrollable-page-content {
+      overflow-y: auto;
+      max-height: 500px;
+      padding-right: 6px;
+    }
+    .scrollable-page-content::-webkit-scrollbar { width: 4px; }
+    .scrollable-page-content::-webkit-scrollbar-thumb { background: #b8a584; border-radius: 2px; }
+
+    .voice-line-box {
+      background: rgba(255,255,255,0.4);
+      border: 1px solid #c2b193;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .voice-line-box:hover { background: rgba(255,255,255,0.7); }
+    .voice-line-en { font-family: var(--font-hand); font-size: 1.5rem; color: #1a365d; font-weight: 700; }
+    .voice-line-vi { font-size: 0.88rem; color: #574b39; }
+    .copy-pill { font-size: 0.8rem; background: #c7b391; padding: 2px 8px; border-radius: 4px; color: #2b2319; font-weight: 600; }
+
+    /* ==============================================================
+       ★ CỰC PHẨM: MODAL HỒ SƠ TẬP MẬT PHÓNG TO (DOSSIER ZOOM MODAL) ★
+       (ĐÃ BỎ HẾT EMOJI, DÙNG SVG VÀ CHỮ SẮC NÉT)
+       ============================================================== */
+    .dossier-modal-backdrop {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(4, 7, 12, 0.84);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      animation: fadeInBackdrop 0.2s ease-out;
+    }
+
+    @keyframes fadeInBackdrop {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+
+    .dossier-modal-folder {
+      width: 100%;
+      max-width: 920px;
+      max-height: 90vh;
+      background-color: #dfcca7;
+      background-image: 
+        radial-gradient(ellipse at center, #ede1c7 0%, #d8c29b 100%),
+        repeating-linear-gradient(transparent, transparent 27px, #caa97b 28px);
+      border: 6px solid #231913;
+      border-radius: 12px;
+      box-shadow: 
+        0 25px 60px rgba(0,0,0,0.9),
+        0 0 0 2px rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      animation: zoomInModal 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes zoomInModal {
+      from { transform: scale(0.96); opacity: 0.7; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .dossier-folder-header {
+      background: #c7ad81;
+      border-bottom: 2px solid #5a4b37;
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: inset 0 -2px 5px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .dossier-header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dossier-classified-stamp {
+      font-size: 0.8rem;
+      border: 2px solid #8f1d1d;
+      color: #8f1d1d;
+      padding: 2px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transform: rotate(-1deg);
+      display: inline-block;
+    }
+
+    .dossier-header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dossier-nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(0,0,0,0.08);
+      padding: 2px 6px;
+      border-radius: 5px;
+      border: 1px solid #aa9573;
+    }
+
+    .dossier-nav-btn {
+      background: #3a2e21;
+      color: #f7eee0;
+      border: 1px solid #5d4a36;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.12s;
+    }
+    .dossier-nav-btn:hover {
+      background: #8f1d1d;
+      border-color: #a82424;
+      color: #fff;
+    }
+
+    .dossier-counter {
+      font-size: 0.82rem;
+      color: #2c2217;
+      font-weight: bold;
+      padding: 0 4px;
+    }
+
+    .modal-close-btn {
+      background: #241c15;
+      color: #f1f5f9;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+    .modal-close-btn:hover { background: #ef4444; }
+
+    .dossier-body {
+      padding: 16px 22px 22px;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .dossier-body::-webkit-scrollbar { width: 5px; }
+    .dossier-body::-webkit-scrollbar-thumb { background: #9c825a; border-radius: 3px; }
+
+    .dossier-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid #5a4b37;
+      padding-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .dossier-name-vi {
+      font-family: var(--font-hand);
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #8f1d1d;
+      line-height: 1;
+    }
+
+    .dossier-name-en {
+      font-size: 1.05rem;
+      color: #4b3e2e;
+      margin-top: 2px;
+    }
+
+    .danger-tag {
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #f87171;
+    }
+
+    .dossier-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 8px;
+    }
+
+    .dossier-stat-card {
+      background: rgba(255,255,255,0.55);
+      border: 1px solid #c2b192;
+      border-radius: 6px;
+      padding: 7px 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: #574b37;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .stat-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1b1915;
+      margin-top: 1px;
+    }
+    .stat-value.highlight-red { color: #8f1d1d; }
+    .stat-value.highlight-blue { color: #1e3a8a; }
+
+    /* FOOTSTEP PRO AUDIO STUDIO IN MODAL */
+    .footstep-simulator-card {
+      background: #19140f;
+      border: 1px solid #3d3025;
+      border-radius: 7px;
+      padding: 10px 14px;
+      color: #f1f5f9;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footstep-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .footstep-info span.title {
+      font-size: 0.88rem;
+      color: #38bdf8;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footstep-info span.desc {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+
+    .footstep-metronome-pulse {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #334155;
+      border: 2px solid #64748b;
+      transition: all 0.04s ease-out;
+    }
+    .footstep-metronome-pulse.beat {
+      background: #ef4444;
+      border-color: #fca5a5;
+      box-shadow: 0 0 14px #ef4444;
+      transform: scale(1.3);
+    }
+
+    .footstep-audio-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .speed-toggle-group {
+      display: flex;
+      gap: 4px;
+      background: #271f18;
+      padding: 2px;
+      border-radius: 5px;
+      border: 1px solid #483928;
+    }
+
+    .btn-speed-mode {
+      background: transparent;
+      color: #cbd5e1;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-speed-mode:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .btn-speed-mode.active {
+      background: #0284c7;
+      color: #fff;
+    }
+
+    .btn-play-footstep {
+      background: #0284c7;
+      color: #fff;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 16px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .btn-play-footstep:hover { background: #38bdf8; color: #0c0f14; }
+    .btn-play-footstep.playing { background: #ef4444; }
+
+    /* TAP TEMPO */
+    .tap-tempo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #231b14;
+      border: 1px dashed #6b5339;
+      border-radius: 5px;
+      padding: 7px 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn-tap-tempo {
+      background: #d97706;
+      color: #fff;
+      border: none;
+      padding: 5px 14px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.08s;
+    }
+    .btn-tap-tempo:active { transform: scale(0.96); background: #f59e0b; }
+
+    .tap-tempo-results {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tap-bpm-display {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+    .tap-bpm-display strong {
+      font-size: 1.35rem;
+      color: #38bdf8;
+    }
+
+    .tap-verdict { font-size: 0.82rem; color: #fde68a; }
+
+    /* DOSSIER TABS NAV */
+    .dossier-tabs-nav {
+      display: flex;
+      gap: 6px;
+      border-bottom: 2px solid #5a4b37;
+      padding-bottom: 2px;
+    }
+
+    .d-tab-btn {
+      background: rgba(0,0,0,0.06);
+      border: 1px solid #bda887;
+      border-bottom: none;
+      padding: 5px 12px;
+      border-radius: 5px 5px 0 0;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #4b3e2e;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .d-tab-btn:hover { background: rgba(0,0,0,0.12); }
+    .d-tab-btn.active {
+      background: #dfcca7;
+      border-color: #5a4b37;
+      color: #8f1d1d;
+      padding-top: 7px;
+      margin-top: -2px;
+    }
+
+    .dossier-tab-pane {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #241f18;
+    }
+    .dossier-tab-pane.active { display: flex; }
+
+    .instant-clue-card {
+      background: #fffbeb;
+      border: 1px solid #d97706;
+      border-left: 5px solid #b45309;
+      border-radius: 6px;
+      padding: 10px 14px;
+    }
+    .instant-clue-header {
+      font-family: var(--font-hand);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 2px;
+    }
+    .instant-clue-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.35;
+    }
+
+    .interactive-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .check-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      background: rgba(255,255,255,0.65);
+      padding: 7px 10px;
+      border-radius: 5px;
+      border: 1px solid #d3c3a7;
+      cursor: pointer;
+      transition: all 0.12s;
+    }
+    .check-step-item:hover { background: #fff; border-color: #9c825a; }
+    .check-step-item.checked { background: #ecfdf5; border-color: #10b981; }
+    .check-step-box {
+      width: 18px; height: 18px;
+      border: 2px solid #5a4b37;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #059669;
+      margin-top: 2px;
+      flex-shrink: 0;
+      background: #fff;
+      font-size: 0.75rem;
+    }
+    .check-step-item.checked .check-step-box {
+      border-color: #059669; background: #d1fae5;
+    }
+    .check-step-text {
+      font-size: 0.9rem;
+      color: #1f2937;
+      line-height: 1.3;
+    }
+
+    .dossier-block {
+      background: rgba(255,255,255,0.5);
+      border-left: 4px solid #8f1d1d;
+      padding: 8px 12px;
+      border-radius: 0 5px 5px 0;
+    }
+    .dossier-block.green { border-left-color: #15803d; }
+    .dossier-block.amber { border-left-color: #b45309; background: #fffcf4; }
+
+    .dossier-block-title {
+      font-family: var(--font-hand);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a150e;
+      margin-bottom: 2px;
+    }
+
+    .modal-smudge-box {
+      background: #181c24;
+      border: 1px solid #2e3a4e;
+      border-radius: 6px;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      margin-top: 6px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    @media (max-width: 860px) {
+      .book { flex-direction: column; }
+      .page.left-page { border-right: none; border-bottom: 2px solid rgba(0,0,0,0.3); }
+      .ghosts-table-container { grid-template-columns: repeat(2, 1fr); }
+      .journal-tabs { margin-left: 4px; gap: 3px; }
+      .j-tab { padding: 4px 8px; }
+      .top-bar-row { flex-direction: column; align-items: stretch; }
+      .top-controls-group { max-width: 100%; flex-wrap: wrap; }
+      .directory-grid-2col { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="screen-overlay"></div>
+
+  <!-- ==============================================================
+       ★ VAN DASHBOARD NAVIGATION BAR: INTEGRATED CLUSTER ★
+       ============================================================== -->
+  <div class="truck-dashboard">
+    <div class="top-bar-row">
+      <div class="truck-title">
+        <span class="rec-dot"></span> PHASMO-INVESTIGATION FEED • FULL 30 GHOSTS (2026 UPDATE)
+      </div>
+
+      <!-- INTEGRATED CONTROLS CLUSTER: SEARCH + UNIFIED SMUDGE TIMER -->
+      <div class="top-controls-group">
+        
+        <!-- SMART SEARCH BAR -->
+        <div class="search-container">
+          <span class="search-icon">
+            <svg class="svg-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
+          <input type="text" id="journalSearch" class="search-input" placeholder="Tìm kiếm ma, tốc độ, bằng chứng... (Phím /)" autocomplete="off">
+          <span class="clear-search-btn" id="clearSearchBtn">✕</span>
+          <div class="search-results-dropdown" id="searchResultsDropdown"></div>
+        </div>
+
+        <!-- UNIFIED MASTER SMUDGE TIMER WIDGET -->
+        <div class="smudge-timer-widget">
+          <button class="timer-btn" id="btnSmudgeTimer">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 2c0 4-4 6-4 10a4 4 0 0 0 8 0c0-4-4-6-4-10z"></path></svg>
+            <span>Bấm Giờ Nhang</span>
+          </button>
+          <div class="timer-display" id="smudgeDisplay">00:00</div>
+          <div class="timer-phase" id="smudgePhase">Sẵn sàng test Demon/Spirit</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TACTICAL GROUP FILTER HUD: 4 NHÓM LỌC DANH SÁCH RÕ RÀNG -->
+    <div class="quick-filter-hud">
+      <div class="hud-left">
+        <div class="hud-label">
+          <span class="hud-radar-dot"></span>
+          <span>BỘ LỌC DANH SÁCH:</span>
+        </div>
+        <div class="hud-chips-container">
+          <div class="filter-chip active" data-filter="all">
+            <span class="chip-text">Tất Cả</span>
+            <span class="chip-badge">30</span>
+          </div>
+          <div class="filter-chip" data-filter="early_hunt">
+            <span class="chip-text">Săn Sớm (&gt;60%)</span>
+            <span class="chip-badge">7</span>
+          </div>
+          <div class="filter-chip" data-filter="fast_speed">
+            <span class="chip-text">Tốc Độ Cao</span>
+            <span class="chip-badge">8</span>
+          </div>
+          <div class="filter-chip" data-filter="expansion_2026">
+            <span class="chip-text">Bản Mở Rộng 2026</span>
+            <span class="chip-badge">6</span>
+          </div>
+
+          <div class="hud-chip-separator"></div>
+
+          <!-- COMPENDIUM TOGGLE BUTTON (GHÉP CHUNG MÂM VỚI TẤT CẢ) -->
+          <button class="compendium-toggle-chip" id="btnToggleCompendium" type="button" title="Mở cẩm nang toàn diện, bảng ký hiệu &amp; mẹo bắt thóp khoa học">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            <span class="chip-text">Cẩm Nang &amp; Chú Thích</span>
+            <span class="chip-badge manual-badge">FIELD MANUAL</span>
+            <span class="toggle-indicator" id="compendiumArrow">▾</span>
+          </button>
+        </div>
+      </div>
+      <div class="hud-filter-status" id="hudFilterStatus">Hiển thị toàn bộ 30 loài ma</div>
+    </div>
+  </div>
+
+  <!-- ==============================================================
+       ★ TACTICAL INVESTIGATION COMPENDIUM (COLLAPSIBLE FIELD MANUAL) ★
+       ============================================================== -->
+  <div class="compendium-container" id="compendiumContainer" style="display: none;">
+    <!-- Header -->
+    <div class="compendium-header">
+      <div class="compendium-title-wrap">
+        <span class="comp-beacon-tag">SOP MANUAL</span>
+        <div>
+          <div class="compendium-main-title">
+            <svg class="svg-icon" viewBox="0 0 24 24" style="color:#38bdf8;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            CẨM NANG ĐIỀU TRA TOÀN DIỆN &amp; KÝ HIỆU NGHIỆP VỤ
+          </div>
+          <div class="compendium-subtitle">
+            Sổ tay tra cứu khoa học: Hướng dẫn tân thủ, bảng ngưỡng Sanity hunt, telemetry vận tốc bước chân &amp; 30 mẹo 0-evidence.
+          </div>
+        </div>
+      </div>
+      <button class="btn-close-compendium" id="btnCloseCompendium" type="button">
+        ✕ Thu Gọn Cẩm Nang
+      </button>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="compendium-tabs-nav">
+      <button class="comp-tab-btn active" data-target="compPaneRookie">
+        🔰 1. Tân Thủ &amp; Bảng Ký Hiệu
+      </button>
+      <button class="comp-tab-btn" data-target="compPaneSanity">
+        ⚡ 2. Ngưỡng Sanity Đi Săn (Hunt Matrix)
+      </button>
+      <button class="comp-tab-btn" data-target="compPaneSpeed">
+        🧪 3. Vận Tốc &amp; Gia Tốc LOS (Speed/BPM)
+      </button>
+      <button class="comp-tab-btn" data-target="compPaneBusters">
+        🎯 4. Tuyệt Chiêu 0-Evidence (30 Loài Ma)
+      </button>
+    </div>
+
+    <!-- PANE 1: TÂN THỦ & KÝ HIỆU -->
+    <div class="comp-pane active" id="compPaneRookie">
+      <div class="comp-grid-2col">
+        <!-- Visual Legend -->
+        <div class="comp-card highlight-cyan">
+          <div class="comp-card-title">
+            <span>BẢNG GIẢI MÃ KÝ HIỆU &amp; TRẠNG THÁI GIAO DIỆN</span>
+            <span class="badge" style="background:#0284c7; color:#fff;">VISUAL UI</span>
+          </div>
+          <div class="legend-badges-grid">
+            <div class="legend-badge-item">
+              <div class="legend-badge-header">
+                <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#e2e8f0; border:1px solid #94a3b8;"></span>
+                <span>Khả Nghi (Active)</span>
+              </div>
+              <div class="legend-badge-desc">Thẻ ma màu sáng bình thường. Chưa có bằng chứng mâu thuẫn.</div>
+            </div>
+
+            <div class="legend-badge-item">
+              <div class="legend-badge-header">
+                <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#ef4444;"></span>
+                <span style="color:#f87171; text-decoration:line-through;">Bị Loại Trừ</span>
+              </div>
+              <div class="legend-badge-desc">Thẻ mờ + gạch ngang đỏ. Bị loại vì mâu thuẫn bằng chứng đã tick.</div>
+            </div>
+
+            <div class="legend-badge-item">
+              <div class="legend-badge-header">
+                <span style="display:inline-block; width:10px; height:10px; border-radius:50%; border:2px solid #ef4444;"></span>
+                <span style="color:#ef4444; font-weight:bold;">Khoanh Ghim</span>
+              </div>
+              <div class="legend-badge-desc">Vòng bút chì đỏ. Loài ma bạn bấm chọn làm kết luận chính thức.</div>
+            </div>
+
+            <div class="legend-badge-item">
+              <div class="legend-badge-header">
+                <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#0284c7; box-shadow:0 0 6px #38bdf8;"></span>
+                <span style="color:#38bdf8;">Lọc Chiến Thuật</span>
+              </div>
+              <div class="legend-badge-desc">Viền xanh Cyan nổi bật. Thuộc nhóm lọc Săn sớm, Tốc độ cao...</div>
+            </div>
+          </div>
+
+          <div style="margin-top:10px; border-top:1px solid rgba(255,255,255,0.06); padding-top:8px;">
+            <p><strong>Cơ chế nút bấm 3 trạng thái tại trang Evidence:</strong></p>
+            <ul>
+              <li><strong>Bấm lần 1:</strong> Đánh dấu <code>[✔ CÓ]</code> (Khóa bằng chứng đã phát hiện).</li>
+              <li><strong>Bấm lần 2:</strong> Đánh dấu <code>[✖ KHÔNG CÓ]</code> (Gạch bỏ bằng chứng đã kiểm tra kỹ nhưng không thấy).</li>
+              <li><strong>Bấm lần 3:</strong> Trở về <code>[⚪ Chưa Rõ]</code> (Khôi phục trạng thái trung lập).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Rookie SOP -->
+        <div class="comp-card highlight-emerald">
+          <div class="comp-card-title">
+            <span>QUY TRÌNH 3 BƯỚC SỐNG SÓT CHUẨN NGHIỆP VỤ (SOP)</span>
+            <span class="badge" style="background:#059669; color:#fff;">ROOKIE 101</span>
+          </div>
+          <ul>
+            <li>
+              <strong>Bước 1 - Tìm Phòng Ma (Favorite Room):</strong>
+              Cầm Nhiệt kế quét từng phòng. Phòng ma luôn có nhiệt độ dưới <strong>10°C</strong> (hoặc &lt;0°C đóng băng).
+              <br><em>*Lưu ý cốt tử:</em> BẬT CẦU DAO (Breaker) ngay khi vào nhà để sưởi ấm, giảm 50% tốc độ tụt Sanity!
+            </li>
+            <li>
+              <strong>Bước 2 - Bố Trí Trang Thiết Bị (3 Evidences):</strong>
+              Đặt D.O.T.S + Sổ ghi chép + Video camera quay vào phòng. Tắt hết đèn phòng, đứng một mình cầm Spirit Box hỏi (<em>"Where are you?"</em>). Rải muối ở cửa phòng để soi dấu chân huỳnh quang UV.
+            </li>
+            <li>
+              <strong>Bước 3 - Phòng Thủ &amp; Giữ Mạng Khi Hunt:</strong>
+              Luôn quan sát bảng Sanity trong xe. Khi Sanity chạm mốc <strong>50%</strong>, đặt ngay 2 Thánh giá trong phòng ma. Chuẩn bị sẵn Nhang + Bật lửa và xác định trước tủ trốn an toàn gần nhất!
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANE 2: NGƯỠNG SANITY HUNT MATRIX -->
+    <div class="comp-pane" id="compPaneSanity">
+      <div class="comp-grid-2col">
+        <!-- Early Hunters -->
+        <div class="comp-card highlight-rose">
+          <div class="comp-card-title">
+            <span>VÙNG NGUY HIỂM: SĂN SỚM BẤT THÌ LÌNH (&gt; 60% SANITY)</span>
+            <span class="badge" style="background:#dc2626; color:#fff;">LETHAL HUNT</span>
+          </div>
+          <ul>
+            <li><strong class="tag-red">Demon (100% / 70%):</strong> Sở hữu chiêu cắn trộm (Ability Hunt) có thể kích hoạt cuộc săn ở <strong>100% Sanity</strong> ngay phút đầu tiên! Đốt nhang chỉ cản được 60 giây.</li>
+            <li><strong class="tag-red">Yokai (80%):</strong> Săn sớm ở 80% nếu người chơi nói chuyện qua micro gần ma trong vòng 2.5m.</li>
+            <li><strong class="tag-red">Thaye (75%):</strong> Săn sớm ở 75% khi mới vào nhà (tuổi 0), chạy siêu tốc 2.75 m/s.</li>
+            <li><strong class="tag-amber">Raiju (65%):</strong> Săn sớm ở 65% nếu có thiết bị điện tử đang mở gần ma.</li>
+            <li><strong class="tag-amber">Onryo (60%):</strong> Coi nến như thánh giá. Thổi tắt 3 ngọn lửa liên tiếp là hunt ngay; hunt ở 60% nếu phòng không có lửa.</li>
+            <li><strong class="tag-amber">Mare (60%):</strong> Săn ở 60% nếu phòng ma đang <strong>TẮT đèn</strong> (ngược lại ở 40% nếu bật đèn).</li>
+            <li><strong class="tag-amber">Aswang (60%):</strong> Săn mồi khi người chơi đứng một mình trong bóng tối.</li>
+            <li><strong class="tag-amber">Gallu (65%):</strong> Quỷ địa ngục hung hãn, cắn thánh giá từ khoảng cách xa.</li>
+          </ul>
+        </div>
+
+        <!-- Normal & Late Hunters -->
+        <div class="comp-card highlight-cyan">
+          <div class="comp-card-title">
+            <span>VÙNG TIÊU CHUẨN &amp; SĂN MUỘN (≤ 50% SANITY)</span>
+            <span class="badge" style="background:#0284c7; color:#fff;">STANDARD &amp; LATE</span>
+          </div>
+          <ul>
+            <li>
+              <strong class="tag-cyan">Ngưỡng Tiêu Chuẩn (50% Sanity):</strong>
+              Hầu hết 16 loài ma phổ thông: <code>Spirit, Wraith, Phantom, Poltergeist, Jinn (khi có điện), Goryo, Myling, Revenant, Obake, Yurei, The Mimic, Dayan, Deildegast, Kormos, Obambo...</code>
+            </li>
+            <li>
+              <strong class="tag-emerald">Deogen (40% Sanity):</strong>
+              Săn muộn nhất game, nhưng <strong>LUÔN BIẾT BẠN Ở ĐÂU</strong>. Tuyệt đối không trốn tủ, hãy dắt đi dạo quanh bàn ăn (Looping)!
+            </li>
+            <li>
+              <strong class="tag-emerald">Shade (35% Sanity):</strong>
+              Loài ma nhút nhát nhất thế giới game. Hoàn toàn không thể hunt, không tương tác, không thở ra khói nếu có người đứng cùng phòng ma!
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANE 3: VẬN TỐC & GIA TỐC LOS TELEMETRY -->
+    <div class="comp-pane" id="compPaneSpeed">
+      <table class="comp-matrix-table">
+        <thead>
+          <tr>
+            <th>Loài Ma / Đối Tượng</th>
+            <th>Tốc Độ Cơ Bản (m/s)</th>
+            <th>Tốc Độ Nhìn Thấy Người (LOS)</th>
+            <th>Nhịp Chân (BPM)</th>
+            <th>Hành Vi Độc Quyền Khi Truy Đuổi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Người chơi (Player)</strong></td>
+            <td>1.6 m/s (Đi bộ)</td>
+            <td>3.0 m/s (Sprint 3 giây)</td>
+            <td>--</td>
+            <td>Hồi sức chạy sau 5 giây. Không mang đồ điện bật khi trốn tủ.</td>
+          </tr>
+          <tr>
+            <td><strong>Ma tiêu chuẩn (Standard)</strong></td>
+            <td>1.7 m/s</td>
+            <td>2.25 m/s (Gia tốc dần)</td>
+            <td>120 → 160 BPM</td>
+            <td>Tăng tốc dần sau mỗi giây nhìn thấy người chơi liên tục.</td>
+          </tr>
+          <tr>
+            <td><strong class="tag-red">Moroi (Nhanh nhất game)</strong></td>
+            <td>1.5 m/s (Sanity cao)</td>
+            <td class="tag-red">3.71 m/s (0% Sanity + LOS)</td>
+            <td>106 → 260 BPM</td>
+            <td>Càng thấp Sanity chạy càng như tên bắn. Đốt nhang làm mù tới 12s.</td>
+          </tr>
+          <tr>
+            <td><strong class="tag-red">Revenant (Tên lửa săn mồi)</strong></td>
+            <td>0.4 m/s (Lê lết)</td>
+            <td class="tag-red">3.0 m/s (Lao vọt tức thì)</td>
+            <td>30 → 212 BPM</td>
+            <td>Mất dấu người chơi đi chậm như rùa; phát hiện người chơi lao vọt cực đại ngay!</td>
+          </tr>
+          <tr>
+            <td><strong class="tag-cyan">Deogen (Đảo ngược cự ly)</strong></td>
+            <td>3.0 m/s (Ở xa &gt;6m)</td>
+            <td class="tag-emerald">0.4 m/s (Ở gần &lt;2.5m)</td>
+            <td>212 → 30 BPM</td>
+            <td>Luôn biết chỗ trốn. Tới gần tự động phanh gấp để bạn dắt đi bộ quanh bàn ăn.</td>
+          </tr>
+          <tr>
+            <td><strong class="tag-cyan">Hantu (Nhiệt độ phòng)</strong></td>
+            <td>1.4 m/s (Phòng ấm)</td>
+            <td>2.7 m/s (Phòng lạnh &lt;0°C)</td>
+            <td>99 → 190 BPM</td>
+            <td><strong>KHÔNG tăng tốc theo LOS</strong>. Thở ra khói trắng từ miệng khi tắt cầu dao.</td>
+          </tr>
+          <tr>
+            <td><strong class="tag-amber">Thaye (Lão hóa theo tuổi)</strong></td>
+            <td>2.75 m/s (Tuổi 0 - Trẻ)</td>
+            <td>1.0 m/s (Tuổi 10 - Già)</td>
+            <td>194 → 70 BPM</td>
+            <td><strong>KHÔNG tăng tốc theo LOS</strong>. Càng ở lâu gần ma thì nó càng già và chậm dần.</td>
+          </tr>
+          <tr>
+            <td><strong>The Twins (Cặp song sinh)</strong></td>
+            <td>1.53 m/s (Ma chính - 90%)</td>
+            <td>1.87 m/s (Ma phụ - 110%)</td>
+            <td>108 / 132 BPM</td>
+            <td>Đợt săn này đi chậm, đợt sau đi nhanh xen kẽ.</td>
+          </tr>
+          <tr>
+            <td><strong>Jinn (Cầu dao điện)</strong></td>
+            <td>1.7 m/s</td>
+            <td>2.5 m/s (Thấy người từ xa)</td>
+            <td>120 → 176 BPM</td>
+            <td>Phóng nhanh khi thấy người từ xa nếu CẦU DAO BẬT, chậm lại khi tới gần &lt;3m.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PANE 4: TUYỆT CHIÊU 0-EVIDENCE 30 LOÀI MA -->
+    <div class="comp-pane" id="compPaneBusters">
+      <div class="quick-buster-grid">
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Spirit</span><span class="buster-badge">180s Nhang</span></div>
+          <div class="buster-tip">Đốt nhang cản đi săn trong suốt <strong>180 giây (3 phút)</strong>. Nếu qua phút thứ 2 vẫn không hunt thì 90% là Spirit.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Wraith</span><span class="buster-badge">Không UV Muối</span></div>
+          <div class="buster-tip">Dẫm muối tạo tiếng sột soạt nhưng <strong>KHÔNG BAO GIỜ</strong> để lại dấu chân UV huỳnh quang. Dịch chuyển tạo EMF 2/5.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Phantom</span><span class="buster-badge">Chụp Ảnh Mất</span></div>
+          <div class="buster-tip">Chụp ảnh biến mất ngay lập tức (ảnh không nhiễu). Khi hunt tàng hình chớp nháy rất lâu (1-2s tàng hình).</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Poltergeist</span><span class="buster-badge">Polty Bomb</span></div>
+          <div class="buster-tip">Ném chùm nhiều đồ vật cùng lúc làm nổ tung phòng; mỗi lần ném đồ làm người chơi gần đó tụt Sanity.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Banshee</span><span class="buster-badge">Hú Paramic</span></div>
+          <div class="buster-tip">Tiếng hú/thét xé gió độc quyền qua Parabolic Mic (33%). Chỉ nhắm giết 1 mục tiêu duy nhất trong đội.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Jinn</span><span class="buster-badge">Cầu Dao Bật</span></div>
+          <div class="buster-tip">Phi 2.5 m/s khi thấy người từ xa nếu Cầu dao BẬT. Không bao giờ tự gạt tắt cầu dao điện.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Mare</span><span class="buster-badge">Tắt Đèn Tức Thì</span></div>
+          <div class="buster-tip">Tắt công tắc đèn ngay lập tức sau khi bạn vừa bật lên. Không bao giờ tự bật đèn; thích nổ bóng đèn.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Revenant</span><span class="buster-badge">Tên Lửa 3.0m/s</span></div>
+          <div class="buster-tip">Đi rề rề 0.4 m/s khi tuần tra, lao vọt với vận tốc 3.0 m/s ngay khi phát hiện người chơi.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Shade</span><span class="buster-badge">Nhút Nhát 35%</span></div>
+          <div class="buster-tip">Không bao giờ hunt hay làm Ghost Event nếu có người chơi đứng cùng phòng ma. Chỉ hunt dưới 35% Sanity.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Demon</span><span class="buster-badge">Nhang 60s</span></div>
+          <div class="buster-tip">Đốt nhang chỉ cản hunt được <strong>60 giây</strong>. Ngưỡng hunt 70% và có skill cắn trộm ở 100% Sanity.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Yurei</span><span class="buster-badge">Sập Cửa -15%</span></div>
+          <div class="buster-tip">Đóng sập cửa 2 nhịp (double click) làm tụt 15% Sanity ngay tức khắc. Đốt nhang giam chân trong phòng 90s.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Oni</span><span class="buster-badge">Hiện Hình Rõ</span></div>
+          <div class="buster-tip">Khi hunt chớp hiện hình liên tục (hầu như thấy rõ suốt). Tuyệt đối không bao giờ có Ghost Event bóng khói (Airball).</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Yokai</span><span class="buster-badge">Điếc &lt;2.5m</span></div>
+          <div class="buster-tip">Hunt ở 80% nếu nói micro gần ma. Khi hunt bị điếc, chỉ nghe thấy tiếng người nói và đồ điện ở cự ly &lt;2.5m.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Hantu</span><span class="buster-badge">Thở Khói Lạnh</span></div>
+          <div class="buster-tip">Thở ra làn sương khói trắng từ miệng khi hunt nếu cầu dao TẮT. Chạy cực nhanh trong lạnh (2.7 m/s).</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Goryo</span><span class="buster-badge">D.O.T.S Camera</span></div>
+          <div class="buster-tip">D.O.T.S chỉ thấy qua Video Camera ban đêm khi không có ai trong phòng. Không bao giờ tự ý đổi phòng ruột.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Myling</span><span class="buster-badge">Bước Chân Êm</span></div>
+          <div class="buster-tip">Tiếng bước chân khi hunt cực êm: Chỉ nghe thấy khi đèn pin đã chớp nháy nhấp nháy trong cự ly &lt;10m.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Onryo</span><span class="buster-badge">Sợ Ngọn Lửa</span></div>
+          <div class="buster-tip">Coi nến như thánh giá. Thổi tắt 3 ngọn lửa liên tiếp là kích hoạt cuộc săn ngay nếu không có nến khác.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">The Twins</span><span class="buster-badge">2 Tốc Độ Chạy</span></div>
+          <div class="buster-tip">Tương tác 2 phòng khác nhau cùng lúc (đồ thị đường dốc). Luân phiên giữa tốc độ chậm (1.53 m/s) và nhanh (1.87 m/s).</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Raiju</span><span class="buster-badge">Nhiễu Sóng 15m</span></div>
+          <div class="buster-tip">Làm nhiễu sóng điện tử từ khoảng cách cực xa (15m). Tăng tốc vọt lên 2.5 m/s gần đồ điện đang mở.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Obake</span><span class="buster-badge">Vân Tay 6 Ngón</span></div>
+          <div class="buster-tip">Tỉ lệ 16.7% để lại dấu vân tay 6 ngón tay; giấu vân tay 25%. Chớp biến hình thành model ma khác khi hunt.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">The Mimic</span><span class="buster-badge">Ghost Orb Giả</span></div>
+          <div class="buster-tip"><strong>LUÔN CÓ GHOST ORB GIẢ</strong> ở mọi độ khó (kể cả 0-Evidence). Sao chép hành vi và tốc độ của bất kỳ loài ma nào.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Moroi</span><span class="buster-badge">Nhang Mù 12s</span></div>
+          <div class="buster-tip">Nguyền rủa qua Spirit Box làm tụt đôi Sanity. Càng thấp Sanity chạy càng nhanh (tối đa 3.71 m/s). Nhang làm mù 12s.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Deogen</span><span class="buster-badge">Thở Khò Khè</span></div>
+          <div class="buster-tip">Thở dốc vào Spirit Box ở cự ly 1m. Biết chỗ trốn 100%. Tới gần đi chậm 0.4 m/s (dắt đi vòng quanh bàn loop).</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Thaye</span><span class="buster-badge">Lão Hóa Giảm Tốc</span></div>
+          <div class="buster-tip">Mới vào hunt sớm 75% chạy 2.75 m/s. Đứng gần ma sẽ kích hoạt lão hóa; càng về sau càng chậm và nhát (1.0 m/s).</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Aswang (2026)</span><span class="buster-badge">Sợ Muối Khựng Chân</span></div>
+          <div class="buster-tip">Khựng chân kêu rít khi giẫm muối trong lúc hunt (ngừng 1.5s). Có thể giả tiếng sủa, mèo kêu hoặc chim vỗ cánh.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Dayan (2026)</span><span class="buster-badge">Chân Ngược 180°</span></div>
+          <div class="buster-tip">Dấu chân UV ngón chân quay ngược 180 độ. Chạy cực nhanh khi người chơi quay lưng bỏ chạy.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Deildegast (2026)</span><span class="buster-badge">Hàn Khí Ngưỡng Cửa</span></div>
+          <div class="buster-tip">Hàn khí di chuyển dọc ngưỡng cửa ra vào. Thích ném đồ kim loại nặng với lực cực mạnh.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Gallu (2026)</span><span class="buster-badge">Ảo Ảnh Phân Thân</span></div>
+          <div class="buster-tip">Quỷ Sumer săn sớm 65%. Tạo ảo ảnh 2 bóng ma cùng lúc. Cắn cháy thánh giá từ cự ly xa hơn bình thường.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Kormos (2026)</span><span class="buster-badge">Hắc Ám Dập Điện</span></div>
+          <div class="buster-tip">Thường xuyên dập cầu dao. Trong bóng tối chạy như tên bay (2.4 m/s), bị đèn pin chiếu vào thì chậm lại.</div>
+        </div>
+        <div class="buster-item">
+          <div class="buster-header"><span class="buster-name">Obambo (2026)</span><span class="buster-badge">Dịch Chuyển Gương</span></div>
+          <div class="buster-tip">Dịch chuyển qua Gương ma ám. Tạo tiếng chân giả đánh lạc hướng. Tiếng khóc than ai oán qua Parabolic Mic.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================================
+       ★ THE JOURNAL BOOK: 6 DIVIDER TABS ★
+       ============================================================== -->
+  <div class="journal-wrapper">
+
+    <!-- 6 TABS TRÊN GÁY SỔ - TÊN ANH CHÍNH, TIẾNG VIỆT PHỤ ĐỀ -->
+    <div class="journal-tabs">
+      <div class="j-tab active" data-tab="main-journal">
+        <span class="j-tab-badge">01</span>
+        <div class="j-tab-content">
+          <span class="j-tab-title">EVIDENCE</span>
+          <span class="j-tab-sub">Bằng Chứng</span>
+        </div>
+      </div>
+      <div class="j-tab" data-tab="ghost-info">
+        <span class="j-tab-badge">02</span>
+        <div class="j-tab-content">
+          <span class="j-tab-title">GHOSTS</span>
+          <span class="j-tab-sub">Danh Mục 30 Ma</span>
+        </div>
+      </div>
+      <div class="j-tab" data-tab="items-tier">
+        <span class="j-tab-badge">03</span>
+        <div class="j-tab-content">
+          <span class="j-tab-title">EQUIPMENT</span>
+          <span class="j-tab-sub">Dụng Cụ Tier</span>
+        </div>
+      </div>
+      <div class="j-tab" data-tab="cursed-possessions">
+        <span class="j-tab-badge">04</span>
+        <div class="j-tab-content">
+          <span class="j-tab-title">CURSED</span>
+          <span class="j-tab-sub">Đồ Nguyền Rủa</span>
+        </div>
+      </div>
+      <div class="j-tab" data-tab="voice-commands">
+        <span class="j-tab-badge">05</span>
+        <div class="j-tab-content">
+          <span class="j-tab-title">PHRASES</span>
+          <span class="j-tab-sub">Câu Thoại Eng</span>
+        </div>
+      </div>
+      <div class="j-tab" data-tab="audio-studio">
+        <span class="j-tab-badge">06</span>
+        <div class="j-tab-content">
+          <span class="j-tab-title">AUDIO</span>
+          <span class="j-tab-sub">Phòng Thử Âm</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOUBLE-PAGE BOOK -->
+    <div class="book">
+
+      <!-- Page turn buttons -->
+      <div class="page-turn prev" id="btnPrevPage" title="Trang trước">&lt;</div>
+      <div class="page-turn next" id="btnNextPage" title="Trang tiếp">&gt;</div>
+
+      <!-- ================= LEFT PAGE ================= -->
+      <div class="page left-page" id="leftPageContent">
+        
+        <!-- View 1: Evidence Selector (Default) -->
+        <div id="leftViewEvidence" style="display: flex; flex-direction: column; height: 100%;">
+          <div class="page-title">
+            <span>Evidence</span>
+            <small>(Bằng Chứng Thu Thập)</small>
+          </div>
+          <p class="page-subtitle">Nhấp 1 lần: Có (✔) • Nhấp 2 lần: Không có (✖) • Nhấp 3 lần: Bỏ chọn</p>
+
+          <div class="evidence-list" id="evidenceList"></div>
+
+          <button class="journal-btn" id="btnResetEvidence">↺ Xóa tất cả bằng chứng đã chọn</button>
+        </div>
+
+        <!-- View 2: Redesigned Ghost Directory (Tab 02) -->
+        <div id="leftViewGhostInfo" style="display: none; height: 100%;">
+          <div class="ghost-directory-layout">
+            <div class="page-title">
+              <span>Ghost Directory</span>
+              <small>(30 Loài Ma)</small>
+            </div>
+            
+            <input type="text" id="directoryFilter" class="directory-search-mini" placeholder="Lọc nhanh tên ma theo chữ cái...">
+            <div class="directory-grid-2col" id="ghostInfoCatalog"></div>
+          </div>
+        </div>
+
+        <!-- View 3: Equipment Left Page (Tab 03) -->
+        <div id="leftViewItems" style="display: none; height: 100%;">
+          <div class="page-title">
+            <span>Evidence Tools</span>
+            <small>(Dụng Cụ Bằng Chứng)</small>
+          </div>
+          <p class="page-subtitle">7 dụng cụ phát hiện bằng chứng cốt lõi (Tier 1 - 3):</p>
+          <div class="scrollable-page-content" id="leftItemsContent"></div>
+        </div>
+
+        <!-- View 4: Cursed Left Page (Tab 04) -->
+        <div id="leftViewCursed" style="display: none; height: 100%;">
+          <div class="page-title">
+            <span>Tarot Cards</span>
+            <small>(10 Lá Bài Ma Ám)</small>
+          </div>
+          <p class="page-subtitle">Tỉ lệ bốc bài, màu lửa cháy &amp; hiệu ứng thực chiến:</p>
+          <div class="scrollable-page-content" id="leftTarotContent"></div>
+        </div>
+
+        <!-- View 5: Phrases Left Page (Tab 05) -->
+        <div id="leftViewVoice" style="display: none; height: 100%;">
+          <div class="page-title">
+            <span>Spirit Box Phrasing</span>
+            <small>(Câu Hỏi Hộp Nói)</small>
+          </div>
+          <p class="page-subtitle">Câu hỏi tiếng Anh chuẩn nhận diện giọng nói (Tắt đèn):</p>
+          <div class="scrollable-page-content" id="leftVoiceContent"></div>
+        </div>
+
+        <!-- View 6: Audio Left Page (Tab 06: Footstep Studio) -->
+        <div id="leftViewAudio" style="display: none; height: 100%;">
+          <div class="audio-studio-layout">
+            <div class="page-title">
+              <span>Footstep Studio</span>
+              <small>(Mô Phỏng Bước Chân)</small>
+            </div>
+            <p class="page-subtitle">Thử nghe âm lượng &amp; nhịp bước chân thực chiến của các loài ma:</p>
+            <div class="scrollable-page-content" id="audioFootstepPresets"></div>
+          </div>
+        </div>
+
+        <div class="page-number" id="leftPageNum">23</div>
+      </div>
+
+      <!-- ================= RIGHT PAGE ================= -->
+      <div class="page right-page" id="rightPageContent">
+
+        <!-- View 1: 30 Ghosts Grid (Default) -->
+        <div id="rightViewGhosts" style="display: flex; flex-direction: column; height: 100%;">
+          <div class="page-title">
+            <span>Ghost Roster</span>
+            <small>(Kết Luận 30 Loài Ma)</small>
+          </div>
+
+          <p class="page-subtitle">Chọn ma để khoanh ghim • Nhấp đúp để mở hồ sơ mật</p>
+
+          <!-- 30 GHOSTS GRID (3 CỘT X 10 HÀNG ĐỒNG NHẤT, KHÔNG LỆCH) -->
+          <div class="ghosts-table-container" id="ghostsGrid"></div>
+
+          <!-- QUICK ACTION BAR (THẺ DƯỚI CÙNG THÔNG MINH) -->
+          <div class="quick-action-bar" id="ghostActionBar">
+            <div class="action-ghost-info" id="actionBarGhostInfo">
+              <!-- Render động theo trạng thái ghim -->
+            </div>
+            <button class="btn-zoom-dossier" id="btnZoomDossier">
+              HỒ SƠ MẬT (DOSSIER)
+            </button>
+          </div>
+        </div>
+
+        <!-- View 2: Deep Dive Ghost Info (Tab 02) -->
+        <div id="rightViewGhostInfo" style="display: none; flex-direction: column; height: 100%;">
+          <div class="info-header">
+            <div>
+              <div class="info-name-vi" id="infoGhostNameVi">Linh Hồn (Spirit)</div>
+              <div class="info-name-en" id="infoGhostNameEn">Spirit</div>
+            </div>
+            <button class="btn-zoom-dossier" id="btnZoomFromInfo" style="padding: 5px 12px; font-size: 0.85rem;">
+              PHÓNG TO HỒ SƠ
+            </button>
+          </div>
+
+          <div class="info-meta-chips" id="infoMetaChips"></div>
+          <div class="info-evidences-bar" id="infoEvidencesBar"></div>
+
+          <div class="scrollable-page-content" style="max-height: 380px;">
+            <div class="info-section">
+              <div class="info-section-title">Sức Mạnh &amp; Hành Vi Nguy Hiểm</div>
+              <div id="infoStrength"></div>
+            </div>
+
+            <div class="info-section weakness">
+              <div class="info-section-title">Điểm Yếu &amp; Cách Khắc Chế</div>
+              <div id="infoWeakness"></div>
+            </div>
+
+            <div class="info-section test">
+              <div class="info-section-title">Mẹo Bắt Thóp 0-Evidence &amp; Dấu Hiệu Ẩn</div>
+              <div id="infoHiddenTest" style="white-space: pre-line;"></div>
+            </div>
+
+            <div id="infoSpecialAlert"></div>
+          </div>
+        </div>
+
+        <!-- View 3: Survival Gear (Tab 03) -->
+        <div id="rightViewItems" style="display: none; height: 100%;">
+          <div class="page-title">
+            <span>Survival Gear</span>
+            <small>(Dụng Cụ Sinh Tồn)</small>
+          </div>
+          <p class="page-subtitle">Thánh giá, Nhang, Thuốc Sanity, Muối Trừ Tà (Tier 1 - 3):</p>
+          <div class="scrollable-page-content" id="rightItemsContent"></div>
+        </div>
+
+        <!-- View 4: Ouija & Monkey Paw (Tab 04) -->
+        <div id="rightViewCursed" style="display: none; height: 100%;">
+          <div class="page-title">
+            <span>Ouija &amp; Monkey Paw</span>
+            <small>(Bàn Cầu Cơ &amp; Tay Khỉ)</small>
+          </div>
+          <p class="page-subtitle">Câu hỏi bàn cầu cơ &amp; Điều ước bàn tay khỉ:</p>
+          <div class="scrollable-page-content" id="rightCursedContent"></div>
+        </div>
+
+        <!-- View 5: Trigger Phrases (Tab 05) -->
+        <div id="rightViewVoice" style="display: none; height: 100%;">
+          <div class="page-title">
+            <span>Trigger Phrases</span>
+            <small>(Câu Thoại Kích Động)</small>
+          </div>
+          <p class="page-subtitle">Câu thoại kích động ma &amp; ép làm Ghost Event:</p>
+          <div class="scrollable-page-content" id="rightVoiceContent"></div>
+        </div>
+
+        <!-- View 6: Audio FX Soundboard (Tab 06) -->
+        <div id="rightViewAudio" style="display: none; height: 100%;">
+          <div class="page-title">
+            <span>Investigation Soundboard</span>
+            <small>(Kho Hiệu Ứng)</small>
+          </div>
+          <p class="page-subtitle">Thanh điều chỉnh âm lượng tổng &amp; kiểm tra âm thanh điều tra:</p>
+
+          <div class="volume-control-box">
+            <span style="font-weight: 700; font-size: 0.85rem;">ÂM LƯỢNG:</span>
+            <div class="volume-slider-group">
+              <input type="range" id="masterVolumeSlider" class="volume-slider" min="0" max="100" value="80">
+              <span id="volumeValueText" style="font-size: 0.85rem; font-weight: bold; min-width: 38px;">80%</span>
+            </div>
+            <button id="btnToggleMute" class="journal-btn" style="padding: 2px 8px; margin: 0; font-size: 0.82rem;">Mute</button>
+          </div>
+
+          <div class="audio-fx-grid">
+            <div class="fx-button" id="btnFxPencil">
+              <div class="fx-button-title">
+                <svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                Pencil Scratch
+              </div>
+              <div class="fx-button-desc">Tiếng bút chì gạch xóa sổ tay</div>
+            </div>
+
+            <div class="fx-button" id="btnFxPageFlip">
+              <div class="fx-button-title">
+                <svg class="svg-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                Page Turn
+              </div>
+              <div class="fx-button-desc">Tiếng lật trang giấy da cổ điển</div>
+            </div>
+
+            <div class="fx-button" id="btnFxHeartbeat">
+              <div class="fx-button-title">
+                <svg class="svg-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                Heartbeat Pulse
+              </div>
+              <div class="fx-button-desc">Tiếng tim đập dồn dập khi ma đi săn</div>
+            </div>
+
+            <div class="fx-button" id="btnFxSmudgeAlert">
+              <div class="fx-button-title">
+                <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                Smudge Chimes
+              </div>
+              <div class="fx-button-desc">Chuông báo hiệu các mốc nhang (60s / 90s / 180s)</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 12px; background: rgba(255,255,255,0.4); padding: 8px 12px; border-radius: 6px; font-size: 0.82rem; line-height: 1.35;">
+            <strong>Mẹo nhận diện qua âm thanh trong game:</strong><br>
+            • <em>Myling:</em> Tiếng bước chân bị câm, chỉ nghe thấy khi đèn pin bắt đầu nháy (&lt;10m).<br>
+            • <em>Deogen:</em> Tiếng thở khò khè vào Spirit Box khi đứng sát &lt;1m; ở gần chạy 0.4 m/s.<br>
+            • <em>Phantom:</em> Tàng hình rất lâu lúc hunt (1-2s mới chớp hiện 0.3s).
+          </div>
+        </div>
+
+        <div class="page-number" id="rightPageNum">24</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==============================================================
+       ★ CỰC PHẨM: MODAL HỒ SƠ TẬP MẬT PHÓNG TO (DOSSIER ZOOM MODAL) ★
+       ============================================================== -->
+  <div class="dossier-modal-backdrop" id="dossierModalBackdrop">
+    <div class="dossier-modal-folder">
+      
+      <!-- Top Folder Bar -->
+      <div class="dossier-folder-header">
+        <div class="dossier-header-left">
+          <span class="dossier-classified-stamp">TOP SECRET • CASE DOSSIER</span>
+          <span style="font-size: 0.82rem; color: #3d3122; font-weight: 700;">PHASMO-BUREAU ARCHIVE #2026</span>
+        </div>
+        <div class="dossier-header-right">
+          <div class="dossier-nav-controls">
+            <button class="dossier-nav-btn" id="modalPrevGhostBtn" title="Loài ma trước (Phím ◄)">&lt; Trước</button>
+            <span class="dossier-counter" id="modalGhostCounter">1 / 30</span>
+            <button class="dossier-nav-btn" id="modalNextGhostBtn" title="Loài ma tiếp theo (Phím ►)">Sau &gt;</button>
+          </div>
+          <button class="modal-close-btn" id="modalCloseBtn" title="Đóng (Esc)">✕</button>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="dossier-body">
+        
+        <!-- Header Info -->
+        <div class="dossier-title-row">
+          <div>
+            <div class="dossier-name-vi" id="modalGhostNameVi">The Mimic (Ma Lừa / Bắt Chước)</div>
+            <div class="dossier-name-en" id="modalGhostNameEn">The Mimic • Bí danh: Ma 4 bằng chứng</div>
+          </div>
+          <div class="danger-tag" id="modalDangerTag">BIẾN THIÊN KHÓ LƯỜNG</div>
+        </div>
+
+        <!-- Key Stats Grid -->
+        <div class="dossier-stats-grid">
+          <div class="dossier-stat-card">
+            <span class="stat-label">Ngưỡng Sanity Đi Săn</span>
+            <span class="stat-value highlight-red" id="modalHuntSanity">Biến thiên</span>
+          </div>
+
+          <div class="dossier-stat-card">
+            <span class="stat-label">Tốc Độ Di Chuyển</span>
+            <span class="stat-value highlight-blue" id="modalSpeed">1.7 m/s → 2.25 m/s</span>
+          </div>
+
+          <div class="dossier-stat-card" style="grid-column: span 2;">
+            <span class="stat-label">Bằng Chứng Nhận Diện</span>
+            <span class="stat-value" style="font-size: 1.05rem;" id="modalEvidences">Spirit Box, UV, Freezing Temps + Ghost Orb giả</span>
+          </div>
+        </div>
+
+        <!-- FOOTSTEP SPEED AUDIO SIMULATOR & TAP TEMPO -->
+        <div class="footstep-simulator-card">
+          <div class="footstep-header-row">
+            <div class="footstep-info">
+              <span class="title">
+                <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                Mô Phỏng &amp; Đo Tốc Độ Bước Chân (Footstep Studio)
+              </span>
+              <span class="desc" id="footstepDesc">Tần số bước chân tuần tra: 120 BPM • Tần số truy đuổi: 160 BPM</span>
+            </div>
+            <div class="footstep-metronome-pulse" id="footstepPulseLight" title="Đèn nhịp Metronome"></div>
+          </div>
+
+          <div class="footstep-audio-controls">
+            <div class="speed-toggle-group">
+              <button class="btn-speed-mode active" id="btnSpeedBase" data-mode="base">
+                Tuần tra (1.7 m/s • 120 BPM)
+              </button>
+              <button class="btn-speed-mode" id="btnSpeedMax" data-mode="max">
+                Nhìn thấy người / LOS (2.25 m/s • 160 BPM)
+              </button>
+            </div>
+
+            <button class="btn-play-footstep" id="btnPlayFootstep">
+              BẬT TIẾNG BƯỚC CHÂN
+            </button>
+          </div>
+
+          <!-- TAP TEMPO REAL-TIME DETECTOR -->
+          <div class="tap-tempo-container">
+            <button class="btn-tap-tempo" id="btnTapTempo">
+              BẤM THEO TIẾNG CHÂN TRONG GAME (PHÍM T)
+            </button>
+            <div class="tap-tempo-results">
+              <div class="tap-bpm-display">
+                <span>Nhịp đo được:</span>
+                <strong id="tapBpmValue">--</strong>
+              </div>
+              <div class="tap-verdict" id="tapVerdictText">Gõ ít nhất 3 nhịp theo tiếng bước chân ma...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Tabs Inside Dossier -->
+        <div class="dossier-tabs-nav">
+          <button class="d-tab-btn active" data-dtab="dtab-mechanics">Cơ Chế Ẩn Chi Tiết</button>
+          <button class="d-tab-btn" data-dtab="dtab-testing">Quy Trình Bắt Thóp (0-Evidence)</button>
+          <button class="d-tab-btn" data-dtab="dtab-looping">Mẹo Sống Sót &amp; Looping</button>
+        </div>
+
+        <!-- Tab 1: Deep Mechanics -->
+        <div class="dossier-tab-pane active" id="dtab-mechanics">
+          <div class="dossier-block">
+            <div class="dossier-block-title">Phân Tích Sức Mạnh &amp; Hành Vi Độc Quyền</div>
+            <div id="modalDeepStrength"></div>
+          </div>
+
+          <div class="dossier-block green">
+            <div class="dossier-block-title">Điểm Yếu Cốt Tử &amp; Cách Khắc Chế</div>
+            <div id="modalDeepWeakness"></div>
+          </div>
+
+          <div class="dossier-block amber" id="modalDeepWarningContainer">
+            <div class="dossier-block-title">Lưu Ý Tối Quan Trọng Cho Thợ Săn Ma</div>
+            <div id="modalDeepWarning"></div>
+          </div>
+        </div>
+
+        <!-- Tab 2: 0-Evidence Testing Protocol -->
+        <div class="dossier-tab-pane" id="dtab-testing">
+          <div class="instant-clue-card" id="modalInstantClueCard">
+            <div class="instant-clue-header">Chìa Khóa Bắt Thóp Nhanh (Instant Identifier)</div>
+            <div class="instant-clue-text" id="modalInstantClueText"></div>
+          </div>
+
+          <div class="dossier-block amber">
+            <div class="dossier-block-title">Quy Trình Thực Nghiệm Từng Bước (Checklist)</div>
+            <div class="interactive-checklist" id="modalTestingChecklist"></div>
+          </div>
+
+          <!-- MINI SMUDGE TESTER IN MODAL (ĐỒNG BỘ 100% VỚI MASTER SMUDGE TIMER) -->
+          <div class="modal-smudge-box">
+            <div>
+              <div style="font-weight: bold; font-size: 0.95rem;">ĐỒNG HỒ NHANG ĐIỀU TRA (SMUDGE MASTER CLOCK)</div>
+              <div style="font-size: 0.82rem; color: #cbd5e1;" id="modalSmudgeStatus">0-60s An toàn | 60-90s Demon | 90-180s Ma Thường | 180s+ Spirit</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-family: monospace; font-size: 1.3rem; font-weight: bold; color: #38bdf8;" id="modalSmudgeTimerDisplay">00:00</span>
+              <button class="modal-smudge-btn timer-btn" id="btnModalSmudge" style="border-radius: 6px;">Bấm Giờ Nhang</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Looping & Survival -->
+        <div class="dossier-tab-pane" id="dtab-looping">
+          <div class="dossier-block">
+            <div class="dossier-block-title">Chiến Thuật Dắt Vòng (Looping) &amp; Trốn Thoát</div>
+            <div id="modalLoopingGuide"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    /* ==============================================================
+       ★ AUDIO ENGINE: PRO WEB AUDIO SYNTHESIS ★
+       - Layered Sub-Thump (110Hz->36Hz) + Filtered Floor Noise (380Hz)
+       - Auto Context Resume on User Interaction
+       - Master Volume & Mute Control
+       - Investigation Soundboard FX
+       ============================================================== */
+    const AudioEngine = {
+      ctx: null,
+      masterGain: null,
+      footstepTimer: null,
+      volume: 0.8,
+      isMuted: false,
+      onFootstepPulse: null,
+
+      ensureContext() {
+        if (!this.ctx) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          this.ctx = new AudioContextClass();
+          this.masterGain = this.ctx.createGain();
+          this.masterGain.gain.setValueAtTime(this.isMuted ? 0 : this.volume, this.ctx.currentTime);
+          this.masterGain.connect(this.ctx.destination);
+        }
+        if (this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      },
+
+      setVolume(val) {
+        this.volume = Math.max(0, Math.min(1, val));
+        if (this.masterGain && this.ctx) {
+          this.masterGain.gain.setValueAtTime(this.isMuted ? 0 : this.volume, this.ctx.currentTime);
+        }
+      },
+
+      setMute(mute) {
+        this.isMuted = mute;
+        if (this.masterGain && this.ctx) {
+          this.masterGain.gain.setValueAtTime(this.isMuted ? 0 : this.volume, this.ctx.currentTime);
+        }
+      },
+
+      // Realistic Wooden Floor Ghost Footstep Synthesis
+      playFootstepThump() {
+        try {
+          this.ensureContext();
+          if (this.isMuted || this.volume <= 0) return;
+          const t = this.ctx.currentTime;
+
+          // Layer 1: Sub Bass Impact Thump (Drop from 110Hz to 36Hz)
+          const osc = this.ctx.createOscillator();
+          const oscGain = this.ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(110, t);
+          osc.frequency.exponentialRampToValueAtTime(36, t + 0.08);
+
+          oscGain.gain.setValueAtTime(0.42, t);
+          oscGain.gain.exponentialRampToValueAtTime(0.001, t + 0.09);
+
+          osc.connect(oscGain);
+          oscGain.connect(this.masterGain);
+          osc.start(t);
+          osc.stop(t + 0.09);
+
+          // Layer 2: Muffled wooden floor friction texture (Low-passed noise burst)
+          const noiseDuration = 0.055;
+          const bufferSize = Math.floor(this.ctx.sampleRate * noiseDuration);
+          const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+          const data = buffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) {
+            data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.28));
+          }
+
+          const noise = this.ctx.createBufferSource();
+          noise.buffer = buffer;
+
+          const filter = this.ctx.createBiquadFilter();
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(380, t);
+          filter.Q.value = 1.3;
+
+          const noiseGain = this.ctx.createGain();
+          noiseGain.gain.setValueAtTime(0.24, t);
+          noiseGain.gain.exponentialRampToValueAtTime(0.001, t + noiseDuration);
+
+          noise.connect(filter);
+          filter.connect(noiseGain);
+          noiseGain.connect(this.masterGain);
+          noise.start(t);
+
+          if (this.onFootstepPulse) this.onFootstepPulse();
+        } catch(e) {
+          console.warn("Footstep audio error:", e);
+        }
+      },
+
+      startFootstepLoop(bpm) {
+        this.stopFootstepLoop();
+        this.ensureContext();
+        const safeBpm = Math.max(25, Math.min(300, bpm || 120));
+        const intervalMs = (60 / safeBpm) * 1000;
+        this.playFootstepThump();
+        this.footstepTimer = setInterval(() => {
+          this.playFootstepThump();
+        }, intervalMs);
+      },
+
+      stopFootstepLoop() {
+        if (this.footstepTimer) {
+          clearInterval(this.footstepTimer);
+          this.footstepTimer = null;
+        }
+      },
+
+      // Sound FX: Pencil Scratch on Paper
+      pencil() {
+        try {
+          this.ensureContext();
+          if (this.isMuted) return;
+          const t = this.ctx.currentTime;
+          const dur = 0.06;
+          const bufferSize = Math.floor(this.ctx.sampleRate * dur);
+          const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+          const data = buffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) {
+            data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.4));
+          }
+          const noise = this.ctx.createBufferSource();
+          noise.buffer = buffer;
+
+          const filter = this.ctx.createBiquadFilter();
+          filter.type = 'bandpass';
+          filter.frequency.setValueAtTime(2800, t);
+          filter.Q.value = 2.0;
+
+          const gain = this.ctx.createGain();
+          gain.gain.setValueAtTime(0.12, t);
+          gain.gain.exponentialRampToValueAtTime(0.001, t + dur);
+
+          noise.connect(filter);
+          filter.connect(gain);
+          gain.connect(this.masterGain);
+          noise.start(t);
+        } catch(e){}
+      },
+
+      // Sound FX: Page Flip
+      pageFlip() {
+        try {
+          this.ensureContext();
+          if (this.isMuted) return;
+          const t = this.ctx.currentTime;
+          const dur = 0.14;
+          const bufferSize = Math.floor(this.ctx.sampleRate * dur);
+          const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+          const data = buffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) {
+            data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.35));
+          }
+          const noise = this.ctx.createBufferSource();
+          noise.buffer = buffer;
+
+          const filter = this.ctx.createBiquadFilter();
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(700, t);
+
+          const gain = this.ctx.createGain();
+          gain.gain.setValueAtTime(0.18, t);
+          gain.gain.exponentialRampToValueAtTime(0.001, t + dur);
+
+          noise.connect(filter);
+          filter.connect(gain);
+          gain.connect(this.masterGain);
+          noise.start(t);
+        } catch(e){}
+      },
+
+      // Sound FX: Heartbeat Pulse
+      heartbeat() {
+        try {
+          this.ensureContext();
+          if (this.isMuted) return;
+          const t = this.ctx.currentTime;
+          [0, 0.16].forEach(offset => {
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(75, t + offset);
+            osc.frequency.exponentialRampToValueAtTime(32, t + offset + 0.1);
+            gain.gain.setValueAtTime(0.35, t + offset);
+            gain.gain.exponentialRampToValueAtTime(0.001, t + offset + 0.11);
+            osc.connect(gain);
+            gain.connect(this.masterGain);
+            osc.start(t + offset);
+            osc.stop(t + offset + 0.11);
+          });
+        } catch(e){}
+      },
+
+      // Sound FX: Soft Chime for Smudge Alerts
+      chime(freq = 587.33) {
+        try {
+          this.ensureContext();
+          if (this.isMuted) return;
+          const t = this.ctx.currentTime;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, t);
+          gain.gain.setValueAtTime(0.16, t);
+          gain.gain.exponentialRampToValueAtTime(0.001, t + 0.6);
+          osc.connect(gain);
+          gain.connect(this.masterGain);
+          osc.start(t);
+          osc.stop(t + 0.6);
+        } catch(e){}
+      }
+    };
+
+    // Unlock Web Audio Context on first user click anywhere
+    window.addEventListener('click', () => {
+      AudioEngine.ensureContext();
+    }, { once: true });
+
+    /* ==============================================================
+       ★ UNIFIED MASTER SMUDGE TIMER ENGINE ★
+       Đồng bộ 100% giữa Dashboard thanh trên cùng và Dossier Modal
+       ============================================================== */
+    const SmudgeMasterTimer = {
+      interval: null,
+      seconds: 0,
+
+      toggle() {
+        if (this.interval) {
+          this.stop();
+        } else {
+          this.start();
+        }
+      },
+
+      start() {
+        AudioEngine.ensureContext();
+        this.seconds = 0;
+        this.updateDisplays();
+        this.setButtonState(true);
+
+        this.interval = setInterval(() => {
+          this.seconds++;
+          this.updateDisplays();
+
+          // Audible & Tactical milestone alerts
+          if (this.seconds === 60) {
+            AudioEngine.chime(440); // 60s Demon alert
+          } else if (this.seconds === 90) {
+            AudioEngine.chime(523.25); // 90s Normal Ghost alert
+          } else if (this.seconds === 180) {
+            AudioEngine.chime(659.25); // 180s Spirit alert
+          }
+        }, 1000);
+      },
+
+      stop() {
+        if (this.interval) {
+          clearInterval(this.interval);
+          this.interval = null;
+        }
+        this.setButtonState(false);
+      },
+
+      setButtonState(isRunning) {
+        const topBtn = document.getElementById("btnSmudgeTimer");
+        const modalBtn = document.getElementById("btnModalSmudge");
+
+        [topBtn, modalBtn].forEach(btn => {
+          if (!btn) return;
+          if (isRunning) {
+            btn.classList.add("running");
+            btn.innerHTML = `<span>Dừng Timer</span>`;
+          } else {
+            btn.classList.remove("running");
+            btn.innerHTML = `<span>Bấm Giờ Nhang</span>`;
+          }
+        });
+      },
+
+      updateDisplays() {
+        const m = String(Math.floor(this.seconds / 60)).padStart(2, '0');
+        const s = String(this.seconds % 60).padStart(2, '0');
+        const timeStr = `${m}:${s}`;
+
+        const topDisp = document.getElementById("smudgeDisplay");
+        const modalDisp = document.getElementById("modalSmudgeTimerDisplay");
+        if (topDisp) topDisp.textContent = timeStr;
+        if (modalDisp) modalDisp.textContent = timeStr;
+
+        let phaseHtml = "";
+        let modalStatusHtml = "";
+
+        if (this.seconds < 60) {
+          phaseHtml = "0-60s: <strong style='color:#10b981;'>An Toàn</strong> (Không ma nào hunt được)";
+          modalStatusHtml = "0-60s: <strong style='color:#10b981;'>An toàn</strong> (Không thể hunt)";
+        } else if (this.seconds >= 60 && this.seconds < 90) {
+          phaseHtml = "60-90s: <strong style='color:#ef4444;'>DEMON ZONE!</strong> (Hunt ở đây = Demon)";
+          modalStatusHtml = "60-90s: <strong style='color:#ef4444;'>DEMON ZONE!</strong> (Hunt ở đây = 100% Demon)";
+        } else if (this.seconds >= 90 && this.seconds < 180) {
+          phaseHtml = "90-180s: <strong style='color:#f59e0b;'>Ma Thường</strong> (Đa số loài ma hunt ở đây)";
+          modalStatusHtml = "90-180s: <strong style='color:#f59e0b;'>Ma Thường</strong> (Đa số ma)";
+        } else {
+          phaseHtml = "180s+: <strong style='color:#38bdf8;'>SPIRIT ZONE!</strong> (Chặn hunt >3p = Spirit)";
+          modalStatusHtml = "180s+: <strong style='color:#38bdf8;'>SPIRIT ZONE!</strong> (Chặn hunt >3p = 100% Spirit)";
+        }
+
+        const topPhase = document.getElementById("smudgePhase");
+        const modalStatus = document.getElementById("modalSmudgeStatus");
+        if (topPhase) topPhase.innerHTML = phaseHtml;
+        if (modalStatus) modalStatus.innerHTML = modalStatusHtml;
+      }
+    };
+
+    /* ==============================================================
+       ★ EVIDENCE & GHOST DATA MATRIX ★
+       ============================================================== */
+    const EVIDENCES = [
+      { id: "EMF 5", label: "EMF Level 5", desc: "Máy đo EMF nhảy vạch đỏ số 5 (tín hiệu mức 5)" },
+      { id: "D.O.T.S Projector", label: "D.O.T.S Projector", desc: "Bóng ma lướt qua lưới tia laser xanh D.O.T.S" },
+      { id: "Ultraviolet", label: "Ultraviolet", desc: "Dấu bàn tay, ngón tay hoặc bước chân huỳnh quang UV" },
+      { id: "Freezing Temperatures", label: "Freezing Temperatures", desc: "Nhiệt kế dưới 0°C (32°F) hoặc thở ra hơi sương trắng" },
+      { id: "Ghost Orb", label: "Ghost Orb", desc: "Đốm sáng ma lơ lửng trên màn hình Video Camera ban đêm" },
+      { id: "Ghost Writing", label: "Ghost Writing", desc: "Hình vẽ ma hoặc chữ viết nguệch ngoạc trong sổ" },
+      { id: "Spirit Box", label: "Spirit Box", desc: "Ma trả lời qua loa máy thu âm Spirit Box (tắt đèn)" }
+    ];
+
+    // Trạng thái của 7 bằng chứng: null (chưa tick), true (có ✔), false (không có ✖)
+    const evidenceState = {};
+    EVIDENCES.forEach(e => evidenceState[e.id] = null);
+
+    let ghostsData = [];
+    let toolsAndCursedData = null;
+    let pinnedGhostId = null; // CHỈ KHOANH KHI NGƯỜI DÙNG BẤM
+    let selectedGhostId = "the_mimic"; // Ghost active trong dossier modal
+    let currentTab = "main-journal";
+    let isFootstepPlaying = false;
+    let selectedBpmMode = "base";
+    let activeListFilter = "all"; // 'all', 'early_hunt', 'fast_speed', 'expansion_2026'
+
+    // Tap tempo variables
+    let tapTimestamps = [];
+    let tapResetTimer = null;
+
+    // 30 Ghost screenshot list
+    const ALL_SCREENSHOT_GHOSTS = [
+      "Aswang", "Banshee", "Dayan", "Deildegast", "Demon", "Deogen", 
+      "Gallu", "Goryo", "Hantu", "Jinn", "Kormos", "Mare", 
+      "Moroi", "Myling", "Obake", "Obambo", "Oni", "Onryo", 
+      "Phantom", "Poltergeist", "Raiju", "Revenant", "Shade", "Spirit", 
+      "Thaye", "The Mimic", "The Twins", "Wraith", "Yokai", "Yurei"
+    ];
+
+    const INSTANT_CLUES = {
+      spirit: "Đốt nhang (Smudge Stick / Incense) khóa khả năng đi săn trong 180 giây (3 phút) - gấp đôi mốc 90 giây của các loài ma thông thường.",
+      wraith: "Dẫm vào đống muối KHÔNG BAO GIỜ để lại dấu chân huỳnh quang phát sáng dưới ánh đèn UV. Có kỹ năng Teleport đến sát lưng người chơi.",
+      phantom: "Chụp ảnh lúc ghost event ma biến mất ngay lập tức và ảnh trong album hoàn toàn TRỐNG TRƠN không bị nhiễu hạt. Lúc hunt tàng hình rất lâu (1-2s mới chớp hiện 0.3s).",
+      poltergeist: "Nổ tung đống 5-10 đồ vật cùng lúc (Polty Bomb). Lúc hunt ném đồ liên tục dồn dập mỗi 0.5 giây với tỷ lệ 100%.",
+      banshee: "Tiếng thét rên rỉ kỳ dị độc quyền trên Parabolic Microphone (Paramic). Chỉ nhắm duy nhất 1 người chơi làm mục tiêu cho tới khi người đó chết.",
+      jinn: "Tăng tốc cực nhanh khi nhìn thấy người chơi NẾU CẦU DAO ĐANG BẬT. Không bao giờ tự tay gạt tắt cầu dao điện chính.",
+      mare: "Không bao giờ bật đèn. Có thể tắt công tắc đèn NGAY LẬP TỨC (0.1s) khi bạn vừa bật lên. Săn ở 60% khi tắt đèn (40% khi bật).",
+      revenant: "Không thấy người: Bò lê lết (1.0 m/s - 70 BPM). Nhìn thấy người: Phóng như tên lửa (3.0 m/s - 210 BPM).",
+      shade: "Siêu nhút nhát: Không bao giờ làm event hay đi săn khi có người đứng cùng phòng. Chỉ săn khi Sanity cả đội dưới 35%.",
+      demon: "Có thể dùng tuyệt chiêu đi săn ở 100% Sanity. Nhang chỉ chặn đi săn trong 60 giây (thay vì 90s). Tầm ngăn chặn của thánh giá là 5m.",
+      yurei: "Đóng sầm cửa 2 nhịp làm tụt 15% Sanity. Đốt nhang nhốt Yurei trong phòng hiện tại suốt 90 giây.",
+      oni: "Cực kỳ hung hãn và liên tục tương tác. Không bao giờ làm event bóng khí (air-ball). Lúc hunt hầu như luôn hiện hình (ít tàng hình).",
+      yokai: "Nói chuyện hoặc dùng bộ đàm gần ma sẽ kích hoạt săn ở 80% Sanity. Lúc hunt bị điếc/mù thiết bị điện xa hơn 2.5m.",
+      hantu: "Cực nhanh trong phòng lạnh (<0°C lên tới 2.7 m/s), siêu chậm trong phòng ấm (1.4 m/s). Thở ra khói lúc hunt khi tắt cầu dao. Không tăng tốc theo LOS.",
+      goryo: "D.O.T.S chỉ nhìn thấy qua MÀN HÌNH VIDEO CAMERA và KHÔNG ĐƯỢC CÓ NGƯỜI TRONG PHÒNG. Không bao giờ đổi phòng yêu thích.",
+      myling: "Tiếng bước chân lúc hunt chỉ nghe thấy khi đèn pin bắt đầu nhấp nháy (<10m). Bình thường ma khác nghe từ 20m.",
+      onryo: "Coi ngọn nến như thánh giá. Thổi tắt ngọn nến thứ 3 sẽ ép đi săn ngay lập tức bất kể Sanity (trừ khi có ngọn nến khác chặn).",
+      the_twins: "Có 2 tốc độ săn luân phiên: Con chính chậm 90% (1.5 m/s) và Con phụ nhanh 110% (1.87 m/s). Tương tác đồng thời ở 2 phòng khác nhau.",
+      raiju: "Tăng tốc lên tới 2.5 m/s khi ở gần thiết bị điện của người chơi (đèn pin, EMF, video cam). Làm nhiễu thiết bị từ khoảng cách 15m (ma thường 10m).",
+      obake: "Dấu tay UV có 6 ngón tay (16.7% tỷ lệ) hoặc dấu tay tự biến mất sau 10s. Lúc hunt chớp biến hình thành model ma khác ít nhất 1 lần.",
+      the_mimic: "LUÔN CÓ GHOST ORB GIẢ (thành 4 bằng chứng, có orb ở cả 0-evidence!). Bắt chước hành vi của loài ma khác mỗi 30-120 giây.",
+      moroi: "Nghe Spirit Box bị dính nguyền tụt Sanity gấp đôi trong bóng tối. Sanity càng thấp chạy càng nhanh (0% Sanity chạy 2.25 m/s, có LOS lên tới 3.71 m/s - NHANH NHẤT GAME!). Nhang làm mù Moroi 12s lúc hunt.",
+      deogen: "LUÔN BIẾT VỊ TRÍ CỦA BẠN (KHÔNG ĐƯỢC TRỐN TỦ). Ở xa lao tới cực nhanh (3.0 m/s), khi lại gần bạn (<2.5m) đi bộ dưỡng sinh cực chậm (0.4 m/s). Spirit Box ở cự ly <1m có tiếng thở dốc ồ ồ độc quyền!",
+      thaye: "Mới vào game cực kỳ trẻ và hung hãn (săn ở 75% Sanity, chạy 2.75 m/s). Càng về sau càng già đi nếu người chơi ở gần nó (săn tụt xuống 15%, chạy chậm 1.0 m/s). Không tăng tốc theo LOS.",
+      aswang: "Quỷ hút máu 2026: Tốc độ săn tăng vọt theo số người chơi có mặt trong phòng. Sợ muối (khựng chân khi giẫm muối).",
+      dayan: "Phù thủy chân ngược 2026: Dấu chân UV quay ngược 180 độ. Chạy cực nhanh khi người chơi quay lưng bỏ chạy.",
+      deildegast: "Hồn ma ranh giới 2026: Vừa bước chân qua ngưỡng cửa phòng ma là kích hoạt đi săn ngay lập tức.",
+      gallu: "Quỷ địa ngục Sumer 2026: Săn sớm 65%, cắn thánh giá từ xa và tạo ảo ảnh phân thân 2 bóng ma cùng lúc.",
+      kormos: "Ác thú hắc ám 2026: Càng ở trong bóng tối chạy càng nhanh (2.4 m/s), bị đèn pin rọi vào mặt thì khựng lại.",
+      obambo: "Oan linh phiêu bạt 2026: Tạo ảo giác tiếng chân giả ở nhiều hướng khác nhau trước khi lao tới từ góc khuất."
+    };
+
+    /* ==============================================================
+       ★ INITIAL DATA LOADING ★
+       ============================================================== */
+    async function loadData() {
+      try {
+        const [gRes, tRes] = await Promise.all([
+          fetch("phasmophobia_ghosts_vi.json"),
+          fetch("phasmophobia_tools_and_cursed_vi.json")
+        ]);
+        ghostsData = await gRes.json();
+        toolsAndCursedData = await tRes.json();
+
+        renderEvidenceList();
+        renderGhostsGrid();
+        renderGhostInfoCatalog();
+        renderItemsTab();
+        renderCursedTab();
+        renderVoiceTab();
+        renderFootstepPresets();
+        updateQuickActionBar();
+
+        if (ghostsData.length > 0) {
+          selectGhost(ghostsData[0].id);
+        }
+
+        initSmartSearch();
+        initShortcuts();
+        initModalEvents();
+        initSmudgeTimerBindings();
+        initAudioStudioControls();
+      } catch (err) {
+        console.error("Error loading JSON:", err);
+      }
+    }
+
+    function initSmudgeTimerBindings() {
+      const topBtn = document.getElementById("btnSmudgeTimer");
+      const modalBtn = document.getElementById("btnModalSmudge");
+      if (topBtn) topBtn.addEventListener("click", () => SmudgeMasterTimer.toggle());
+      if (modalBtn) modalBtn.addEventListener("click", () => SmudgeMasterTimer.toggle());
+    }
+
+    /* ==============================================================
+       ★ GIAI ĐOẠN 1: LOGIC TRANG EVIDENCE & 3 TRẠNG THÁI LOẠI TRỪ ★
+       1. NORMAL: Chưa tick loại, chưa ghim
+       2. RULED-OUT: Bị loại (mờ + gạch nét đỏ thẫm 2px rõ nét)
+       3. PINNED: Được ghim (khoanh tròn đỏ do người dùng bấm)
+       Quy tắc: Chưa tick gì => Cả 30 ma sáng bình thường!
+       ============================================================== */
+    function renderEvidenceList() {
+      const container = document.getElementById("evidenceList");
+      container.innerHTML = "";
+
+      EVIDENCES.forEach(ev => {
+        const item = document.createElement("div");
+        item.className = "evidence-item";
+        if (evidenceState[ev.id] === true) item.classList.add("found");
+        if (evidenceState[ev.id] === false) item.classList.add("rejected");
+
+        const mark = evidenceState[ev.id] === true ? "✔" : (evidenceState[ev.id] === false ? "✖" : "");
+
+        item.innerHTML = `
+          <div class="hand-checkbox">${mark}</div>
+          <div class="evidence-text-block">
+            <div class="evidence-name">${ev.label}</div>
+            <div class="evidence-desc">${ev.desc}</div>
+          </div>
+        `;
+
+        item.addEventListener("click", () => {
+          AudioEngine.pencil();
+          if (evidenceState[ev.id] === null) evidenceState[ev.id] = true;
+          else if (evidenceState[ev.id] === true) evidenceState[ev.id] = false;
+          else evidenceState[ev.id] = null;
+
+          renderEvidenceList();
+          updateGhostGridStates();
+        });
+
+        container.appendChild(item);
+      });
+    }
+
+    document.getElementById("btnResetEvidence").addEventListener("click", () => {
+      AudioEngine.pencil();
+      EVIDENCES.forEach(e => evidenceState[e.id] = null);
+      renderEvidenceList();
+      updateGhostGridStates();
+    });
+
+    const GHOST_ROSTER_VI_NAMES = {
+      "spirit": "Linh Hồn",
+      "wraith": "Oan Hồn / Ma Bay",
+      "phantom": "Bóng Ma Biến Hình",
+      "poltergeist": "Yêu Tinh Quậy Phá",
+      "banshee": "Nữ Thần Báo Tử",
+      "jinn": "Thần Đèn Jinn",
+      "mare": "Ác Mộng Bóng Đêm",
+      "revenant": "Báo Oán / Kẻ Hủy Diệt",
+      "shade": "Bóng Đen Nhút Nhát",
+      "demon": "Ác Quỷ Săn Sớm",
+      "yurei": "U Hồn Cửa",
+      "oni": "Quỷ Mặt Đỏ Hiếu Động",
+      "yokai": "Yêu Quái Ghét Tiếng Ồn",
+      "hantu": "Hồn Ma Xứ Lạnh",
+      "goryo": "Oan Hồn Ẩn Dật",
+      "myling": "Hài Nhi Yên Lặng",
+      "onryo": "Oan Hồn Sợ Lửa",
+      "the_twins": "Cặp Song Sinh",
+      "raiju": "Lôi Thú Hút Điện",
+      "obake": "Yêu Quái Biến Hình",
+      "the_mimic": "Ma Bắt Chước (Orb Giả)",
+      "moroi": "Ma Nguyền Rủa",
+      "deogen": "Ma Thở Dốc (Săn Đuổi)",
+      "thaye": "Lão Quỷ Trẻ Hóa",
+      "aswang": "Quỷ Hút Máu (2026)",
+      "dayan": "Phù Thủy Chân Ngược (2026)",
+      "deildegast": "Hồn Ma Ranh Giới (2026)",
+      "gallu": "Quỷ Địa Ngục (2026)",
+      "kormos": "Ác Thú Hắc Ám (2026)",
+      "obambo": "Oan Linh Phiêu Bạt (2026)"
+    };
+
+    // RENDER 30 GHOSTS GRID (3 CỘT X 10 HÀNG ĐỒNG BỘ CÂN ĐỐI)
+    function renderGhostsGrid() {
+      const grid = document.getElementById("ghostsGrid");
+      grid.innerHTML = "";
+
+      ALL_SCREENSHOT_GHOSTS.forEach(name => {
+        const slot = document.createElement("div");
+        slot.className = "ghost-slot";
+        slot.dataset.name = name;
+
+        const ghostObj = ghostsData.find(g => g.name_en.toLowerCase() === name.toLowerCase());
+        const gid = ghostObj ? ghostObj.id : name.toLowerCase().replace(/\s+/g, '_');
+        slot.dataset.id = gid;
+
+        const viName = GHOST_ROSTER_VI_NAMES[gid] || (ghostObj ? ghostObj.name_vi.replace(/\s*\([^)]*\)/g, '').trim() : name);
+
+        slot.innerHTML = `
+          <div class="slot-name-en-wrap">
+            <span class="slot-name-en">${name}</span>
+            <svg class="pencil-name-circle" viewBox="0 0 80 30" preserveAspectRatio="none">
+              <path d="M 6,15 C 4,5 20,2 40,2 C 62,2 76,6 77,15 C 78,25 60,29 38,29 C 14,29 2,24 3,13 C 4,6 16,2.5 32,2" 
+                    fill="none" stroke="#9e1c1c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.92" />
+            </svg>
+          </div>
+          <div class="slot-name-vi">${viName}</div>
+        `;
+
+        // Click để ghim (khoanh) hoặc bỏ ghim
+        slot.addEventListener("click", () => {
+          AudioEngine.pencil();
+          if (!ghostObj) return;
+
+          if (pinnedGhostId === ghostObj.id) {
+            // Click lại vào ma đang ghim => Bỏ ghim (unpin)
+            pinnedGhostId = null;
+          } else {
+            // Ghim ma này
+            pinnedGhostId = ghostObj.id;
+            selectedGhostId = ghostObj.id;
+            selectGhost(ghostObj.id);
+          }
+
+          updateGhostGridStates();
+        });
+
+        // Double click mở ngay Hồ sơ mật phóng to
+        slot.addEventListener("dblclick", () => {
+          if (ghostObj) {
+            pinnedGhostId = ghostObj.id;
+            selectedGhostId = ghostObj.id;
+            selectGhost(ghostObj.id);
+            openDossierModal();
+          }
+        });
+
+        grid.appendChild(slot);
+      });
+
+      updateGhostGridStates();
+    }
+
+    // TÍNH TOÁN 3 TRẠNG THÁI: NORMAL | RULED-OUT | PINNED
+    function updateGhostGridStates() {
+      const included = Object.keys(evidenceState).filter(k => evidenceState[k] === true);
+      const excluded = Object.keys(evidenceState).filter(k => evidenceState[k] === false);
+
+      const slots = document.querySelectorAll(".ghost-slot");
+      let possibleGhosts = [];
+
+      slots.forEach(slot => {
+        const name = slot.dataset.name;
+        const g = ghostsData.find(x => x.name_en.toLowerCase() === name.toLowerCase());
+        if (!g) return;
+
+        // BỘ LỌC NHÓM (ACTIVE LIST FILTER)
+        let matchesGroup = true;
+        if (activeListFilter === "early_hunt") {
+          matchesGroup = (g.hunt_sanity >= 60 || g.id === "demon" || g.id === "yokai" || g.id === "thaye");
+        } else if (activeListFilter === "fast_speed") {
+          matchesGroup = (g.speed.max_los >= 2.5 || g.speed.base >= 2.0 || g.id === "revenant" || g.id === "moroi" || g.id === "deogen");
+        } else if (activeListFilter === "expansion_2026") {
+          matchesGroup = ["aswang", "dayan", "deildegast", "gallu", "kormos", "obambo"].includes(g.id);
+        }
+
+        slot.style.display = "flex";
+
+        // QUY TẮC LOẠI TRỪ BẰNG CHỨNG (CHỈ GẠCH KHI CÓ MÂU THUẪN)
+        let isRuledOut = false;
+
+        // Chưa tick bằng chứng nào thì cả 30 ma đều sáng bình thường
+        if (included.length > 0 || excluded.length > 0) {
+          for (const inc of included) {
+            // The Mimic luôn có Fake Ghost Orb ở mọi độ khó
+            if (g.id === "the_mimic" && inc === "Ghost Orb") continue;
+            if (!g.evidences.includes(inc)) {
+              isRuledOut = true;
+              break;
+            }
+          }
+
+          if (!isRuledOut) {
+            for (const exc of excluded) {
+              if (g.id === "the_mimic" && exc === "Ghost Orb") {
+                isRuledOut = true;
+                break;
+              }
+              if (g.evidences.includes(exc)) {
+                isRuledOut = true;
+                break;
+              }
+            }
+          }
+        }
+
+        // ÁP DỤNG TRẠNG THÁI: RULED-OUT | PINNED | HIGHLIGHTED
+        slot.classList.remove("ruled-out", "pinned", "highlighted");
+
+        if (isRuledOut) {
+          slot.classList.add("ruled-out");
+        } else {
+          possibleGhosts.push(g);
+          if (activeListFilter !== "all" && matchesGroup) {
+            slot.classList.add("highlighted");
+          }
+        }
+
+        // Khoanh chỉ khi người dùng bấm
+        if (pinnedGhostId === g.id) {
+          slot.classList.add("pinned");
+        }
+      });
+
+      updateQuickActionBar(possibleGhosts);
+    }
+
+    // CẬP NHẬT THẺ DƯỚI CÙNG (QUICK ACTION BAR)
+    function updateQuickActionBar(possibleGhosts) {
+      if (!possibleGhosts) {
+        possibleGhosts = ghostsData.filter(g => {
+          // check if not ruled out
+          return true;
+        });
+      }
+
+      const infoContainer = document.getElementById("actionBarGhostInfo");
+      const btnZoom = document.getElementById("btnZoomDossier");
+
+      if (pinnedGhostId) {
+        // ĐANG CÓ MA ĐƯỢC GHIM (KHOANH)
+        const g = ghostsData.find(x => x.id === pinnedGhostId);
+        if (g) {
+          let speedText = `${g.speed.base} m/s`;
+          if (g.speed.max_los !== g.speed.base) speedText += ` → ${g.speed.max_los} m/s`;
+          let huntText = typeof g.hunt_sanity === "number" ? `${g.hunt_sanity}% Sanity` : g.hunt_sanity;
+
+          const cleanVi = g.name_vi.replace(/\s*\([^)]*\)/g, '').trim();
+          infoContainer.innerHTML = `
+            <div class="action-ghost-name">${g.name_en} <small>(${cleanVi})</small></div>
+            <div class="action-ghost-meta">Đã khoanh ghim • Ngưỡng Hunt: <strong>${huntText}</strong> • Tốc độ: <strong>${speedText}</strong></div>
+          `;
+
+          btnZoom.textContent = "HỒ SƠ MẬT (DOSSIER)";
+          btnZoom.className = "btn-zoom-dossier";
+          btnZoom.onclick = () => {
+            selectGhost(g.id);
+            openDossierModal();
+          };
+          return;
+        }
+      }
+
+      // CHƯA GHIM MA NÀO
+      const count = possibleGhosts.length;
+      infoContainer.innerHTML = `
+        <div class="action-ghost-name" style="color: #4a3e2e;">CHƯA GHIM MA NÀO</div>
+        <div class="action-ghost-meta">Còn <strong>${count} / 30</strong> loài ma khả nghi • Nhấp vào thẻ ma để khoanh ghim</div>
+      `;
+
+      if (count === 1) {
+        btnZoom.textContent = `XEM ${possibleGhosts[0].name_en.toUpperCase()}`;
+        btnZoom.className = "btn-zoom-dossier";
+        btnZoom.onclick = () => {
+          selectGhost(possibleGhosts[0].id);
+          openDossierModal();
+        };
+      } else {
+        btnZoom.textContent = "HỒ SƠ MẬT (DOSSIER)";
+        btnZoom.className = "btn-zoom-dossier secondary";
+        btnZoom.onclick = () => {
+          if (possibleGhosts.length > 0) {
+            selectGhost(possibleGhosts[0].id);
+          }
+          openDossierModal();
+        };
+      }
+    }
+
+    // SELECT GHOST FOR DEEP-DIVE (TAB 02)
+    function selectGhost(ghostId) {
+      selectedGhostId = ghostId;
+      const g = ghostsData.find(x => x.id === ghostId);
+      if (!g) return;
+
+      document.getElementById("infoGhostNameVi").textContent = g.name_vi;
+      document.getElementById("infoGhostNameEn").textContent = `${g.name_en} • Bí danh: ${g.alias ? g.alias.join(', ') : 'Không có'}`;
+
+      let speedText = `${g.speed.base} m/s`;
+      if (g.speed.max_los !== g.speed.base) speedText += ` → ${g.speed.max_los} m/s`;
+      let huntText = typeof g.hunt_sanity === "number" ? `${g.hunt_sanity}% Sanity` : g.hunt_sanity;
+
+      document.getElementById("infoMetaChips").innerHTML = `
+        <div class="info-chip">Ngưỡng Sanity Hunt: <strong>${huntText}</strong></div>
+        <div class="info-chip">Tốc Độ Săn: <strong>${speedText}</strong></div>
+      `;
+
+      let evsHtml = `<strong>Bằng Chứng:</strong> ${g.evidences.join(" • ")}`;
+      if (g.fake_evidence) {
+        evsHtml += ` • <span style="color: #c53030; font-weight: bold;">+ ${g.fake_evidence} (Luôn xuất hiện)</span>`;
+      }
+      document.getElementById("infoEvidencesBar").innerHTML = evsHtml;
+
+      document.getElementById("infoStrength").textContent = g.traits.strength;
+      document.getElementById("infoWeakness").textContent = g.traits.weakness;
+      document.getElementById("infoHiddenTest").textContent = g.hidden_test;
+
+      const alertBox = document.getElementById("infoSpecialAlert");
+      alertBox.innerHTML = "";
+      if (g.id === "deogen") {
+        alertBox.innerHTML = `
+          <div class="warning-badge">
+            <strong>DEOGEN (MA THỞ DỐC):</strong> Luôn biết vị trí của bạn 100%! Tuyệt đối không trốn trong tủ. Chạy ra dắt bộ looping quanh bàn (ở gần nó đi siêu chậm 0.4 m/s).
+          </div>
+        `;
+      } else if (g.id === "the_mimic") {
+        alertBox.innerHTML = `
+          <div class="warning-badge" style="border-color: #ec4899; color: #9d174d; background: #fdf2f8;">
+            <strong>THE MIMIC (MA LỪA):</strong> Luôn có Ghost Orb giả ở mọi độ khó (kể cả 0-evidence)! Đừng nhầm lẫn với Hantu hay Onryo.
+          </div>
+        `;
+      } else if (g.id === "demon") {
+        alertBox.innerHTML = `
+          <div class="warning-badge">
+            <strong>DEMON (ÁC QUỶ):</strong> Có thể hunt bất ngờ ở 100% Sanity. Nhang chỉ chặn hunt được 60 giây!
+          </div>
+        `;
+      }
+
+      document.querySelectorAll(".dir-card").forEach(c => {
+        c.classList.toggle("active", c.dataset.id === ghostId);
+      });
+    }
+
+    /* ==============================================================
+       ★ DOSSIER MODAL LOGIC (PHÓNG TO HỒ SƠ MẬT) ★
+       ============================================================== */
+    function openDossierModal() {
+      const g = ghostsData.find(x => x.id === selectedGhostId);
+      if (!g) return;
+
+      AudioEngine.pageFlip();
+
+      const currentIndex = ghostsData.findIndex(x => x.id === selectedGhostId);
+      const counterEl = document.getElementById("modalGhostCounter");
+      if (counterEl) {
+        counterEl.textContent = `${currentIndex + 1} / ${ghostsData.length}`;
+      }
+
+      document.getElementById("modalGhostNameVi").textContent = g.name_vi;
+      document.getElementById("modalGhostNameEn").textContent = `${g.name_en} • Bí danh: ${g.alias ? g.alias.join(', ') : 'Không có'}`;
+      document.getElementById("modalDangerTag").textContent = g.danger_level || 'NGUY HIỂM';
+
+      let huntText = typeof g.hunt_sanity === "number" ? `${g.hunt_sanity}% Sanity` : g.hunt_sanity;
+      document.getElementById("modalHuntSanity").textContent = huntText;
+
+      let speedText = `${g.speed.base} m/s`;
+      if (g.speed.max_los !== g.speed.base) speedText += ` → ${g.speed.max_los} m/s`;
+      document.getElementById("modalSpeed").textContent = speedText;
+
+      let evsText = g.evidences.join(", ");
+      if (g.fake_evidence) evsText += ` + ${g.fake_evidence} (Luôn có)`;
+      document.getElementById("modalEvidences").textContent = evsText;
+
+      selectedBpmMode = "base";
+      updateFootstepControlsForGhost(g);
+
+      document.getElementById("modalDeepStrength").textContent = g.traits.strength;
+      document.getElementById("modalDeepWeakness").textContent = g.traits.weakness;
+      document.getElementById("modalDeepWarning").textContent = g.deep_mechanics || g.notes;
+
+      const instantClue = INSTANT_CLUES[g.id] || g.traits.weakness;
+      document.getElementById("modalInstantClueText").textContent = instantClue;
+
+      renderTestingChecklist(g.hidden_test);
+
+      document.getElementById("modalLoopingGuide").textContent = g.looping_guide || "Looping tiêu chuẩn quanh chướng ngại vật kín góc (bàn ăn, đảo bếp). Chú ý cắt tầm nhìn (break LOS) để ma giảm tốc độ.";
+
+      stopFootstepAudio();
+      resetTapTempo();
+
+      // Đồng bộ màn hình timer nhang trong modal với Master Timer
+      SmudgeMasterTimer.updateDisplays();
+      SmudgeMasterTimer.setButtonState(SmudgeMasterTimer.interval !== null);
+
+      AudioEngine.onFootstepPulse = () => {
+        flashPulseLight();
+      };
+
+      document.getElementById("dossierModalBackdrop").style.display = "flex";
+    }
+
+    function closeDossierModal() {
+      stopFootstepAudio();
+      document.getElementById("dossierModalBackdrop").style.display = "none";
+    }
+
+    function flashPulseLight() {
+      const pulseLight = document.getElementById("footstepPulseLight");
+      if (pulseLight) {
+        pulseLight.classList.add("beat");
+        setTimeout(() => pulseLight.classList.remove("beat"), 75);
+      }
+    }
+
+    function navigateModalGhost(direction) {
+      if (!ghostsData || ghostsData.length === 0) return;
+      const currentIndex = ghostsData.findIndex(g => g.id === selectedGhostId);
+      if (currentIndex === -1) return;
+
+      let nextIndex = currentIndex + direction;
+      if (nextIndex < 0) nextIndex = ghostsData.length - 1;
+      if (nextIndex >= ghostsData.length) nextIndex = 0;
+
+      selectGhost(ghostsData[nextIndex].id);
+      openDossierModal();
+    }
+
+    function updateFootstepControlsForGhost(g) {
+      const baseBpm = g.speed.bpm_base || 120;
+      const maxBpm = g.speed.bpm_max || 160;
+
+      const descEl = document.getElementById("footstepDesc");
+      const btnBase = document.getElementById("btnSpeedBase");
+      const btnMax = document.getElementById("btnSpeedMax");
+
+      btnBase.classList.toggle("active", selectedBpmMode === "base");
+      btnMax.classList.toggle("active", selectedBpmMode === "max");
+
+      if (g.id === "deogen") {
+        descEl.textContent = `Tần số ở xa: 210 BPM (3.0 m/s) • Tần số sát người (<2.5m): 30 BPM (0.4 m/s - Đi bộ dưỡng sinh)`;
+        btnBase.textContent = `Ở xa: 3.0 m/s (210 BPM)`;
+        btnMax.textContent = `Ở gần: 0.4 m/s (30 BPM)`;
+      } else if (g.id === "revenant") {
+        descEl.textContent = `Tần số tuần tra: 70 BPM (1.0 m/s - Rùa bò) • Tần số thấy người: 210 BPM (3.0 m/s - Tên lửa)`;
+        btnBase.textContent = `Không thấy người: 1.0 m/s (70 BPM)`;
+        btnMax.textContent = `Thấy người: 3.0 m/s (210 BPM)`;
+      } else if (g.id === "thaye") {
+        descEl.textContent = `Mới vào (Trẻ): 2.75 m/s (195 BPM) • Cuối trận (Già): 1.0 m/s (70 BPM)`;
+        btnBase.textContent = `Mới vào (Trẻ): 2.75 m/s (195 BPM)`;
+        btnMax.textContent = `Về sau (Già): 1.0 m/s (70 BPM)`;
+      } else if (g.id === "hantu") {
+        descEl.textContent = `Phòng ấm: 1.4 m/s (90 BPM) • Phòng lạnh: 2.7 m/s (190 BPM)`;
+        btnBase.textContent = `Phòng ấm: 1.4 m/s (90 BPM)`;
+        btnMax.textContent = `Phòng lạnh: 2.7 m/s (190 BPM)`;
+      } else if (g.id === "moroi") {
+        descEl.textContent = `50% Sanity: 1.5 m/s (105 BPM) • 0% Sanity + LOS: 3.71 m/s (250 BPM - Nhanh nhất game)`;
+        btnBase.textContent = `Sanity 50%: 1.5 m/s (105 BPM)`;
+        btnMax.textContent = `Sanity 0%: 3.71 m/s (250 BPM)`;
+      } else {
+        descEl.textContent = `Tần số tuần tra: ${baseBpm} BPM (${g.speed.base} m/s) • Tần số truy đuổi: ${maxBpm} BPM (${g.speed.max_los} m/s)`;
+        btnBase.textContent = `Tuần tra: ${g.speed.base} m/s (${baseBpm} BPM)`;
+        btnMax.textContent = `Thấy người: ${g.speed.max_los} m/s (${maxBpm} BPM)`;
+      }
+    }
+
+    function renderTestingChecklist(rawProtocolText) {
+      const container = document.getElementById("modalTestingChecklist");
+      container.innerHTML = "";
+
+      if (!rawProtocolText) {
+        container.innerHTML = "<div>Không có quy trình kiểm tra cụ thể.</div>";
+        return;
+      }
+
+      const lines = rawProtocolText.split("\n").filter(l => l.trim().length > 0);
+
+      lines.forEach((line) => {
+        const item = document.createElement("div");
+        item.className = "check-step-item";
+        item.innerHTML = `
+          <div class="check-step-box"></div>
+          <div class="check-step-text">${line}</div>
+        `;
+
+        item.addEventListener("click", () => {
+          AudioEngine.pencil();
+          item.classList.toggle("checked");
+          const box = item.querySelector(".check-step-box");
+          box.textContent = item.classList.contains("checked") ? "✔" : "";
+        });
+
+        container.appendChild(item);
+      });
+    }
+
+    function resetTapTempo() {
+      tapTimestamps = [];
+      clearTimeout(tapResetTimer);
+      const bpmVal = document.getElementById("tapBpmValue");
+      const verdict = document.getElementById("tapVerdictText");
+      if (bpmVal) bpmVal.textContent = "--";
+      if (verdict) verdict.textContent = "Gõ ít nhất 3 nhịp theo tiếng bước chân ma...";
+    }
+
+    function handleTapTempo() {
+      const now = performance.now();
+      AudioEngine.pencil();
+
+      if (tapTimestamps.length > 0 && (now - tapTimestamps[tapTimestamps.length - 1] > 3000)) {
+        tapTimestamps = [];
+      }
+
+      tapTimestamps.push(now);
+      if (tapTimestamps.length > 5) tapTimestamps.shift();
+
+      if (tapTimestamps.length >= 2) {
+        let diffs = [];
+        for (let i = 1; i < tapTimestamps.length; i++) {
+          diffs.push(tapTimestamps[i] - tapTimestamps[i - 1]);
+        }
+        const avgDiff = diffs.reduce((a, b) => a + b, 0) / diffs.length;
+        const bpm = Math.round(60000 / avgDiff);
+
+        document.getElementById("tapBpmValue").textContent = bpm;
+
+        const g = ghostsData.find(x => x.id === selectedGhostId);
+        if (g) {
+          const baseBpm = g.speed.bpm_base || 120;
+          const maxBpm = g.speed.bpm_max || 160;
+          const verdictEl = document.getElementById("tapVerdictText");
+
+          if (Math.abs(bpm - baseBpm) <= 12) {
+            verdictEl.innerHTML = `<span style="color:#10b981; font-weight:bold;">✔ Khớp Chuẩn (~${bpm} BPM):</span> Tốc độ tuần tra của ${g.name_vi}!`;
+          } else if (Math.abs(bpm - maxBpm) <= 15) {
+            verdictEl.innerHTML = `<span style="color:#f59e0b; font-weight:bold;">⚡ Khớp LOS (~${bpm} BPM):</span> Tốc độ săn khi nhìn thấy người chơi!`;
+          } else if (bpm > 200) {
+            verdictEl.innerHTML = `<span style="color:#ef4444; font-weight:bold;">⚠️ CỰC KỲ NHANH (~${bpm} BPM):</span> Thaye trẻ, Revenant LOS, hoặc Deogen ở xa!`;
+          } else if (bpm < 85) {
+            verdictEl.innerHTML = `<span style="color:#38bdf8; font-weight:bold;">🐢 RẤT CHẬM (~${bpm} BPM):</span> Revenant không thấy người hoặc Deogen ở sát người!`;
+          } else {
+            verdictEl.innerHTML = `Đo được ~${bpm} BPM (Loài ma này: ${baseBpm} BPM tuần tra • ${maxBpm} BPM khi thấy người).`;
+          }
+        }
+      } else {
+        document.getElementById("tapBpmValue").textContent = "...";
+        document.getElementById("tapVerdictText").textContent = "Gõ tiếp theo tiếng bước chân (cần ít nhất 3 nhịp)...";
+      }
+
+      clearTimeout(tapResetTimer);
+      tapResetTimer = setTimeout(() => {
+        tapTimestamps = [];
+      }, 4000);
+    }
+
+    function playCurrentFootstepMode() {
+      const g = ghostsData.find(x => x.id === selectedGhostId);
+      if (!g) return;
+
+      const bpm = selectedBpmMode === "base" ? (g.speed.bpm_base || 120) : (g.speed.bpm_max || 160);
+      AudioEngine.startFootstepLoop(bpm);
+      isFootstepPlaying = true;
+      const btn = document.getElementById("btnPlayFootstep");
+      if (btn) {
+        btn.textContent = "DỪNG TIẾNG BƯỚC CHÂN";
+        btn.classList.add("playing");
+      }
+    }
+
+    function stopFootstepAudio() {
+      AudioEngine.stopFootstepLoop();
+      isFootstepPlaying = false;
+      const btn = document.getElementById("btnPlayFootstep");
+      if (btn) {
+        btn.textContent = "BẬT TIẾNG BƯỚC CHÂN";
+        btn.classList.remove("playing");
+      }
+    }
+
+    function initModalEvents() {
+      document.getElementById("modalCloseBtn").addEventListener("click", closeDossierModal);
+      document.getElementById("btnZoomFromInfo").addEventListener("click", openDossierModal);
+
+      document.getElementById("modalPrevGhostBtn").addEventListener("click", () => navigateModalGhost(-1));
+      document.getElementById("modalNextGhostBtn").addEventListener("click", () => navigateModalGhost(1));
+
+      document.getElementById("btnSpeedBase").addEventListener("click", () => {
+        selectedBpmMode = "base";
+        const g = ghostsData.find(x => x.id === selectedGhostId);
+        if (g) updateFootstepControlsForGhost(g);
+        if (isFootstepPlaying) playCurrentFootstepMode();
+      });
+
+      document.getElementById("btnSpeedMax").addEventListener("click", () => {
+        selectedBpmMode = "max";
+        const g = ghostsData.find(x => x.id === selectedGhostId);
+        if (g) updateFootstepControlsForGhost(g);
+        if (isFootstepPlaying) playCurrentFootstepMode();
+      });
+
+      document.getElementById("btnTapTempo").addEventListener("click", handleTapTempo);
+
+      document.getElementById("dossierModalBackdrop").addEventListener("click", (e) => {
+        if (e.target.id === "dossierModalBackdrop") closeDossierModal();
+      });
+
+      document.querySelectorAll(".d-tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".d-tab-btn").forEach(b => b.classList.remove("active"));
+          document.querySelectorAll(".dossier-tab-pane").forEach(p => p.classList.remove("active"));
+          btn.classList.add("active");
+          document.getElementById(btn.dataset.dtab).classList.add("active");
+        });
+      });
+
+      document.getElementById("btnPlayFootstep").addEventListener("click", () => {
+        if (isFootstepPlaying) {
+          stopFootstepAudio();
+        } else {
+          playCurrentFootstepMode();
+        }
+      });
+    }
+
+    function initShortcuts() {
+      document.addEventListener("keydown", (e) => {
+        const isModalOpen = document.getElementById("dossierModalBackdrop").style.display === "flex";
+
+        if (e.key === "/" && document.activeElement.tagName !== "INPUT" && !isModalOpen) {
+          e.preventDefault();
+          document.getElementById("journalSearch").focus();
+        }
+        if ((e.key === "h" || e.key === "H") && document.activeElement.tagName !== "INPUT" && !isModalOpen) {
+          e.preventDefault();
+          if (window.toggleFieldCompendium) window.toggleFieldCompendium();
+        }
+        if (e.key === "Escape") {
+          closeDossierModal();
+          document.getElementById("searchResultsDropdown").style.display = "none";
+          if (window.toggleFieldCompendium) window.toggleFieldCompendium(false);
+        }
+
+        if (isModalOpen && document.activeElement.tagName !== "INPUT") {
+          if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            navigateModalGhost(-1);
+          } else if (e.key === "ArrowRight") {
+            e.preventDefault();
+            navigateModalGhost(1);
+          } else if (e.key === "t" || e.key === "T") {
+            e.preventDefault();
+            handleTapTempo();
+          } else if (e.code === "Space") {
+            e.preventDefault();
+            if (isFootstepPlaying) stopFootstepAudio();
+            else playCurrentFootstepMode();
+          }
+        }
+      });
+    }
+
+    /* ==============================================================
+       ★ LEFT PAGE GHOST DIRECTORY (TAB 02) ★
+       ============================================================== */
+    function renderGhostInfoCatalog() {
+      const container = document.getElementById("ghostInfoCatalog");
+      container.innerHTML = "";
+
+      ghostsData.forEach(g => {
+        const card = document.createElement("div");
+        card.className = "dir-card";
+        if (g.id === selectedGhostId) card.classList.add("active");
+        card.dataset.id = g.id;
+        card.dataset.name = (g.name_vi + " " + g.name_en + " " + (g.alias ? g.alias.join(" ") : "")).toLowerCase();
+
+        // Làm sạch phụ đề tiếng Việt (bỏ phần lặp lại tên tiếng Anh trong ngoặc nếu có)
+        const cleanVi = g.name_vi.replace(/\s*\([A-Za-z\s]+\)$/, '').trim();
+
+        card.innerHTML = `
+          <div class="dir-card-header">
+            <span class="dir-name-en">${g.name_en}</span>
+            <span class="dir-hunt-tag">${g.hunt_sanity}% Hunt</span>
+          </div>
+          <div class="dir-name-vi">${cleanVi}</div>
+          <div class="dir-speed-tag">Tốc độ: ${g.speed.base} m/s</div>
+        `;
+
+        card.addEventListener("click", () => {
+          AudioEngine.pageFlip();
+          selectGhost(g.id);
+        });
+
+        card.addEventListener("dblclick", () => {
+          selectGhost(g.id);
+          openDossierModal();
+        });
+
+        container.appendChild(card);
+      });
+
+      document.getElementById("directoryFilter").addEventListener("input", (e) => {
+        const val = e.target.value.toLowerCase().trim();
+        document.querySelectorAll(".dir-card").forEach(card => {
+          const match = card.dataset.name.includes(val);
+          card.style.display = match ? "flex" : "none";
+        });
+      });
+    }
+
+    /* ==============================================================
+       ★ ITEMS, CURSED, VOICE TABS ★
+       ============================================================== */
+    function renderItemsTab() {
+      if (!toolsAndCursedData) return;
+      const leftC = document.getElementById("leftItemsContent");
+      const rightC = document.getElementById("rightItemsContent");
+      leftC.innerHTML = ""; rightC.innerHTML = "";
+
+      toolsAndCursedData.tools_and_equipment.forEach(tool => {
+        const target = tool.type.includes("Bằng chứng") ? leftC : rightC;
+        const box = document.createElement("div");
+        box.style.marginBottom = "10px";
+        box.style.background = "rgba(255,255,255,0.45)";
+        box.style.padding = "8px 10px";
+        box.style.borderRadius = "5px";
+
+        let tierText = tool.tiers.map(t => `<strong>${t.tier}:</strong> ${t.item} - <em>${t.desc}</em>`).join("<br>");
+
+        box.innerHTML = `
+          <div style="font-family: var(--font-hand); font-size: 1.45rem; color: #1e3a8a; font-weight: bold; line-height: 1.1;">
+            ${tool.name_vi} (${tool.name_en})
+          </div>
+          <div style="font-size: 0.88rem; line-height: 1.35; margin-top: 4px;">${tierText}</div>
+        `;
+        target.appendChild(box);
+      });
+    }
+
+    function renderCursedTab() {
+      if (!toolsAndCursedData) return;
+      const leftC = document.getElementById("leftTarotContent");
+      const rightC = document.getElementById("rightCursedContent");
+      leftC.innerHTML = ""; rightC.innerHTML = "";
+
+      const tarot = toolsAndCursedData.cursed_possessions.find(c => c.id === "tarot_cards");
+      const ouija = toolsAndCursedData.cursed_possessions.find(c => c.id === "ouija_board");
+      const monkey = toolsAndCursedData.cursed_possessions.find(c => c.id === "monkey_paw");
+
+      if (tarot) {
+        tarot.cards.forEach(c => {
+          const item = document.createElement("div");
+          item.style.marginBottom = "8px";
+          item.style.fontSize = "0.92rem";
+          item.innerHTML = `
+            <strong style="color: #8f2020;">${c.name_vi}</strong> (${c.chance})<br>
+            <span style="font-style: italic; color: #5a4b37;">Lửa: ${c.flame_color}</span> - ${c.effect}
+          `;
+          leftC.appendChild(item);
+        });
+      }
+
+      if (ouija) {
+        const ouijaHeader = document.createElement("div");
+        ouijaHeader.innerHTML = `<h3 style="font-family: var(--font-hand); font-size: 1.6rem; color: #8f2020;">Bàn Cầu Cơ (Nói 'Goodbye' trước khi đi!)</h3>`;
+        rightC.appendChild(ouijaHeader);
+
+        ouija.questions.slice(0, 5).forEach(q => {
+          const row = document.createElement("div");
+          row.style.marginBottom = "6px";
+          row.style.fontSize = "0.88rem";
+          row.innerHTML = `
+            <strong>"${q.questions_en[0]}"</strong> (${q.sanity_cost})<br>
+            <em>${q.meaning_vi}</em>
+          `;
+          rightC.appendChild(row);
+        });
+      }
+
+      if (monkey) {
+        const monkeyHeader = document.createElement("div");
+        monkeyHeader.style.marginTop = "10px";
+        monkeyHeader.innerHTML = `<h3 style="font-family: var(--font-hand); font-size: 1.6rem; color: #8f2020;">Bàn Tay Khỉ (Monkey Paw)</h3>`;
+        rightC.appendChild(monkeyHeader);
+
+        monkey.wishes.slice(0, 4).forEach(w => {
+          const row = document.createElement("div");
+          row.style.marginBottom = "6px";
+          row.style.fontSize = "0.88rem";
+          row.innerHTML = `
+            <strong>"${w.wish_en}"</strong><br>
+            Ước: ${w.benefit}<br>
+            Phản phệ: <span style="color: #991b1b; font-weight: bold;">${w.penalty}</span>
+          `;
+          rightC.appendChild(row);
+        });
+      }
+    }
+
+    function renderVoiceTab() {
+      if (!toolsAndCursedData) return;
+      const leftC = document.getElementById("leftVoiceContent");
+      const rightC = document.getElementById("rightVoiceContent");
+      leftC.innerHTML = ""; rightC.innerHTML = "";
+
+      const v = toolsAndCursedData.voice_commands_en;
+
+      v.spirit_box_phrases.forEach(p => {
+        const box = document.createElement("div");
+        box.className = "voice-line-box";
+        box.innerHTML = `
+          <div>
+            <div class="voice-line-en">"${p.phrase}"</div>
+            <div class="voice-line-vi">${p.meaning}</div>
+          </div>
+          <div class="copy-pill">Copy</div>
+        `;
+        box.addEventListener("click", () => {
+          navigator.clipboard.writeText(p.phrase);
+          alert(`Đã copy câu hỏi: "${p.phrase}"`);
+        });
+        leftC.appendChild(box);
+      });
+
+      v.trigger_anger_phrases.forEach(p => {
+        const box = document.createElement("div");
+        box.className = "voice-line-box";
+        box.innerHTML = `
+          <div>
+            <div class="voice-line-en">"${p.phrase}"</div>
+            <div class="voice-line-vi">${p.meaning}</div>
+          </div>
+          <div class="copy-pill">Copy</div>
+        `;
+        box.addEventListener("click", () => {
+          navigator.clipboard.writeText(p.phrase);
+          alert(`Đã copy câu thoại: "${p.phrase}"`);
+        });
+        rightC.appendChild(box);
+      });
+    }
+
+    /* ==============================================================
+       ★ TAB 06: AUDIO STUDIO RENDER & CONTROLS ★
+       ============================================================== */
+    const FOOTSTEP_PRESETS = [
+      { id: "std_patrol", name: "Standard Patrol (Tuần Tra Chuẩn)", speed: "1.7 m/s", bpm: 120, desc: "Tốc độ tuần tra mặc định của hơn 20 loài ma" },
+      { id: "rev_slow", name: "Revenant Wandering (Rùa Bò)", speed: "1.0 m/s", bpm: 70, desc: "Revenant khi chưa thấy người (bước chân cực thưa)" },
+      { id: "rev_fast", name: "Revenant LOS Chase (Tên Lửa)", speed: "3.0 m/s", bpm: 210, desc: "Revenant khi phát hiện người chơi (lao như tên lửa)" },
+      { id: "deo_close", name: "Deogen Close (<2.5m sát người)", speed: "0.4 m/s", bpm: 30, desc: "Deogen ở cự ly sát người (bước chân dưỡng sinh)" },
+      { id: "deo_far", name: "Deogen Distance (>6m ở xa)", speed: "3.0 m/s", bpm: 210, desc: "Deogen lao xuyên bản đồ từ xa đến chỗ bạn" },
+      { id: "thaye_young", name: "Thaye Early Hunt (Trẻ & Hung Hăng)", speed: "2.75 m/s", bpm: 195, desc: "Thaye đầu trận khi còn trẻ tuổi" },
+      { id: "thaye_old", name: "Thaye Late Game (Về Già)", speed: "1.0 m/s", bpm: 70, desc: "Thaye sau khi đã già đi 10 lần" },
+      { id: "hantu_cold", name: "Hantu Cold Room (<0°C)", speed: "2.7 m/s", bpm: 190, desc: "Hantu trong phòng lạnh đóng băng" },
+      { id: "moroi_0", name: "Moroi 0% Sanity (LOS Nhanh Nhất Game)", speed: "3.71 m/s", bpm: 250, desc: "Moroi cạn kiệt Sanity và có đường nhìn thẳng" }
+    ];
+
+    let activePresetId = null;
+
+    function renderFootstepPresets() {
+      const container = document.getElementById("audioFootstepPresets");
+      if (!container) return;
+      container.innerHTML = "";
+
+      FOOTSTEP_PRESETS.forEach(p => {
+        const card = document.createElement("div");
+        card.className = "footstep-preset-card";
+        card.dataset.id = p.id;
+
+        card.innerHTML = `
+          <div class="preset-info-left">
+            <div class="preset-title">${p.name}</div>
+            <div class="preset-desc">${p.desc} • <strong>${p.speed} (${p.bpm} BPM)</strong></div>
+          </div>
+          <button class="preset-btn-play">▶ Nghe Thử</button>
+        `;
+
+        card.addEventListener("click", () => {
+          if (activePresetId === p.id && isFootstepPlaying) {
+            AudioEngine.stopFootstepLoop();
+            isFootstepPlaying = false;
+            activePresetId = null;
+            card.classList.remove("playing");
+            card.querySelector(".preset-btn-play").textContent = "▶ Nghe Thử";
+          } else {
+            document.querySelectorAll(".footstep-preset-card").forEach(c => {
+              c.classList.remove("playing");
+              c.querySelector(".preset-btn-play").textContent = "▶ Nghe Thử";
+            });
+
+            AudioEngine.startFootstepLoop(p.bpm);
+            isFootstepPlaying = true;
+            activePresetId = p.id;
+            card.classList.add("playing");
+            card.querySelector(".preset-btn-play").textContent = "⏹ Dừng";
+          }
+        });
+
+        container.appendChild(card);
+      });
+    }
+
+    function initAudioStudioControls() {
+      const volSlider = document.getElementById("masterVolumeSlider");
+      const volText = document.getElementById("volumeValueText");
+      const muteBtn = document.getElementById("btnToggleMute");
+
+      if (volSlider) {
+        volSlider.addEventListener("input", (e) => {
+          const val = parseInt(e.target.value, 10);
+          volText.textContent = `${val}%`;
+          AudioEngine.setVolume(val / 100);
+        });
+      }
+
+      if (muteBtn) {
+        muteBtn.addEventListener("click", () => {
+          AudioEngine.setMute(!AudioEngine.isMuted);
+          muteBtn.textContent = AudioEngine.isMuted ? "Unmute" : "Mute";
+          muteBtn.style.color = AudioEngine.isMuted ? "#ef4444" : "#574b39";
+        });
+      }
+
+      // FX Soundboard Buttons
+      const btnPencil = document.getElementById("btnFxPencil");
+      const btnPageFlip = document.getElementById("btnFxPageFlip");
+      const btnHeartbeat = document.getElementById("btnFxHeartbeat");
+      const btnSmudgeAlert = document.getElementById("btnFxSmudgeAlert");
+
+      if (btnPencil) btnPencil.addEventListener("click", () => AudioEngine.pencil());
+      if (btnPageFlip) btnPageFlip.addEventListener("click", () => AudioEngine.pageFlip());
+      if (btnHeartbeat) btnHeartbeat.addEventListener("click", () => AudioEngine.heartbeat());
+      if (btnSmudgeAlert) btnSmudgeAlert.addEventListener("click", () => {
+        AudioEngine.chime(440);
+        setTimeout(() => AudioEngine.chime(523.25), 250);
+        setTimeout(() => AudioEngine.chime(659.25), 500);
+      });
+    }
+
+    /* ==============================================================
+       ★ MAIN TAB NAVIGATION (6 TABS) ★
+       ============================================================== */
+    const TABS_CONFIG = {
+      "main-journal": { left: "leftViewEvidence", right: "rightViewGhosts", leftNum: 23, rightNum: 24 },
+      "ghost-info": { left: "leftViewGhostInfo", right: "rightViewGhostInfo", leftNum: 25, rightNum: 26 },
+      "items-tier": { left: "leftViewItems", right: "rightViewItems", leftNum: 27, rightNum: 28 },
+      "cursed-possessions": { left: "leftViewCursed", right: "rightViewCursed", leftNum: 29, rightNum: 30 },
+      "voice-commands": { left: "leftViewVoice", right: "rightViewVoice", leftNum: 31, rightNum: 32 },
+      "audio-studio": { left: "leftViewAudio", right: "rightViewAudio", leftNum: 33, rightNum: 34 }
+    };
+
+    function switchTab(tabKey) {
+      AudioEngine.pageFlip();
+      currentTab = tabKey;
+
+      document.querySelectorAll(".j-tab").forEach(tab => {
+        tab.classList.toggle("active", tab.dataset.tab === tabKey);
+      });
+
+      const config = TABS_CONFIG[tabKey];
+      if (!config) return;
+
+      ["leftViewEvidence", "leftViewGhostInfo", "leftViewItems", "leftViewCursed", "leftViewVoice", "leftViewAudio"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = "none";
+      });
+
+      ["rightViewGhosts", "rightViewGhostInfo", "rightViewItems", "rightViewCursed", "rightViewVoice", "rightViewAudio"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = "none";
+      });
+
+      const activeLeft = document.getElementById(config.left);
+      const activeRight = document.getElementById(config.right);
+      if (activeLeft) activeLeft.style.display = "flex";
+      if (activeRight) activeRight.style.display = "flex";
+
+      const leftNum = document.getElementById("leftPageNum");
+      const rightNum = document.getElementById("rightPageNum");
+      if (leftNum) leftNum.textContent = config.leftNum;
+      if (rightNum) rightNum.textContent = config.rightNum;
+    }
+
+    document.querySelectorAll(".j-tab").forEach(tab => {
+      tab.addEventListener("click", () => switchTab(tab.dataset.tab));
+    });
+
+    const TAB_KEYS = ["main-journal", "ghost-info", "items-tier", "cursed-possessions", "voice-commands", "audio-studio"];
+    document.getElementById("btnNextPage").addEventListener("click", () => {
+      let idx = (TAB_KEYS.indexOf(currentTab) + 1) % TAB_KEYS.length;
+      switchTab(TAB_KEYS[idx]);
+    });
+    document.getElementById("btnPrevPage").addEventListener("click", () => {
+      let idx = (TAB_KEYS.indexOf(currentTab) - 1 + TAB_KEYS.length) % TAB_KEYS.length;
+      switchTab(TAB_KEYS[idx]);
+    });
+
+    /* ==============================================================
+       ★ SMART SEARCH & GROUP FILTER ENGINE ★
+       ============================================================== */
+    function initSmartSearch() {
+      const searchInput = document.getElementById("journalSearch");
+      const dropdown = document.getElementById("searchResultsDropdown");
+      const clearBtn = document.getElementById("clearSearchBtn");
+
+      searchInput.addEventListener("input", (e) => {
+        const q = e.target.value.toLowerCase().trim();
+        if (!q) {
+          dropdown.style.display = "none";
+          clearBtn.style.display = "none";
+          updateGhostGridStates();
+          return;
+        }
+
+        clearBtn.style.display = "block";
+        renderSearchResults(q);
+      });
+
+      clearBtn.addEventListener("click", () => {
+        searchInput.value = "";
+        dropdown.style.display = "none";
+        clearBtn.style.display = "none";
+        updateGhostGridStates();
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".search-container")) {
+          dropdown.style.display = "none";
+        }
+      });
+
+      // 4 TACTICAL GROUP FILTER CHIPS (LỌC DANH SÁCH THỰC THỤ)
+      document.querySelectorAll(".filter-chip").forEach(chip => {
+        chip.addEventListener("click", () => {
+          document.querySelectorAll(".filter-chip").forEach(c => c.classList.remove("active"));
+          chip.classList.add("active");
+          activeListFilter = chip.dataset.filter;
+
+          const statusEl = document.getElementById("hudFilterStatus");
+          if (activeListFilter === "all") {
+            statusEl.textContent = "Hiển thị toàn bộ 30 loài ma";
+          } else if (activeListFilter === "early_hunt") {
+            statusEl.textContent = "Đang lọc: Loài ma săn sớm (>60% Sanity)";
+          } else if (activeListFilter === "fast_speed") {
+            statusEl.textContent = "Đang lọc: Loài ma có tốc độ cao / LOS đột biến";
+          } else if (activeListFilter === "expansion_2026") {
+            statusEl.textContent = "Đang lọc: 6 loài ma Bản Mở Rộng 2026";
+          }
+
+          updateGhostGridStates();
+        });
+      });
+
+      // TACTICAL COMPENDIUM TOGGLE & TABS LOGIC (GHÉP CHUNG MÂM VỚI TẤT CẢ)
+      const compContainer = document.getElementById("compendiumContainer");
+      const btnToggleComp = document.getElementById("btnToggleCompendium");
+      const btnCloseComp = document.getElementById("btnCloseCompendium");
+      const compArrow = document.getElementById("compendiumArrow");
+
+      window.toggleFieldCompendium = function(forceState) {
+        if (!compContainer) return;
+        const isCurrentlyOpen = compContainer.style.display !== "none";
+        const targetOpen = typeof forceState === "boolean" ? forceState : !isCurrentlyOpen;
+
+        if (targetOpen) {
+          compContainer.style.display = "block";
+          if (btnToggleComp) btnToggleComp.classList.add("active");
+          if (compArrow) compArrow.textContent = "▴";
+          compContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        } else {
+          compContainer.style.display = "none";
+          if (btnToggleComp) btnToggleComp.classList.remove("active");
+          if (compArrow) compArrow.textContent = "▾";
+        }
+      };
+
+      if (btnToggleComp) {
+        btnToggleComp.addEventListener("click", () => window.toggleFieldCompendium());
+      }
+      if (btnCloseComp) {
+        btnCloseComp.addEventListener("click", () => window.toggleFieldCompendium(false));
+      }
+
+      // Compendium internal tabs
+      document.querySelectorAll(".comp-tab-btn").forEach(tabBtn => {
+        tabBtn.addEventListener("click", () => {
+          document.querySelectorAll(".comp-tab-btn").forEach(b => b.classList.remove("active"));
+          document.querySelectorAll(".comp-pane").forEach(p => p.classList.remove("active"));
+
+          tabBtn.classList.add("active");
+          const targetPane = document.getElementById(tabBtn.dataset.target);
+          if (targetPane) targetPane.classList.add("active");
+        });
+      });
+    }
+
+    function renderSearchResults(q) {
+      const dropdown = document.getElementById("searchResultsDropdown");
+      dropdown.innerHTML = "";
+
+      const matchedGhosts = ghostsData.filter(g => {
+        return g.name_en.toLowerCase().includes(q)
+          || g.name_vi.toLowerCase().includes(q)
+          || (g.alias && g.alias.some(a => a.toLowerCase().includes(q)))
+          || g.evidences.some(ev => ev.toLowerCase().includes(q))
+          || g.traits.strength.toLowerCase().includes(q)
+          || g.traits.weakness.toLowerCase().includes(q)
+          || g.hidden_test.toLowerCase().includes(q)
+          || (q === "2026" && ["aswang", "dayan", "deildegast", "gallu", "kormos", "obambo"].includes(g.id))
+          || (q.includes("săn") && g.hunt_sanity >= 60)
+          || (q.includes("nhanh") && (g.speed.max_los >= 2.5 || g.speed.base >= 2.0));
+      });
+
+      let matchedCursed = [];
+      if (toolsAndCursedData) {
+        matchedCursed = toolsAndCursedData.cursed_possessions.filter(c => {
+          return c.name_en.toLowerCase().includes(q)
+            || c.name_vi.toLowerCase().includes(q)
+            || c.description.toLowerCase().includes(q);
+        });
+      }
+
+      if (matchedGhosts.length === 0 && matchedCursed.length === 0) {
+        dropdown.innerHTML = `<div style="padding: 10px; color: #94a3b8; text-align: center; font-size: 0.88rem;">Không tìm thấy kết quả phù hợp với "${q}"</div>`;
+        dropdown.style.display = "block";
+        return;
+      }
+
+      if (matchedGhosts.length > 0) {
+        const cat = document.createElement("div");
+        cat.className = "search-category-title";
+        cat.textContent = `LOÀI MA PHÙ HỢP (${matchedGhosts.length}) • CLICK ĐỂ XEM HỒ SƠ`;
+        dropdown.appendChild(cat);
+
+        matchedGhosts.slice(0, 8).forEach(g => {
+          const item = document.createElement("div");
+          item.className = "search-result-item";
+          item.innerHTML = `
+            <div>
+              <div class="result-name">${g.name_en} <small>(${g.name_vi})</small></div>
+              <div class="result-snippet">${g.evidences.join(", ")} • Săn: ${g.hunt_sanity}% Sanity</div>
+            </div>
+            <div class="result-badge">${g.speed.base} m/s</div>
+          `;
+
+          item.addEventListener("click", () => {
+            selectGhost(g.id);
+            openDossierModal();
+            dropdown.style.display = "none";
+          });
+
+          dropdown.appendChild(item);
+        });
+      }
+
+      if (matchedCursed.length > 0) {
+        const cat = document.createElement("div");
+        cat.className = "search-category-title";
+        cat.textContent = `VẬT PHẨM NGUYỀN RỦA (${matchedCursed.length})`;
+        dropdown.appendChild(cat);
+
+        matchedCursed.forEach(c => {
+          const item = document.createElement("div");
+          item.className = "search-result-item";
+          item.innerHTML = `
+            <div>
+              <div class="result-name">${c.name_vi} <small>(${c.name_en})</small></div>
+              <div class="result-snippet">${c.description.substring(0, 55)}...</div>
+            </div>
+            <div class="result-badge">Cursed</div>
+          `;
+
+          item.addEventListener("click", () => {
+            switchTab("cursed-possessions");
+            dropdown.style.display = "none";
+          });
+
+          dropdown.appendChild(item);
+        });
+      }
+
+      dropdown.style.display = "block";
+    }
+
+    loadData();
+  </script>
+</body>
+</html>

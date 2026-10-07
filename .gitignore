@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.pyc
+
+# Local tooling
+.playwright-mcp/
+
+# Assets not needed for the web app
+*.png

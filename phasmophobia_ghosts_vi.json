@@ -1,0 +1,723 @@
+[
+  {
+    "id": "spirit",
+    "name_en": "Spirit",
+    "name_vi": "Linh Hồn (Spirit)",
+    "alias": ["Ma thường", "Linh hồn cơ bản"],
+    "danger_level": "Trung Bình",
+    "evidences": ["EMF 5", "Spirit Box", "Ghost Writing"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s, tăng tốc dần khi nhìn thấy người chơi (LOS) lên 2.25 m/s."
+    },
+    "traits": {
+      "strength": "Không có điểm mạnh nguy hiểm đặc thù. Thường rất hung hãn và đi săn đều đặn khi Sanity dưới 50%.",
+      "weakness": "Cực kỳ sợ nhang: Đốt nhang (Smudge Stick / Incense) sẽ khóa khả năng đi săn của Spirit trong suốt 180 giây (3 phút) - gấp đôi so với 90 giây của các loài ma thông thường."
+    },
+    "deep_mechanics": "Spirit là con ma chuẩn mực nhất game, dùng làm thước đo cho mọi loài ma khác. Khi chơi ở độ khó không bằng chứng (0-Evidence / Insanity / Apocalypse), Spirit KHÔNG CÓ bất kỳ biểu hiện hình thể nào để nhận biết ngoài duy nhất bài test đồng hồ bấm giờ sau khi đốt nhang.",
+    "hidden_test": "1. Đợi Sanity cả đội tụt xuống dưới 50% (ngưỡng hunt).\n2. Cầm nhang và bật lửa đứng trong phòng ma, đốt nhang ngay khi thấy nó tương tác hoặc đốt thẳng vào mặt ma khi nó bắt đầu hunt.\n3. BẬT ĐỒNG HỒ BẤM GIỜ: Lắng nghe và đếm giờ. Nếu qua phút thứ 2, phút thứ 2 rưỡi ma vẫn KHÔNG THỂ HUNT, và chỉ bắt đầu hunt lại sau mốc 180 giây (3 phút) -> 100% Chắc chắn là Spirit!\n(Nếu hunt lại trước 90s: Demon. Nếu hunt trong khoảng 90s-180s: Các ma khác).",
+    "looping_guide": "Tốc độ 1.7 m/s bình thường. Có thể loop quanh bàn ăn hoặc đảo bếp dễ dàng trong 10-15 giây đầu. Cẩn thận vì nó tăng tốc theo LOS sau khi nhìn thấy bạn liên tục.",
+    "notes": "Là con ma chuẩn cơ bản của game. Cách nhận diện duy nhất ở 0 evidence là bài test đốt nhang 180s."
+  },
+  {
+    "id": "wraith",
+    "name_en": "Wraith",
+    "name_vi": "Oan Hồn / Ma Bay (Wraith)",
+    "alias": ["Ma không dẫm muối", "Ma dịch chuyển tức thời"],
+    "danger_level": "Cao",
+    "evidences": ["EMF 5", "Spirit Box", "D.O.T.S Projector"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Bay lơ lửng trên mặt đất. Có kỹ năng dịch chuyển tức thời (Teleport) xuyên tường đến ngay vị trí của một người chơi ngẫu nhiên, để lại chỉ số EMF 2 hoặc EMF 5 tại điểm đến.",
+      "weakness": "Sợ muối: Không bao giờ để lại dấu chân phát quang dưới ánh đèn cực tím (UV) sau khi giẫm vào đống muối."
+    },
+    "deep_mechanics": "Kỹ năng Teleport của Wraith cực kỳ nguy hiểm vì nó có thể dịch chuyển đến sát lưng bạn rồi bất ngờ kích hoạt cuộc săn ngay tại chỗ bạn đang đứng, biến vị trí trốn của bạn thành tử địa.",
+    "hidden_test": "BÀI TEST MUỐI (Footstep UV Test):\n1. Rải 2-3 đống muối ở cửa phòng hoặc hành lang.\n2. Chờ ma bước qua: Bạn sẽ nghe tiếng 'sột soạt' và đống muối bị lún xuống.\n3. Cầm đèn UV soi ngay vào đống muối và xung quanh trong 15 giây: Ma thường sẽ hiện dấu bàn chân màu xanh/tím huỳnh quang. NẾU KHÔNG CÓ BẤT KỲ DẤU CHÂN UV NÀO -> 100% là Wraith!\n(Lưu ý: Nếu thấy dấu chân UV dù chỉ 1 vết -> Gạch bỏ Wraith ngay lập tức).",
+    "looping_guide": "Tốc độ bình thường 1.7 m/s. Không thể bay xuyên tường khi hunt như lời đồn, nhưng có thể bắt đầu hunt ở vị trí bất ngờ do dịch chuyển trước đó.",
+    "notes": "Không thể bay xuyên tường khi hunt, nhưng có thể dịch chuyển tức thời tới người chơi ngoài lúc hunt."
+  },
+  {
+    "id": "phantom",
+    "name_en": "Phantom",
+    "name_vi": "Bóng Ma Biến Hình (Phantom)",
+    "alias": ["Ma tàng hình trong ảnh", "Ma làm tụt sanity", "Ma nhấp nháy lâu"],
+    "danger_level": "Cao",
+    "evidences": ["Spirit Box", "Ultraviolet", "D.O.T.S Projector"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Ánh nhìn tử thần: Nhìn trực diện vào Phantom sẽ khiến Sanity của bạn tụt dốc cực nhanh với tốc độ 0.5% mỗi giây.",
+      "weakness": "Sợ máy ảnh: Chụp ảnh Phantom sẽ làm nó biến mất ngay tức khắc và bức ảnh chụp được hoàn toàn không bị nhiễu sóng điện tử."
+    },
+    "deep_mechanics": "Khi Hunt, mọi loài ma đều chớp nhấp nháy (hiện 0.3s - ẩn 0.3s). Riêng Phantom có chu kỳ tàng hình cực dài: Nó tàng hình biến mất trong 1 đến 2 giây rồi mới chỉ chớp hiện hình thoáng qua 0.3 giây, khiến bạn cảm giác như đang bị một bóng ma vô hình rượt đuổi.",
+    "hidden_test": "1. TEST CHỤP ẢNH GHOST EVENT: Khi ma hiện hình làm event, rút máy ảnh chụp 1 tấm -> Bóng ma lập tức bốc hơi biến mất, âm thanh vẫn có thể tiếp tục nhưng không còn thấy bóng ma. Mở album ảnh thấy ảnh 3 sao đề tên 'Phantom' nhưng bức ảnh chụp trống trơn không có bóng ma và KHÔNG CÓ hạt nhiễu điện tử!\n2. TEST NHẤP NHÁY KHI HUNT: Quan sát lúc ma săn, Phantom tàng hình rất lâu (hầu như tàng hình suốt), rất khó nhìn thấy vị trí bằng mắt thường mà phải dựa vào tiếng bước chân.",
+    "looping_guide": "Vì nó tàng hình liên tục trong 1-2 giây nên rất khó nhìn thấy để căn góc quanh bàn. Hãy dựa hoàn toàn vào âm thanh tiếng bước chân 'bịch bịch' để giữ khoảng cách an toàn.",
+    "notes": "Có thể thỉnh thoảng đi bộ lang thang đến vị trí của một người chơi."
+  },
+  {
+    "id": "poltergeist",
+    "name_en": "Poltergeist",
+    "name_vi": "Yêu Tinh Quậy Phá (Poltergeist)",
+    "alias": ["Ma ném đồ", "Polty bomb", "Thánh quậy phá"],
+    "danger_level": "Trung Bình",
+    "evidences": ["Spirit Box", "Ultraviolet", "Ghost Writing"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Vụ nổ Poltergeist (Polty Bomb): Có khả năng ném đồng loạt nhiều đồ vật (5-10 món) cùng một lúc với lực cực mạnh. Mỗi món đồ ném trúng người chơi sẽ trừ 2% Sanity x số lượng đồ vật.",
+      "weakness": "Vô hại trong phòng trống: Khi ở trong căn phòng không có đồ đạc để ném, Poltergeist trở nên yếu thế và không thể sử dụng tuyệt chiêu."
+    },
+    "deep_mechanics": "Khi Hunt, cứ mỗi 0.5 giây Poltergeist có tỉ lệ 100% ném một đồ vật xung quanh đường đi của nó (ma thường chỉ có 50% tỉ lệ ném mỗi 1 giây). Điều này tạo ra một cơn bão đồ vật bay tứ tung khi nó đuổi theo bạn.",
+    "hidden_test": "BÀI TEST XẾP ĐỒ (Polty Pile Test):\n1. Gom 10 - 15 món đồ nhỏ (cốc, chén, đĩa, nến, giày, dụng cụ) xếp thành một đống cao giữa phòng ma.\n2. Đặt máy đo EMF cạnh đống đồ và đứng canh từ xa.\n3. NẾU THẤY ĐỐNG ĐỒ NỔ TUNG TỨ PHÍA CÙNG MỘT LÚC (tạo mức EMF 3 cực mạnh) -> 100% là Poltergeist!\n4. Khi Hunt: Nghe tiếng đồ vật va đập liên tục dồn dập mỗi nửa giây.",
+    "looping_guide": "Đừng loop ở những nơi có nhiều đồ vật chưa bị ném vì bạn có thể bị đồ bay trúng trừ Sanity. Loop ở khu vực trống trải.",
+    "notes": "Cực kỳ ồn ào và thích quăng quật đồ đạc khắp nơi."
+  },
+  {
+    "id": "banshee",
+    "name_en": "Banshee",
+    "name_vi": "Nữ Thần Báo Tử / Ma Hú (Banshee)",
+    "alias": ["Ma hú", "Ma đè hú", "Nữ thần báo tử", "Ma rình rập"],
+    "danger_level": "Cực Cao (với mục tiêu)",
+    "evidences": ["Ultraviolet", "Ghost Orb", "D.O.T.S Projector"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Khóa mục tiêu duy nhất (Target Lock): Chọn ngẫu nhiên 1 người chơi làm 'con mồi' và CHỈ kiểm tra Sanity của con mồi đó để đi săn. Nếu con mồi còn 100% Sanity dù 3 đồng đội còn lại 0% Sanity, Banshee VẪN KHÔNG THỂ HUNT. Khi Hunt, nó đi xuyên qua người các đồng đội khác mà không giết.",
+      "weakness": "Tiếng hú độc quyền: Phát ra tiếng thét/hú rên rỉ xé gió (Banshee Scream) qua máy thu âm định hướng Parabolic Microphone với tỉ lệ 33%."
+    },
+    "deep_mechanics": "Banshee rất thích bám theo con mồi của nó khắp căn nhà. Nó thường xuyên làm sự kiện Hát Hò (Singing Ghost Event), và nếu con mồi chạm vào nó trong sự kiện này sẽ bị tụt tới 15% Sanity (ma thường chỉ trừ 10%). Khi con mồi chết, nó sẽ chọn một con mồi mới.",
+    "hidden_test": "1. DÙNG PARABOLIC MICROPHONE (Paramic): Chĩa mic vào phòng ma. Nếu nghe thấy tiếng thì thầm bình thường thì kiên nhẫn nghe tiếp. Khi nghe thấy một tiếng HÚ DÀI RỢN TÓC GÁY giống tiếng gió gào thét qua mic -> 100% Chắc chắn là Banshee!\n2. TEST ĐỨNG TRƯỚC MẶT KHI HUNT: Nếu bạn biết ai là con mồi, những người chơi còn lại có thể đứng nhảy múa trước mặt Banshee khi nó đang săn mà hoàn toàn không bị siết cổ chết.",
+    "looping_guide": "Nếu bạn là mục tiêu, hãy loop cẩn thận. Nếu bạn không phải mục tiêu, bạn hoàn toàn miễn nhiễm với đòn tấn công của Banshee!",
+    "notes": "Đây là một trong hai loài ma hay được gọi là 'ma hú' hoặc 'ma đè hú' trong cộng đồng Việt Nam."
+  },
+  {
+    "id": "jinn",
+    "name_en": "Jinn",
+    "name_vi": "Thần Đèn Jinn (Jinn)",
+    "alias": ["Ma điện", "Ma chạy nhanh theo cầu dao"],
+    "danger_level": "Cao",
+    "evidences": ["EMF 5", "Ultraviolet", "Freezing Temperatures"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.5,
+      "bpm_base": 120,
+      "bpm_max": 180,
+      "description": "Khi Cầu Dao BẬT và nhìn thấy người chơi ở xa, nó phóng như tên lửa với tốc độ 2.5 m/s, sau đó phanh gấp về 1.7 m/s khi tới cự ly 3m."
+    },
+    "traits": {
+      "strength": "Gia tốc điện trường: Khi cầu dao bật, Jinn sở hữu tốc độ lao tới cực nhanh từ xa khi thấy người chơi. Ngoài ra nó có thể kích hoạt khả năng xả điện làm tụt ngay lập tức 25% Sanity của người chơi ở gần cầu dao (tạo EMF 2/5 tại cầu dao).",
+      "weakness": "Mất điện là phế: Tắt cầu dao sẽ vô hiệu hóa hoàn toàn năng lực tăng tốc và hút Sanity của Jinn. Jinn KHÔNG BAO GIỜ tự tay gạt tắt cầu dao."
+    },
+    "deep_mechanics": "Jinn không bao giờ tự tay gạt công tắc cầu dao xuống (nó chỉ có thể làm nhảy cầu dao nếu người chơi bật quá số lượng bóng đèn quy định của map). Nếu bạn thấy cầu dao bị gạt tắt trực tiếp bằng tay, 100% loại trừ Jinn.",
+    "hidden_test": "1. QUAN SÁT CẦU DAO: Nếu thấy cầu dao bị ma tắt trực tiếp -> GẠCH BỎ Jinn ngay.\n2. TEST HÀNH LANG KHI HUNT (Cầu dao bật): Đứng ở đầu hành lang dài để Jinn nhìn thấy bạn từ xa. Bạn sẽ nghe nhịp chân phóng cực nhanh lao tới như xe đua, nhưng khi vừa tới gần bạn trong cự ly 3 mét thì nó đột ngột chậm hẳn lại.",
+    "looping_guide": "Luôn luôn TẮT CẦU DAO nếu nghi ngờ Jinn. Khi cầu dao tắt, Jinn chỉ là một con ma tốc độ 1.7 m/s tầm thường không có bất kỳ năng lực đặc biệt nào.",
+    "notes": "Chỉ cần tắt cầu dao là Jinn trở nên vô hại."
+  },
+  {
+    "id": "mare",
+    "name_en": "Mare",
+    "name_vi": "Ác Mộng Bóng Đêm (Mare)",
+    "alias": ["Ma sợ ánh sáng", "Ma tắt đèn", "Ác mộng bóng tối"],
+    "danger_level": "Cao (trong bóng tối)",
+    "evidences": ["Spirit Box", "Ghost Orb", "Ghost Writing"],
+    "hunt_sanity": 60,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Chúa tể bóng tối: Trong phòng tối, Mare có thể đi săn ở ngưỡng 60% Sanity và có xu hướng tấn công hung hãn hơn rất nhiều.",
+      "weakness": "Sợ ánh sáng: Khi bật đèn trong phòng, Mare chỉ có thể đi săn ở mức 40% Sanity. Mare KHÔNG BAO GIỜ bật đèn và ghét cay ghét đắng ánh sáng."
+    },
+    "deep_mechanics": "Mare có một phản xạ độc quyền: Kỹ năng Tắt Công Tắc Đèn Tức Thì (Instant Light Switch Flip). Khi người chơi vừa bấm bật công tắc đèn, Mare có tỉ lệ cao gạt tắt phụt ngay lập tức trong vòng 0.1 - 0.2 giây. Nó cũng rất hay làm nổ tung bóng đèn phòng.",
+    "hidden_test": "1. TEST CÔNG TẮC ĐÈN: Đứng trong phòng ma và bật công tắc đèn lên. Nếu công tắc bị ma tắt phụt lại NGAY LẬP TỨC trong chớp mắt -> 99% là Mare!\n2. QUY TẮC VÀNG: Nếu thấy con ma tự tay BẬT đèn sáng -> 100% KHÔNG PHẢI LÀ MARE!\n3. Nếu bạn bật đèn phòng ma liên tục, Mare sẽ có xu hướng bỏ phòng đó để chuyển sang một phòng tối khác gần đó.",
+    "looping_guide": "Bật đèn ở các khu vực hành lang và phòng bạn định loop để hạ ngưỡng săn của Mare xuống 40%.",
+    "notes": "Quy tắc vàng: Nếu con ma tự tay BẬT đèn, 100% không phải là Mare."
+  },
+  {
+    "id": "revenant",
+    "name_en": "Revenant",
+    "name_vi": "Báo Oán / Kẻ Hủy Diệt (Revenant)",
+    "alias": ["Rev", "Ma chạy nhanh nhất khi thấy người", "Kẻ rùa bò"],
+    "danger_level": "Cực Kỳ Nguy Hiểm",
+    "evidences": ["Ghost Orb", "Ghost Writing", "Freezing Temperatures"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.0,
+      "max_los": 3.0,
+      "bpm_base": 70,
+      "bpm_max": 210,
+      "description": "Tốc độ cực đoan: Khi tuần tra không thấy ai chạy siêu chậm (1.0 m/s). Khi thấy người chơi hoặc phát hiện thiết bị điện tử lập tức tăng tốc lên 3.0 m/s (siêu tốc)."
+    },
+    "traits": {
+      "strength": "Tốc độ tử thần: Khi phát hiện mục tiêu, Revenant lao tới với vận tốc 3.0 m/s (nhanh hơn tốc độ chạy tối đa của người chơi), gần như không ai chạy thoát được nếu không có nhang hoặc chỗ trốn ngay trước mắt.",
+      "weakness": "Chậm chạp khi mất dấu: Khi không nhìn thấy người chơi và không bắt được sóng thiết bị điện, Revenant lê bước chân cực kỳ chậm chạp (1.0 m/s - chậm hơn người đi bộ bình thường)."
+    },
+    "deep_mechanics": "Revenant tăng tốc lên 3.0 m/s ngay tức khắc khi có Line of Sight (LOS) hoặc khi nó bắt được tín hiệu giọng nói/đèn pin của bạn. Nó giữ tốc độ 3.0 m/s cho đến khi đến được vị trí nhìn thấy bạn lần cuối, sau đó giảm tốc độ về 1.0 m/s dần dần.",
+    "hidden_test": "LẮNG NGHE NHỊP BƯỚC CHÂN KHI HUNT:\n- Không thấy ai: Nhịp bước chân cực kỳ thưa thớt, chậm rì 'Bịch.......... Bịch.......... Bịch..........' (khoảng 70 BPM, chậm hơn mọi loài ma khác).\n- Vừa thấy người hoặc bạn bật đèn pin: Nhịp chân lập tức biến thành 'Bịch-bịch-bịch-bịch-bịch' dồn dập như súng liên thanh (210 BPM) và lao thẳng tới giết bạn!",
+    "looping_guide": "TUYỆT ĐỐI KHÔNG THỬ LOOP REVENANT TRỪ KHI BẠN CẦM NHANG! Nó chạy 3.0 m/s sẽ bắt kịp bạn trong 2 giây. Hãy cắt đường nhìn ngay lập tức và chui vào tủ đóng cửa tắt hết đèn pin.",
+    "notes": "Là cơn ác mộng lớn nhất của người mới chơi. Luôn chuẩn bị sẵn nhang khi gặp Revenant."
+  },
+  {
+    "id": "shade",
+    "name_en": "Shade",
+    "name_vi": "Bóng Đen Nhút Nhát (Shade)",
+    "alias": ["Ma trầm cảm", "Ma nhát gan", "Ma lười tương tác"],
+    "danger_level": "Thấp",
+    "evidences": ["EMF 5", "Ghost Writing", "Freezing Temperatures"],
+    "hunt_sanity": 35,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Rất khó tìm kiếm bằng chứng vì nó hầu như không tương tác khi có nhiều người ở gần phòng của nó.",
+      "weakness": "Cực kỳ nhút nhát: KHÔNG BAO GIỜ đi săn nếu có người chơi đứng cùng trong phòng ma. Chỉ có thể đi săn khi Sanity trung bình tụt xuống dưới 35%."
+    },
+    "deep_mechanics": "Shade không bao giờ thực hiện Ghost Event dạng toàn thân (Full Physical Form) khi có người chơi ở cùng phòng. Nó chỉ làm dạng bóng đen mờ ảo hoặc dạng thở vào tai (Airball). Đốt nhang trong phòng ma sẽ ngăn Shade tương tác trong 180s.",
+    "hidden_test": "1. TEST ĐỨNG TRONG PHÒNG: Đứng trong phòng ma khi Sanity cả đội đã tụt xuống 0%. NẾU CON MA KHÔNG THỂ BẮT ĐẦU CUỘC SĂN từ căn phòng đó -> 100% là Shade!\n2. Tương tác cực kỳ thưa thớt, viết sổ rất muộn và chỉ viết khi không có ai trong phòng.",
+    "looping_guide": "Tốc độ bình thường 1.7 m/s. Rất hiếm khi hunt nên việc đối phó rất dễ dàng.",
+    "notes": "Nếu bạn ở trong nhà mãi mà không thấy động tĩnh gì, Sanity tụt sâu mới hunt thì thường là Shade."
+  },
+  {
+    "id": "demon",
+    "name_en": "Demon",
+    "name_vi": "Ác Quỷ Săn Sớm (Demon)",
+    "alias": ["Ma cắn trộm", "Ma săn 100% sanity", "Ác quỷ"],
+    "danger_level": "Cực Kỳ Nguy Hiểm",
+    "evidences": ["Ultraviolet", "Ghost Writing", "Freezing Temperatures"],
+    "hunt_sanity": 70,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Kỹ năng cắn trộm bất ngờ (Early Hunt Ability): Ngưỡng hunt tự nhiên là 70% Sanity. ĐẶC BIỆT: Demon sở hữu kỹ năng hiếm có thể kích hoạt cuộc săn ở BẤT KỲ MỨC SANITY NÀO (kể cả 100% Sanity ngay khi vừa mở cửa bước vào nhà 10 giây). Thời gian hồi giữa 2 đợt hunt chỉ có 20 giây (ma khác là 25s).",
+      "weakness": "Sợ thánh giá: Phạm vi bảo vệ của thánh giá tăng thêm 50% đối với Demon (Tier 1: 4.5m, Tier 2: 6m, Tier 3: 7.5m). Đốt nhang chỉ làm nó ngừng hunt trong 60 giây (thay vì 90 giây như ma thường)."
+    },
+    "deep_mechanics": "Demon là loài ma hung bạo nhất game. Khả năng săn ở 100% Sanity có thể kích hoạt bất cứ lúc nào. Khoảng cách cắn nát thánh giá của nó cực kỳ xa.",
+    "hidden_test": "BÀI TEST NHANG 60 GIÂY (Smudge 60s Test):\n1. Đốt nhang cản ma và bấm giờ trên widget.\n2. Quan sát mốc thời gian: Nếu ma bắt đầu cuộc săn tiếp theo trong khoảng từ 60 giây đến 89 giây -> 100% CHẮC CHẮN LÀ DEMON!\n(Không có loài ma nào khác trong game có thể hunt lại trong khoảng 60s-89s sau khi đốt nhang).",
+    "looping_guide": "Tốc độ 1.7 m/s chuẩn. Tuy nhiên vì thời gian nghỉ giữa 2 đợt hunt chỉ có 20 giây nên sau khi trốn thoát một đợt săn, hãy chuẩn bị tinh thần nó sẽ hunt lại gần như ngay lập tức!",
+    "notes": "Một trong những con ma nguy hiểm nhất game, có thể 'tiễn' bạn lên bảng đếm số trong 1 phút đầu tiên."
+  },
+  {
+    "id": "yurei",
+    "name_en": "Yurei",
+    "name_vi": "U Hồn Cửa (Yurei)",
+    "alias": ["Ma đóng sập cửa", "Ma trừ sanity cửa"],
+    "danger_level": "Trung Bình",
+    "evidences": ["Ghost Orb", "Freezing Temperatures", "D.O.T.S Projector"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Đóng sập cửa trừ Sanity: Có kỹ năng đóng sập hoàn toàn một cánh cửa đang mở (kèm âm thanh click đúp) và trừ lập tức 15% Sanity của tất cả người chơi ở gần trong phạm vi 7.5m.",
+      "weakness": "Bị khóa chân bởi nhang: Đốt nhang trong phòng của Yurei sẽ khóa chặt nó trong phòng đó và không thể đi lang thang ra ngoài trong vòng 90 giây."
+    },
+    "deep_mechanics": "Yurei là con ma duy nhất ngoài lúc Ghost Event có thể đóng sầm cánh cửa chính ra vào nhà (Front Door Slam). Khi nó dùng kỹ năng đóng cửa, cánh cửa sẽ đóng từ từ rồi đóng sầm lại kèm tiếng click đúp trễ khoảng 0.2s.",
+    "hidden_test": "Âm thanh đóng cửa: Cửa phòng bị đóng sầm lại kèm tiếng click đúp mà KHÔNG PHẢI trong sự kiện Ghost Event. Có thể đóng cả cửa chính ra vào nhà ngoài Ghost Event.",
+    "looping_guide": "Tốc độ bình thường 1.7 m/s. Loop bình thường quanh bàn.",
+    "notes": "Nếu cửa chính tự đóng sầm lại ngoài lúc hunt/event, hãy nghĩ ngay tới Yurei."
+  },
+  {
+    "id": "oni",
+    "name_en": "Oni",
+    "name_vi": "Quỷ Mặt Đỏ Hiếu Động (Oni)",
+    "alias": ["Ma tăng động", "Ma ném đồ xa", "Ma hiện hình liên tục"],
+    "danger_level": "Cao",
+    "evidences": ["EMF 5", "Freezing Temperatures", "D.O.T.S Projector"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Cực kỳ hung hăng và hiếu động khi có nhiều người ở gần. Khi làm Ghost Event chạm vào người chơi sẽ trừ 20% Sanity (gấp đôi bình thường).",
+      "weakness": "KHÔNG BAO GIỜ làm Ghost Event dạng bóng khói/hơi sương thở vào tai (Airball/Hiss event). Khi đi săn, Oni hiện hình liên tục và rất ít khi tàng hình (ngược lại hoàn toàn với Phantom)."
+    },
+    "deep_mechanics": "Khi Hunt, Oni hiện hình gần như liên tục (thời gian hiện hình chiếm 80% thời gian chớp nháy, chỉ tàng hình thoáng qua 0.1s). Bạn sẽ nhìn thấy rõ mồn một cơ thể của nó đuổi theo bạn.",
+    "hidden_test": "1. QUẢ CẦU KHÓI: Nếu thấy sự kiện quả cầu sương mù khói bay tới phà tiếng thở 'Hù' vào mặt -> GẠCH BỎ Oni NGAY LẬP TỨC (Oni không bao giờ làm event này)!\n2. QUAN SÁT KHI HUNT: Thấy bóng ma hầu như không tàng hình mà hiện hình rõ ràng suốt cuộc săn.",
+    "looping_guide": "Rất dễ loop vì bạn luôn nhìn thấy rõ vị trí của nó qua các khe bàn ghế.",
+    "notes": "Dễ nhận biết qua việc không có airball event và tần suất quậy phá cực cao."
+  },
+  {
+    "id": "yokai",
+    "name_en": "Yokai",
+    "name_vi": "Yêu Quái Ghét Tiếng Ồn (Yokai)",
+    "alias": ["Ma điếc", "Ma cấm nói chuyện"],
+    "danger_level": "Cao (khi nói chuyện)",
+    "evidences": ["Spirit Box", "Ghost Orb", "D.O.T.S Projector"],
+    "hunt_sanity": 80,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Thính tai khi ở ngoài cuộc săn: Nếu người chơi nói chuyện bằng Micro gần Yokai, nó có thể đi săn ở mức Sanity lên tới 80%.",
+      "weakness": "Bị 'điếc' khi đi săn: Khi hunt, Yokai chỉ có thể nghe thấy tiếng nói hoặc phát hiện thiết bị điện tử của người chơi trong phạm vi cực hẹp (dưới 2.5m, so với 10m của ma thường)."
+    },
+    "deep_mechanics": "Yokai có thể bị bạn trêu ngươi trong lúc hunt nếu bạn giữ khoảng cách trên 2.5 mét. Bật đèn pin hoặc nói chuyện to ở khoảng cách 3-4 mét nó hoàn toàn không phát hiện ra.",
+    "hidden_test": "BÀI TEST BẬT ĐÈN PIN KHI HUNT:\nKhi ma đang Hunt, trốn trong góc hoặc giữ khoảng cách 3-4 mét, bật đèn pin hoặc bật bộ đàm nói to. Nếu con ma đi lướt ngang qua mà hoàn toàn không phát hiện hay đổi hướng tấn công bạn -> 100% là Yokai!",
+    "looping_guide": "Tốc độ 1.7 m/s chuẩn. Tắt mic khi ở gần phòng ma nếu không muốn bị săn ở 80% Sanity.",
+    "notes": "Đừng bao giờ tám chuyện gần phòng ma nếu chưa xác định được có phải Yokai hay không!"
+  },
+  {
+    "id": "hantu",
+    "name_en": "Hantu",
+    "name_vi": "Hồn Ma Xứ Lạnh (Hantu)",
+    "alias": ["Ma thở ra khói", "Ma chạy nhanh phòng lạnh", "Ma sợ nóng"],
+    "danger_level": "Cực Cao (khi tắt cầu dao)",
+    "evidences": ["Ultraviolet", "Ghost Orb", "Freezing Temperatures"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.4,
+      "max_los": 2.7,
+      "bpm_base": 90,
+      "bpm_max": 190,
+      "description": "Tốc độ phụ thuộc nhiệt độ phòng: Phòng ấm (>15°C) chạy 1.4 m/s. Phòng lạnh (<0°C) chạy 2.7 m/s. KHÔNG tăng tốc theo đường nhìn (LOS)."
+    },
+    "traits": {
+      "strength": "Sát thủ băng giá: Di chuyển cực nhanh trong các căn phòng lạnh giá khi cầu dao bị tắt (lên tới 2.7 m/s). BẮT BUỘC có Freezing Temperatures ở mọi độ khó.",
+      "weakness": "Rùa bò khi ấm áp: Rất chậm ở nơi ấm áp (1.4 m/s). Khi Hunt trong phòng lạnh nếu cầu dao TẮT, Hantu sẽ thở ra luồng hơi sương trắng từ miệng."
+    },
+    "deep_mechanics": "Hantu không có Line of Sight acceleration (không tăng tốc dần khi nhìn thấy người chơi). Tốc độ của nó chỉ phụ thuộc vào nhiệt độ của căn phòng mà nó đang bước chân qua.",
+    "hidden_test": "1. BẬT CẦU DAO: Nhịp chân chạy chậm rề rề 1.4 m/s.\n2. TẮT CẦU DAO: Nhịp chân phóng nhanh như bão 2.7 m/s trong phòng ma lạnh giá.\n3. HƠI THỞ SƯƠNG: Quan sát miệng ma khi hunt (nếu tắt cầu dao) thấy phà ra sương trắng rõ rệt.",
+    "looping_guide": "LUÔN BẬT CẦU DAO ĐỂ SƯỞI ẤM NHÀ. Loop ở hành lang ấm, Hantu sẽ đi chậm hơn cả bạn đi bộ!",
+    "notes": "Luôn luôn giữ cầu dao BẬT để làm Hantu chậm chạp như rùa."
+  },
+  {
+    "id": "goryo",
+    "name_en": "Goryo",
+    "name_vi": "Oan Hồn Ẩn Dật (Goryo)",
+    "alias": ["Ma DOTS camera", "Ma không đổi phòng"],
+    "danger_level": "Trung Bình",
+    "evidences": ["EMF 5", "Ultraviolet", "D.O.T.S Projector"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Ẩn mình trước mắt thường: Chỉ có thể nhìn thấy bóng ma D.O.T.S qua màn hình Video Camera, và TUYỆT ĐỐI KHÔNG HIỆN nếu có người chơi đứng cùng trong phòng.",
+      "weakness": "BẮT BUỘC có bằng chứng D.O.T.S Projector ở mọi độ khó (kể cả 1 evidence). Hầu như KHÔNG BAO GIỜ đổi phòng yêu thích (Favorite Room) và ít khi đi lang thang xa."
+    },
+    "deep_mechanics": "Nếu bạn đứng trong phòng nhìn máy DOTS thì 100% không bao giờ thấy Goryo. Bạn phải đặt camera quay vào máy DOTS rồi ra ngoài xe tải hoặc đứng ngoài cửa nhìn qua màn hình.",
+    "hidden_test": "1. Đứng mắt thường nhìn DOTS không thấy gì, nhưng nhìn qua camera video lại thấy bóng ma chạy qua máy chiếu.\n2. Cả game không hề đổi phòng yêu thích.",
+    "looping_guide": "Tốc độ 1.7 m/s chuẩn. Loop bình thường quanh bàn.",
+    "notes": "Nếu chơi Nightmare/Insanity mà không có DOTS, chắc chắn loại trừ Goryo."
+  },
+  {
+    "id": "myling",
+    "name_en": "Myling",
+    "name_vi": "Hài Nhi Yên Lặng (Myling)",
+    "alias": ["Ma bước chân im lặng", "Ma test đèn pin"],
+    "danger_level": "Cực Cao (dễ bị móc lốp)",
+    "evidences": ["EMF 5", "Ultraviolet", "Ghost Writing"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Bước chân sát thủ vô thanh: Khi đi săn, tiếng bước chân và tiếng rên rỉ của Myling cực kỳ êm ái, chỉ có thể nghe thấy ở cự ly dưới 10m (ngang bằng với tầm làm nhấp nháy đèn pin).",
+      "weakness": "Phát ra âm thanh qua Parabolic Microphone thường xuyên hơn các loài ma khác."
+    },
+    "deep_mechanics": "Với ma thường, bạn nghe tiếng bước chân từ xa 20m, trước khi đèn pin nhấp nháy (10m). Với Myling, tiếng bước chân và đèn pin nhấp nháy xảy ra CÙNG MỘT LÚC.",
+    "hidden_test": "BÀI TEST NÉM ĐÈN PIN:\n1. Ném 1 cây đèn pin đang bật xuống sàn hành lang.\n2. Khi ma hunt: Đứng cách đèn pin khoảng 10-15m.\n3. Nếu bạn thấy đèn pin bắt đầu chớp nháy mà TIẾNG CHÂN MỚI BẮT ĐẦU NGHE THẤY -> 100% là Myling!",
+    "looping_guide": "Cẩn thận vì nó có thể áp sát bạn mà không tạo tiếng động từ xa.",
+    "notes": "Rất nguy hiểm vì nó có thể tiếp cận bạn trong im lặng trước khi bạn kịp nhận ra."
+  },
+  {
+    "id": "onryo",
+    "name_en": "Onryo",
+    "name_vi": "Oan Hồn Sợ Lửa (Onryo)",
+    "alias": ["Ma thổi nến", "Ma sợ nến", "Ma hunt nến"],
+    "danger_level": "Cực Cao (khi hết nến)",
+    "evidences": ["Spirit Box", "Ghost Orb", "Freezing Temperatures"],
+    "hunt_sanity": 60,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Săn sớm khi không có lửa: Nếu không có ngọn lửa nào xung quanh, Onryo có thể đi săn ở mức 60% Sanity. Cứ mỗi 3 lần thổi tắt nến, Onryo sẽ LẬP TỨC ĐI SĂN ở bất kỳ mức Sanity nào.",
+      "weakness": "Sợ lửa: Onryo coi ngọn nến như một chiếc Thánh Giá trong cự ly 4m. Nếu có nến đang cháy, nó PHẢI thổi tắt nến trước khi cắn thánh giá."
+    },
+    "deep_mechanics": "Đặt 1 cây thánh giá chồng lên 1 cây nến đang cháy: Nếu thánh giá bị cắn trong khi nến vẫn đang cháy -> Loại Onryo. Ngược lại nếu nến bị thổi tắt liên tục mà thánh giá nguyên vẹn -> Onryo.",
+    "hidden_test": "BÀI TEST 3 CÂY NẾN:\nThắp nến cho nó thổi: Thổi tắt lần 1, thắp lại -> Thổi tắt lần 2, thắp lại -> Vừa thổi tắt lần 3 là lập tức cửa sập đi săn ngay (trừ khi có cây nến thứ 4 gần đó cản lại).",
+    "looping_guide": "Đem theo thật nhiều nến và bật lửa cắm xung quanh chỗ bạn đứng.",
+    "notes": "Đem theo thật nhiều nến và bật lửa khi nghi ngờ Onryo."
+  },
+  {
+    "id": "the_twins",
+    "name_en": "The Twins",
+    "name_vi": "Cặp Song Sinh (The Twins)",
+    "alias": ["Ma sinh đôi", "Con nhanh con chậm", "Hai con ma"],
+    "danger_level": "Cao",
+    "evidences": ["EMF 5", "Spirit Box", "Freezing Temperatures"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.53,
+      "max_los": 2.25,
+      "bpm_base": 110,
+      "bpm_max": 140,
+      "description": "Có 2 tốc độ: Con chính chạy 1.53 m/s (90%), Con phụ chạy 1.87 m/s (110%)."
+    },
+    "traits": {
+      "strength": "Phân thân tương tác 2 nơi: Con chính ở phòng ma, con phụ đi phá ở phòng khác cách xa. Bất kỳ con nào cũng có thể bắt đầu cuộc săn (50/50 cơ hội).",
+      "weakness": "Con phụ không bao giờ cho bằng chứng Spirit Box hay nhiệt độ đóng băng."
+    },
+    "deep_mechanics": "Trên bảng hoạt động trong xe tải, bạn sẽ thấy 2 đường cong tương tác vọt lên cùng một giây (Twin Interaction Curve). Nhịp bước chân giữa các đợt hunt khác nhau rõ rệt (đợt này nghe chân chậm, đợt sau lại nghe chân chạy nhanh dồn dập).",
+    "hidden_test": "1. Nghe tiếng bước chân khi Hunt: Đợt hunt này chạy chậm rõ rệt (1.53 m/s), đợt sau lại chạy nhanh hơn bình thường (1.87 m/s).\n2. Biểu đồ hoạt động xe tải nét dốc đôi.",
+    "looping_guide": "Cẩn thận vì con phụ có thể bắt đầu hunt ngay trước mặt bạn ở căn phòng khác.",
+    "notes": "Hãy cẩn thận vì con phụ có thể xuất phát cuộc săn từ một vị trí bạn không hề ngờ tới."
+  },
+  {
+    "id": "raiju",
+    "name_en": "Raiju",
+    "name_vi": "Lôi Thú Hút Điện (Raiju)",
+    "alias": ["Ma điện tử", "Ma chạy nhanh gần đồ điện", "Lôi thú"],
+    "danger_level": "Cực Kỳ Nguy Hiểm",
+    "evidences": ["EMF 5", "Ghost Orb", "D.O.T.S Projector"],
+    "hunt_sanity": 65,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.5,
+      "bpm_base": 120,
+      "bpm_max": 180,
+      "description": "Bình thường chạy 1.7 m/s. Khi đến gần thiết bị điện tử đang bật phóng vọt lên 2.5 m/s."
+    },
+    "traits": {
+      "strength": "Hút năng lượng từ thiết bị điện tử: Hunt ở mức 65% Sanity nếu có đồ điện tử bật gần nó. Khi hunt, tốc độ tăng vọt lên 2.5 m/s trong vùng có đồ điện.",
+      "weakness": "Làm nhiễu sóng thiết bị điện tử từ khoảng cách xa hơn rất nhiều (15m thay vì 10m)."
+    },
+    "deep_mechanics": "Raiju tăng tốc khi ở gần bất kỳ thiết bị điện tử nào đang bật: Đèn pin, máy EMF, camera, D.O.T.S dưới sàn. Tắt hết thiết bị điện tử nó sẽ chạy chậm lại bình thường.",
+    "hidden_test": "Đặt 2-3 thiết bị điện tử bật sẵn trên sàn. Khi ma hunt, vừa bước qua đống thiết bị là tốc độ giậm chân tăng vọt lên 2.5 m/s, bước ra khỏi vùng đồ điện lại chạy chậm lại bình thường.",
+    "looping_guide": "TẮT HẾT ĐÈN PIN VÀ NHẶT SẠCH THIẾT BỊ ĐIỆN DƯỚI SÀN CẤT ĐI TRƯỚC KHI LOOP.",
+    "notes": "Khi nghi ngờ Raiju, hãy tắt hết đèn pin và nhặt sạch thiết bị điện tử dưới sàn nhà cất đi."
+  },
+  {
+    "id": "obake",
+    "name_en": "Obake",
+    "name_vi": "Yêu Quái Biến Hình / Ma 6 Ngón (Obake)",
+    "alias": ["Ma 6 ngón tay", "Ma đổi hình dạng", "Ma giấu vân tay"],
+    "danger_level": "Cao",
+    "evidences": ["EMF 5", "Ultraviolet", "D.O.T.S Projector"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Giấu vân tay: Có 25% tỉ lệ chạm vào cửa mà không để lại dấu vân tay UV. Dấu vân tay biến mất nhanh gấp đôi bình thường (sau 1 phút thay vì 2 phút).",
+      "weakness": "Dấu vân tay 6 ngón độc quyền (16.7% cơ hội). Khi Hunt, có ít nhất 1 lần chớp nhấp nháy biến hình thành một Model ma khác (Shape-shift Flash)."
+    },
+    "deep_mechanics": "BẮT BUỘC có bằng chứng UV ở mọi độ khó. Nhìn dấu bàn tay trên cửa: Nếu đếm được 6 ngón tay -> 100% Obake. Khi Hunt: Nhìn kỹ lúc nó chớp nháy, nó sẽ đổi sang model ma khác trong 1 khung hình.",
+    "hidden_test": "1. Soi đèn UV thấy bàn tay 6 ngón trên cửa kính/gỗ.\n2. Quan sát khi hunt thấy ma đổi hình dạng model khác trong 1 tích tắc.",
+    "looping_guide": "Tốc độ 1.7 m/s chuẩn. Loop bình thường quanh bàn.",
+    "notes": "Nếu ở Nightmare/Insanity mà không có dấu vân tay UV, loại bỏ Obake."
+  },
+  {
+    "id": "the_mimic",
+    "name_en": "The Mimic",
+    "name_vi": "Ma Lừa / Ma Bắt Chước (The Mimic)",
+    "alias": ["Ma lừa", "Ma 4 bằng chứng", "The Mimic", "Bậc thầy sao chép"],
+    "danger_level": "Biến Thiên Khó Lường",
+    "evidences": ["Spirit Box", "Ultraviolet", "Freezing Temperatures"],
+    "fake_evidence": "Ghost Orb (Quả cầu ma giả - LUÔN XUẤT HIỆN Ở MỌI ĐỘ KHÓ)",
+    "hunt_sanity": "Thay đổi liên tục (tùy con bắt chước: 0% - 100%)",
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 210,
+      "description": "Sao chép tốc độ của con ma nó bắt chước: Có thể chậm như Revenant (1.0 m/s), phóng như Thaye/Deogen (3.0 m/s), hoặc lạch bạch như Hantu."
+    },
+    "traits": {
+      "strength": "Sao chép hoàn hảo mọi loài ma: Cứ sau mỗi 30 giây đến 2 phút, Mimic sẽ chọn một loài ma ngẫu nhiên để sao chép toàn bộ hành vi, tốc độ và ngưỡng săn (kể cả Demon săn 100%, Deogen thở dốc, Revenant phi nước đại).",
+      "weakness": "LUÔN CÓ GHOST ORB: Ở chế độ Professional có 4 bằng chứng. Ở chế độ Nightmare hiện 3 bằng chứng. Ở chế độ 0 Evidence VẪN HIỆN Ghost Orb!"
+    },
+    "deep_mechanics": "The Mimic là nguyên nhân số 1 khiến thợ săn ma đoán sai. Nó lừa bạn bằng quả cầu ma giả. Nếu bạn thấy Ghost Orb kèm Spirit Box, UV, Freezing (đủ 4 bằng chứng) thì chắc chắn 100% là The Mimic.",
+    "hidden_test": "1. ĐẾM ĐỦ 4 BẰNG CHỨNG: Spirit Box + UV + Freezing + Ghost Orb -> 1000% The Mimic!\n2. Chơi 0-Evidence: Soi camera thấy có Ghost Orb bay lơ lửng -> 100% The Mimic vì mọi ma khác đều bị ẩn Orb.\n3. Hành vi thay đổi thất thường: Đợt trước chạy chậm như rùa (Rev), đợt sau lại chạy như bay.",
+    "looping_guide": "Cực kỳ cảnh giác vì nó có thể bất thình lình sao chép tốc độ tử thần của Revenant hoặc Deogen giữa chừng!",
+    "notes": "ĐÂY CHÍNH LÀ 'CON MA LỪA' NỔI TIẾNG NHẤT GAME PHASMOPHOBIA."
+  },
+  {
+    "id": "moroi",
+    "name_en": "Moroi",
+    "name_vi": "Nguyền Hồn Khát Máu (Moroi)",
+    "alias": ["Ma nguyền rủa", "Ma chạy siêu nhanh 0% sanity", "Ma sợ nhang 12s"],
+    "danger_level": "Cực Kỳ Nguy Hiểm",
+    "evidences": ["Spirit Box", "Ghost Writing", "Freezing Temperatures"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.5,
+      "max_los": 3.71,
+      "bpm_base": 105,
+      "bpm_max": 250,
+      "description": "Càng mất Sanity chạy càng nhanh: 50% Sanity chạy 1.5 m/s; 0% Sanity chạy 2.25 m/s. Khi có đường nhìn LOS tối đa đạt tới 3.71 m/s (nhanh nhất toàn game)."
+    },
+    "traits": {
+      "strength": "Lời nguyền Moroi: Nghe giọng nó qua Spirit Box hoặc Paramic sẽ bị dính lời nguyền, tốc độ tụt Sanity tăng gấp đôi và không thể chặn dù đứng dưới ánh đèn sáng.",
+      "weakness": "BẮT BUỘC có Spirit Box. Sợ nhang: Đốt nhang khi Moroi đang hunt sẽ làm nó bị mù và mất phương hướng trong 12 giây (thay vì 6 giây như ma khác)."
+    },
+    "deep_mechanics": "Ở 0% Sanity, Moroi di chuyển với tốc độ cơ bản 2.25 m/s, và nếu nhìn thấy bạn trong đường thẳng dài, LOS acceleration sẽ đẩy tốc độ của nó lên tới 3.71 m/s - nhanh hơn cả người chơi chạy Sprint (3.0 m/s).",
+    "hidden_test": "1. BẤM GIỜ NHANG KHI HUNT: Đốt nhang vào ma khi nó đuổi theo bạn. Bấm giờ thấy nó đi lang thang vô định tới tận 12 giây mới đuổi tiếp -> 100% Moroi!\n2. Uống thuốc đầy 100% Sanity -> Nó chạy chậm lững thững 1.5 m/s.",
+    "looping_guide": "UỐNG THUỐC SANITY ĐỂ GIẢM TỐC ĐỘ MOROI. Đốt nhang cho bạn tới 12 giây an toàn để thoát thân.",
+    "notes": "Nếu vừa vào nghe Spirit Box xong mà thấy Sanity tụt dốc không phanh, bạn đã bị dính lời nguyền Moroi."
+  },
+  {
+    "id": "deogen",
+    "name_en": "Deogen",
+    "name_vi": "Deogen (Ma Thở Dốc • Luôn Biết Chỗ Trốn)",
+    "alias": ["Deogen", "Ma thở dốc", "Ma biết chỗ trốn", "Ma dắt bộ", "Kẻ săn đuổi"],
+    "danger_level": "Cực Cao (nếu trốn tủ) / Cực Dễ (nếu dắt bộ)",
+    "evidences": ["Spirit Box", "Ghost Writing", "D.O.T.S Projector"],
+    "hunt_sanity": 40,
+    "speed": {
+      "base": 3.0,
+      "max_los": 0.4,
+      "bpm_base": 210,
+      "bpm_max": 30,
+      "description": "Tốc độ đảo ngược: Ở xa (>6m) phi 3.0 m/s. Khi đến gần (<2.5m) tự động phanh lại cực chậm 0.4 m/s (chậm hơn người đi bộ 1.6 m/s)."
+    },
+    "traits": {
+      "strength": "LUÔN BIẾT VỊ TRÍ CỦA TẤT CẢ NGƯỜI CHƠI: Deogen nhìn xuyên tường và đi thẳng đến chỗ bạn dù bạn trốn trong tủ đóng cửa kín hay góc khuất. TRỐN TRONG TỦ LÀ CHẾT 100%!",
+      "weakness": "TỐC ĐỘ RÙA BÒ KHI Ở GẦN: Khi đến gần bạn trong cự ly 2.5m, nó chậm lại chỉ còn 0.4 m/s. Bạn chỉ cần đi bộ thong thả vòng quanh bàn ăn (Looping) là nó không bao giờ bắt được bạn!"
+    },
+    "deep_mechanics": "Âm thanh thở dốc độc quyền: Cầm Spirit Box đứng sát ma trong vòng 1m, có 33% cơ hội Deogen phát ra TIẾNG THỞ DỐC KHÒ KHÈ / TIẾNG THỞ NẶNG NỀ (Heavy Breathing / Groan) trực tiếp vào tai. BẮT BUỘC có Spirit Box ở mọi độ khó.",
+    "hidden_test": "1. ÂM THANH THỞ DỐC SPIRIT BOX: Nghe thấy tiếng thở khò khè trực tiếp vào loa Spirit Box khi đứng sát 1m.\n2. KHI HUNT: Dù trốn ở đâu, tiếng chân rầm rập 3.0 m/s từ xa phi thẳng tới chỗ bạn. Khi tới nơi, nhịp chân chậm rề rề 'bịch...... bịch...... bịch......' (30 BPM).\n3. BƯỚC RA DẮT BỘ VÒNG QUANH BÀN ĂN.",
+    "looping_guide": "QUY TẮC SỐNG CÒN: TUYỆT ĐỐI KHÔNG TRỐN TỦ! Hãy chạy ra khu vực bàn ăn, quầy bếp hoặc xe hơi gara, nhìn thẳng vào nó và đi bộ lùi thong thả dắt nó đi dạo quanh cái bàn.",
+    "notes": "ĐÂY CHÍNH LÀ DEOGEN - LOÀI MA THỞ DỐC VÀ LUÔN BIẾT VỊ TRÍ CỦA BẠN."
+  },
+  {
+    "id": "thaye",
+    "name_en": "Thaye",
+    "name_vi": "Lão Quỷ Trẻ Hóa (Thaye)",
+    "alias": ["Ma lão hóa", "Ma già đi", "Ma chạy nhanh lúc đầu"],
+    "danger_level": "Cực Cao (đầu game) -> Thấp (cuối game)",
+    "evidences": ["Ghost Orb", "Ghost Writing", "D.O.T.S Projector"],
+    "hunt_sanity": 75,
+    "speed": {
+      "base": 2.75,
+      "max_los": 1.0,
+      "bpm_base": 195,
+      "bpm_max": 70,
+      "description": "Tuổi 0 (Trẻ): Hunt ở 75% Sanity, tốc độ 2.75 m/s. Tuổi 10 (Già): Hunt ở 15% Sanity, tốc độ 1.0 m/s. Không tăng tốc theo LOS."
+    },
+    "traits": {
+      "strength": "Hung dữ đầu game: Khi còn trẻ, Thaye đi săn ở ngưỡng 75% Sanity, tốc độ chạy 2.75 m/s, quậy phá liên tục.",
+      "weakness": "Già đi theo thời gian: Mỗi khi có người chơi đứng cùng phòng, Thaye sẽ già đi sau mỗi 1-2 phút (tối đa 10 lần). Càng già càng chậm và hiền."
+    },
+    "deep_mechanics": "Hỏi tuổi qua bàn cầu cơ Ouija 'How old are you?': Đầu trận hỏi nó trả lời 20 tuổi. Đứng chơi 5 phút sau hỏi lại, nó sẽ trả lời 45 tuổi hoặc 70 tuổi!",
+    "hidden_test": "1. Hỏi tuổi bàn cầu cơ thấy tuổi tăng lên sau mỗi vài phút.\n2. Đầu trận nhịp chân phóng cực nhanh (2.75 m/s). Về sau nhịp chân lê lết chậm chạp (1.0 m/s).",
+    "looping_guide": "Đầu game hãy cẩn thận trốn ngay vì nó chạy 2.75 m/s. Cuối game khi nó đã già bạn có thể loop nó dễ dàng như Revenant.",
+    "notes": "Lúc đầu game nguy hiểm không kém Demon, nhưng càng về sau càng hiền."
+  },
+  {
+    "id": "aswang",
+    "name_en": "Aswang",
+    "name_vi": "Quỷ Hút Máu Biến Hình (Aswang)",
+    "alias": ["Ma hút máu", "Quỷ biến hình Philippines", "Aswang 2026"],
+    "danger_level": "Cao",
+    "evidences": ["Ultraviolet", "Freezing Temperatures", "D.O.T.S Projector"],
+    "hunt_sanity": 60,
+    "speed": {
+      "base": 1.8,
+      "max_los": 2.6,
+      "bpm_base": 125,
+      "bpm_max": 185,
+      "description": "Tốc độ 1.8 m/s, tăng lên 2.6 m/s khi con mồi đứng một mình trong bóng tối."
+    },
+    "traits": {
+      "strength": "Săn mồi đơn độc: Rất hung dữ khi người chơi ở một mình. Có khả năng tạo ra âm thanh giả tiếng động vật (chó sủa, mèo kêu, chim vỗ cánh) để dụ người chơi.",
+      "weakness": "Sợ muối: Khi dẫm lên muối trong lúc hunt, Aswang bị khựng chân lại rít lên đau đớn trong 1.5 giây."
+    },
+    "deep_mechanics": "Rải muối dày ở các cửa thoát hiểm. Khi bị săn, dụ Aswang bước qua đống muối sẽ cho bạn 1.5 giây quý giá để cắt góc thoát thân.",
+    "hidden_test": "1. Ma bị khựng lại kêu rít khi giẫm muối trong lúc hunt.\n2. Nghe thấy tiếng động vật lạ trong căn nhà.",
+    "looping_guide": "Rải muối quanh bàn loop để làm gián đoạn nhịp chạy của nó.",
+    "notes": "Loài ma truyền thuyết Nam Đảo/Philippines trong bản mở rộng folklore Phasmophobia."
+  },
+  {
+    "id": "dayan",
+    "name_en": "Dayan",
+    "name_vi": "Phù Thủy Chân Ngược (Dayan / Daayan)",
+    "alias": ["Phù thủy ma Ấn Độ", "Ma chân ngược", "Daayan"],
+    "danger_level": "Cao",
+    "evidences": ["EMF 5", "Spirit Box", "Ghost Writing"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.4,
+      "bpm_base": 120,
+      "bpm_max": 170,
+      "description": "Tốc độ 1.7 m/s, tăng vọt lên 2.4 m/s khi người chơi quay lưng bỏ chạy."
+    },
+    "traits": {
+      "strength": "Ảo ảnh mê hoặc: Làm lệch hướng kim la bàn và di chuyển đồ vật sau lưng người chơi. Dấu chân UV có ngón chân QUAY NGƯỢC 180 ĐỘ!",
+      "weakness": "Sợ nhìn thẳng: Duy trì giao tiếp mắt (Eye contact) khi nó làm Ghost Event sẽ giảm 50% lượng Sanity bị trừ."
+    },
+    "deep_mechanics": "Khi Dayan rượt đuổi, nếu bạn vừa đi lùi vừa nhìn thẳng vào nó, nó chỉ chạy 1.7 m/s. Nếu bạn quay lưng chạy trốn, nó phóng vọt lên 2.4 m/s.",
+    "hidden_test": "Soi đèn UV vào dấu bàn chân trên sàn: Thấy hướng ngón chân quay ngược về phía sau lưng hướng di chuyển.",
+    "looping_guide": "Vừa lùi vừa nhìn thẳng vào mặt nó để ngăn nó tăng tốc.",
+    "notes": "Ma nữ phù thủy móng vuốt dài và bàn chân xoay ngược trong truyền thuyết Ấn Độ."
+  },
+  {
+    "id": "deildegast",
+    "name_en": "Deildegast",
+    "name_vi": "Hồn Ma Ranh Giới (Deildegast)",
+    "alias": ["Ma ranh giới", "Ma đá Bắc Âu", "Deildegast"],
+    "danger_level": "Trung Bình",
+    "evidences": ["Ghost Orb", "Ghost Writing", "Freezing Temperatures"],
+    "hunt_sanity": 45,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.5,
+      "bpm_base": 120,
+      "bpm_max": 180,
+      "description": "Tốc độ 1.7 m/s, tăng lên 2.5 m/s khi người chơi vượt qua ngưỡng cửa phòng ma."
+    },
+    "traits": {
+      "strength": "Luồng hàn khí di động: Tạo ra các dải nhiệt độ âm (-°C) di chuyển dọc theo ngưỡng cửa. Ném đồ kim loại nặng với lực cực mạnh.",
+      "weakness": "Bị giam hãm bởi ranh giới: Rất khó rời khỏi khu vực phòng ban đầu. Đốt nhang ép nó lùi sâu về tâm phòng 90s."
+    },
+    "deep_mechanics": "Ranh giới căn phòng là vương quốc của nó. Khi ở trong phòng nó tương tác rất mạnh, nhưng khi bạn bước ra khỏi cửa nó sẽ hung hãn hơn.",
+    "hidden_test": "Nhiệt độ âm (-°C) di chuyển dọc theo ngưỡng cửa ra vào thay vì chỉ cố định ở giữa phòng.",
+    "looping_guide": "Loop ở các phòng khác ngoài phòng ma yêu thích của nó.",
+    "notes": "Linh hồn kẻ lừa đảo dời cột mốc đất đai trong truyền thuyết dân gian Bắc Âu."
+  },
+  {
+    "id": "gallu",
+    "name_en": "Gallu",
+    "name_vi": "Quỷ Đoạt Hồn Địa Ngục (Gallu)",
+    "alias": ["Quỷ Sumer", "Quỷ lôi kéo linh hồn", "Gallu"],
+    "danger_level": "Cao",
+    "evidences": ["EMF 5", "Ultraviolet", "Freezing Temperatures"],
+    "hunt_sanity": 65,
+    "speed": {
+      "base": 1.85,
+      "max_los": 2.4,
+      "bpm_base": 130,
+      "bpm_max": 170,
+      "description": "Tốc độ tuần tra 1.85 m/s (nhanh hơn ma thường một chút)."
+    },
+    "traits": {
+      "strength": "Săn sớm ở mức 65% Sanity. Có khả năng tạo ra các ảo ảnh phân thân (Ghost Event giả lập 2 bóng đen cùng lúc) làm người chơi hoảng loạn.",
+      "weakness": "Sợ thánh tích cổ: Cây thánh giá (Crucifix) có phạm vi cản săn tăng thêm 35% đối với Gallu."
+    },
+    "deep_mechanics": "Gallu là loài ma hung bạo chuyên tấn công phủ đầu. Cắm thánh giá sớm ở phòng ma là chìa khóa vô hiệu hóa nó.",
+    "hidden_test": "Làm Ghost Event xuất hiện 2 ảo ảnh ma ở 2 góc phòng cùng lúc hoặc cắn thánh giá từ khoảng cách xa hơn bình thường.",
+    "looping_guide": "Tốc độ 1.85 m/s hơi nhanh hơn bình thường một chút, hãy cẩn thận khi loop.",
+    "notes": "Ác quỷ cõi âm Mesopotamia / Sumer cổ đại chuyên kéo người sống xuống địa ngục."
+  },
+  {
+    "id": "kormos",
+    "name_en": "Kormos",
+    "name_vi": "Ác Thú Hắc Ám (Kormos)",
+    "alias": ["Ma bóng đêm", "Ma ghét ánh sáng", "Kormos"],
+    "danger_level": "Cực Cao (trong bóng tối)",
+    "evidences": ["Spirit Box", "Ultraviolet", "D.O.T.S Projector"],
+    "hunt_sanity": 55,
+    "speed": {
+      "base": 1.4,
+      "max_los": 2.4,
+      "bpm_base": 95,
+      "bpm_max": 170,
+      "description": "Trong bóng tối chạy như bay 2.4 m/s. Khi bị chiếu đèn pin chạy chậm lại 1.4 m/s."
+    },
+    "traits": {
+      "strength": "Sát thủ bóng đêm: Rất thích dập cầu dao điện. Một khi căn nhà mất điện, Kormos trở thành một cỗ máy săn mồi chạy cực nhanh 2.4 m/s.",
+      "weakness": "Sợ ánh sáng: Chiếu đèn pin thẳng vào mặt Kormos khi đang hunt sẽ làm chậm tốc độ di chuyển của nó xuống 1.4 m/s."
+    },
+    "deep_mechanics": "Đèn pin là vũ khí sinh tồn chống lại Kormos. Luôn bật đèn pin chiếu vào hướng nó đuổi theo bạn.",
+    "hidden_test": "Đang tắt đèn nó chạy cực nhanh, vừa bật đèn pin chiếu thẳng vào mặt là nghe tiếng chân nó khựng chậm hẳn lại.",
+    "looping_guide": "Bật đèn pin chiếu thẳng vào nó trong lúc loop quanh bàn.",
+    "notes": "Sinh vật bóng tối săn mồi trong bóng đen hoàn toàn."
+  },
+  {
+    "id": "obambo",
+    "name_en": "Obambo",
+    "name_vi": "Oan Linh Phiêu Bạt (Obambo)",
+    "alias": ["Ma lang thang", "Linh hồn rừng thiêng", "Obambo"],
+    "danger_level": "Trung Bình",
+    "evidences": ["EMF 5", "Ghost Orb", "D.O.T.S Projector"],
+    "hunt_sanity": 50,
+    "speed": {
+      "base": 1.7,
+      "max_los": 2.25,
+      "bpm_base": 120,
+      "bpm_max": 160,
+      "description": "Tốc độ tiêu chuẩn 1.7 m/s."
+    },
+    "traits": {
+      "strength": "Âm thanh đánh lạc hướng: Tạo ra âm thanh tiếng bước chân giả ở căn phòng cách xa nơi nó đang đứng. Thích mở vòi nước bẩn đổi màu đen.",
+      "weakness": "Phát ra tiếng khóc than ai oán rất rõ ràng và thường xuyên qua máy thu âm định hướng Parabolic Microphone."
+    },
+    "deep_mechanics": "Đừng để bị lừa bởi tiếng chân giả ở phòng khác. Hãy tin tưởng máy đo EMF và Paramic để định vị phòng thực sự của nó.",
+    "hidden_test": "Nghe thấy tiếng bước chân giả từ xa nhưng máy đo EMF trong phòng bạn lại giật lên mức 5, hoặc vòi nước trong nhà liên tục tự bật chảy nước bẩn.",
+    "looping_guide": "Tốc độ 1.7 m/s chuẩn. Loop bình thường quanh bàn.",
+    "notes": "Linh hồn không nơi nương tựa trong văn hóa Trung Phi."
+  }
+]

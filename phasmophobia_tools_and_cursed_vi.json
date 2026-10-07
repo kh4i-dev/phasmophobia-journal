@@ -1,0 +1,418 @@
+{
+  "cursed_possessions": [
+    {
+      "id": "tarot_cards",
+      "name_en": "Tarot Cards",
+      "name_vi": "Bộ Bài Tarot Ma Quái",
+      "description": "Gồm 10 lá bài ngẫu nhiên. Mỗi lần rút sẽ kích hoạt một hiệu ứng tức thì.",
+      "cards": [
+        {
+          "name_en": "The Sun",
+          "name_vi": "Mặt Trời (The Sun)",
+          "chance": "5%",
+          "flame_color": "Vàng cam rực rỡ",
+          "effect": "Hồi phục Sanity của người rút lên 100% ngay lập tức."
+        },
+        {
+          "name_en": "The Moon",
+          "name_vi": "Mặt Trăng (The Moon)",
+          "chance": "5%",
+          "flame_color": "Trắng bạc / Xanh nhạt",
+          "effect": "Hạ Sanity của người rút xuống 0% ngay lập tức."
+        },
+        {
+          "name_en": "The Tower",
+          "name_vi": "Tòa Tháp (The Tower)",
+          "chance": "20%",
+          "flame_color": "Xanh da trời",
+          "effect": "Ép ma thực hiện một tương tác mạnh (ném đồ, gõ cửa...) và tăng hoạt tính ma trong 20 giây."
+        },
+        {
+          "name_en": "The Wheel of Fortune",
+          "name_vi": "Vòng Quay May Mắn (The Wheel of Fortune)",
+          "chance": "20%",
+          "flame_color": "Xanh lá (+25% Sanity) hoặc Đỏ rực (-25% Sanity)",
+          "effect": "Nếu cháy lửa xanh lá cây: Tăng 25% Sanity. Nếu cháy lửa đỏ: Trừ 25% Sanity của người rút."
+        },
+        {
+          "name_en": "The Devil",
+          "name_vi": "Ác Quỷ (The Devil)",
+          "chance": "10%",
+          "flame_color": "Đỏ thẫm",
+          "effect": "Kích hoạt sự kiện Ghost Event ngay tại vị trí người rút bài gần ma nhất."
+        },
+        {
+          "name_en": "Death",
+          "name_vi": "Tử Thần (Death)",
+          "chance": "10%",
+          "flame_color": "Tím đen u ám",
+          "effect": "KÍCH HOẠT CUỘC ĐI SĂN NGUYỀN RỦA (Cursed Hunt) ngay lập tức! Thời gian chuẩn bị chỉ 1 giây."
+        },
+        {
+          "name_en": "The Hermit",
+          "name_vi": "Ẩn Sĩ (The Hermit)",
+          "chance": "10%",
+          "flame_color": "Ngọc lam nhạt",
+          "effect": "Dịch chuyển ma về phòng yêu thích và khóa chân ma trong phòng đó trong 1 phút (không thể đi săn hoặc rời phòng)."
+        },
+        {
+          "name_en": "The High Priestess",
+          "name_vi": "Nữ Đại Tư Tế (The High Priestess)",
+          "chance": "2%",
+          "flame_color": "Vàng kim nhạt",
+          "effect": "HỒI SINH 1 đồng đội đã chết ngẫu nhiên tại vị trí xác chết. Nếu chưa có ai chết, lá bài này sẽ dự trữ mạng: người tiếp theo bị siết cổ sẽ được hồi sinh lập tức!"
+        },
+        {
+          "name_en": "The Hanged Man",
+          "name_vi": "Kẻ Treo Cổ (The Hanged Man)",
+          "chance": "1%",
+          "flame_color": "Không cháy (bay lên rồi biến mất)",
+          "effect": "GIẾT CHẾT NGƯỜI RÚT BÀI NGAY TỨC THÌ! Không có cách nào ngăn cản."
+        },
+        {
+          "name_en": "The Fool",
+          "name_vi": "Kẻ Ngốc (The Fool)",
+          "chance": "17% (100% trong lúc Hunt)",
+          "flame_color": "Hồng nhạt",
+          "effect": "Lá bài bịp bợm: Ban đầu hiện ra một lá bài khác (VD The Sun, Death...), nhưng sau 0.5s biến thành The Fool và HỦY BỎ hoàn toàn hiệu ứng của lá bài đó."
+        }
+      ]
+    },
+    {
+      "id": "ouija_board",
+      "name_en": "Ouija Board",
+      "name_vi": "Bàn Cầu Cơ",
+      "description": "Đặt xuống đất hoặc cầm trên tay, bấm chuột phải để đặt con cơ lên bàn. Hỏi các câu hỏi tiếng Anh để lấy thông tin. BẮT BUỘC nói 'Goodbye' trước khi bỏ đi!",
+      "sanity_rules": "Nếu hỏi khi Sanity không đủ để trả phí, hoặc bỏ đi mà KHÔNG nói 'Goodbye', bàn cầu cơ sẽ vỡ nát và kích hoạt Cursed Hunt!",
+      "questions": [
+        {
+          "category": "Vị trí phòng ma",
+          "questions_en": ["Where are you?", "What is your favorite room?", "Where is your room?"],
+          "meaning_vi": "Bạn đang ở đâu? Phòng yêu thích của bạn là phòng nào?",
+          "sanity_cost": "50% Sanity",
+          "notes": "Con cơ sẽ chỉ từng chữ cái tên phòng ma yêu thích. Cực kỳ hữu ích đầu game."
+        },
+        {
+          "category": "Vị trí xương (Bone)",
+          "questions_en": ["Where is the bone?"],
+          "meaning_vi": "Khúc xương nằm ở đâu?",
+          "sanity_cost": "20% Sanity",
+          "notes": "Chỉ tên căn phòng có khúc xương phục vụ nhiệm vụ phụ kiếm tiền."
+        },
+        {
+          "category": "Khoảng cách hiện tại",
+          "questions_en": ["Are you close?", "How close are you?"],
+          "meaning_vi": "Bạn có ở gần đây không?",
+          "sanity_cost": "20% Sanity",
+          "notes": "Trả lời 'Yes' nếu ma ở trong cùng phòng hoặc trong cự ly 5m, trả lời 'No' nếu ở xa."
+        },
+        {
+          "category": "Tuổi của ma (Check Thaye)",
+          "questions_en": ["How old are you?", "What is your age?"],
+          "meaning_vi": "Bạn bao nhiêu tuổi?",
+          "sanity_cost": "5% Sanity",
+          "notes": "Dùng để kiểm tra con Thaye: Lúc đầu vào hỏi tuổi nhỏ, sau vài phút đứng trong phòng hỏi lại thấy tuổi tăng lên."
+        },
+        {
+          "category": "Kiểm tra Sanity",
+          "questions_en": ["What is my sanity?", "How crazy am I?"],
+          "meaning_vi": "Sanity của tôi hiện tại là bao nhiêu?",
+          "sanity_cost": "5% Sanity",
+          "notes": "Trả lời tình trạng Sanity (Healthy > 80%, Good 60-80%, Average 40-60%, Bad 20-40%, Awful < 20%)."
+        },
+        {
+          "category": "Số người trong phòng",
+          "questions_en": ["How many people are in this room?", "How many ghosts are here?"],
+          "meaning_vi": "Có bao nhiêu người / ma trong phòng này?",
+          "sanity_cost": "20% Sanity",
+          "notes": "Trả lời số lượng người hoặc ma."
+        },
+        {
+          "category": "Nguyên nhân chết",
+          "questions_en": ["How did you die?"],
+          "meaning_vi": "Bạn đã chết như thế nào?",
+          "sanity_cost": "5% Sanity",
+          "notes": "Trả lời nguyên nhân chết (Accident, Drowned, Choked, Shot, Murder...)."
+        },
+        {
+          "category": "Trò chơi trốn tìm (KÍCH HOẠT HUNT)",
+          "questions_en": ["Hide and seek", "Do you want to play hide and seek?"],
+          "meaning_vi": "Chơi trốn tìm nào!",
+          "sanity_cost": "Trừ hết Sanity",
+          "notes": "Con cơ sẽ đếm ngược 5, 4, 3, 2, 1 -> Bàn cầu cơ nổ vỡ và kích hoạt Cursed Hunt!"
+        },
+        {
+          "category": "Kết thúc phiên cầu cơ (BẮT BUỘC)",
+          "questions_en": ["Goodbye"],
+          "meaning_vi": "Tạm biệt",
+          "sanity_cost": "0% Sanity",
+          "notes": "Con cơ sẽ trượt về chữ 'GOODBYE' rồi biến mất. Khi đó mới an toàn để bước đi!"
+        }
+      ]
+    },
+    {
+      "id": "monkey_paw",
+      "name_en": "Monkey Paw",
+      "name_vi": "Bàn Tay Khỉ",
+      "description": "Ban cho người chơi 3 đến 5 điều ước (tùy độ khó). Mỗi điều ước mang lại lợi ích lớn nhưng luôn đi kèm với sự PHẢN PHỆ nguy hiểm.",
+      "wishes": [
+        {
+          "category": "Ghost (Ước về Ma)",
+          "wish_en": "I wish to see the ghost",
+          "meaning_vi": "Tôi ước được nhìn thấy con ma",
+          "benefit": "Triệu hồi con ma hiện hình làm Ghost Event ngay trước mặt trong 5 giây (chụp ảnh, làm nhiệm vụ).",
+          "penalty": "Lập tức kích hoạt Cursed Hunt sau 5s, đồng thời người ước bị mù tạm thời và mắt bị phủ sương đen tối tăm suốt thời gian hunt."
+        },
+        {
+          "category": "Ghost (Ước về Ma)",
+          "wish_en": "I wish for activity",
+          "meaning_vi": "Tôi ước có nhiều tương tác ma hơn",
+          "benefit": "Ma tăng gấp đôi tỉ lệ tương tác và làm event trong 2 phút tới.",
+          "penalty": "Cầu dao điện bị nổ hỏng vĩnh viễn không thể bật lại, và cửa chính ra vào nhà bị khóa chặt trong 2 phút."
+        },
+        {
+          "category": "Ghost (Ước về Ma)",
+          "wish_en": "I wish the ghost was trapped",
+          "meaning_vi": "Tôi ước con ma bị nhốt lại",
+          "benefit": "Dịch chuyển ma về phòng yêu thích và khóa chặt cửa phòng ma trong 1 phút.",
+          "penalty": "Khóa luôn cửa phòng mà người ước đang đứng trong 1 phút. Sau 1 phút mở khóa, có 25% tỉ lệ ma lập tức đi săn."
+        },
+        {
+          "category": "Player (Ước về Người)",
+          "wish_en": "I wish to be safe",
+          "meaning_vi": "Tôi ước được an toàn",
+          "benefit": "Mở khóa một tủ trốn/nơi ẩn nấp gần nhất đã bị chặn trước đó.",
+          "penalty": "Làm vỡ nổ toàn bộ bóng đèn trong phòng bạn đang đứng, và ma có thể nghe thấy tiếng bước chân/thiết bị của bạn ở bất kỳ khoảng cách nào trong cuộc săn kế tiếp."
+        },
+        {
+          "category": "Player (Ước về Người)",
+          "wish_en": "I wish to leave",
+          "meaning_vi": "Tôi ước được rời khỏi nhà",
+          "benefit": "Mở khóa cửa chính ra vào nhà ngay cả trong lúc ma đang Hunt.",
+          "penalty": "Khóa tốc độ di chuyển của người ước: Người ước bị đi chậm như sên trong 5 giây và tầm nhìn bị đen mờ dần."
+        },
+        {
+          "category": "Player (Ước về Người)",
+          "wish_en": "I wish to revive a friend",
+          "meaning_vi": "Tôi ước hồi sinh một người bạn",
+          "benefit": "Hồi sinh một đồng đội đã chết ngẫu nhiên về lại dương gian.",
+          "penalty": "Có 50% tỉ lệ người nói điều ước sẽ bị CHẾT THAY ngay tại chỗ!"
+        },
+        {
+          "category": "Other (Thông tin & Thời tiết)",
+          "wish_en": "I wish for sanity",
+          "meaning_vi": "Tôi ước có thêm Sanity",
+          "benefit": "Đặt Sanity của toàn bộ người chơi về mức trung bình 50%.",
+          "penalty": "Tốc độ tụt Sanity tăng 50%, đồng thời ma đổi phòng yêu thích sang một phòng ngẫu nhiên khác."
+        },
+        {
+          "category": "Other (Thông tin & Thời tiết)",
+          "wish_en": "I wish for knowledge",
+          "meaning_vi": "Tôi ước có thêm manh mối / kiến thức",
+          "benefit": "Tự động gạch bỏ 1 bằng chứng sai và loại trừ các loài ma tương ứng trong cuốn sổ điều tra.",
+          "penalty": "Tầm nhìn của người ước bị bóp nghẹt, tai bị ù điếc, và ma bắt đầu Cursed Hunt ở cự ly rất gần bạn."
+        },
+        {
+          "category": "Other (Thông tin & Thời tiết)",
+          "wish_en": "I wish for clear skies / rain / snow / fog",
+          "meaning_vi": "Tôi ước đổi thời tiết (trời quang / mưa / tuyết / sương mù)",
+          "benefit": "Đổi thời tiết của ván chơi.",
+          "penalty": "Trừ 25% Sanity của người ước."
+        }
+      ]
+    },
+    {
+      "id": "haunted_mirror",
+      "name_en": "Haunted Mirror",
+      "name_vi": "Gương Ma Ám",
+      "description": "Nhìn vào gương để thấy góc nhìn trực tiếp bên trong căn phòng ma yêu thích (Favorite Room).",
+      "sanity_cost": "Tụt khoảng 20% Sanity mỗi giây sử dụng (tối thiểu 20%).",
+      "warning": "Nếu Sanity tụt về 0% khi đang soi gương, tấm gương sẽ vỡ vụn và kích hoạt Cursed Hunt ngay lập tức!"
+    },
+    {
+      "id": "music_box",
+      "name_en": "Music Box",
+      "name_vi": "Hộp Nhạc Ma Quái",
+      "description": "Lên dây cót và thả xuống đất hoặc cầm trên tay. Hộp nhạc phát ra giai điệu ru êm ái khiến con ma hát theo từ xa.",
+      "sanity_cost": "Làm tụt Sanity của bất cứ ai đứng gần nghe tiếng nhạc.",
+      "warning": "Nếu bạn cầm hộp nhạc đi đến quá gần ma (<5m), hoặc thả hộp nhạc rơi vỡ khi đang phát nhạc, hoặc ma đi tới chạm vào hộp nhạc -> Ma sẽ lập tức hiện hình và kích hoạt Cursed Hunt!"
+    },
+    {
+      "id": "voodoo_doll",
+      "name_en": "Voodoo Doll",
+      "name_vi": "Búp Bê Voodoo",
+      "description": "Có 10 cây kim cắm trên thân. Bấm chuột phải để ghim 1 cây kim ngẫu nhiên vào sâu trong búp bê.",
+      "effects": "Mỗi cây kim thường: Trừ 5% Sanity và ép ma thực hiện 1 tương tác tại vị trí của nó.",
+      "warning": "Nếu ghim trúng cây kim ở Trái Tim (Heart Pin): Trừ 10% Sanity và KÍCH HOẠT CURSED HUNT LẬP TỨC! Nếu Sanity < 5% mà bấm ghim, toàn bộ kim còn lại tự cắm vào và Hunt ngay."
+    },
+    {
+      "id": "summoning_circle",
+      "name_en": "Summoning Circle",
+      "name_vi": "Vòng Tròn Triệu Hồi",
+      "description": "Vòng tròn vẽ bằng máu trên sàn nhà với 5 ngọn nến đỏ xung quanh. Dùng bật lửa/diêm để thắp từng ngọn nến.",
+      "sanity_cost": "Mỗi ngọn nến thắp lên trừ 16% Sanity của người thắp (thắp cả 5 nến tốn 80% Sanity).",
+      "warning": "Khi thắp đủ cả 5 ngọn nến: Con ma sẽ bị triệu hồi đứng im bất động giữa vòng tròn trong 5 giây (cơ hội vàng chụp ảnh ma 3 sao và xem DOTS). Đúng sau 5 giây, ma lập tức bắt đầu Cursed Hunt!"
+    }
+  ],
+
+  "tools_and_equipment": [
+    {
+      "id": "emf_reader",
+      "name_en": "EMF Reader",
+      "name_vi": "Máy Dò EMF",
+      "type": "Bằng chứng (Evidence Tool)",
+      "evidence": "EMF Level 5",
+      "tiers": [
+        { "tier": "Tier 1", "item": "Máy Đo Cơ Analog", "desc": "Kim chỉ analog rung giật. Tầm quét ngắn (1.5m), độ nhạy thấp, khó nhận biết giữa vạch 4 và 5." },
+        { "tier": "Tier 2", "item": "Máy K2 LED Kinh Điển", "desc": "5 vạch đèn LED rõ ràng (Xanh -> Đỏ). Kêu tít tít lớn khi có EMF 5. Tầm quét 2m." },
+        { "tier": "Tier 3", "item": "Máy Kỹ Thuật Số Hiển Thị Màn Hình", "desc": "Màn hình điện tử hiển thị chính xác cấp EMF, âm thanh định vị 3D và hiển thị hướng phát ra tín hiệu. Tầm quét 3.5m, có thể theo dõi cùng lúc 3 nguồn EMF." }
+      ]
+    },
+    {
+      "id": "spirit_box",
+      "name_en": "Spirit Box",
+      "name_vi": "Hộp Thu Âm Linh Hồn",
+      "type": "Bằng chứng (Evidence Tool)",
+      "evidence": "Spirit Box",
+      "tiers": [
+        { "tier": "Tier 1", "item": "Đài Radio Cổ AM", "desc": "Tốc độ quét sóng chậm, tầm bắt hẹp (3m), âm thanh rè nhiều, tỉ lệ phản hồi thấp." },
+        { "tier": "Tier 2", "item": "Spirit Box Kỹ Thuật Số", "desc": "Tốc độ quét nhanh, màn hình LED hiện biểu tượng ma hoặc dấu X khi hỏi. Tầm bắt 4m." },
+        { "tier": "Tier 3", "item": "Spirit Box Lọc Nhiễu Cao Cấp", "desc": "Tốc độ quét cực nhanh, âm thanh rõ nét, bán kính phản hồi 5m, màn hình hiển thị cả cường độ tín hiệu." }
+      ]
+    },
+    {
+      "id": "uv_light",
+      "name_en": "Ultraviolet Light",
+      "name_vi": "Đèn Tia Cực Tím / Soi Vân Tay",
+      "type": "Bằng chứng (Evidence Tool)",
+      "evidence": "Ultraviolet",
+      "tiers": [
+        { "tier": "Tier 1", "item": "Đèn Pin UV Quay Tay", "desc": "Chùm tia sáng hẹp, phải sạc bằng tay định kỳ, thời gian giữ sáng ngắn." },
+        { "tier": "Tier 2", "item": "Đèn Pin UV Bóng LED", "desc": "Chùm tia UV sáng rộng, soi rõ dấu vân tay và vết chân nhanh chóng." },
+        { "tier": "Tier 3", "item": "Đèn UV Huỳnh Quang Đặt Sàn 360°", "desc": "Đèn tuýp tỏa ánh sáng UV 360 độ khắp phòng, soi sáng mọi dấu chân và vân tay tự động mà không cần cầm tay." }
+      ]
+    },
+    {
+      "id": "ghost_writing_book",
+      "name_en": "Ghost Writing Book",
+      "name_vi": "Sổ Ghi Chép Ma Ám",
+      "type": "Bằng chứng (Evidence Tool)",
+      "evidence": "Ghost Writing",
+      "tiers": [
+        { "tier": "Tier 1", "item": "Sổ Tay Bìa Mềm & Bút Chì", "desc": "Phạm vi tương tác hẹp (2m), ma mất nhiều thời gian hơn để chịu viết vào sổ." },
+        { "tier": "Tier 2", "item": "Sổ Bọc Da & Bút Máy", "desc": "Phạm vi tương tác 3m, tốc độ viết trung bình." },
+        { "tier": "Tier 3", "item": "Cổ Thư Mạ Vàng & Bút Lông Vũ", "desc": "Phạm vi tương tác rộng (4m), ma bị kích thích viết vào sổ cực kỳ nhanh chóng." }
+      ]
+    },
+    {
+      "id": "thermometer",
+      "name_en": "Thermometer",
+      "name_vi": "Nhiệt Kế",
+      "type": "Bằng chứng (Evidence Tool)",
+      "evidence": "Freezing Temperatures",
+      "tiers": [
+        { "tier": "Tier 1", "item": "Nhiệt Kế Thủy Ngân", "desc": "Đo chậm theo thời gian thực, phải đợi cột thủy ngân tụt xuống để biết nhiệt độ." },
+        { "tier": "Tier 2", "item": "Súng Đo Nhiệt Độ Laser", "desc": "Bấm cò để bắn tia laser đo nhiệt độ tức thì trên màn hình điện tử." },
+        { "tier": "Tier 3", "item": "Nhiệt Kế Kỹ Thuật Số Quét Liên Tục", "desc": "Tự động quét nhiệt độ liên tục với độ chính xác cao và cập nhật cực nhanh trên màn hình LCD." }
+      ]
+    },
+    {
+      "id": "dots_projector",
+      "name_en": "D.O.T.S Projector",
+      "name_vi": "Máy Chiếu Ma D.O.T.S",
+      "type": "Bằng chứng (Evidence Tool)",
+      "evidence": "D.O.T.S Projector",
+      "tiers": [
+        { "tier": "Tier 1", "item": "Bút Chiếu Laser Cầm Tay", "desc": "Phạm vi lưới laser hẹp, chiếu dạng chùm nhỏ, khó quan sát." },
+        { "tier": "Tier 2", "item": "Máy Chiếu Quét Nón Đặt Sàn", "desc": "Phủ lưới laser xanh hình nón rộng khắp một khu vực phòng." },
+        { "tier": "Tier 3", "item": "Máy Chiếu Xoay 360° Tích Hợp Quét", "desc": "Quét lưới laser xanh 360 độ toàn bộ căn phòng, có cảm biến phát hiện chuyển động của ma." }
+      ]
+    },
+    {
+      "id": "crucifix",
+      "name_en": "Crucifix",
+      "name_vi": "Cây Thánh Giá Trừ Tà",
+      "type": "Trang bị bảo vệ sinh tồn",
+      "evidence": "Không",
+      "tiers": [
+        { "tier": "Tier 1", "item": "Thánh Giá Gỗ Thô Sơ", "desc": "Sử dụng được 1 lần cản hunt. Bán kính cản 3 mét (Demon: 4.5m)." },
+        { "tier": "Tier 2", "item": "Thánh Giá Sắt Rèn", "desc": "Sử dụng được 2 lần cản hunt (cháy từng nhánh). Bán kính cản 4 mét (Demon: 6m)." },
+        { "tier": "Tier 3", "item": "Thánh Giá Bạc Trừ Tà Tối Thượng", "desc": "Sử dụng được 2 lần. Bán kính cản cực đại 5 mét (Demon: 7.5m). ĐẶC BIỆT: Có thể ngăn chặn cả Cursed Hunt (Săn Nguyền Rủa)!" }
+      ]
+    },
+    {
+      "id": "incense",
+      "name_en": "Incense / Smudge Sticks",
+      "name_vi": "Nhang Xua Đuổi Tà Ma",
+      "type": "Trang bị cứu mạng & Làm nhiệm vụ",
+      "evidence": "Không",
+      "tiers": [
+        { "tier": "Tier 1", "item": "Bó Lá Xô Thơm (Smudge Stick)", "desc": "Đốt bằng bật lửa. Khi Hunt: Làm mù ma trong 5 giây để bỏ chạy. Ngoài Hunt: Ngăn ma săn trong 90s (Demon: 60s, Spirit: 180s)." },
+        { "tier": "Tier 2", "item": "Nhang Ống Kim Loại", "desc": "Tỏa khói rộng hơn. Khi Hunt: Làm mù ma trong 5 giây VÀ làm chậm tốc độ chạy của ma đi 25% trong 5 giây." },
+        { "tier": "Tier 3", "item": "Lư Hương Trừ Tà Hoàng Gia", "desc": "Khi Hunt: Làm mù ma trong 5 giây VÀ KHÓA CHÂN ma đứng bất động hoàn toàn tại chỗ trong 5 giây!" }
+      ]
+    },
+    {
+      "id": "sanity_medication",
+      "name_en": "Sanity Medication",
+      "name_vi": "Thuốc Hồi Phục Sanity",
+      "type": "Trang bị sinh tồn",
+      "evidence": "Không",
+      "tiers": [
+        { "tier": "Tier 1", "item": "Lọ Thuốc Viên Uống", "desc": "Hồi phục 20% Sanity nhưng hồi rất chậm trong vòng 30 giây." },
+        { "tier": "Tier 2", "item": "Thuốc Con Nhộng Hấp Thu Nhanh", "desc": "Hồi phục 35% Sanity trong vòng 20 giây." },
+        { "tier": "Tier 3", "item": "Ống Tiêm Adrenaline Khẩn Cấp", "desc": "Hồi phục 50% Sanity NGAY LẬP TỨC và tăng tốc độ chạy (Sprint vô hạn) cho người tiêm trong 10 giây!" }
+      ]
+    },
+    {
+      "id": "salt",
+      "name_en": "Salt",
+      "name_vi": "Muối Trừ Tà",
+      "type": "Trang bị phát hiện & Làm chậm",
+      "evidence": "Test Wraith & Chụp ảnh",
+      "tiers": [
+        { "tier": "Tier 1", "item": "Lọ Muối Ăn Rải 2 Lần", "desc": "Rải được 2 đống muối trên sàn. Khi ma dẫm vào sẽ để lại dấu chân UV (trừ Wraith)." },
+        { "tier": "Tier 2", "item": "Hộp Muối Hạt Rải 3 Lần", "desc": "Rải được 3 đống muối trên sàn." },
+        { "tier": "Tier 3", "item": "Lọ Muối Đen Trừ Tà", "desc": "Rải được 3 vạch muối dài chắn ngang cửa. Khi ma bước qua vạch muối đen trong lúc Hunt, nó sẽ bị làm chậm tốc độ đáng kể!" }
+      ]
+    }
+  ],
+
+  "voice_commands_en": {
+    "spirit_box_phrases": [
+      { "phrase": "Where are you?", "meaning": "Bạn ở đâu?", "response_type": "Chỉ vị trí: Close, Behind, Far, Here..." },
+      { "phrase": "How old are you?", "meaning": "Bạn bao nhiêu tuổi?", "response_type": "Chỉ tuổi: Old, Young, Kid, [Con số]..." },
+      { "phrase": "Are you close?", "meaning": "Bạn có ở gần đây không?", "response_type": "Yes / Close / Behind you" },
+      { "phrase": "Are you friendly?", "meaning": "Bạn có thân thiện không?", "response_type": "Kill, Death, Attack, Die..." },
+      { "phrase": "What do you want?", "meaning": "Bạn muốn gì ở chúng tôi?", "response_type": "Leave, Kill, Hurt, Die..." },
+      { "phrase": "Should we leave?", "meaning": "Chúng tôi có nên rời đi không?", "response_type": "Yes / Run / Die" },
+      { "phrase": "Give us a sign.", "meaning": "Hãy cho chúng tôi một dấu hiệu.", "response_type": "Tương tác hoặc trả lời loa" },
+      { "phrase": "Show yourself.", "meaning": "Hãy hiện hình đi.", "response_type": "Làm event hoặc trả lời" }
+    ],
+    "trigger_anger_phrases": [
+      { "phrase": "[Ghost Name], show yourself!", "meaning": "[Tên ma], hiện hình đi!", "effect": "Kích động ma tương tác hoặc làm Ghost Event" },
+      { "phrase": "[Ghost Name], give us a sign!", "meaning": "[Tên ma], cho một dấu hiệu đi!", "effect": "Ép ma ném đồ hoặc tắt mở đèn" },
+      { "phrase": "I'm scared / We are scared", "meaning": "Tôi đang rất sợ", "effect": "Tăng độ hiếu động của ma" },
+      { "phrase": "Talk to me / Speak to us", "meaning": "Nói chuyện với tôi đi", "effect": "Tăng cơ hội trả lời Spirit Box" },
+      { "phrase": "Open the door / Turn off the light", "meaning": "Mở cửa ra / Tắt đèn đi", "effect": "Kích thích tương tác môi trường" }
+    ],
+    "ouija_board_phrases": [
+      { "phrase": "Where are you?", "meaning": "Bạn ở đâu? (Tốn 50% Sanity)" },
+      { "phrase": "Where is the bone?", "meaning": "Khúc xương ở đâu? (Tốn 20% Sanity)" },
+      { "phrase": "How old are you?", "meaning": "Bạn bao nhiêu tuổi? (Tốn 5% Sanity - Check Thaye)" },
+      { "phrase": "What is my sanity?", "meaning": "Sanity của tôi thế nào? (Tốn 5% Sanity)" },
+      { "phrase": "Hide and seek", "meaning": "Chơi trốn tìm (KÍCH HOẠT HUNT NGAY LẬP TỨC)" },
+      { "phrase": "Goodbye", "meaning": "Tạm biệt (BẮT BUỘC NÓI TRƯỚC KHI RỜI BÀN CẦU CƠ)" }
+    ],
+    "monkey_paw_phrases": [
+      { "phrase": "I wish to see the ghost", "meaning": "Ước thấy ma (Event 5s -> Cursed Hunt + mù tạm thời)" },
+      { "phrase": "I wish for activity", "meaning": "Ước tăng tương tác (Hỏng cầu dao vĩnh viễn + khóa cửa 2p)" },
+      { "phrase": "I wish the ghost was trapped", "meaning": "Ước nhốt ma trong phòng 1 phút (Nhốt luôn người ước)" },
+      { "phrase": "I wish to be safe", "meaning": "Ước mở chỗ trốn an toàn (Nổ đèn + ma nghe thấy tiếng bạn từ xa)" },
+      { "phrase": "I wish to leave", "meaning": "Ước mở cửa chính khi đang Hunt (Bị đi chậm 5s)" },
+      { "phrase": "I wish to revive a friend", "meaning": "Ước hồi sinh bạn (Có 50% tỉ lệ chết thay)" },
+      { "phrase": "I wish for sanity", "meaning": "Ước đặt Sanity cả đội về 50% (Tăng tốc độ tụt Sanity + ma đổi phòng)" },
+      { "phrase": "I wish for knowledge", "meaning": "Ước loại trừ 1 bằng chứng sai (Ù tai mờ mắt + Hunt gần bạn)" }
+    ]
+  }
+}
