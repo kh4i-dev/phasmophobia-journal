@@ -4387,14 +4387,22 @@
 
         monkey.wishes.forEach(w => {
           const row = document.createElement("div");
-          row.style.marginBottom = "7px";
-          row.style.fontSize = "0.86rem";
-          row.style.lineHeight = "1.3";
+          row.style.marginBottom = "8px";
+          row.style.background = "rgba(255,255,255,0.5)";
+          row.style.borderRadius = "6px";
+          row.style.padding = "6px 9px";
+          row.style.boxShadow = "0 1px 2px rgba(0,0,0,0.06)";
           row.innerHTML = `
-            <strong>"${w.wish_en}"</strong><br>
-            <em style="color: #5a4b37;">${w.meaning_vi}</em><br>
-            Ước: ${w.benefit}<br>
-            Phản phệ: <span style="color: #991b1b; font-weight: bold;">${w.penalty}</span>
+            <div style="font-weight: 700; font-size: 0.85rem; color: #1e3a8a;">"${w.wish_en}"</div>
+            <div style="font-style: italic; font-size: 0.76rem; color: #5a4b37; margin: 2px 0 4px;">${w.meaning_vi}</div>
+            <div style="font-size: 0.82rem; line-height: 1.35;">
+              <span style="display:inline-block; background:#dcfce7; color:#166534; font-weight:700; font-size:0.68rem; padding:1px 7px; border-radius:999px; margin-right:4px;">ƯỚC</span>
+              ${w.benefit}
+            </div>
+            <div style="font-size: 0.82rem; line-height: 1.35; margin-top: 3px;">
+              <span style="display:inline-block; background:#fee2e2; color:#991b1b; font-weight:700; font-size:0.68rem; padding:1px 7px; border-radius:999px; margin-right:4px;">PHẢN PHỆ</span>
+              <span style="color: #991b1b; font-weight: 600;">${w.penalty}</span>
+            </div>
           `;
           rightC.appendChild(row);
         });
@@ -4418,23 +4426,26 @@
 
       if (leftC && referenceData.difficulties) {
         referenceData.difficulties.forEach(d => {
+          const col = diffColors[d.id] || "#8f2020";
           const box = document.createElement("div");
           box.style.marginBottom = "10px";
-          box.style.background = "rgba(255,255,255,0.45)";
-          box.style.padding = "8px 10px";
-          box.style.borderRadius = "5px";
-          box.style.borderLeft = `4px solid ${diffColors[d.id] || "#8f2020"}`;
+          box.style.background = "rgba(255,255,255,0.55)";
+          box.style.borderRadius = "6px";
+          box.style.overflow = "hidden";
+          box.style.boxShadow = "0 1px 2px rgba(0,0,0,0.08)";
           box.innerHTML = `
-            <div style="font-family: var(--font-hand); font-size: 1.4rem; font-weight: bold; color: ${diffColors[d.id] || "#8f2020"}; line-height: 1.1;">
-              ${d.name_en} <span style="font-size: 1rem; color: #5a4b37;">(${d.name_vi})</span>
+            <div style="background: ${col}; color: #fff; padding: 4px 9px; display: flex; justify-content: space-between; align-items: baseline; gap: 6px;">
+              <span style="font-family: var(--font-hand); font-size: 1.3rem; font-weight: bold; line-height: 1.1;">
+                ${d.name_en} <span style="font-size: 0.9rem; opacity: 0.9;">(${d.name_vi})</span>
+              </span>
+              <span style="font-size: 0.76rem; white-space: nowrap;">${d.reward} • ${d.unlock_level}</span>
             </div>
-            <div style="font-size: 0.82rem; line-height: 1.45; margin-top: 4px;">
-              Mở khóa: <strong>${d.unlock_level}</strong> • Thưởng: <strong>${d.reward}</strong> • Bảo hiểm: ${d.insurance}<br>
-              Setup: <strong>${d.setup_time}</strong> • Grace: <strong>${d.grace_period}</strong> • Hunt: ${d.hunt_duration}<br>
-              Sanity đầu: ${d.starting_sanity} • Thuốc hồi: ${d.sanity_pill} • Tốc độ tụt: ${d.sanity_drain}<br>
-              Bằng chứng: <strong>${d.evidence_given}</strong> • Chỗ ẩn: ${d.hiding_places} • Cầu dao: ${d.fuse_box}<br>
-              Cursed: ${d.cursed_count} • ${d.monitors}<br>
-              <em style="color: #5a4b37;">${d.notes}</em>
+            <div style="padding: 6px 9px; font-size: 0.82rem; line-height: 1.5;">
+              <div><strong>Setup:</strong> ${d.setup_time} &nbsp;•&nbsp; <strong>Grace:</strong> ${d.grace_period} &nbsp;•&nbsp; <strong>Hunt:</strong> ${d.hunt_duration}</div>
+              <div><strong>Sanity đầu:</strong> ${d.starting_sanity} &nbsp;•&nbsp; <strong>Thuốc hồi:</strong> ${d.sanity_pill} &nbsp;•&nbsp; <strong>Tụt Sanity:</strong> ${d.sanity_drain}</div>
+              <div><strong>Bằng chứng:</strong> ${d.evidence_given} &nbsp;•&nbsp; <strong>Chỗ ẩn:</strong> ${d.hiding_places} &nbsp;•&nbsp; <strong>Cầu dao:</strong> ${d.fuse_box}</div>
+              <div><strong>Cursed:</strong> ${d.cursed_count} &nbsp;•&nbsp; ${d.monitors}</div>
+              <div style="font-style: italic; color: #5a4b37; margin-top: 3px;">${d.notes}</div>
             </div>
           `;
           leftC.appendChild(box);
@@ -4454,27 +4465,33 @@
       if (rightC && referenceData.maps) {
         const sizeColor = { "Nhỏ": "#15803d", "Trung bình": "#b45309", "Lớn": "#8f2020" };
         let currentSize = null;
+        let rowIdx = 0;
         referenceData.maps.forEach(m => {
+          const col = sizeColor[m.size] || "#8f2020";
           if (m.size !== currentSize) {
             currentSize = m.size;
+            rowIdx = 0;
             const head = document.createElement("div");
-            head.style.fontFamily = "var(--font-hand)";
-            head.style.fontSize = "1.35rem";
-            head.style.fontWeight = "bold";
-            head.style.color = sizeColor[m.size] || "#8f2020";
-            head.style.margin = "8px 0 4px";
-            head.textContent = `Map ${m.size}`;
+            head.style.margin = "10px 0 4px";
+            head.innerHTML = `<span style="display:inline-block; background:${col}; color:#fff; font-size:0.72rem; font-weight:700; padding:2px 11px; border-radius:999px; letter-spacing:0.04em;">MAP ${m.size.toUpperCase()}</span>`;
             rightC.appendChild(head);
           }
           const row = document.createElement("div");
-          row.style.fontSize = "0.84rem";
+          row.style.display = "flex";
+          row.style.justifyContent = "space-between";
+          row.style.alignItems = "baseline";
+          row.style.gap = "8px";
+          row.style.fontSize = "0.8rem";
           row.style.lineHeight = "1.35";
-          row.style.marginBottom = "4px";
+          row.style.padding = "3px 7px";
+          row.style.borderRadius = "3px";
+          if (rowIdx % 2 === 1) row.style.background = "rgba(255,255,255,0.4)";
           row.innerHTML = `
-            <strong>${m.name}</strong> — ${m.rooms} phòng, ${m.floors} tầng
-            <span style="color: #5a4b37;">• ${m.unlock} • Hunt ${m.hunt_length}</span>
+            <span style="font-weight: 600;">${m.name}</span>
+            <span style="color: #5a4b37; text-align: right;">${m.rooms}p • ${m.floors}t • ${m.unlock} • ${m.hunt_length}</span>
           `;
           rightC.appendChild(row);
+          rowIdx++;
         });
 
         if (referenceData.maps_note) {
