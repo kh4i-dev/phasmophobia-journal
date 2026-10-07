@@ -4275,12 +4275,28 @@
         monkeyHeader.innerHTML = `<h3 style="font-family: var(--font-hand); font-size: 1.6rem; color: #8f2020;">Bàn Tay Khỉ (Monkey Paw)</h3>`;
         rightC.appendChild(monkeyHeader);
 
-        monkey.wishes.slice(0, 4).forEach(w => {
+        if (monkey.usage) {
+          const usageEl = document.createElement("div");
+          usageEl.style.marginBottom = "8px";
+          usageEl.style.fontSize = "0.82rem";
+          usageEl.style.lineHeight = "1.35";
+          usageEl.style.fontStyle = "italic";
+          usageEl.style.color = "#5a4b37";
+          usageEl.style.background = "rgba(143, 32, 32, 0.06)";
+          usageEl.style.padding = "6px 8px";
+          usageEl.style.borderRadius = "5px";
+          usageEl.textContent = monkey.usage;
+          rightC.appendChild(usageEl);
+        }
+
+        monkey.wishes.forEach(w => {
           const row = document.createElement("div");
-          row.style.marginBottom = "6px";
-          row.style.fontSize = "0.88rem";
+          row.style.marginBottom = "7px";
+          row.style.fontSize = "0.86rem";
+          row.style.lineHeight = "1.3";
           row.innerHTML = `
             <strong>"${w.wish_en}"</strong><br>
+            <em style="color: #5a4b37;">${w.meaning_vi}</em><br>
             Ước: ${w.benefit}<br>
             Phản phệ: <span style="color: #991b1b; font-weight: bold;">${w.penalty}</span>
           `;

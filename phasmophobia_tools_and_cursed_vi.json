@@ -154,70 +154,78 @@
       "id": "monkey_paw",
       "name_en": "Monkey Paw",
       "name_vi": "Bàn Tay Khỉ",
-      "description": "Ban cho người chơi 3 đến 5 điều ước (tùy độ khó). Mỗi điều ước mang lại lợi ích lớn nhưng luôn đi kèm với sự PHẢN PHỆ nguy hiểm.",
+      "description": "Ban cho người chơi một số điều ước tùy độ khó. Mỗi điều ước mang lại lợi ích lớn nhưng luôn kèm PHẢN PHỆ. Mỗi ngón tay ứng với 1 điều ước; ước xong một ngón sẽ gập xuống, gập hết cả bàn tay là hết lượt.",
+      "usage": "Cầm Bàn Tay Khỉ và GIỮ phím nói (V hoặc B) rồi đọc điều ước bằng TIẾNG ANH, hoặc bấm nút dùng chính để mở menu ước dạng chữ (chỉ dùng được trong khu vực điều tra). Số điều ước theo độ khó: 0x–1x = 5, 1.01x–2x = 4, 2.01x trở lên = 3. Ngón tay giật = đã nhận đúng câu; ngón gập = đã thực hiện, hết ngón là không ước được nữa.",
       "wishes": [
         {
           "category": "Ghost (Ước về Ma)",
           "wish_en": "I wish to see the ghost",
           "meaning_vi": "Tôi ước được nhìn thấy con ma",
-          "benefit": "Triệu hồi con ma hiện hình làm Ghost Event ngay trước mặt trong 5 giây (chụp ảnh, làm nhiệm vụ).",
-          "penalty": "Lập tức kích hoạt Cursed Hunt sau 5s, đồng thời người ước bị mù tạm thời và mắt bị phủ sương đen tối tăm suốt thời gian hunt."
+          "benefit": "Con ma hiện hình đầy đủ (Ghost Event) NGAY TẠI vị trí hiện tại của nó trong 5 giây (từ bản 0.9.0 KHÔNG còn teleport về trước mặt bạn) — thời điểm vàng để chụp ảnh 3 sao / làm nhiệm vụ.",
+          "penalty": "Khóa cửa thoát ra vào; ngay sau 5 giây sẽ kích hoạt Cursed Hunt, và tầm nhìn người ước bị phủ sương đen tối suốt thời gian hunt."
         },
         {
           "category": "Ghost (Ước về Ma)",
-          "wish_en": "I wish for activity",
-          "meaning_vi": "Tôi ước có nhiều tương tác ma hơn",
-          "benefit": "Ma tăng gấp đôi tỉ lệ tương tác và làm event trong 2 phút tới.",
-          "penalty": "Cầu dao điện bị nổ hỏng vĩnh viễn không thể bật lại, và cửa chính ra vào nhà bị khóa chặt trong 2 phút."
+          "wish_en": "I wish for activity / I wish the ghost would do something",
+          "meaning_vi": "Tôi ước con ma làm gì đó / có nhiều tương tác hơn",
+          "benefit": "Nhân đôi TOÀN BỘ hoạt tính của ma trong 2 phút.",
+          "penalty": "Cầu dao điện (Fuse box) hỏng VĨNH VIỄN không thể bật lại, và cửa thoát ra vào bị khóa chặt trong 2 phút."
         },
         {
           "category": "Ghost (Ước về Ma)",
-          "wish_en": "I wish the ghost was trapped",
+          "wish_en": "I wish the ghost was trapped / I wish to trap the ghost",
           "meaning_vi": "Tôi ước con ma bị nhốt lại",
-          "benefit": "Dịch chuyển ma về phòng yêu thích và khóa chặt cửa phòng ma trong 1 phút.",
-          "penalty": "Khóa luôn cửa phòng mà người ước đang đứng trong 1 phút. Sau 1 phút mở khóa, có 25% tỉ lệ ma lập tức đi săn."
+          "benefit": "Tẩy uế (incense) con ma và dịch chuyển nó về phòng yêu thích, giữ nó ở đó.",
+          "penalty": "Khóa các cửa quanh phòng người ước trong 1 phút (nhốt bạn chung với ma); hết 1 phút sẽ có một đợt Hunt tiêu chuẩn bắt đầu."
         },
         {
           "category": "Player (Ước về Người)",
           "wish_en": "I wish to be safe",
           "meaning_vi": "Tôi ước được an toàn",
-          "benefit": "Mở khóa một tủ trốn/nơi ẩn nấp gần nhất đã bị chặn trước đó.",
-          "penalty": "Làm vỡ nổ toàn bộ bóng đèn trong phòng bạn đang đứng, và ma có thể nghe thấy tiếng bước chân/thiết bị của bạn ở bất kỳ khoảng cách nào trong cuộc săn kế tiếp."
+          "benefit": "Mở khóa chỗ ẩn nấp (tủ/hộc) bị chặn gần nhất.",
+          "penalty": "Toàn bộ bóng đèn trong phòng vỡ tan, và ma có thể nghe/định vị người ước ở MỌI khoảng cách trong suốt ván."
         },
         {
           "category": "Player (Ước về Người)",
           "wish_en": "I wish to leave",
           "meaning_vi": "Tôi ước được rời khỏi nhà",
-          "benefit": "Mở khóa cửa chính ra vào nhà ngay cả trong lúc ma đang Hunt.",
-          "penalty": "Khóa tốc độ di chuyển của người ước: Người ước bị đi chậm như sên trong 5 giây và tầm nhìn bị đen mờ dần."
+          "benefit": "Mở khóa toàn bộ cửa thoát ra vào ngay cả khi ma đang Hunt.",
+          "penalty": "Tốc độ di chuyển của người ước bị giảm mạnh trong chốc lát và tầm nhìn bị tối mờ."
         },
         {
           "category": "Player (Ước về Người)",
-          "wish_en": "I wish to revive a friend",
+          "wish_en": "I wish for life / I wish to revive my friend",
           "meaning_vi": "Tôi ước hồi sinh một người bạn",
-          "benefit": "Hồi sinh một đồng đội đã chết ngẫu nhiên về lại dương gian.",
-          "penalty": "Có 50% tỉ lệ người nói điều ước sẽ bị CHẾT THAY ngay tại chỗ!"
+          "benefit": "Hồi sinh người chơi ĐÃ CHẾT ĐẦU TIÊN (theo thứ tự danh sách lobby).",
+          "penalty": "Có 50% tỉ lệ chính người ước bị CHẾT THAY ngay tại chỗ!"
         },
         {
           "category": "Other (Thông tin & Thời tiết)",
-          "wish_en": "I wish for sanity",
-          "meaning_vi": "Tôi ước có thêm Sanity",
-          "benefit": "Đặt Sanity của toàn bộ người chơi về mức trung bình 50%.",
-          "penalty": "Tốc độ tụt Sanity tăng 50%, đồng thời ma đổi phòng yêu thích sang một phòng ngẫu nhiên khác."
+          "wish_en": "I wish for sanity / I wish to be sane",
+          "meaning_vi": "Tôi ước mình được tỉnh táo",
+          "benefit": "Đặt Sanity của TẤT CẢ người chơi về đúng 50%.",
+          "penalty": "Tốc độ tụt Sanity thụ động tăng gấp 1.5 lần suốt ván, và ma có thể đổi phòng yêu thích sang phòng ngẫu nhiên khác."
         },
         {
           "category": "Other (Thông tin & Thời tiết)",
           "wish_en": "I wish for knowledge",
           "meaning_vi": "Tôi ước có thêm manh mối / kiến thức",
-          "benefit": "Tự động gạch bỏ 1 bằng chứng sai và loại trừ các loài ma tương ứng trong cuốn sổ điều tra.",
-          "penalty": "Tầm nhìn của người ước bị bóp nghẹt, tai bị ù điếc, và ma bắt đầu Cursed Hunt ở cự ly rất gần bạn."
+          "benefit": "Gạch bỏ 1 bằng chứng SAI cùng các loài ma tương ứng khỏi cuốn sổ điều tra.",
+          "penalty": "Ma teleport tới sát người ước và mở Cursed Hunt; tầm nhìn bị phủ sương đen và thính giác bị bịt lại cho tới khi bạn chết hoặc hết ván."
         },
         {
           "category": "Other (Thông tin & Thời tiết)",
-          "wish_en": "I wish for clear skies / rain / snow / fog",
-          "meaning_vi": "Tôi ước đổi thời tiết (trời quang / mưa / tuyết / sương mù)",
-          "benefit": "Đổi thời tiết của ván chơi.",
-          "penalty": "Trừ 25% Sanity của người ước."
+          "wish_en": "I wish for weather (Clear Sky / Fog / Rain / Snow / Sunrise)",
+          "meaning_vi": "Tôi ước đổi thời tiết",
+          "benefit": "Đổi thời tiết của ván chơi (Rain có 50% thành mưa nhỏ hoặc mưa lớn).",
+          "penalty": "Mọi người chơi bị lóa mắt trong chốc lát và người ước mất 25% Sanity."
+        },
+        {
+          "category": "Misc (Bất kỳ)",
+          "wish_en": "I wish for anything",
+          "meaning_vi": "Tôi ước một điều bất kỳ",
+          "benefit": "Thực hiện NGẪU NHIÊN một điều ước còn lại chưa dùng (chỉ dùng được bằng voice chat).",
+          "penalty": "Chịu đúng phản phệ của điều ước ngẫu nhiên được chọn."
         }
       ]
     },
