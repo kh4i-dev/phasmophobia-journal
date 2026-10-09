@@ -285,7 +285,7 @@
     .timer-phase strong { color: #38bdf8; }
 
     /* ==============================================================
-       ★ TACTICAL GROUP FILTER HUD: 4 NHÓM LỌC DANH SÁCH THỰC THỤ ★
+       ★ TACTICAL GROUP FILTER HUD: 3 NHÓM LỌC DANH SÁCH THỰC THỤ ★
        ============================================================== */
     .quick-filter-hud {
       display: flex;
@@ -932,6 +932,21 @@
       font-weight: 600;
     }
 
+    /* TAB 08: MANUAL — nhấn pha amber, đồng bộ màu chip MANUAL trên HUD */
+    .j-tab-manual { border-style: dashed; }
+    .j-tab-manual .j-tab-badge {
+      color: #c2822a;
+      border-color: #6b4a1d;
+      background: rgba(194, 130, 42, 0.1);
+    }
+    .j-tab-manual .j-tab-sub { color: #a5772e; }
+    .j-tab-manual.active .j-tab-badge {
+      color: #ffb84d;
+      border-color: #c2822a;
+      background: rgba(255, 184, 77, 0.15);
+    }
+    .j-tab-manual.active .j-tab-sub { color: #d69a3f; }
+
     /* THE BOOK */
     .book {
       background: #211913;
@@ -1200,24 +1215,6 @@
       gap: 6px;
       width: 100%;
       min-width: 0;
-    }
-
-    .slot-attr {
-      flex: 0 0 auto;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      text-transform: uppercase;
-      color: #8f1d1d;
-      background: rgba(143, 29, 29, 0.08);
-      border: 1px solid rgba(143, 29, 29, 0.22);
-      border-radius: 999px;
-      padding: 1px 6px;
-      line-height: 1.25;
-      white-space: nowrap;
-      max-width: 60%;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
     .slot-name-vi {
@@ -2301,6 +2298,77 @@
 
     .ghost-slot-anim { animation: ghostIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; }
     @keyframes ghostIn { from { opacity: 0; transform: translateY(12px) scale(0.97); } to { opacity: 1; transform: none; } }
+
+    /* ===== U AM: VIGNETTE + GRAIN + LAMP FLICKER ===== */
+    .fx-overlays { position: fixed; inset: 0; pointer-events: none; z-index: 4; }
+    .fx-vignette {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 42%, transparent 40%, rgba(0,0,0,0.66) 100%);
+      mix-blend-mode: multiply;
+    }
+    .fx-grain {
+      position: absolute; inset: -60%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+      opacity: 0.05;
+      animation: grainShift 0.7s steps(3) infinite;
+    }
+    @keyframes grainShift {
+      0% { transform: translate(0, 0); }
+      33% { transform: translate(-3%, 2%); }
+      66% { transform: translate(2%, -3%); }
+      100% { transform: translate(0, 0); }
+    }
+    .fx-flicker {
+      position: absolute; inset: 0; opacity: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(150, 180, 210, 0.10), transparent 70%);
+      animation: lampFlicker 11s infinite;
+    }
+    @keyframes lampFlicker {
+      0%, 87%, 100% { opacity: 0; }
+      88% { opacity: 0.10; } 89% { opacity: 0; }
+      91% { opacity: 0.16; } 91.6% { opacity: 0; }
+      93% { opacity: 0.08; } 93.6% { opacity: 0; }
+    }
+
+    /* ===== JUMPSCARE ===== */
+    .jumpscare-layer {
+      position: fixed; inset: 0; z-index: 6000;
+      display: none; align-items: center; justify-content: center;
+      pointer-events: none;
+      background: radial-gradient(circle at 50% 45%, rgba(40, 0, 0, 0.55), rgba(0, 0, 0, 0.94));
+    }
+    .jumpscare-layer.show { display: flex; animation: jumpFade 0.95s ease forwards; }
+    .jumpscare-layer .js-face {
+      width: min(72vw, 430px); height: auto;
+      filter: contrast(1.15) saturate(0.55) drop-shadow(0 0 34px rgba(160, 0, 0, 0.55));
+      animation: jumpZoom 0.95s cubic-bezier(0.16, 0.9, 0.3, 1) forwards, jumpShake 0.09s linear 0s 7;
+    }
+    @keyframes jumpFade { 0% { opacity: 0; } 6% { opacity: 1; } 78% { opacity: 1; } 100% { opacity: 0; } }
+    @keyframes jumpZoom {
+      0% { transform: scale(0.35) rotate(-5deg); opacity: 0; }
+      9% { transform: scale(1.12) rotate(3deg); opacity: 1; }
+      100% { transform: scale(1.72); opacity: 0; }
+    }
+    @keyframes jumpShake { 0% { margin-left: -5px; } 50% { margin-left: 6px; } 100% { margin-left: -4px; } }
+    @keyframes bodyQuake {
+      0% { transform: translate(0, 0); }
+      20% { transform: translate(-6px, 3px); }
+      40% { transform: translate(5px, -4px); }
+      60% { transform: translate(-4px, -3px); }
+      80% { transform: translate(4px, 3px); }
+      100% { transform: translate(0, 0); }
+    }
+    body.quake { animation: bodyQuake 0.4s ease; }
+
+    /* ===== COMPENDIUM RE-THEME (tông nâu u tối cho hợp web) ===== */
+    #compendiumContainer {
+      background:
+        radial-gradient(ellipse at 50% -10%, rgba(110, 65, 25, 0.35), transparent 65%),
+        linear-gradient(180deg, #140e09 0%, #090604 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 220, 160, 0.06);
+      filter: sepia(0.95) saturate(1.6) hue-rotate(-28deg) brightness(0.88) contrast(1.06);
+    }
+    #compendiumContainer .comp-card-title span.badge { background: #8f1d1d !important; color: #f5e6c8 !important; }
   </style>
 </head>
 <body>
@@ -2342,7 +2410,7 @@
       </div>
     </div>
 
-    <!-- TACTICAL GROUP FILTER HUD: 4 NHÓM LỌC DANH SÁCH RÕ RÀNG -->
+    <!-- TACTICAL GROUP FILTER HUD: 3 NHÓM LỌC DANH SÁCH RÕ RÀNG -->
     <div class="quick-filter-hud">
       <div class="hud-left">
         <div class="hud-label">
@@ -2361,10 +2429,6 @@
           <div class="filter-chip" data-filter="fast_speed">
             <span class="chip-text">Tốc Độ Cao</span>
             <span class="chip-badge">8</span>
-          </div>
-          <div class="filter-chip" data-filter="expansion_2026">
-            <span class="chip-text">Bản Mở Rộng 2026</span>
-            <span class="chip-badge">6</span>
           </div>
 
           <div class="hud-chip-separator"></div>
@@ -2804,6 +2868,13 @@
         <div class="j-tab-content">
           <span class="j-tab-title">REFERENCE</span>
           <span class="j-tab-sub">Độ Khó &amp; Map</span>
+        </div>
+      </div>
+      <div class="j-tab j-tab-manual" data-tab="compendium" id="jTabCompendium" title="Mở Cẩm Nang điều tra toàn diện &amp; mẹo 0-evidence">
+        <span class="j-tab-badge">08</span>
+        <div class="j-tab-content">
+          <span class="j-tab-title">MANUAL</span>
+          <span class="j-tab-sub">Cẩm Nang</span>
         </div>
       </div>
     </div>
@@ -3440,6 +3511,47 @@
           osc.start(t);
           osc.stop(t + 0.6);
         } catch(e){}
+      },
+
+      // Sound FX: Sudden Jumpscare screech
+      scare() {
+        try {
+          this.ensureContext();
+          if (this.isMuted || this.volume <= 0) return;
+          const t = this.ctx.currentTime;
+
+          // Harsh high-passed noise burst
+          const dur = 0.9;
+          const bufferSize = Math.floor(this.ctx.sampleRate * dur);
+          const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+          const data = buffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) {
+            data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.45));
+          }
+          const noise = this.ctx.createBufferSource();
+          noise.buffer = buffer;
+          const hp = this.ctx.createBiquadFilter();
+          hp.type = 'highpass';
+          hp.frequency.value = 500;
+          const nGain = this.ctx.createGain();
+          nGain.gain.setValueAtTime(0.55, t);
+          nGain.gain.exponentialRampToValueAtTime(0.001, t + dur);
+          noise.connect(hp); hp.connect(nGain); nGain.connect(this.masterGain);
+          noise.start(t);
+
+          // Dissonant rising detuned oscillators (the "shriek")
+          [180, 191, 97].forEach((f, i) => {
+            const osc = this.ctx.createOscillator();
+            const g = this.ctx.createGain();
+            osc.type = i === 2 ? 'sawtooth' : 'square';
+            osc.frequency.setValueAtTime(f, t);
+            osc.frequency.exponentialRampToValueAtTime(f * 2.6, t + 0.55);
+            g.gain.setValueAtTime(0.16, t);
+            g.gain.exponentialRampToValueAtTime(0.001, t + 0.85);
+            osc.connect(g); g.connect(this.masterGain);
+            osc.start(t); osc.stop(t + 0.86);
+          });
+        } catch(e){}
       }
     };
 
@@ -3568,7 +3680,7 @@
     let currentTab = "main-journal";
     let isFootstepPlaying = false;
     let selectedBpmMode = "base";
-    let activeListFilter = "all"; // 'all', 'early_hunt', 'fast_speed', 'expansion_2026'
+    let activeListFilter = "all"; // 'all', 'early_hunt', 'fast_speed'
 
     // Tap tempo variables
     let tapTimestamps = [];
@@ -3792,7 +3904,6 @@
         slot.dataset.id = gid;
 
         const viName = GHOST_ROSTER_VI_NAMES[gid] || (ghostObj ? ghostObj.name_vi.replace(/\s*\([^)]*\)/g, '').trim() : name);
-        const attr = GHOST_ROSTER_ATTRS[gid];
 
         slot.innerHTML = `
           <div class="slot-top">
@@ -3803,7 +3914,6 @@
                       fill="none" stroke="#9e1c1c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.92" />
               </svg>
             </div>
-            ${attr ? `<span class="slot-attr" title="${attr.full.replace(/"/g, '&quot;')}">${attr.tag}</span>` : ''}
           </div>
           <div class="slot-name-vi">${viName}</div>
         `;
@@ -3861,8 +3971,6 @@
           matchesGroup = (g.hunt_sanity >= 60 || g.id === "demon" || g.id === "yokai" || g.id === "thaye");
         } else if (activeListFilter === "fast_speed") {
           matchesGroup = (g.speed.max_los >= 2.5 || g.speed.base >= 2.0 || g.id === "revenant" || g.id === "moroi" || g.id === "deogen");
-        } else if (activeListFilter === "expansion_2026") {
-          matchesGroup = ["aswang", "dayan", "deildegast", "gallu", "kormos", "obambo"].includes(g.id);
         }
 
         slot.style.display = "flex";
@@ -3991,9 +4099,11 @@
       if (g.speed.max_los !== g.speed.base) speedText += ` → ${g.speed.max_los} m/s`;
       let huntText = typeof g.hunt_sanity === "number" ? `${g.hunt_sanity}% Sanity` : g.hunt_sanity;
 
+      const attr = GHOST_ROSTER_ATTRS[ghostId];
       document.getElementById("infoMetaChips").innerHTML = `
         <div class="info-chip">Ngưỡng Sanity Hunt: <strong>${huntText}</strong></div>
         <div class="info-chip">Tốc Độ Săn: <strong>${speedText}</strong></div>
+        ${attr ? `<div class="info-chip info-chip-attr" title="${attr.full.replace(/"/g, '&quot;')}">Thuộc Tính Riêng: <strong>${attr.tag}</strong></div>` : ''}
       `;
 
       let evsHtml = `<strong>Bằng Chứng:</strong> ${g.evidences.join(" • ")}`;
@@ -4868,7 +4978,7 @@
         }
       });
 
-      // 4 TACTICAL GROUP FILTER CHIPS (LỌC DANH SÁCH THỰC THỤ)
+      // 3 TACTICAL GROUP FILTER CHIPS (LỌC DANH SÁCH THỰC THỤ)
       document.querySelectorAll(".filter-chip").forEach(chip => {
         chip.addEventListener("click", () => {
           document.querySelectorAll(".filter-chip").forEach(c => c.classList.remove("active"));
@@ -4882,8 +4992,6 @@
             statusEl.textContent = "Đang lọc: Loài ma săn sớm (>60% Sanity)";
           } else if (activeListFilter === "fast_speed") {
             statusEl.textContent = "Đang lọc: Loài ma có tốc độ cao / LOS đột biến";
-          } else if (activeListFilter === "expansion_2026") {
-            statusEl.textContent = "Đang lọc: 6 loài ma Bản Mở Rộng 2026";
           }
 
           updateGhostGridStates();
@@ -4926,6 +5034,25 @@
       }
       if (btnCloseComp) {
         btnCloseComp.addEventListener("click", () => window.toggleFieldCompendium(false));
+      }
+
+      // TAB 08: siết trạng thái highlight Manual theo cờ mở/đóng của compendium
+      const jTabManual = document.getElementById("jTabCompendium");
+      const prevToggle = window.toggleFieldCompendium;
+      window.toggleFieldCompendium = function(forceState) {
+        prevToggle(forceState);
+        if (jTabManual) {
+          const open = compContainer && compContainer.style.display !== "none";
+          jTabManual.classList.toggle("active", !!open);
+        }
+      };
+
+      // TAB 08 (JOURNAL BAR): click mở/đóng cẩm nang, không lật trang sổ
+      if (jTabManual) {
+        jTabManual.addEventListener("click", (e) => {
+          e.stopImmediatePropagation();
+          window.toggleFieldCompendium();
+        });
       }
 
       // Compendium internal tabs
@@ -5029,7 +5156,63 @@
       dropdown.style.display = "block";
     }
 
+    /* ==============================================================
+       ★ JUMPSCARE (thỉnh thoảng, ngẫu nhiên) ★
+       ============================================================== */
+    function triggerJumpscare() {
+      const layer = document.getElementById("jumpscareLayer");
+      if (!layer) return;
+      AudioEngine.scare();
+      layer.classList.remove("show");
+      void layer.offsetWidth;
+      layer.classList.add("show");
+      document.body.classList.add("quake");
+      setTimeout(() => layer.classList.remove("show"), 1000);
+      setTimeout(() => document.body.classList.remove("quake"), 420);
+    }
+
+    function scheduleJumpscares() {
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce) return;
+      const delay = 50000 + Math.random() * 130000; // 50s – 180s, ngẫu nhiên
+      setTimeout(() => {
+        if (document.visibilityState === "visible") triggerJumpscare();
+        scheduleJumpscares();
+      }, delay);
+    }
+
     loadData();
+    scheduleJumpscares();
   </script>
+
+  <!-- U ÁM: lớp vignette + hạt nhiễu + đèn chập chờn -->
+  <div class="fx-overlays" aria-hidden="true">
+    <div class="fx-vignette"></div>
+    <div class="fx-grain"></div>
+    <div class="fx-flicker"></div>
+  </div>
+
+  <!-- JUMPSCARE layer -->
+  <div class="jumpscare-layer" id="jumpscareLayer" aria-hidden="true">
+    <svg class="js-face" viewBox="0 0 240 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="jsFaceGrad" cx="50%" cy="40%" r="65%">
+          <stop offset="0%" stop-color="#d5cdba"/>
+          <stop offset="60%" stop-color="#7d766a"/>
+          <stop offset="100%" stop-color="#131009"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="120" cy="150" rx="88" ry="120" fill="url(#jsFaceGrad)"/>
+      <ellipse cx="86" cy="126" rx="22" ry="32" fill="#050404"/>
+      <ellipse cx="154" cy="126" rx="22" ry="32" fill="#050404"/>
+      <circle cx="86" cy="118" r="3.4" fill="#e2402f"/>
+      <circle cx="154" cy="118" r="3.4" fill="#e2402f"/>
+      <path d="M58 96 Q86 82 114 98" stroke="#000" stroke-width="6" fill="none" opacity="0.35"/>
+      <path d="M126 98 Q154 82 182 96" stroke="#000" stroke-width="6" fill="none" opacity="0.35"/>
+      <path d="M120 172 C156 172 166 224 120 250 C74 224 84 172 120 172 Z" fill="#0a0605"/>
+      <path d="M96 186 L108 206 L120 188 L132 206 L144 186" fill="none" stroke="#cfc7b4" stroke-width="3"/>
+      <path d="M100 214 L112 226 L120 210 L128 226 L140 214" fill="none" stroke="#cfc7b4" stroke-width="2.4" opacity="0.8"/>
+    </svg>
+  </div>
 </body>
 </html>
