@@ -1,4 +1,4 @@
-    /* GOM NHÓM ĐIỀU KHIỂN: Ô TÌM KIẾM + ĐỒNG HỒ NHANG HÀI HÒA */
+﻿    /* GOM NHÃ“M ÄIá»€U KHIá»‚N: Ã” TÃŒM KIáº¾M + Äá»’NG Há»’ NHANG HÃ€I HÃ’A */
     .top-controls-group {
       display: flex;
       align-items: center;
@@ -111,7 +111,7 @@
       white-space: nowrap;
     }
 
-    /* MASTER SMUDGE TIMER WIDGET (MÀU ĐỒNG VINTAGE TRẦM ẤM, KHÔNG CHÓI LỌI) */
+    /* MASTER SMUDGE TIMER WIDGET (MÃ€U Äá»’NG VINTAGE TRáº¦M áº¤M, KHÃ”NG CHÃ“I Lá»ŒI) */
     .smudge-timer-widget {
       display: flex;
       align-items: center;
@@ -186,7 +186,7 @@
     .timer-reset-btn:hover { background: #3d3023; color: #fff; border-color: #7d6349; transform: rotate(-90deg); }
 
     /* ==============================================================
-       ★ TACTICAL GROUP FILTER HUD: 3 NHÓM LỌC DANH SÁCH THỰC THỤ ★
+       â˜… TACTICAL GROUP FILTER HUD: 3 NHÃ“M Lá»ŒC DANH SÃCH THá»°C THá»¤ â˜…
        ============================================================== */
     .quick-filter-hud {
       display: flex;
@@ -280,34 +280,9 @@
       border-radius: 999px;
     }
 
-    .hud-filter-status {
-      font-size: 0.76rem;
-      color: #7dd3fc;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 5px 12px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.22);
-    }
-
-    .hud-filter-status::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #38bdf8;
-      box-shadow: 0 0 6px #38bdf8;
-      flex-shrink: 0;
-    }
 
     /* ==============================================================
-       ★ TACTICAL FIELD COMPENDIUM (CẨM NANG TOÀN DIỆN & BẢNG KÝ HIỆU) ★
+       â˜… TACTICAL FIELD COMPENDIUM (Cáº¨M NANG TOÃ€N DIá»†N & Báº¢NG KÃ HIá»†U) â˜…
        ============================================================== */
     .hud-chip-separator {
       width: 1px;
@@ -373,7 +348,7 @@
       transform: rotate(180deg);
     }
 
-    /* ===== GỌN HÓA HUD + TRANG TRÍ ===== */
+    /* ===== Gá»ŒN HÃ“A HUD + TRANG TRÃ ===== */
     .truck-dashboard {
       padding: 7px 12px 8px;
       gap: 6px;
@@ -413,9 +388,8 @@
     .hud-label { font-size: 0.72rem; }
     .filter-chip { padding: 3px 9px; font-size: 0.78rem; }
     .filter-chip .chip-badge { font-size: 0.66rem; }
-    .hud-filter-status { font-size: 0.74rem; }
 
-    /* Trang trí nhẹ cho sổ: khung nét đứt quanh mép trang */
+    /* Trang trÃ­ nháº¹ cho sá»•: khung nÃ©t Ä‘á»©t quanh mÃ©p trang */
     .page {
       outline: 1px dashed rgba(120, 90, 55, 0.2);
       outline-offset: -9px;

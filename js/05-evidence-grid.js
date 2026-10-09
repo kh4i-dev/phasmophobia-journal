@@ -78,13 +78,6 @@
         c.classList.toggle("active", f === "all" ? activeFilters.length === 0 : activeFilters.includes(f));
       });
       renderGroupFilterList();
-
-      const statusEl = document.getElementById("hudFilterStatus");
-      if (!statusEl) return;
-      const activeGroups = GROUP_ATTRS.filter(a => activeFilters.includes(a.id));
-      statusEl.textContent = activeGroups.length
-        ? `Đang lọc ${(activeGroups.length > 1 ? "chung" : "")}: ${activeGroups.map(a => a.label).join(" + ")}`
-        : "Hiển thị toàn bộ 30 loài ma";
     }
 
     document.getElementById("btnResetEvidence").addEventListener("click", () => {
