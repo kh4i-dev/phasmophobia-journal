@@ -169,6 +169,22 @@
     }
     .timer-phase strong { color: #38bdf8; }
 
+    .timer-reset-btn {
+      background: #2b2218;
+      color: #e2d7c5;
+      border: 1px solid #574431;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      padding: 0;
+      font-size: 0.95rem;
+      line-height: 1;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+    .timer-reset-btn:hover { background: #3d3023; color: #fff; border-color: #7d6349; transform: rotate(-90deg); }
+
     /* ==============================================================
        ★ TACTICAL GROUP FILTER HUD: 3 NHÓM LỌC DANH SÁCH THỰC THỤ ★
        ============================================================== */

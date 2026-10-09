@@ -265,3 +265,28 @@
       });
     }
 
+    /* ==============================================================
+       ★ BẢNG TRẠNG THÁI 30 GHOST ★
+       ============================================================== */
+    function renderGhostStatusTable() {
+      const tbl = document.getElementById("ghostStatusTable");
+      if (!tbl || !ghostsData) return;
+      let html = `<thead><tr>
+        <th>Ma</th><th>Bằng chứng</th><th>Hunt</th><th>Tốc độ (m/s)</th><th>Nhận diện nhanh</th>
+      </tr></thead><tbody>`;
+      ghostsData.forEach(g => {
+        const sp = g.speed ? `${g.speed.base} → ${g.speed.max_los}` : "-";
+        const hunt = typeof g.hunt_sanity === "number" ? g.hunt_sanity + "%" : (g.hunt_sanity || "-");
+        const alias = (g.alias && g.alias.length) ? g.alias.join(", ") : "";
+        html += `<tr>
+          <td><strong>${g.name_en}</strong><br><span style="font-size:.72rem;color:#ab9575;">${g.name_vi}</span></td>
+          <td style="font-size:.76rem;">${(g.evidences || []).join("<br>")}</td>
+          <td>${hunt}</td>
+          <td>${sp}</td>
+          <td style="font-size:.74rem;color:#cbb894;">${alias}</td>
+        </tr>`;
+      });
+      html += "</tbody>";
+      tbl.innerHTML = html;
+    }
+

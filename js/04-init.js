@@ -20,6 +20,7 @@
         renderCursedTab();
         renderReferenceTab();
         renderVoiceTab();
+        renderGhostStatusTable();
         renderFootstepPresets();
         updateQuickActionBar();
 
@@ -40,7 +41,12 @@
     function initSmudgeTimerBindings() {
       const topBtn = document.getElementById("btnSmudgeTimer");
       const modalBtn = document.getElementById("btnModalSmudge");
+      const topReset = document.getElementById("btnSmudgeReset");
+      const modalReset = document.getElementById("btnModalSmudgeReset");
       if (topBtn) topBtn.addEventListener("click", () => SmudgeMasterTimer.toggle());
       if (modalBtn) modalBtn.addEventListener("click", () => SmudgeMasterTimer.toggle());
+      if (topReset) topReset.addEventListener("click", () => SmudgeMasterTimer.reset());
+      if (modalReset) modalReset.addEventListener("click", () => SmudgeMasterTimer.reset());
+      SmudgeMasterTimer.reset(); // trạng thái ban đầu: 03:00
     }
 

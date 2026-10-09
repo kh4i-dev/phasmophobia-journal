@@ -52,6 +52,7 @@
             <span>Đốt Nhang</span>
           </button>
           <div class="timer-display" id="smudgeDisplay">03:00</div>
+          <button class="timer-reset-btn" id="btnSmudgeReset" type="button" title="Reset đồng hồ nhang về 03:00">↺</button>
           <div class="timer-phase" id="smudgePhase">Đốt nhang lúc KHÔNG hunt → đếm ngược thời gian an toàn còn lại</div>
         </div>
 
@@ -121,6 +122,9 @@
       </button>
       <button class="comp-tab-btn" data-target="compPaneVocab" title="Từ vựng & câu thoại tiếng Anh trong game (kèm phát âm bồi)">
         <span class="comp-tab-txt">Từ Vựng</span>
+      </button>
+      <button class="comp-tab-btn" data-target="compPaneStatus" title="Bảng trạng thái 30 loài ma: bằng chứng, ngưỡng hunt, tốc độ, dấu hiệu">
+        <span class="comp-tab-txt">Trạng Thái</span>
       </button>
     </div>
 
@@ -698,7 +702,7 @@
 
     <!-- PANE 7: TỪ VỰNG & CÂU THOẠI (Anh → Việt + phát âm bồi) -->
     <div class="comp-pane" id="compPaneVocab">
-      <p style="font-size:0.8rem; color:#ab9575; margin:0 0 12px;">Từ vựng & câu thoại tiếng Anh trong game kèm <strong>phát âm bồi</strong> + nghĩa + ngữ cảnh. Rê/chạm vào dòng có gạch nét đứt để xem thêm.</p>
+      <p style="font-size:0.8rem; color:#ab9575; margin:0 0 12px;">Từ vựng &amp; câu thoại tiếng Anh trong game kèm <strong>phát âm bồi</strong> + nghĩa + ngữ cảnh.</p>
       <div class="comp-grid-2col">
 
         <div class="comp-card highlight-cyan">
@@ -766,6 +770,14 @@
           </ul>
         </div>
 
+      </div>
+    </div>
+
+    <!-- PANE 8: BẢNG TRẠNG THÁI 30 GHOST -->
+    <div class="comp-pane" id="compPaneStatus">
+      <p style="font-size:0.8rem; color:#ab9575; margin:0 0 12px;">Bảng trạng thái 30 loài ma: bằng chứng, ngưỡng hunt, tốc độ, dấu hiệu nhận diện nhanh.</p>
+      <div style="overflow-x:auto;">
+        <table class="comp-matrix-table" id="ghostStatusTable"></table>
       </div>
     </div>
   </div>
@@ -1236,6 +1248,7 @@
             <div style="display: flex; align-items: center; gap: 8px;">
               <span style="font-family: monospace; font-size: 1.3rem; font-weight: bold; color: #38bdf8;" id="modalSmudgeTimerDisplay">00:00</span>
               <button class="modal-smudge-btn timer-btn" id="btnModalSmudge" style="border-radius: 6px;">Bấm Giờ Nhang</button>
+              <button class="modal-smudge-btn timer-btn" id="btnModalSmudgeReset" style="border-radius: 6px;" title="Reset về 03:00">↺ Reset</button>
             </div>
           </div>
         </div>
@@ -1267,6 +1280,7 @@
   <script src="js/11-search-filter.js"></script>
   <script src="js/12-jumpscare.js"></script>
   <script src="js/13-comp-tip.js"></script>
+  <script src="js/14-haunt.js"></script>
 
   </script>
 
@@ -1297,6 +1311,15 @@
       <path d="M120 172 C156 172 166 224 120 250 C74 224 84 172 120 172 Z" fill="#0a0605"/>
       <path d="M96 186 L108 206 L120 188 L132 206 L144 186" fill="none" stroke="#cfc7b4" stroke-width="3"/>
       <path d="M100 214 L112 226 L120 210 L128 226 L140 214" fill="none" stroke="#cfc7b4" stroke-width="2.4" opacity="0.8"/>
+    </svg>
+  </div>
+
+  <!-- MA ÁM KHI TREO WEB: sách rách -->
+  <div class="haunt-layer" id="hauntLayer" aria-hidden="true">
+    <svg class="haunt-tear" viewBox="0 0 1000 240" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 120 L45 104 L90 128 L135 100 L180 126 L225 102 L270 130 L315 100 L360 128 L405 104 L450 130 L495 100 L540 128 L585 104 L630 130 L675 102 L720 128 L765 104 L810 130 L855 100 L900 126 L945 104 L1000 122 L1000 240 L0 240 Z" fill="rgba(226, 211, 182, 0.12)"/>
+      <path d="M0 120 L45 104 L90 128 L135 100 L180 126 L225 102 L270 130 L315 100 L360 128 L405 104 L450 130 L495 100 L540 128 L585 104 L630 130 L675 102 L720 128 L765 104 L810 130 L855 100 L900 126 L945 104 L1000 122" fill="none" stroke="#e6d3b0" stroke-width="2.6" opacity="0.9"/>
+      <path d="M0 124 L45 108 L90 132 L135 104 L180 130 L225 106 L270 134 L315 104 L360 132 L405 108 L450 134 L495 104 L540 132 L585 108 L630 134 L675 106 L720 132 L765 108 L810 134 L855 104 L900 130 L945 108 L1000 126" fill="none" stroke="#7a1414" stroke-width="1" opacity="0.5"/>
     </svg>
   </div>
 </body>

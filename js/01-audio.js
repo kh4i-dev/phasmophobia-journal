@@ -396,6 +396,53 @@
             osc.start(t + off); osc.stop(t + off + 0.24);
           });
         } catch(e){}
+      },
+
+      // Sound FX: tiếng khóc than / rên rỉ ma ám (khi treo web)
+      cry() {
+        try {
+          this.ensureContext();
+          if (this.isMuted || this.volume <= 0) return;
+          const t = this.ctx.currentTime;
+
+          // Giọng rên: sóng sin trượt xuống + rung (vibrato)
+          const osc = this.ctx.createOscillator();
+          const g = this.ctx.createGain();
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(330, t);
+          osc.frequency.exponentialRampToValueAtTime(175, t + 1.6);
+          const lfo = this.ctx.createOscillator();
+          const lfoGain = this.ctx.createGain();
+          lfo.frequency.value = 6.5;
+          lfoGain.gain.value = 20;
+          lfo.connect(lfoGain); lfoGain.connect(osc.frequency);
+          g.gain.setValueAtTime(0.0001, t);
+          g.gain.exponentialRampToValueAtTime(0.15, t + 0.45);
+          g.gain.exponentialRampToValueAtTime(0.001, t + 1.8);
+          osc.connect(g); g.connect(this.masterGain);
+          osc.start(t); osc.stop(t + 1.9);
+          lfo.start(t); lfo.stop(t + 1.9);
+
+          // Hơi thở / thì thầm: noise bandpass nhẹ
+          const dur = 1.8;
+          const bs = Math.floor(this.ctx.sampleRate * dur);
+          const buf = this.ctx.createBuffer(1, bs, this.ctx.sampleRate);
+          const d = buf.getChannelData(0);
+          for (let i = 0; i < bs; i++) {
+            d[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bs * 0.8));
+          }
+          const n = this.ctx.createBufferSource();
+          n.buffer = buf;
+          const bp = this.ctx.createBiquadFilter();
+          bp.type = "bandpass";
+          bp.frequency.value = 900;
+          bp.Q.value = 0.6;
+          const ng = this.ctx.createGain();
+          ng.gain.setValueAtTime(0.05, t);
+          ng.gain.exponentialRampToValueAtTime(0.001, t + dur);
+          n.connect(bp); bp.connect(ng); ng.connect(this.masterGain);
+          n.start(t);
+        } catch(e){}
       }
     };
 

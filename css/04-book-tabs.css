@@ -96,20 +96,17 @@
       font-weight: 600;
     }
 
-    /* TAB 08: MANUAL — nhấn pha amber, đồng bộ màu chip MANUAL trên HUD */
-    .j-tab-manual { border-style: dashed; }
+    /* TAB 08: MANUAL — badge màu đất riêng, viền giữ nguyên để không hở dash cạnh mép sổ */
     .j-tab-manual .j-tab-badge {
-      color: #c2822a;
+      color: #9f6b2a;
       border-color: #6b4a1d;
-      background: rgba(194, 130, 42, 0.1);
+      background: rgba(159, 107, 42, 0.08);
     }
-    .j-tab-manual .j-tab-sub { color: #a5772e; }
     .j-tab-manual.active .j-tab-badge {
-      color: #ffb84d;
-      border-color: #c2822a;
-      background: rgba(255, 184, 77, 0.15);
+      color: #8a5a12;
+      border-color: #b58a3c;
+      background: rgba(176, 128, 45, 0.14);
     }
-    .j-tab-manual.active .j-tab-sub { color: #d69a3f; }
 
     /* THE BOOK */
     .book {

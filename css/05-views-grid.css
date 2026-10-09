@@ -264,20 +264,21 @@
       line-height: 1;
     }
 
-    /* PILL THUỘC TÍNH NHẬN DIỆN NHANH BÊN PHẢI TÊN MA (amber đồng bộ MANUAL) */
+    /* PILL THUỘC TÍNH NHẬN DIỆN NHANH BÊN PHẢI TÊN MA — con dấu mực nâu trên giấy */
     .slot-attr {
       font-family: var(--font-hand);
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: #8a5a12;
-      background: rgba(194, 130, 42, 0.14);
-      border: 1px solid rgba(194, 130, 42, 0.45);
+      font-size: 0.66rem;
+      font-weight: 600;
+      color: #6b4f1e;
+      background: rgba(255, 250, 235, 0.55);
+      border: 1px solid rgba(107, 79, 30, 0.38);
       border-radius: 4px;
       padding: 1px 5px;
-      line-height: 1.1;
+      line-height: 1.15;
       white-space: nowrap;
       flex: 0 0 auto;
       cursor: default;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
     }
     .ghost-slot.ruled-out .slot-attr { opacity: 0.5; }
 

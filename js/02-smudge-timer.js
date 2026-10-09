@@ -53,6 +53,23 @@
         this.setButtonState(false);
       },
 
+      reset() {
+        if (this.interval) {
+          clearInterval(this.interval);
+          this.interval = null;
+        }
+        this.remaining = 180;
+        this.setButtonState(false);
+        const topDisp = document.getElementById("smudgeDisplay");
+        const modalDisp = document.getElementById("modalSmudgeTimerDisplay");
+        if (topDisp) topDisp.textContent = "03:00";
+        if (modalDisp) modalDisp.textContent = "03:00";
+        const topPhase = document.getElementById("smudgePhase");
+        const modalStatus = document.getElementById("modalSmudgeStatus");
+        if (topPhase) topPhase.innerHTML = "Đốt nhang lúc KHÔNG hunt → đếm ngược thời gian an toàn còn lại";
+        if (modalStatus) modalStatus.innerHTML = "0-60s An toàn | 60-90s Demon | 90-180s Ma Thường | 180s+ Spirit";
+      },
+
       setButtonState(isRunning) {
         const topBtn = document.getElementById("btnSmudgeTimer");
         const modalBtn = document.getElementById("btnModalSmudge");
