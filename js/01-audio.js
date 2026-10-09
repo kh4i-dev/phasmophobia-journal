@@ -375,6 +375,27 @@
           osc.connect(g); g.connect(this.masterGain);
           osc.start(t); osc.stop(t + 0.055);
         } catch(e){}
+      },
+
+      // Sound FX: chuông báo HẾT NHANG (buzzer trầm 2 nhịp)
+      alarm() {
+        try {
+          this.ensureContext();
+          if (this.isMuted || this.volume <= 0) return;
+          const t = this.ctx.currentTime;
+          [0, 0.28].forEach(off => {
+            const osc = this.ctx.createOscillator();
+            const g = this.ctx.createGain();
+            osc.type = 'square';
+            osc.frequency.setValueAtTime(196, t + off);
+            osc.frequency.exponentialRampToValueAtTime(130, t + off + 0.2);
+            g.gain.setValueAtTime(0.0001, t + off);
+            g.gain.exponentialRampToValueAtTime(0.22, t + off + 0.02);
+            g.gain.exponentialRampToValueAtTime(0.001, t + off + 0.22);
+            osc.connect(g); g.connect(this.masterGain);
+            osc.start(t + off); osc.stop(t + off + 0.24);
+          });
+        } catch(e){}
       }
     };
 
