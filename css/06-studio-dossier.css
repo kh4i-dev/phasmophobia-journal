@@ -1,0 +1,743 @@
+    /* DEEP DIVE VIEW (RIGHT PAGE ON TAB 02) */
+    .info-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid #5a4b37;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+    }
+
+    .info-name-vi {
+      font-family: var(--font-hand);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #8f1d1d;
+      line-height: 1;
+    }
+
+    .info-name-en {
+      font-size: 0.95rem;
+      color: #5a4b37;
+      margin-top: 2px;
+    }
+
+    .info-meta-chips {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .info-chip {
+      background: rgba(255,255,255,0.6);
+      border: 1px solid #c2b192;
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-size: 0.82rem;
+      color: #2b2319;
+    }
+    .info-chip strong { color: #8f1d1d; }
+
+    .info-evidences-bar {
+      background: #e6d3b3;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      color: #1e293b;
+      margin-bottom: 8px;
+      border-left: 3px solid #1e3a8a;
+    }
+
+    .info-section {
+      background: rgba(255,255,255,0.4);
+      border-left: 3px solid #8f1d1d;
+      padding: 6px 10px;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+    .info-section.weakness { border-left-color: #059669; }
+    .info-section.test { border-left-color: #d97706; background: #fffcf0; }
+
+    .info-section-title {
+      font-family: var(--font-hand);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #1a150e;
+      margin-bottom: 2px;
+    }
+
+    .warning-badge {
+      background: #fee2e2;
+      border: 1px solid #f87171;
+      color: #991b1b;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      line-height: 1.3;
+      margin-top: 6px;
+    }
+
+    /* ==============================================================
+       ★ TAB 06: AUDIO STUDIO (PHÒNG THỬ ÂM THANH & BƯỚC CHÂN) ★
+       ============================================================== */
+    .audio-studio-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: 100%;
+    }
+
+    .footstep-preset-card {
+      background: rgba(255,255,255,0.45);
+      border: 1px solid #c9b99e;
+      border-radius: 6px;
+      padding: 8px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+    .footstep-preset-card:hover {
+      background: rgba(255,255,255,0.85);
+      border-color: #8f2020;
+    }
+    .footstep-preset-card.playing {
+      background: #fdf2f2;
+      border-color: #ef4444;
+      box-shadow: 0 0 8px rgba(239, 68, 68, 0.2);
+    }
+
+    .preset-info-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .preset-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #1b1915;
+    }
+
+    .preset-desc {
+      font-size: 0.8rem;
+      color: #574b39;
+    }
+
+    .preset-btn-play {
+      background: #2b2218;
+      color: #fff;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s;
+    }
+    .preset-btn-play:hover { background: #0284c7; }
+    .footstep-preset-card.playing .preset-btn-play {
+      background: #ef4444;
+    }
+
+    /* RIGHT PAGE SOUNDBOARD CONTROLS */
+    .audio-fx-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .fx-button {
+      background: rgba(255,255,255,0.5);
+      border: 1px solid #c9b99e;
+      border-radius: 6px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: var(--font-body);
+      text-align: left;
+    }
+    .fx-button:hover {
+      background: #fff;
+      border-color: #8f2020;
+      transform: translateY(-1px);
+    }
+    .fx-button-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #1b1915;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .fx-button-desc {
+      font-size: 0.78rem;
+      color: #64748b;
+    }
+
+    .volume-control-box {
+      background: rgba(0,0,0,0.06);
+      border: 1px solid #bfaf92;
+      border-radius: 6px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .volume-slider-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .volume-slider {
+      flex: 1;
+      accent-color: #8f1d1d;
+      cursor: pointer;
+    }
+
+    /* SCROLLABLE PAGE CONTENT */
+    .scrollable-page-content {
+      overflow-y: auto;
+      max-height: 500px;
+      padding-right: 6px;
+    }
+    .scrollable-page-content::-webkit-scrollbar { width: 4px; }
+    .scrollable-page-content::-webkit-scrollbar-thumb { background: #b8a584; border-radius: 2px; }
+
+    .voice-line-box {
+      background: rgba(255,255,255,0.4);
+      border: 1px solid #c2b193;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .voice-line-box:hover { background: rgba(255,255,255,0.7); }
+    .voice-line-en { font-family: var(--font-hand); font-size: 1.5rem; color: #1a365d; font-weight: 700; }
+    .voice-line-vi { font-size: 0.88rem; color: #574b39; }
+    .copy-pill { font-size: 0.8rem; background: #c7b391; padding: 2px 8px; border-radius: 4px; color: #2b2319; font-weight: 600; }
+
+    /* ==============================================================
+       ★ CỰC PHẨM: MODAL HỒ SƠ TẬP MẬT PHÓNG TO (DOSSIER ZOOM MODAL) ★
+       (ĐÃ BỎ HẾT EMOJI, DÙNG SVG VÀ CHỮ SẮC NÉT)
+       ============================================================== */
+    .dossier-modal-backdrop {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(4, 7, 12, 0.84);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      animation: fadeInBackdrop 0.2s ease-out;
+    }
+
+    @keyframes fadeInBackdrop {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+
+    .dossier-modal-folder {
+      width: 100%;
+      max-width: 920px;
+      max-height: 90vh;
+      background-color: #dfcca7;
+      background-image: 
+        radial-gradient(ellipse at center, #ede1c7 0%, #d8c29b 100%),
+        repeating-linear-gradient(transparent, transparent 27px, #caa97b 28px);
+      border: 6px solid #231913;
+      border-radius: 12px;
+      box-shadow: 
+        0 25px 60px rgba(0,0,0,0.9),
+        0 0 0 2px rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      animation: zoomInModal 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes zoomInModal {
+      from { transform: scale(0.96); opacity: 0.7; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .dossier-folder-header {
+      background: #c7ad81;
+      border-bottom: 2px solid #5a4b37;
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: inset 0 -2px 5px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .dossier-header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dossier-classified-stamp {
+      font-size: 0.8rem;
+      border: 2px solid #8f1d1d;
+      color: #8f1d1d;
+      padding: 2px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transform: rotate(-1deg);
+      display: inline-block;
+    }
+
+    .dossier-header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dossier-nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(0,0,0,0.08);
+      padding: 2px 6px;
+      border-radius: 5px;
+      border: 1px solid #aa9573;
+    }
+
+    .dossier-nav-btn {
+      background: #3a2e21;
+      color: #f7eee0;
+      border: 1px solid #5d4a36;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.12s;
+    }
+    .dossier-nav-btn:hover {
+      background: #8f1d1d;
+      border-color: #a82424;
+      color: #fff;
+    }
+
+    .dossier-counter {
+      font-size: 0.82rem;
+      color: #2c2217;
+      font-weight: bold;
+      padding: 0 4px;
+    }
+
+    .modal-close-btn {
+      background: #241c15;
+      color: #f1f5f9;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+    .modal-close-btn:hover { background: #ef4444; }
+
+    .dossier-body {
+      padding: 16px 22px 22px;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .dossier-body::-webkit-scrollbar { width: 5px; }
+    .dossier-body::-webkit-scrollbar-thumb { background: #9c825a; border-radius: 3px; }
+
+    .dossier-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid #5a4b37;
+      padding-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .dossier-name-vi {
+      font-family: var(--font-hand);
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #8f1d1d;
+      line-height: 1;
+    }
+
+    .dossier-name-en {
+      font-size: 1.05rem;
+      color: #4b3e2e;
+      margin-top: 2px;
+    }
+
+    .danger-tag {
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #f87171;
+    }
+
+    .dossier-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 8px;
+    }
+
+    .dossier-stat-card {
+      background: rgba(255,255,255,0.55);
+      border: 1px solid #c2b192;
+      border-radius: 6px;
+      padding: 7px 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: #574b37;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .stat-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1b1915;
+      margin-top: 1px;
+    }
+    .stat-value.highlight-red { color: #8f1d1d; }
+    .stat-value.highlight-blue { color: #1e3a8a; }
+
+    /* FOOTSTEP PRO AUDIO STUDIO IN MODAL */
+    .footstep-simulator-card {
+      background: #19140f;
+      border: 1px solid #3d3025;
+      border-radius: 7px;
+      padding: 10px 14px;
+      color: #f1f5f9;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footstep-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .footstep-info span.title {
+      font-size: 0.88rem;
+      color: #38bdf8;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footstep-info span.desc {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+
+    .footstep-metronome-pulse {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #334155;
+      border: 2px solid #64748b;
+      transition: all 0.04s ease-out;
+    }
+    .footstep-metronome-pulse.beat {
+      background: #ef4444;
+      border-color: #fca5a5;
+      box-shadow: 0 0 14px #ef4444;
+      transform: scale(1.3);
+    }
+
+    .footstep-audio-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .speed-toggle-group {
+      display: flex;
+      gap: 4px;
+      background: #271f18;
+      padding: 2px;
+      border-radius: 5px;
+      border: 1px solid #483928;
+    }
+
+    .btn-speed-mode {
+      background: transparent;
+      color: #cbd5e1;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-speed-mode:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .btn-speed-mode.active {
+      background: #0284c7;
+      color: #fff;
+    }
+
+    .btn-play-footstep {
+      background: #0284c7;
+      color: #fff;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 16px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .btn-play-footstep:hover { background: #38bdf8; color: #0c0f14; }
+    .btn-play-footstep.playing { background: #ef4444; }
+
+    /* TAP TEMPO */
+    .tap-tempo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #231b14;
+      border: 1px dashed #6b5339;
+      border-radius: 5px;
+      padding: 7px 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn-tap-tempo {
+      background: #d97706;
+      color: #fff;
+      border: none;
+      padding: 5px 14px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.08s;
+    }
+    .btn-tap-tempo:active { transform: scale(0.96); background: #f59e0b; }
+
+    .tap-tempo-results {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tap-bpm-display {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+    .tap-bpm-display strong {
+      font-size: 1.35rem;
+      color: #38bdf8;
+    }
+
+    .tap-verdict { font-size: 0.82rem; color: #fde68a; }
+
+    /* DOSSIER TABS NAV */
+    .dossier-tabs-nav {
+      display: flex;
+      gap: 6px;
+      border-bottom: 2px solid #5a4b37;
+      padding-bottom: 2px;
+    }
+
+    .d-tab-btn {
+      background: rgba(0,0,0,0.06);
+      border: 1px solid #bda887;
+      border-bottom: none;
+      padding: 5px 12px;
+      border-radius: 5px 5px 0 0;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #4b3e2e;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .d-tab-btn:hover { background: rgba(0,0,0,0.12); }
+    .d-tab-btn.active {
+      background: #dfcca7;
+      border-color: #5a4b37;
+      color: #8f1d1d;
+      padding-top: 7px;
+      margin-top: -2px;
+    }
+
+    .dossier-tab-pane {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #241f18;
+    }
+    .dossier-tab-pane.active { display: flex; }
+
+    .instant-clue-card {
+      background: #fffbeb;
+      border: 1px solid #d97706;
+      border-left: 5px solid #b45309;
+      border-radius: 6px;
+      padding: 10px 14px;
+    }
+    .instant-clue-header {
+      font-family: var(--font-hand);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 2px;
+    }
+    .instant-clue-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.35;
+    }
+
+    .interactive-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .check-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      background: rgba(255,255,255,0.65);
+      padding: 7px 10px;
+      border-radius: 5px;
+      border: 1px solid #d3c3a7;
+      cursor: pointer;
+      transition: all 0.12s;
+    }
+    .check-step-item:hover { background: #fff; border-color: #9c825a; }
+    .check-step-item.checked { background: #ecfdf5; border-color: #10b981; }
+    .check-step-box {
+      width: 18px; height: 18px;
+      border: 2px solid #5a4b37;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #059669;
+      margin-top: 2px;
+      flex-shrink: 0;
+      background: #fff;
+      font-size: 0.75rem;
+    }
+    .check-step-item.checked .check-step-box {
+      border-color: #059669; background: #d1fae5;
+    }
+    .check-step-text {
+      font-size: 0.9rem;
+      color: #1f2937;
+      line-height: 1.3;
+    }
+
+    .dossier-block {
+      background: rgba(255,255,255,0.5);
+      border-left: 4px solid #8f1d1d;
+      padding: 8px 12px;
+      border-radius: 0 5px 5px 0;
+    }
+    .dossier-block.green { border-left-color: #15803d; }
+    .dossier-block.amber { border-left-color: #b45309; background: #fffcf4; }
+
+    .dossier-block-title {
+      font-family: var(--font-hand);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a150e;
+      margin-bottom: 2px;
+    }
+
+    .modal-smudge-box {
+      background: #181c24;
+      border: 1px solid #2e3a4e;
+      border-radius: 6px;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      margin-top: 6px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    @media (max-width: 860px) {
+      .book { flex-direction: column; }
+      .page.left-page { border-right: none; border-bottom: 2px solid rgba(0,0,0,0.3); }
+      .ghosts-table-container { grid-template-columns: repeat(2, 1fr); }
+      .journal-tabs { margin-left: 4px; gap: 3px; }
+      .j-tab { padding: 4px 8px; }
+      .top-bar-row { flex-direction: column; align-items: stretch; }
+      .top-controls-group { max-width: 100%; flex-wrap: wrap; }
+      .directory-grid-2col { grid-template-columns: 1fr; }
+    }
+

@@ -1,0 +1,164 @@
+    /* 6 TABS TRÊN GÁY SỔ - TÊN ANH CHÍNH, TIẾNG VIỆT PHỤ ĐỀ */
+    .journal-tabs {
+      display: flex;
+      gap: 4px;
+      margin-left: 0;
+      position: relative;
+      z-index: 5;
+      margin-bottom: -1px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .journal-tabs::-webkit-scrollbar { display: none; }
+
+    .j-tab {
+      background: linear-gradient(180deg, #241c15 0%, #17120e 100%);
+      border: 1px solid #483928;
+      border-bottom: none;
+      padding: 6px 10px 7px;
+      border-radius: 8px 8px 0 0;
+      color: #9c8975;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex: 0 0 auto;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 -2px 6px rgba(0,0,0,0.5);
+      user-select: none;
+    }
+
+    .j-tab:hover {
+      background: linear-gradient(180deg, #33271d 0%, #1e1711 100%);
+      color: #ded1c1;
+      border-color: #665039;
+      transform: translateY(-2px);
+    }
+
+    .j-tab.active {
+      background: linear-gradient(180deg, #ebd8b6 0%, var(--paper-bg) 100%);
+      border-color: #7d6545;
+      border-bottom: 1px solid var(--paper-bg);
+      color: #1b1915;
+      padding-top: 7px;
+      padding-bottom: 8px;
+      margin-top: -2px;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.6);
+      z-index: 6;
+    }
+
+    .j-tab-badge {
+      font-family: var(--font-hand);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #78644e;
+      border: 1px solid #4a3a29;
+      border-radius: 5px;
+      padding: 1px 4px;
+      line-height: 1;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .j-tab.active .j-tab-badge {
+      color: #8f1d1d;
+      border-color: #a82424;
+      background: rgba(143, 29, 29, 0.08);
+    }
+
+    .j-tab-content {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .j-tab-title {
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      color: inherit;
+      white-space: nowrap;
+    }
+
+    .j-tab-sub {
+      font-size: 0.66rem;
+      color: #7a6a57;
+      margin-top: 1px;
+      white-space: nowrap;
+    }
+
+    .j-tab.active .j-tab-sub {
+      color: #5a4b37;
+      font-weight: 600;
+    }
+
+    /* TAB 08: MANUAL — nhấn pha amber, đồng bộ màu chip MANUAL trên HUD */
+    .j-tab-manual { border-style: dashed; }
+    .j-tab-manual .j-tab-badge {
+      color: #c2822a;
+      border-color: #6b4a1d;
+      background: rgba(194, 130, 42, 0.1);
+    }
+    .j-tab-manual .j-tab-sub { color: #a5772e; }
+    .j-tab-manual.active .j-tab-badge {
+      color: #ffb84d;
+      border-color: #c2822a;
+      background: rgba(255, 184, 77, 0.15);
+    }
+    .j-tab-manual.active .j-tab-sub { color: #d69a3f; }
+
+    /* THE BOOK */
+    .book {
+      background: #211913;
+      border: 6px solid #140f0c;
+      border-radius: 12px;
+      box-shadow: 
+        0 18px 45px rgba(0,0,0,0.9),
+        0 0 0 1px rgba(255,255,255,0.05);
+      display: flex;
+      min-height: 650px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .book::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: 8px;
+      box-shadow: inset 0 0 25px rgba(0,0,0,0.8);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .page {
+      flex: 1;
+      background-color: var(--paper-bg);
+      background-image: 
+        radial-gradient(ellipse at center, var(--paper-texture) 0%, var(--paper-bg) 85%),
+        repeating-linear-gradient(transparent, transparent 27px, var(--paper-line) 28px);
+      padding: 24px 30px 40px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: inset 0 0 60px rgba(130, 100, 60, 0.18);
+    }
+
+    .page.left-page {
+      border-right: 1px solid rgba(0, 0, 0, 0.22);
+      box-shadow: 
+        inset -15px 0 25px rgba(0,0,0,0.2),
+        inset 0 0 50px rgba(130, 100, 60, 0.15);
+    }
+
+    .page.right-page {
+      border-left: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 
+        inset 15px 0 25px rgba(0,0,0,0.2),
+        inset 0 0 50px rgba(130, 100, 60, 0.15);
+    }
+

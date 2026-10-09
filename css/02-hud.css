@@ -1,0 +1,359 @@
+    /* GOM NHÓM ĐIỀU KHIỂN: Ô TÌM KIẾM + ĐỒNG HỒ NHANG HÀI HÒA */
+    .top-controls-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      justify-content: flex-end;
+      max-width: 780px;
+    }
+
+    .search-container {
+      position: relative;
+      flex: 1;
+      max-width: 420px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 8px 34px 8px 36px;
+      background: #121822;
+      border: 1px solid #28374a;
+      border-radius: 20px;
+      color: #f1f5f9;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+      background: #17212e;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+      display: flex;
+      align-items: center;
+    }
+
+    .clear-search-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+      color: #64748b;
+      cursor: pointer;
+      display: none;
+    }
+    .clear-search-btn:hover { color: #ef4444; }
+
+    /* SEARCH DROPDOWN */
+    .search-results-dropdown {
+      position: absolute;
+      top: 105%;
+      left: 0; right: 0;
+      background: #0f1622;
+      border: 1px solid #28374a;
+      border-radius: 10px;
+      max-height: 440px;
+      overflow-y: auto;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.9);
+      display: none;
+      z-index: 1000;
+      padding: 8px;
+    }
+
+    .search-category-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+      margin: 6px 6px 4px;
+      font-weight: 700;
+    }
+
+    .search-result-item {
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: #16202c;
+      margin-bottom: 5px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.15s;
+    }
+
+    .search-result-item:hover {
+      background: #1e2c3d;
+      border-left: 3px solid #38bdf8;
+      transform: translateX(2px);
+    }
+
+    .result-name { font-size: 1rem; font-weight: 700; color: #f1f5f9; }
+    .result-name small { color: #94a3b8; font-size: 0.82rem; margin-left: 6px; font-weight: normal; }
+    .result-snippet { font-size: 0.82rem; color: #cbd5e1; margin-top: 2px; }
+    .result-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #1e293b;
+      color: #38bdf8;
+      white-space: nowrap;
+    }
+
+    /* MASTER SMUDGE TIMER WIDGET (MÀU ĐỒNG VINTAGE TRẦM ẤM, KHÔNG CHÓI LỌI) */
+    .smudge-timer-widget {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #121822;
+      border: 1px solid #28374a;
+      border-radius: 20px;
+      padding: 3px 12px 3px 6px;
+      white-space: nowrap;
+    }
+
+    .timer-btn {
+      background: #2b2218;
+      color: #e2d7c5;
+      border: 1px solid #574431;
+      border-radius: 14px;
+      padding: 4px 12px;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s;
+    }
+    .timer-btn:hover { background: #3d3023; color: #fff; border-color: #7d6349; }
+    .timer-btn.running {
+      background: #8f1d1d;
+      color: #fff;
+      border-color: #b91c1c;
+      animation: pulseBtn 1.5s infinite;
+    }
+
+    @keyframes pulseBtn {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(1.2); }
+    }
+
+    .timer-display {
+      font-family: monospace;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #f8fafc;
+      min-width: 52px;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+
+    .timer-phase {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      border-left: 1px solid #2c394b;
+      padding-left: 8px;
+    }
+    .timer-phase strong { color: #38bdf8; }
+
+    /* ==============================================================
+       ★ TACTICAL GROUP FILTER HUD: 3 NHÓM LỌC DANH SÁCH THỰC THỤ ★
+       ============================================================== */
+    .quick-filter-hud {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 2px 0;
+      border-top: 1px solid rgba(56, 189, 248, 0.14);
+    }
+
+    .hud-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .hud-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: #64748b;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .hud-radar-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 6px #38bdf8;
+      animation: radarPulse 2s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes radarPulse {
+      0%, 100% { opacity: 0.35; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.15); box-shadow: 0 0 10px #38bdf8; }
+    }
+
+    .hud-chips-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(22, 32, 48, 0.85);
+      border: 1px solid rgba(52, 73, 102, 0.55);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 0.82rem;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .filter-chip:hover {
+      background: rgba(30, 44, 66, 0.95);
+      border-color: rgba(56, 189, 248, 0.45);
+      color: #f1f5f9;
+    }
+
+    .filter-chip.active {
+      background: #14283d;
+      border-color: #38bdf8;
+      color: #38bdf8;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.22);
+    }
+
+    .chip-text { font-weight: 600; letter-spacing: 0.02em; }
+    .chip-badge {
+      background: #1e293b;
+      color: #38bdf8;
+      font-size: 0.72rem;
+      font-weight: bold;
+      padding: 1px 6px;
+      border-radius: 999px;
+    }
+
+    .hud-filter-status {
+      font-size: 0.76rem;
+      color: #7dd3fc;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+    }
+
+    .hud-filter-status::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 6px #38bdf8;
+      flex-shrink: 0;
+    }
+
+    /* ==============================================================
+       ★ TACTICAL FIELD COMPENDIUM (CẨM NANG TOÀN DIỆN & BẢNG KÝ HIỆU) ★
+       ============================================================== */
+    .hud-chip-separator {
+      width: 1px;
+      height: 18px;
+      background: rgba(56, 189, 248, 0.25);
+      margin: 0 4px;
+    }
+
+    .compendium-toggle-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #38bdf8;
+      cursor: pointer;
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+      white-space: nowrap;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .compendium-toggle-chip:hover {
+      background: rgba(14, 116, 144, 0.25);
+      border-color: #38bdf8;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+    }
+
+    .compendium-toggle-chip.active {
+      background: #0369a1;
+      border-color: #38bdf8;
+      color: #fff;
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.5);
+    }
+
+    .compendium-toggle-chip .manual-badge {
+      background: #0284c7;
+      color: #f0f9ff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 999px;
+      letter-spacing: 0.05em;
+    }
+
+    .compendium-toggle-chip.active .manual-badge {
+      background: #fff;
+      color: #0369a1;
+    }
+
+    .compendium-toggle-chip .toggle-indicator {
+      font-size: 0.72rem;
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .compendium-toggle-chip.active .toggle-indicator {
+      transform: rotate(180deg);
+    }
+
