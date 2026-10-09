@@ -474,21 +474,25 @@
 
     /* COMPENDIUM CONTAINER */
     .compendium-container {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
       width: 100%;
-      max-width: 1140px;
-      margin: 0 auto 16px;
+      max-width: none;
+      margin: 0;
+      overflow-y: auto;
       background: linear-gradient(180deg, #0e1522 0%, #080c14 100%);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      border-radius: 12px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.08);
-      padding: 16px 22px;
+      border: none;
+      border-radius: 0;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+      padding: 24px clamp(16px, 6vw, 80px) 90px;
       box-sizing: border-box;
-      animation: compendiumSlide 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: compendiumPageIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    @keyframes compendiumSlide {
-      from { opacity: 0; transform: translateY(-8px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes compendiumPageIn {
+      from { opacity: 0; transform: translateY(16px) scale(0.99); }
+      to { opacity: 1; transform: none; }
     }
 
     .compendium-header {
@@ -2267,6 +2271,36 @@
     @media (max-width: 860px) {
       .tarot-grid { grid-template-columns: repeat(2, 1fr); }
     }
+
+    /* ===== PREMIUM MOTION ===== */
+    .book { perspective: 2200px; }
+    .book .page { will-change: transform, opacity; }
+    .book.turn-next .page.left-page { animation: turnFromLeft 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .book.turn-next .page.right-page { animation: turnFromRight 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .book.turn-prev .page.left-page { animation: turnFromRight 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .book.turn-prev .page.right-page { animation: turnFromLeft 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    @keyframes turnFromLeft { 0% { opacity: 0.3; transform: rotateY(16deg) translateZ(-45px); } 100% { opacity: 1; transform: none; } }
+    @keyframes turnFromRight { 0% { opacity: 0.3; transform: rotateY(-16deg) translateZ(-45px); } 100% { opacity: 1; transform: none; } }
+
+    .book::after {
+      content: '';
+      position: absolute; inset: 0; z-index: 12; pointer-events: none;
+      background: linear-gradient(115deg, transparent 32%, rgba(255,255,255,0.12) 50%, transparent 66%);
+      opacity: 0;
+    }
+    .book.turn-next::after, .book.turn-prev::after { animation: bookSheen 0.6s ease; }
+    @keyframes bookSheen { 0% { opacity: 0; transform: translateX(-26%); } 40% { opacity: 1; } 100% { opacity: 0; transform: translateX(26%); } }
+
+    .filter-chip, .compendium-toggle-chip, .journal-btn, .btn-zoom-dossier, .preset-btn-play, .fx-button, .page-turn, .comp-tab-btn {
+      transition: transform 0.18s ease, box-shadow 0.22s ease, background 0.22s ease, color 0.2s ease;
+    }
+    .filter-chip:hover, .compendium-toggle-chip:hover { transform: translateY(-2px); }
+    .j-tab { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .j-tab:hover { transform: translateY(-3px); }
+    .j-tab.active { box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4); }
+
+    .ghost-slot-anim { animation: ghostIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; }
+    @keyframes ghostIn { from { opacity: 0; transform: translateY(12px) scale(0.97); } to { opacity: 1; transform: none; } }
   </style>
 </head>
 <body>
@@ -2358,7 +2392,6 @@
         <span class="comp-beacon-tag">SOP MANUAL</span>
         <div>
           <div class="compendium-main-title">
-            <svg class="svg-icon" viewBox="0 0 24 24" style="color:#38bdf8;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             CẨM NANG ĐIỀU TRA TOÀN DIỆN &amp; KÝ HIỆU NGHIỆP VỤ
           </div>
           <div class="compendium-subtitle">
@@ -2367,23 +2400,23 @@
         </div>
       </div>
       <button class="btn-close-compendium" id="btnCloseCompendium" type="button">
-        ✕ Thu Gọn Cẩm Nang
+        Đóng Cẩm Nang
       </button>
     </div>
 
     <!-- Navigation Tabs -->
     <div class="compendium-tabs-nav">
       <button class="comp-tab-btn active" data-target="compPaneRookie" title="Tân thủ &amp; bảng giải mã ký hiệu giao diện">
-        <span class="comp-tab-ico">🔰</span><span class="comp-tab-txt">Tân Thủ &amp; Ký Hiệu</span>
+        <span class="comp-tab-txt">Tân Thủ &amp; Ký Hiệu</span>
       </button>
       <button class="comp-tab-btn" data-target="compPaneSanity" title="Ngưỡng Sanity đi săn (Hunt Matrix)">
-        <span class="comp-tab-ico">⚡</span><span class="comp-tab-txt">Ngưỡng Sanity Hunt</span>
+        <span class="comp-tab-txt">Ngưỡng Sanity Hunt</span>
       </button>
       <button class="comp-tab-btn" data-target="compPaneSpeed" title="Vận tốc &amp; gia tốc LOS (Speed/BPM)">
-        <span class="comp-tab-ico">🧪</span><span class="comp-tab-txt">Vận Tốc &amp; LOS</span>
+        <span class="comp-tab-txt">Vận Tốc &amp; LOS</span>
       </button>
       <button class="comp-tab-btn" data-target="compPaneBusters" title="Tuyệt chiêu 0-Evidence cho 30 loài ma">
-        <span class="comp-tab-ico">🎯</span><span class="comp-tab-txt">Mẹo 0-Evidence</span>
+        <span class="comp-tab-txt">Mẹo 0-Evidence</span>
       </button>
     </div>
 
@@ -3748,9 +3781,10 @@
       const grid = document.getElementById("ghostsGrid");
       grid.innerHTML = "";
 
-      ALL_SCREENSHOT_GHOSTS.forEach(name => {
+      ALL_SCREENSHOT_GHOSTS.forEach((name, i) => {
         const slot = document.createElement("div");
-        slot.className = "ghost-slot";
+        slot.className = "ghost-slot ghost-slot-anim";
+        slot.style.animationDelay = (i * 0.02).toFixed(2) + "s";
         slot.dataset.name = name;
 
         const ghostObj = ghostsData.find(g => g.name_en.toLowerCase() === name.toLowerCase());
@@ -4742,6 +4776,7 @@
     };
 
     function switchTab(tabKey) {
+      const prevTab = currentTab;
       AudioEngine.pageFlip();
       currentTab = tabKey;
 
@@ -4764,13 +4799,20 @@
 
       const activeLeft = document.getElementById(config.left);
       const activeRight = document.getElementById(config.right);
-      [activeLeft, activeRight].forEach(el => {
-        if (!el) return;
-        el.style.display = "flex";
-        el.classList.remove("view-anim");
-        void el.offsetWidth;
-        el.classList.add("view-anim");
-      });
+      if (activeLeft) activeLeft.style.display = "flex";
+      if (activeRight) activeRight.style.display = "flex";
+
+      // Lật trang sổ (page-turn) mượt khi chuyển qua lại
+      const book = document.querySelector(".book");
+      if (book) {
+        const fromIdx = TAB_KEYS.indexOf(prevTab);
+        const toIdx = TAB_KEYS.indexOf(tabKey);
+        const dir = (fromIdx >= 0 && toIdx >= 0) ? (toIdx > fromIdx ? "next" : "prev") : "next";
+        book.classList.remove("turn-next", "turn-prev");
+        void book.offsetWidth;
+        book.classList.add(dir === "next" ? "turn-next" : "turn-prev");
+        setTimeout(() => book.classList.remove("turn-next", "turn-prev"), 620);
+      }
 
       const leftNum = document.getElementById("leftPageNum");
       const rightNum = document.getElementById("rightPageNum");
@@ -4861,15 +4903,23 @@
 
         if (targetOpen) {
           compContainer.style.display = "block";
+          compContainer.scrollTop = 0;
+          document.body.style.overflow = "hidden";
           if (btnToggleComp) btnToggleComp.classList.add("active");
           if (compArrow) compArrow.textContent = "▴";
-          compContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
         } else {
           compContainer.style.display = "none";
+          document.body.style.overflow = "";
           if (btnToggleComp) btnToggleComp.classList.remove("active");
           if (compArrow) compArrow.textContent = "▾";
         }
       };
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && compContainer && compContainer.style.display !== "none") {
+          window.toggleFieldCompendium(false);
+        }
+      });
 
       if (btnToggleComp) {
         btnToggleComp.addEventListener("click", () => window.toggleFieldCompendium());
