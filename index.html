@@ -845,19 +845,24 @@
     /* 6 TABS TRÊN GÁY SỔ - TÊN ANH CHÍNH, TIẾNG VIỆT PHỤ ĐỀ */
     .journal-tabs {
       display: flex;
-      gap: 6px;
+      gap: 4px;
       margin-left: 0;
       position: relative;
       z-index: 5;
       margin-bottom: -1px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
+    .journal-tabs::-webkit-scrollbar { display: none; }
 
     .j-tab {
       background: linear-gradient(180deg, #241c15 0%, #17120e 100%);
       border: 1px solid #483928;
       border-bottom: none;
-      padding: 6px 14px 7px;
+      padding: 6px 10px 7px;
       border-radius: 8px 8px 0 0;
       color: #9c8975;
       cursor: pointer;
@@ -865,7 +870,8 @@
       position: relative;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+      flex: 0 0 auto;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 -2px 6px rgba(0,0,0,0.5);
       user-select: none;
     }
@@ -891,14 +897,14 @@
 
     .j-tab-badge {
       font-family: var(--font-hand);
-      font-size: 1.05rem;
+      font-size: 0.92rem;
       font-weight: 700;
       color: #78644e;
       border: 1px solid #4a3a29;
       border-radius: 5px;
-      padding: 1px 5px;
+      padding: 1px 4px;
       line-height: 1;
-      min-width: 22px;
+      min-width: 20px;
       text-align: center;
     }
 
@@ -915,16 +921,18 @@
     }
 
     .j-tab-title {
-      font-size: 0.85rem;
-      letter-spacing: 0.06em;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
       font-weight: 700;
       color: inherit;
+      white-space: nowrap;
     }
 
     .j-tab-sub {
-      font-size: 0.76rem;
+      font-size: 0.66rem;
       color: #7a6a57;
       margin-top: 1px;
+      white-space: nowrap;
     }
 
     .j-tab.active .j-tab-sub {
@@ -1133,6 +1141,21 @@
       line-height: 1.25;
       margin-top: 1px;
     }
+
+    .evidence-group-head {
+      font-family: var(--font-hand);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #8f1d1d;
+      margin: 14px 0 2px;
+      letter-spacing: 0.01em;
+    }
+    .group-filter-list { margin-top: 2px; }
+    .group-filter-item.active { background: rgba(143, 29, 29, 0.08); }
+    .group-filter-item.active .hand-checkbox {
+      color: #8f1d1d; background: #fde8e8; border-color: #8f1d1d;
+    }
+    .group-filter-item.active .evidence-name { color: #8f1d1d; }
 
     .journal-btn {
       align-self: flex-start;
@@ -2422,14 +2445,6 @@
             <span class="chip-text">Tất Cả</span>
             <span class="chip-badge">30</span>
           </div>
-          <div class="filter-chip" data-filter="early_hunt">
-            <span class="chip-text">Săn Sớm (&gt;60%)</span>
-            <span class="chip-badge">7</span>
-          </div>
-          <div class="filter-chip" data-filter="fast_speed">
-            <span class="chip-text">Tốc Độ Cao</span>
-            <span class="chip-badge">8</span>
-          </div>
 
           <div class="hud-chip-separator"></div>
 
@@ -2898,6 +2913,9 @@
           <p class="page-subtitle">Nhấp 1 lần: Có (✔) • Nhấp 2 lần: Không có (✖) • Nhấp 3 lần: Bỏ chọn</p>
 
           <div class="evidence-list" id="evidenceList"></div>
+
+          <div class="evidence-group-head">Thuộc Tính Nhóm — Loại Nhanh</div>
+          <div class="evidence-list group-filter-list" id="groupFilterList"></div>
 
           <button class="journal-btn" id="btnResetEvidence">↺ Xóa tất cả bằng chứng đã chọn</button>
         </div>
@@ -3672,6 +3690,14 @@
     const evidenceState = {};
     EVIDENCES.forEach(e => evidenceState[e.id] = null);
 
+    // THUỘC TÍNH NHÓM — dùng chung cơ chế LOẠI với bằng chứng (bấm là gạch thẳng con không liên quan)
+    const GROUP_ATTRS = [
+      { id: "early_hunt", label: "Săn Sớm (>60%)", desc: "Loài săn ở ngưỡng Sanity cao (>60%)",
+        test: g => (g.hunt_sanity >= 60 || g.id === "demon" || g.id === "yokai" || g.id === "thaye") },
+      { id: "fast_speed", label: "Tốc Độ Cao", desc: "Loài có cơ chế tăng tốc đặc thù (LOS / điện / lạnh / bóng tối)",
+        test: g => ["revenant", "moroi", "deogen", "thaye", "deildegast", "hantu", "jinn", "raiju"].includes(g.id) }
+    ];
+
     let ghostsData = [];
     let toolsAndCursedData = null;
     let referenceData = null;
@@ -3743,6 +3769,7 @@
         referenceData = await rRes.json();
 
         renderEvidenceList();
+        renderGroupFilterList();
         renderGhostsGrid();
         renderGhostInfoCatalog();
         renderItemsTab();
@@ -3812,6 +3839,53 @@
 
         container.appendChild(item);
       });
+    }
+
+    // RENDER NHÓM LỌC (THUỘC TÍNH NHÓM) — hiển thị trong panel Bằng Chứng
+    function renderGroupFilterList() {
+      const container = document.getElementById("groupFilterList");
+      if (!container) return;
+      container.innerHTML = "";
+
+      GROUP_ATTRS.forEach(ga => {
+        const active = activeListFilter === ga.id;
+        const count = ghostsData.filter(ga.test).length;
+        const item = document.createElement("div");
+        item.className = "evidence-item group-filter-item";
+        if (active) item.classList.add("active");
+
+        item.innerHTML = `
+          <div class="hand-checkbox">${active ? "✔" : ""}</div>
+          <div class="evidence-text-block">
+            <div class="evidence-name">${ga.label} <span style="font-size:0.95rem;color:#8a7a63;">(${count})</span></div>
+            <div class="evidence-desc">${ga.desc}</div>
+          </div>
+        `;
+
+        item.addEventListener("click", () => {
+          AudioEngine.pencil();
+          activeListFilter = active ? "all" : ga.id;
+          syncGroupFilterUI();
+          updateGhostGridStates();
+        });
+
+        container.appendChild(item);
+      });
+    }
+
+    // ĐỒNG BỘ UI NHÓM LỌC GIỮA HUD + PANEL BẰNG CHỨNG
+    function syncGroupFilterUI() {
+      document.querySelectorAll(".filter-chip").forEach(c => {
+        c.classList.toggle("active", c.dataset.filter === activeListFilter);
+      });
+      renderGroupFilterList();
+
+      const statusEl = document.getElementById("hudFilterStatus");
+      if (!statusEl) return;
+      const ga = GROUP_ATTRS.find(a => a.id === activeListFilter);
+      statusEl.textContent = ga
+        ? `Đang loại nhanh: ${ga.label} — đã gạch các con không liên quan`
+        : "Hiển thị toàn bộ 30 loài ma";
     }
 
     document.getElementById("btnResetEvidence").addEventListener("click", () => {
@@ -3965,14 +4039,6 @@
         const g = ghostsData.find(x => x.name_en.toLowerCase() === name.toLowerCase());
         if (!g) return;
 
-        // BỘ LỌC NHÓM (ACTIVE LIST FILTER)
-        let matchesGroup = true;
-        if (activeListFilter === "early_hunt") {
-          matchesGroup = (g.hunt_sanity >= 60 || g.id === "demon" || g.id === "yokai" || g.id === "thaye");
-        } else if (activeListFilter === "fast_speed") {
-          matchesGroup = (g.speed.max_los >= 2.5 || g.speed.base >= 2.0 || g.id === "revenant" || g.id === "moroi" || g.id === "deogen");
-        }
-
         slot.style.display = "flex";
 
         // QUY TẮC LOẠI TRỪ BẰNG CHỨNG (CHỈ GẠCH KHI CÓ MÂU THUẪN)
@@ -4006,11 +4072,17 @@
         // ÁP DỤNG TRẠNG THÁI: RULED-OUT | PINNED | HIGHLIGHTED
         slot.classList.remove("ruled-out", "pinned", "highlighted");
 
+        // THUỘC TÍNH NHÓM: chọn nhóm nào thì loại thẳng con không thuộc nhóm đó
+        const activeGroup = GROUP_ATTRS.find(a => a.id === activeListFilter);
+        if (!isRuledOut && activeGroup && !activeGroup.test(g)) {
+          isRuledOut = true;
+        }
+
         if (isRuledOut) {
           slot.classList.add("ruled-out");
         } else {
           possibleGhosts.push(g);
-          if (activeListFilter !== "all" && matchesGroup) {
+          if (activeGroup) {
             slot.classList.add("highlighted");
           }
         }
@@ -4978,22 +5050,12 @@
         }
       });
 
-      // 3 TACTICAL GROUP FILTER CHIPS (LỌC DANH SÁCH THỰC THỤ)
+      // CHIP "TẤT CẢ" Ở HUD — reset nhóm lọc nhanh (đồng bộ với panel Bằng Chứng)
       document.querySelectorAll(".filter-chip").forEach(chip => {
         chip.addEventListener("click", () => {
-          document.querySelectorAll(".filter-chip").forEach(c => c.classList.remove("active"));
-          chip.classList.add("active");
+          AudioEngine.pencil();
           activeListFilter = chip.dataset.filter;
-
-          const statusEl = document.getElementById("hudFilterStatus");
-          if (activeListFilter === "all") {
-            statusEl.textContent = "Hiển thị toàn bộ 30 loài ma";
-          } else if (activeListFilter === "early_hunt") {
-            statusEl.textContent = "Đang lọc: Loài ma săn sớm (>60% Sanity)";
-          } else if (activeListFilter === "fast_speed") {
-            statusEl.textContent = "Đang lọc: Loài ma có tốc độ cao / LOS đột biến";
-          }
-
+          syncGroupFilterUI();
           updateGhostGridStates();
         });
       });
