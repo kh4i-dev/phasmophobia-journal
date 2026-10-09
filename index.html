@@ -49,10 +49,10 @@
         <div class="smudge-timer-widget">
           <button class="timer-btn" id="btnSmudgeTimer">
             <svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 2c0 4-4 6-4 10a4 4 0 0 0 8 0c0-4-4-6-4-10z"></path></svg>
-            <span>Bấm Giờ Nhang</span>
+            <span>Đốt Nhang</span>
           </button>
-          <div class="timer-display" id="smudgeDisplay">00:00</div>
-          <div class="timer-phase" id="smudgePhase">Sẵn sàng test Demon/Spirit</div>
+          <div class="timer-display" id="smudgeDisplay">03:00</div>
+          <div class="timer-phase" id="smudgePhase">Đốt nhang lúc KHÔNG hunt → đếm ngược thời gian an toàn còn lại</div>
         </div>
 
       </div>
@@ -465,11 +465,13 @@
         <div class="comp-card highlight-cyan">
           <div class="comp-card-title"><span>NHẬN DIỆN SIÊU TỐC (TELLS ẨN)</span><span class="badge">PRO</span></div>
           <ul>
-            <li><strong>Raiju:</strong> nhịp tim (heartbeat) <strong>to &amp; bass hơn</strong> mọi ma khác — nghe cả khi event lẫn hunt.</li>
-            <li><strong>Banshee:</strong> KHÔNG BAO GIỜ là nam (model/tên) từ update Giáng Sinh 2025 → thấy nam là gạch ngay.</li>
-            <li><strong>Onryo:</strong> không thắp được nến nhà/campfire; thổi tắt <em>cùng 1 firelight 2 lần trong 20s</em>; thổi tắt bật lửa của bạn trước 20s.</li>
-            <li><strong>Mare:</strong> không bật được TV/màn hình máy tính.</li>
-            <li><strong>Shade:</strong> không làm event hát; không nâng &amp; ném đồ (update Chronicle).</li>
+            <li><strong>Raiju:</strong> nhịp tim (heartbeat) <strong>to &amp; bass hơn</strong> mọi ma khác — nghe cả khi event lẫn hunt. Nghe là biết.</li>
+            <li><strong>Banshee:</strong> KHÔNG BAO GIỜ là nam (model/tên) từ update Giáng Sinh 2025 → <em>thấy model/tên nam = gạch Banshee.</em></li>
+            <li><strong>Mare:</strong> <strong>không bật được</strong> TV/màn hình. → <em>Thấy ma BẬT TV/màn hình = gạch Mare.</em> Còn Mare thì hay <strong>tắt đèn ngay</strong> sau khi bạn vừa bật (và không bao giờ bật đèn).</li>
+            <li><strong>Onryo:</strong> <strong>không thắp được</strong> nến nhà/campfire → <em>thấy ma thắp nến = gạch Onryo.</em> Onryo còn hay thổi tắt cùng 1 firelight 2 lần trong 20s, và thổi tắt bật lửa của bạn trong &lt;20s.</li>
+            <li><strong>Shade:</strong> không làm event hát; không nâng &amp; ném đồ (update Chronicle) → <em>thấy hát / thấy nâng-ném đồ = gạch Shade.</em></li>
+            <li><strong>Oni:</strong> không làm event "bóng khói" (airball) → <em>thấy airball = gạch Oni.</em> Khi hunt Oni hiện hình lâu (ít tàng hình).</li>
+            <li><strong>Hantu:</strong> khi hunt (lúc cầu dao TẮT) thở ra <strong>hơi khói trắng</strong> → <em>thấy hơi thở = Hantu.</em></li>
           </ul>
         </div>
 
@@ -527,6 +529,21 @@
             <li><strong>B3 — Test Spirit chuẩn:</strong> nếu <strong>2 phút 45 giây</strong> vẫn không hunt → đốt nhang lần 2. Nếu hunt trong <strong>dưới 60 giây</strong> sau đó → 100% Spirit.</li>
             <li><strong>Vì sao?</strong> Nhang <strong>KHÔNG cộng dồn/reset</strong> cửa sổ đang chạy → cửa sổ 180s của Spirit (tính từ lần đốt 1) lúc đốt lần 2 chỉ còn ~15s, nên nó hunt ngay sau đó. (Ma thường thì cửa sổ đã hết từ 90s.)</li>
             <li><strong>Điều kiện:</strong> sanity phải <strong>đủ thấp</strong> để ma có thể hunt (thường &lt;50%) — nếu không, "không thấy hunt" là vô nghĩa.</li>
+          </ul>
+        </div>
+
+        <div class="comp-card highlight-rose">
+          <div class="comp-card-title"><span>HD ĐỐT NHANG CHI TIẾT (KHI KHÓ PHÂN)</span><span class="badge">PRO</span></div>
+          <ul>
+            <li><strong>Chuẩn bị:</strong> nhang + bật lửa; xác định <strong>phòng ma</strong> và <strong>chỗ núp</strong> gần đó; kiểm tra <strong>sanity &lt;50%</strong> (nếu cao, ma không hunt được → test vô nghĩa).</li>
+            <li><strong>Đốt ĐÚNG cách:</strong> đứng <strong>trong/sát phòng ma</strong> rồi mới đốt. Đốt ở cửa hay xa ma = <strong>vô ích</strong> (lỗi phổ biến nhất khiến kết quả sai).</li>
+            <li><strong>Bấm timer</strong> ("Đốt Nhang") rồi <strong>đứng yên chờ</strong>. Timer tự chia vùng: <strong>3:00→2:00</strong> an toàn → <strong>2:00→1:30</strong> Demon → <strong>1:30→0:00</strong> ma thường/Spirit.</li>
+            <li><strong>Đọc kết quả:</strong> hunt <strong>60–90s</strong> = Demon • hunt <strong>90–180s</strong> = ma thường • không hunt tới <strong>180s</strong> = Spirit.</li>
+            <li><strong>Nếu vẫn khó phân:</strong>
+              <br>• Kiểm tra lại lúc đốt bạn có <strong>đứng gần ma</strong> không.
+              <br>• <strong>Đừng đốt lại khi đang chạy</strong> (không reset) — chờ hết rồi hãy đốt lần 2.
+              <br>• <strong>Test 2 nhang:</strong> đốt lần 1 → không hunt tới <strong>2:45</strong> → đốt lần 2 → hunt trong <strong>&lt;60s</strong> sau đó = <strong>100% Spirit</strong>.
+              <br>• Vẫn mơ hồ → chốt bằng <strong>bằng chứng + tells</strong> khác, đừng chỉ dựa 1 test.</li>
           </ul>
         </div>
 
