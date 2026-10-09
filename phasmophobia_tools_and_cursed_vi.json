@@ -8,6 +8,7 @@
       "cards": [
         {
           "name_en": "The Sun",
+          "image": "assets/tarot/sun.jpg",
           "name_vi": "Mặt Trời (The Sun)",
           "chance": "5%",
           "flame_color": "Vàng cam rực rỡ",
@@ -15,6 +16,7 @@
         },
         {
           "name_en": "The Moon",
+          "image": "assets/tarot/moon.jpg",
           "name_vi": "Mặt Trăng (The Moon)",
           "chance": "5%",
           "flame_color": "Trắng bạc / Xanh nhạt",
@@ -22,6 +24,7 @@
         },
         {
           "name_en": "The Tower",
+          "image": "assets/tarot/tower.jpg",
           "name_vi": "Tòa Tháp (The Tower)",
           "chance": "20%",
           "flame_color": "Xanh da trời",
@@ -29,6 +32,7 @@
         },
         {
           "name_en": "The Wheel of Fortune",
+          "image": "assets/tarot/wheel_of_fortune.jpg",
           "name_vi": "Vòng Quay May Mắn (The Wheel of Fortune)",
           "chance": "20%",
           "flame_color": "Xanh lá (+25% Sanity) hoặc Đỏ rực (-25% Sanity)",
@@ -36,6 +40,7 @@
         },
         {
           "name_en": "The Devil",
+          "image": "assets/tarot/devil.jpg",
           "name_vi": "Ác Quỷ (The Devil)",
           "chance": "10%",
           "flame_color": "Đỏ thẫm",
@@ -43,6 +48,7 @@
         },
         {
           "name_en": "Death",
+          "image": "assets/tarot/death.jpg",
           "name_vi": "Tử Thần (Death)",
           "chance": "10%",
           "flame_color": "Tím đen u ám",
@@ -50,6 +56,7 @@
         },
         {
           "name_en": "The Hermit",
+          "image": "assets/tarot/hermit.jpg",
           "name_vi": "Ẩn Sĩ (The Hermit)",
           "chance": "10%",
           "flame_color": "Ngọc lam nhạt",
@@ -57,6 +64,7 @@
         },
         {
           "name_en": "The High Priestess",
+          "image": "assets/tarot/high_priestess.jpg",
           "name_vi": "Nữ Đại Tư Tế (The High Priestess)",
           "chance": "2%",
           "flame_color": "Vàng kim nhạt",
@@ -64,6 +72,7 @@
         },
         {
           "name_en": "The Hanged Man",
+          "image": "assets/tarot/hanged_man.jpg",
           "name_vi": "Kẻ Treo Cổ (The Hanged Man)",
           "chance": "1%",
           "flame_color": "Không cháy (bay lên rồi biến mất)",
@@ -71,6 +80,7 @@
         },
         {
           "name_en": "The Fool",
+          "image": "assets/tarot/fool.jpg",
           "name_vi": "Kẻ Ngốc (The Fool)",
           "chance": "17% (100% trong lúc Hunt)",
           "flame_color": "Hồng nhạt",
