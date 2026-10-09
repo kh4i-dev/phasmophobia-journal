@@ -1223,6 +1223,13 @@
       color: #0369a1 !important;
     }
 
+    /* OVERLAP: con còn sống khi trộn ≥2 bộ lọc → viền ngoài xanh đậm kép */
+    .ghost-slot.highlighted.filter-overlap {
+      border-width: 2px;
+      border-color: #0ea5e9;
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.22), 0 0 0 1px rgba(14, 165, 233, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
     .slot-name-en {
       font-family: var(--font-hand);
       font-size: 1.15rem;
@@ -1259,6 +1266,23 @@
       color: #38bdf8;
       line-height: 1;
     }
+
+    /* PILL THUỘC TÍNH NHẬN DIỆN NHANH BÊN PHẢI TÊN MA (amber đồng bộ MANUAL) */
+    .slot-attr {
+      font-family: var(--font-hand);
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #8a5a12;
+      background: rgba(194, 130, 42, 0.14);
+      border: 1px solid rgba(194, 130, 42, 0.45);
+      border-radius: 4px;
+      padding: 1px 5px;
+      line-height: 1.1;
+      white-space: nowrap;
+      flex-shrink: 0;
+      cursor: default;
+    }
+    .ghost-slot.ruled-out .slot-attr { opacity: 0.5; }
 
     /* TRẠNG THÁI 2: RULED-OUT (GẠCH NGANG TƯƠNG PHẢN CAO, ĐẬM NÉT ĐỎ THẪM) */
     .ghost-slot.ruled-out {
@@ -3763,7 +3787,7 @@
     let currentTab = "main-journal";
     let isFootstepPlaying = false;
     let selectedBpmMode = "base";
-    let activeListFilter = "all"; // 'all', 'early_hunt', 'fast_speed'
+    let activeFilters = []; //Cho phép chọn nhiều nhóm cùng lúc: 'early_hunt', 'fast_speed'
 
     // Tap tempo variables
     let tapTimestamps = [];
@@ -3905,7 +3929,7 @@
       container.innerHTML = "";
 
       GROUP_ATTRS.forEach(ga => {
-        const active = activeListFilter === ga.id;
+        const active = activeFilters.includes(ga.id);
         const count = ghostsData.filter(ga.test).length;
         const item = document.createElement("div");
         item.className = "evidence-item group-filter-item";
@@ -3921,7 +3945,7 @@
 
         item.addEventListener("click", () => {
           AudioEngine.pencil();
-          activeListFilter = active ? "all" : ga.id;
+          activeFilters = active ? activeFilters.filter(f => f !== ga.id) : [...activeFilters, ga.id];
           syncGroupFilterUI();
           updateGhostGridStates();
         });
@@ -3933,15 +3957,16 @@
     // ĐỒNG BỘ UI NHÓM LỌC GIỮA HUD + PANEL BẰNG CHỨNG
     function syncGroupFilterUI() {
       document.querySelectorAll(".filter-chip").forEach(c => {
-        c.classList.toggle("active", c.dataset.filter === activeListFilter);
+        const f = c.dataset.filter;
+        c.classList.toggle("active", f === "all" ? activeFilters.length === 0 : activeFilters.includes(f));
       });
       renderGroupFilterList();
 
       const statusEl = document.getElementById("hudFilterStatus");
       if (!statusEl) return;
-      const ga = GROUP_ATTRS.find(a => a.id === activeListFilter);
-      statusEl.textContent = ga
-        ? `Đang loại nhanh: ${ga.label} — đã gạch các con không liên quan`
+      const activeGroups = GROUP_ATTRS.filter(a => activeFilters.includes(a.id));
+      statusEl.textContent = activeGroups.length
+        ? `Đang lọc ${(activeGroups.length > 1 ? "chung" : "")}: ${activeGroups.map(a => a.label).join(" + ")}`
         : "Hiển thị toàn bộ 30 loài ma";
     }
 
@@ -4035,16 +4060,18 @@
         slot.dataset.id = gid;
 
         const viName = GHOST_ROSTER_VI_NAMES[gid] || (ghostObj ? ghostObj.name_vi.replace(/\s*\([^)]*\)/g, '').trim() : name);
+        const attr = GHOST_ROSTER_ATTRS[gid];
 
         slot.innerHTML = `
           <div class="slot-top">
             <div class="slot-name-en-wrap">
               <span class="slot-name-en">${name}</span>
               <svg class="pencil-name-circle" viewBox="0 0 80 30" preserveAspectRatio="none">
-                <path d="M 6,15 C 4,5 20,2 40,2 C 62,2 76,6 77,15 C 78,25 60,29 38,29 C 14,29 2,24 3,13 C 4,6 16,2.5 32,2" 
+                <path d="M 6,15 C 4,5 20,2 40,2 C 62,2 76,6 77,15 C 78,25 60,29 38,29 C 14,29 2,24 3,13 C 4,6 16,2.5 32,2"
                       fill="none" stroke="#9e1c1c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.92" />
               </svg>
             </div>
+            ${attr ? `<span class="slot-attr" title="${attr.full.replace(/"/g, '&quot;')}">${attr.tag}</span>` : ''}
           </div>
           <div class="slot-name-vi">${viName}</div>
         `;
@@ -4129,9 +4156,9 @@
         // ÁP DỤNG TRẠNG THÁI: RULED-OUT | PINNED | HIGHLIGHTED
         slot.classList.remove("ruled-out", "pinned", "highlighted");
 
-        // THUỘC TÍNH NHÓM: chọn nhóm nào thì loại thẳng con không thuộc nhóm đó
-        const activeGroup = GROUP_ATTRS.find(a => a.id === activeListFilter);
-        if (!isRuledOut && activeGroup && !activeGroup.test(g)) {
+        // THUỘC TÍNH NHÓM: tích nhiều nhóm được — chỉ giữ con đủ ĐIỀU KIỆN của tất cả nhóm đã tick
+        const activeGroups = GROUP_ATTRS.filter(a => activeFilters.includes(a.id));
+        if (!isRuledOut && activeGroups.length && !activeGroups.every(ga => ga.test(g))) {
           isRuledOut = true;
         }
 
@@ -4139,8 +4166,10 @@
           slot.classList.add("ruled-out");
         } else {
           possibleGhosts.push(g);
-          if (activeGroup) {
+          if (activeGroups.length) {
             slot.classList.add("highlighted");
+            // Trộn ≥2 nhóm: con trùng cả hai đội viền xanh kép
+            if (activeGroups.length >= 2) slot.classList.add("filter-overlap");
           }
         }
 
@@ -5112,11 +5141,16 @@
         }
       });
 
-      // CHIP "TẤT CẢ" Ở HUD — reset nhóm lọc nhanh (đồng bộ với panel Bằng Chứng)
+      // CHIPS HUD — tín nhiều chip cùng lúc (đồng bộ panel Bằng Chứng)
       document.querySelectorAll(".filter-chip").forEach(chip => {
         chip.addEventListener("click", () => {
           AudioEngine.pencil();
-          activeListFilter = chip.dataset.filter;
+          const f = chip.dataset.filter;
+          if (f === "all") {
+            activeFilters = [];
+          } else {
+            activeFilters = activeFilters.includes(f) ? activeFilters.filter(x => x !== f) : [...activeFilters, f];
+          }
           syncGroupFilterUI();
           updateGhostGridStates();
         });
