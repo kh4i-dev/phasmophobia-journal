@@ -357,6 +357,24 @@
           osc.connect(og); og.connect(this.masterGain);
           osc.start(t); osc.stop(t + 0.2);
         } catch(e){}
+      },
+
+      // Sound FX: tick nhẹ khi lia chuột qua tab/chip/nút
+      hover() {
+        try {
+          if (!this.ctx || this.isMuted || this.volume <= 0) return; // chỉ kêu sau khi đã có tương tác (context đã mở)
+          const t = this.ctx.currentTime;
+          const osc = this.ctx.createOscillator();
+          const g = this.ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(1750, t);
+          osc.frequency.exponentialRampToValueAtTime(2400, t + 0.03);
+          g.gain.setValueAtTime(0.0001, t);
+          g.gain.exponentialRampToValueAtTime(0.05, t + 0.005);
+          g.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
+          osc.connect(g); g.connect(this.masterGain);
+          osc.start(t); osc.stop(t + 0.055);
+        } catch(e){}
       }
     };
 
@@ -364,4 +382,21 @@
     window.addEventListener('click', () => {
       AudioEngine.ensureContext();
     }, { once: true });
+
+    // Hover tick cho các phần tử tương tác (throttled, tránh kêu dồn dập)
+    (function () {
+      const SEL = ".j-tab, .filter-chip, .compendium-toggle-chip, .journal-btn, .btn-zoom-dossier, .page-turn, .preset-btn-play, .fx-button, .comp-tab-btn, .tarot-card, .ghost-slot, .legend-badge-item, .modal-nav-btn, .modal-close-btn, .voice-line-box";
+      let lastEl = null;
+      let lastTime = 0;
+      document.addEventListener("mouseover", (e) => {
+        const el = e.target && e.target.closest ? e.target.closest(SEL) : null;
+        if (!el) { lastEl = null; return; }
+        if (el === lastEl) return;
+        const now = performance.now();
+        if (now - lastTime < 60) return;
+        lastEl = el;
+        lastTime = now;
+        AudioEngine.hover();
+      });
+    })();
 
