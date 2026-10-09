@@ -295,14 +295,14 @@ Ban cho **3–5 điều ước** tùy độ khó (0x–1x = **5**, 1.01x–2x = 
 ## 7. TOÀN BỘ CÂU THOẠI TIẾNG ANH NHẬN DIỆN GIỌNG NÓI
 
 ### A. Câu Hỏi Spirit Box (Hỏi máy thu âm linh hồn):
-* **"Where are you?"***: Bạn ở đâu? (Ma trả lời: *Close, Behind, Far, Here...*)
-* **"How old are you?"***: Bạn bao nhiêu tuổi? (Ma trả lời: *Old, Young, Kid, [Số]...*)
-* **"Are you close?"***: Bạn có ở gần đây không?
-* **"Are you friendly?"***: Bạn có thân thiện không? (Ma trả lời: *Kill, Attack, Hurt...*)
-* **"What do you want?"***: Bạn muốn điều gì? (Ma trả lời: *Leave, Die...*)
-* **"Should we leave?"***: Chúng tôi có nên rời đi không?
-* **"Give us a sign."***: Hãy cho chúng tôi một dấu hiệu!
-* **"Show yourself."***: Hãy hiện hình đi!
+* **"Where are you?"**: Bạn ở đâu? (Ma trả lời: *Close, Behind, Far, Here...*)
+* **"How old are you?"**: Bạn bao nhiêu tuổi? (Ma trả lời: *Old, Young, Kid, [Số]...*)
+* **"Are you close?"**: Bạn có ở gần đây không?
+* **"Are you friendly?"**: Bạn có thân thiện không? (Ma trả lời: *Kill, Attack, Hurt...*)
+* **"What do you want?"**: Bạn muốn điều gì? (Ma trả lời: *Leave, Die...*)
+* **"Should we leave?"**: Chúng tôi có nên rời đi không?
+* **"Give us a sign."**: Hãy cho chúng tôi một dấu hiệu!
+* **"Show yourself."**: Hãy hiện hình đi!
 
 ### B. Câu Nói Chọc Giận Ma & Kích Thích Tương Tác:
 * **"[Tên con ma], show yourself!"**: Gọi đích danh tên ma + bảo hiện hình.
