@@ -368,3 +368,34 @@
       max-width: 1140px;
     }
 
+
+    /* ==============================================================
+       PANE TU VUNG — dan dài danh sách g?n hàng cho d? d?c
+       ============================================================== */
+    #compPaneVocab ul {
+      list-style: none;
+      padding: 0 !important;
+    }
+
+    #compPaneVocab .comp-card li {
+      list-style: none;
+      padding: 9px 12px 10px;
+      margin: 0 0 7px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    #compPaneVocab .comp-card strong {
+      display: block;
+      font-size: 0.92rem;
+      color: #f3e9d6;
+      margin: 0 0 4px;
+    }
+
+    #compPaneVocab .comp-card em {
+      display: block;
+      font-size: 0.7rem;
+      color: #94815f;
+      margin: 0 0 5px;
+    }
