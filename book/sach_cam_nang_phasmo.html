@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<title>Cẩm Nang Điều Tra Toàn Diện Phasmophobia — 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0d0a07; color: #e8ddc8; font-family: "Be Vietnam Pro", system-ui, sans-serif;
+         -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 10.2pt; line-height: 1.55; }
+  .page { min-height: 286mm; padding: 16mm 15mm 12mm; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+  h1, h2, h3, h4 { font-family: Oswald, "Be Vietnam Pro", sans-serif; letter-spacing: .02em; }
+  code { font-family: Consolas, monospace; color: #f0b357; font-size: .92em; }
+  hr { border: 0; border-top: 1px solid #3a3129; margin: 10px 0; }
+  ul, ol { margin: 4px 0 8px; padding-left: 20px; }
+  li { margin: 2px 0; }
+  blockquote { border-left: 3px solid #9e1c1c; margin: 8px 0; padding: 2px 12px; color: #d8c9ad; background: #171310; border-radius: 0 6px 6px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px; font-size: 8.4pt; }
+  th { background: #241c14; color: #f0b357; text-transform: uppercase; font-family: Oswald; font-weight: 500; letter-spacing: .06em; }
+  th, td { border: 1px solid #382d23; padding: 4px 7px; text-align: left; }
+  td { vertical-align: top; }
+  p { margin: 6px 0; }
+  .note { font-size: 9pt; color: #b7a588; }
+  .cover { display: flex; flex-direction: column; justify-content: space-between;
+    background: radial-gradient(ellipse at 50% -10%, #2a1109 0%, #0d0a07 70%); padding: 20mm 18mm; }
+  .cover-top { font-family: Oswald; font-size: 14pt; letter-spacing: .5em; color: #9e1c1c; }
+  .cover h1 { font-size: 44pt; line-height: 1.05; margin: 6mm 0 4mm; color: #f3e9d2; }
+  .cover h1 em { color: #e04b2a; font-style: normal; }
+  .cover .sub { font-size: 13pt; color: #c9b289; max-width: 130mm; }
+  .cover-meta { font-family: Oswald; display: flex; gap: 10px; flex-wrap: wrap; }
+  .cover-meta span { border: 1px solid #4a3b28; border-radius: 999px; padding: 4px 14px; font-size: 9pt; letter-spacing: .15em; color: #d8c9ad; }
+  .cover-foot { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #3a3129; padding-top: 5mm; color: #8fab76; font-family: Oswald; letter-spacing: .2em; font-size: 9pt; }
+  .toc h2 { color: #9e1c1c; font-size: 18pt; }
+  .toc ol { columns: 2; }
+  .toc li { margin: 3px 0; }
+  .chapter h2 { font-size: 20pt; color: #f0b357; border-bottom: 2px solid #9e1c1c; padding-bottom: 4px; margin: 2px 0 10px; }
+  .ch-num { color: #6b5b46; border: 0; font-size: 11pt; letter-spacing: .4em; margin: 0 0 2px; text-transform: uppercase; }
+  .chapter h3 { color: #e8ddc8; font-size: 13pt; margin: 12px 0 4px; }
+  .chapter h4 { color: #f0b357; font-size: 10.5pt; margin: 10px 0 2px; }
+  .d-grid { column-count: 2; column-gap: 8mm; }
+  .dossier { break-inside: avoid; background: linear-gradient(180deg, #17110b, #120d09); border: 1px solid #3a2f22; border-radius: 10px; padding: 5mm 5mm 4mm; margin: 0 0 6mm; }
+  .d-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 4mm; border-bottom: 1px dashed #4a3b28; padding-bottom: 3mm; margin-bottom: 3mm; }
+  .d-head h3 { margin: 0; font-size: 13.5pt; color: #f3e9d2; }
+  .d-en { font-size: 8pt; color: #9b8a6e; }
+  .danger { flex-shrink: 0; font-family: Oswald; font-size: 7.5pt; letter-spacing: .1em; border-radius: 999px; padding: 3px 9px; text-transform: uppercase; white-space: nowrap; }
+  .d-low { color: #67d38b; background: #14251a; border: 1px solid #2c5e3e; }
+  .d-mid { color: #f0b357; background: #2a2010; border: 1px solid #6b5320; }
+  .d-high { color: #f87171; background: #2a1310; border: 1px solid #7a2e2e; }
+  .d-stats { display: flex; gap: 3mm; }
+  .d-stats div { flex: 1; background: #1e1710; border: 1px solid #32281c; border-radius: 6px; padding: 2mm 3mm; font-size: 8pt; }
+  .d-stats span { display: block; color: #9b8a6e; text-transform: uppercase; font-size: 6.6pt; font-family: Oswald; letter-spacing: .1em; }
+  .d-stats b { font-family: Oswald; font-size: 11pt; color: #f0b357; }
+  .d-ev { margin-top: 2.5mm; display: flex; flex-wrap: wrap; gap: 1.5mm; }
+  .d-ev span { border: 1px solid #2c5e5e; color: #7fd4d4; background: #0f1f20; border-radius: 4px; padding: 1.5px 7px; font-size: 8pt; }
+  .d-ev .fake { border-color: #7a2e6e; color: #e08fd0; background: #200f1c; width: 100%; }
+  .d-block { margin-top: 3mm; }
+  .d-block h4 { margin: 0 0 1mm; font-size: 8.6pt; text-transform: uppercase; letter-spacing: .08em; color: #f0b357; }
+  .d-block p { margin: 0; font-size: 9pt; color: #ddd0b8; }
+  .d-block.wk h4 { color: #7fd48f; }
+  .d-block.deep { border-left: 2px solid #9e1c1c; padding-left: 3mm; }
+  .deep h4 { color: #e0776f; }
+  .tool { break-inside: avoid; background: #151009; border: 1px solid #32281c; border-radius: 8px; padding: 3mm 4mm; margin: 4px 0; }
+  .tool h3 { margin: 0 0 2px; font-size: 11pt; color: #f0b357; }
+  .tool small { font-family: "Be Vietnam Pro"; font-weight: 400; font-size: 8pt; color: #9b8a6e; }
+  .tier { font-size: 8.6pt; color: #cbbb9e; padding: 1px 0; }
+  .tarot-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3mm; }
+  .tarot { display: flex; gap: 3mm; background: #151009; border: 1px solid #3a2f22; border-radius: 8px; padding: 3mm; break-inside: avoid; }
+  .tarot img { width: 22mm; height: 30mm; object-fit: cover; border-radius: 5px; }
+  .tarot b { font-family: Oswald; color: #f0b357; font-size: 10pt; }
+  .tarot span { display: block; font-size: 7.5pt; color: #9b8a6e; }
+  .tarot p { margin: 1px 0 0; font-size: 8.4pt; }
+</style></head><body>
+
+<section class="page cover">
+  <div>
+    <div class="cover-top">PHASMOPHOBIA • FIELD MANUAL</div>
+    <h1>CẨM NANG<br>ĐIỀU TRA <em>TOÀN DIỆN</em></h1>
+    <div class="sub">Sổ tay khoa học của thợ săn ma: 30 hồ sơ mật đầy đủ, bảng ngưỡng Sanity hunt, telemetry vận tốc bước chân, hệ thống bằng chứng &amp; kỹ năng bắt thóp 0-evidence.</div>
+  </div>
+  <div>
+    <div class="cover-meta"><span>30 LOÀI MA</span><span>7 BẰNG CHỨNG</span><span>10 LÁ TAROT</span><span>15 BẢN ĐỒ</span><span>EDITION 2026</span></div>
+    <div class="cover-foot"><span>PHASMO-INVESTIGATION ARCHIVE</span><span>VOL. 01 — VIETSUB</span></div>
+  </div>
+</section>
+
+<section class="page toc">
+  <h2>Mục lục</h2>
+  <ol>
+    <li>Hệ thống 7 loại bằng chứng</li>
+    <li>Ma trận tổng hợp 30 loài ma</li>
+    <li>30 hồ sơ mật (dossier đầy đủ)</li>
+    <li>Chuyên đề đặc biệt</li><li>Kỹ thuật 0-evidence</li><li>Độ khó &amp; bản đồ điều tra</li><li>Vật phẩm nguyền rủa</li><li>Trang bị &amp; dụng cụ điều tra</li><li>Câu thoại &amp; thuật ngữ Anh–Việt</li>
+  </ol>
+  <hr>
+  <p class="note">Tài liệu biên tập từ dữ liệu game bản cập nhật 2026 — mọi con số đối chiếu trực tiếp với nguồn trong ứng dụng.</p>
+</section>
+
+<section class="page chapter"><h2 class="ch-num">CHƯƠNG 01</h2><h2>Hệ Thống 7 Loại Bằng Chứng</h2></section>
+<section class="page chapter"><h2 class="ch-num">CHƯƠNG 02</h2><h2>Ma Trận Tổng Hợp 30 Loài Ma</h2><p><em>Ghi chú tốc độ: Tốc độ cơ bản người chơi đi bộ là 1.6 m/s, chạy nhanh (Sprint) là 3.0 m/s trong 3 giây.</em></p><table><thead><tr><th>STT</th><th>Loài Ma</th><th>3 Bằng Chứng Chính</th><th>Ngưỡng Hunt (% Sanity)</th><th>Tốc Độ Săn (m/s)</th><th>Đặc Điểm Nhận Diện Nhanh Nhất</th></tr></thead><tbody><tr><td>1</td><td><strong>Spirit</strong></td><td>EMF 5, Spirit Box, Writing</td><td>50%</td><td>1.7 (Chuẩn)</td><td>Đốt nhang chặn hunt trong <strong>180 giây</strong> (3 phút).</td></tr><tr><td>2</td><td><strong>Wraith</strong></td><td>EMF 5, Spirit Box, D.O.T.S</td><td>50%</td><td>1.7 (Chuẩn)</td><td>Dẫm muối <strong>KHÔNG BAO GIỜ</strong> để lại dấu chân tia UV. Dịch chuyển tức thời đến người chơi.</td></tr><tr><td>3</td><td><strong>Phantom</strong></td><td>Spirit Box, UV, D.O.T.S</td><td>50%</td><td>1.7 (Chuẩn)</td><td>Chụp ảnh <strong>biến mất ngay lập tức</strong> (ảnh không nhiễu). Khi hunt tàng hình chớp nháy rất lâu.</td></tr><tr><td>4</td><td><strong>Poltergeist</strong></td><td>Spirit Box, UV, Writing</td><td>50%</td><td>1.7 (Chuẩn)</td><td>Ném đồ nổ chùm (<strong>Polty Bomb</strong>), hunt cứ 0.5s ném 1 đồ vật xung quanh (tỉ lệ 100%).</td></tr><tr><td>5</td><td><strong>Banshee</strong></td><td>UV, Ghost Orb, D.O.T.S</td><td>50% (Mục tiêu)</td><td>1.7 (Chuẩn)</td><td><strong>Hú/thở dài độc quyền</strong> qua Paramic (tỉ lệ 33%). Chỉ nhắm giết 1 mục tiêu duy nhất.</td></tr><tr><td>6</td><td><strong>Jinn</strong></td><td>EMF 5, UV, Freezing</td><td>50%</td><td>1.7 → 2.5 (Cầu dao BẬT)</td><td>Phóng nhanh khi thấy người ở xa nếu <strong>Cầu dao Bật</strong>. Không bao giờ tự tay gạt tắt cầu dao.</td></tr><tr><td>7</td><td><strong>Mare</strong></td><td>Spirit Box, Orb, Writing</td><td>60% tối / 40% sáng</td><td>1.7 (Chuẩn)</td><td>Thích bóng tối, <strong>tắt đèn ngay lập tức</strong> khi bạn vừa bật. Không bao giờ tự bật đèn.</td></tr><tr><td>8</td><td><strong>Revenant</strong></td><td>Ghost Orb, Writing, Freezing</td><td>50%</td><td>1.0 (Lê lết) → 3.0 (Thấy người)</td><td>Chạy như rùa khi tuần tra, <strong>phóng như tên lửa (3.0 m/s)</strong> khi phát hiện người chơi.</td></tr><tr><td>9</td><td><strong>Shade</strong></td><td>EMF 5, Writing, Freezing</td><td>35%</td><td>1.7 (Chuẩn)</td><td>Cực nhát, <strong>KHÔNG HUNT</strong> khi có người đứng cùng phòng. Rất lười tương tác.</td></tr><tr><td>10</td><td><strong>Demon</strong></td><td>UV, Writing, Freezing</td><td><strong>70%</strong> (Skill: <strong>100%</strong>)</td><td>1.7 (Chuẩn)</td><td>Hunt sớm bất ngờ ở 100% sanity. <strong>Nhang chỉ cản 60 giây</strong>. Tầm thánh giá cực xa (5m).</td></tr><tr><td>11</td><td><strong>Yurei</strong></td><td>Ghost Orb, Freezing, D.O.T.S</td><td>50%</td><td>1.7 (Chuẩn)</td><td>Đóng sầm cửa cái rầm (tiếng click đúp) <strong>trừ 15% Sanity</strong>. Nhang giam chân 90s.</td></tr><tr><td>12</td><td><strong>Oni</strong></td><td>EMF 5, Freezing, D.O.T.S</td><td>50%</td><td>1.7 (Chuẩn)</td><td>Siêu tăng động. <strong>KHÔNG BAO GIỜ có event bóng khói thở (airball)</strong>. Hiện hình rõ khi hunt.</td></tr><tr><td>13</td><td><strong>Yokai</strong></td><td>Spirit Box, Orb, D.O.T.S</td><td><strong>80%</strong> (Nói chuyện)</td><td>1.7 (Chuẩn)</td><td>Hunt ở 80% nếu nói to gần nó. Khi hunt bị "điếc" (chỉ nghe thấy người chơi &lt; 2.5m).</td></tr><tr><td>14</td><td><strong>Hantu</strong></td><td>UV, Ghost Orb, Freezing</td><td>50%</td><td>1.4 (Ấm) → 2.7 (Lạnh)</td><td>Chạy nhanh trong phòng lạnh, chậm khi ấm. <strong>Thở ra hơi sương trắng</strong> khi tắt cầu dao.</td></tr><tr><td>15</td><td><strong>Goryo</strong></td><td>EMF 5, UV, D.O.T.S</td><td>50%</td><td>1.7 (Chuẩn)</td><td>D.O.T.S <strong>chỉ nhìn thấy qua Video Camera</strong> khi không có ai trong phòng. Không đổi phòng.</td></tr><tr><td>16</td><td><strong>Myling</strong></td><td>EMF 5, UV, Writing</td><td>50%</td><td>1.7 (Chuẩn)</td><td><strong>Bước chân cực êm khi hunt</strong>: Chỉ nghe thấy tiếng bước chân khi đèn pin đã nhấp nháy (&lt; 10m).</td></tr><tr><td>17</td><td><strong>Onryo</strong></td><td>Spirit Box, Orb, Freezing</td><td>60% (Không nến)</td><td>1.7 (Chuẩn)</td><td><strong>Sợ lửa</strong>: Coi nến như thánh giá. Thổi tắt 3 ngọn nến liên tiếp là <strong>lập tức đi săn</strong>.</td></tr><tr><td>18</td><td><strong>The Twins</strong></td><td>EMF 5, Spirit Box, Freezing</td><td>50%</td><td>Con chậm 1.53 / Con nhanh 1.87</td><td>Tương tác 2 nơi cùng lúc. Đợt săn này chạy chậm (90%), đợt sau chạy nhanh (110%).</td></tr><tr><td>19</td><td><strong>Raiju</strong></td><td>EMF 5, Ghost Orb, D.O.T.S</td><td>65% (Gần đồ điện)</td><td>1.7 → 2.5 (Kích điện)</td><td>Hút sóng điện tử. Làm nhiễu đèn pin từ xa (15m). <strong>Tăng tốc vọt lên 2.5 m/s</strong> gần thiết bị điện.</td></tr><tr><td>20</td><td><strong>Obake</strong></td><td>EMF 5, UV, Ghost Orb</td><td>50%</td><td>1.7 (Chuẩn)</td><td><strong>Dấu tay 6 ngón</strong> độc quyền (16.7%). Giấu vân tay 25%. Chớp biến hình dạng khác khi hunt.</td></tr><tr><td>21</td><td><strong>The Mimic</strong></td><td>Spirit Box, UV, Freezing</td><td><em>Biến thiên</em></td><td><em>Sao chép tùy con</em></td><td><strong>MA LỪA: Luôn có Ghost Orb giả</strong> (tổng 4 bằng chứng, kể cả 0-Evidence). Sao chép năng lực mọi loài ma.</td></tr><tr><td>22</td><td><strong>Moroi</strong></td><td>Spirit Box, Writing, Freezing</td><td>50%</td><td>1.5 → 3.71 (Sanity thấp + LOS)</td><td>Nguyền rủa qua Spirit Box làm tụt đôi Sanity. Càng thấp Sanity chạy càng nhanh. Nhang mù 12s.</td></tr><tr><td>23</td><td><strong>Deogen</strong></td><td>Spirit Box, Writing, D.O.T.S</td><td>40%</td><td>3.0 (Ở xa) → <strong>0.4 (Ở gần)</strong></td><td><strong>MA THỞ DỐC (LUÔN BIẾT CHỖ TRỐN)</strong>: Biết chỗ trốn 100%. Tiếng thở khò khè qua Spirit Box. Ở gần đi chậm như rùa.</td></tr><tr><td>24</td><td><strong>Thaye</strong></td><td>Ghost Orb, Writing, D.O.T.S</td><td>75% (Trẻ) → 15% (Già)</td><td>2.75 (Trẻ) → 1.0 (Già)</td><td>Lão hóa theo thời gian. Mới vào hunt sớm và chạy cực nhanh, về sau già đi thì yếu và chậm.</td></tr><tr><td>25</td><td><strong>Aswang</strong></td><td>Freezing, Writing, D.O.T.S</td><td>50%</td><td>1.53 → 2.52 (Tăng tốc LOS nhanh nhất game)</td><td><strong>Aswang (2026)</strong>: Base chậm (1.53 m/s) nhưng tăng tốc theo LOS nhanh nhất game; có thể hunt với grace period = 0. Không giết được người trốn trong chỗ ẩn chính thức.</td></tr><tr><td>26</td><td><strong>Dayan</strong></td><td>EMF 5, Spirit Box, Ghost Orb</td><td>65% (di chuyển) / 45% (đứng yên)</td><td>1.2 ↔ 2.25 (theo chuyển động)</td><td><strong>Dayan (2026)</strong>: Trong 10m — bạn DI CHUYỂN → hunt sớm 65%, chạy 2.25 m/s; bạn ĐỨNG YÊN → hunt muộn 45%, chạy 1.2 m/s.</td></tr><tr><td>27</td><td><strong>Deildegast</strong></td><td>EMF 5, Writing, D.O.T.S</td><td>50%</td><td>3.0 → 0.4 (theo số đồ bị xê dịch)</td><td><strong>Deildegast (2026)</strong>: Hunt bắt đầu 3.0 m/s; mỗi đồ vật bị người chơi xê dịch giảm 0.1 m/s; xê dịch 26 món → chỉ còn 0.4 m/s.</td></tr><tr><td>28</td><td><strong>Gallu</strong></td><td>EMF 5, UV, Spirit Box</td><td>50% / 60% (Enraged) / 40% (Weakened)</td><td>1.7 / 1.96 / 1.36 (theo trạng thái)</td><td><strong>Gallu (2026)</strong>: Đổi trạng thái khi dùng thiết bị bảo vệ quanh nó (thánh giá/nhang/muối). Enraged hunt sớm 60% &amp; nhanh 1.96 m/s; Weakened chậm còn 1.36 m/s.</td></tr><tr><td>29</td><td><strong>Kormos</strong></td><td>Ghost Orb, Spirit Box, UV</td><td>50% (70% khi bạn sprint)</td><td>1.7 → 2.21</td><td><strong>Kormos (2026)</strong>: Gần như MÙ nhưng nghe bước chân cực xa; bạn sprint gần nó → hunt sớm 70%. Đi bộ &amp; đứng yên có thể khiến nó đi ngang qua mà không thấy bạn.</td></tr><tr><td>30</td><td><strong>Obambo</strong></td><td>UV, Writing, D.O.T.S</td><td>65% (Aggressive) / 10% (Calm)</td><td>1.955 (Aggressive) / 1.445 (Calm)</td><td><strong>Obambo (2026)</strong>: Đổi trạng thái mỗi 2 phút — Aggressive hunt sớm 65%, chạy 1.955 m/s (hunt ngắn hơn ~20%); Calm hunt muộn 10%, chạy 1.445 m/s.</td></tr></tbody></table><hr></section>
+<section class="page chapter"><h2 class="ch-num">CHƯƠNG 03</h2><h2>30 Hồ Sơ Mật — Dossier Đầy Đủ</h2>
+  <div class="d-grid"><article class="dossier">
+    <div class="d-head">
+      <div><h3>Linh Hồn (Spirit)</h3><div class="d-en">Spirit • Ma thường • Linh hồn cơ bản</div></div>
+      <span class="danger d-mid">Trung Bình</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>EMF 5</span><span>Spirit Box</span><span>Ghost Writing</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Không có điểm mạnh nguy hiểm đặc thù. Thường rất hung hãn và đi săn đều đặn khi Sanity dưới 50%.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Cực kỳ sợ nhang: Đốt nhang (Smudge Stick / Incense) sẽ khóa khả năng đi săn của Spirit trong suốt 180 giây (3 phút) - gấp đôi so với 90 giây của các loài ma thông thường.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Spirit là con ma chuẩn mực nhất game, dùng làm thước đo cho mọi loài ma khác. Khi chơi ở độ khó không bằng chứng (0-Evidence / Insanity / Apocalypse), Spirit KHÔNG CÓ bất kỳ biểu hiện hình thể nào để nhận biết ngoài duy nhất bài test đồng hồ bấm giờ sau khi đốt nhang.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Oan Hồn / Ma Bay (Wraith)</h3><div class="d-en">Wraith • Ma không dẫm muối • Ma dịch chuyển tức thời</div></div>
+      <span class="danger d-high">Cao</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>EMF 5</span><span>Spirit Box</span><span>D.O.T.S Projector</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Bay lơ lửng trên mặt đất. Có kỹ năng dịch chuyển tức thời (Teleport) xuyên tường đến ngay vị trí của một người chơi ngẫu nhiên, để lại chỉ số EMF 2 hoặc EMF 5 tại điểm đến.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Sợ muối: Không bao giờ để lại dấu chân phát quang dưới ánh đèn cực tím (UV) sau khi giẫm vào đống muối.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Kỹ năng Teleport của Wraith cực kỳ nguy hiểm vì nó có thể dịch chuyển đến sát lưng bạn rồi bất ngờ kích hoạt cuộc săn ngay tại chỗ bạn đang đứng, biến vị trí trốn của bạn thành tử địa.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Bóng Ma Biến Hình (Phantom)</h3><div class="d-en">Phantom • Ma tàng hình trong ảnh • Ma làm tụt sanity • Ma nhấp nháy lâu</div></div>
+      <span class="danger d-high">Cao</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Spirit Box</span><span>Ultraviolet</span><span>D.O.T.S Projector</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Ánh nhìn tử thần: Nhìn trực diện vào Phantom sẽ khiến Sanity của bạn tụt dốc cực nhanh với tốc độ 0.5% mỗi giây.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Sợ máy ảnh: Chụp ảnh Phantom sẽ làm nó biến mất ngay tức khắc và bức ảnh chụp được hoàn toàn không bị nhiễu sóng điện tử.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Khi Hunt, mọi loài ma đều chớp nhấp nháy (hiện 0.3s - ẩn 0.3s). Riêng Phantom có chu kỳ tàng hình cực dài: Nó tàng hình biến mất trong 1 đến 2 giây rồi mới chỉ chớp hiện hình thoáng qua 0.3 giây, khiến bạn cảm giác như đang bị một bóng ma vô hình rượt đuổi.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Yêu Tinh Quậy Phá (Poltergeist)</h3><div class="d-en">Poltergeist • Ma ném đồ • Polty bomb • Thánh quậy phá</div></div>
+      <span class="danger d-mid">Trung Bình</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Spirit Box</span><span>Ultraviolet</span><span>Ghost Writing</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Vụ nổ Poltergeist (Polty Bomb): Có khả năng ném đồng loạt nhiều đồ vật (5-10 món) cùng một lúc với lực cực mạnh. Mỗi món đồ ném trúng người chơi sẽ trừ 2% Sanity x số lượng đồ vật.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Vô hại trong phòng trống: Khi ở trong căn phòng không có đồ đạc để ném, Poltergeist trở nên yếu thế và không thể sử dụng tuyệt chiêu.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Khi Hunt, cứ mỗi 0.5 giây Poltergeist có tỉ lệ 100% ném một đồ vật xung quanh đường đi của nó (ma thường chỉ có 50% tỉ lệ ném mỗi 1 giây). Điều này tạo ra một cơn bão đồ vật bay tứ tung khi nó đuổi theo bạn.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Nữ Thần Báo Tử / Ma Hú (Banshee)</h3><div class="d-en">Banshee • Ma hú • Ma đè hú • Nữ thần báo tử • Ma rình rập</div></div>
+      <span class="danger d-mid">Cực Cao (với mục tiêu)</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Ultraviolet</span><span>Ghost Orb</span><span>D.O.T.S Projector</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Khóa mục tiêu duy nhất (Target Lock): Chọn ngẫu nhiên 1 người chơi làm 'con mồi' và CHỈ kiểm tra Sanity của con mồi đó để đi săn. Nếu con mồi còn 100% Sanity dù 3 đồng đội còn lại 0% Sanity, Banshee VẪN KHÔNG THỂ HUNT. Khi Hunt, nó đi xuyên qua người các đồng đội khác mà không giết.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Tiếng hú độc quyền: Phát ra tiếng thét/hú rên rỉ xé gió (Banshee Scream) qua máy thu âm định hướng Parabolic Microphone với tỉ lệ 33%.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Banshee rất thích bám theo con mồi của nó khắp căn nhà. Nó thường xuyên làm sự kiện Hát Hò (Singing Ghost Event), và nếu con mồi chạm vào nó trong sự kiện này sẽ bị tụt tới 15% Sanity (ma thường chỉ trừ 10%). Khi con mồi chết, nó sẽ chọn một con mồi mới.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Thần Đèn Jinn (Jinn)</h3><div class="d-en">Jinn • Ma điện • Ma chạy nhanh theo cầu dao</div></div>
+      <span class="danger d-high">Cao</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.5 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 180 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>EMF 5</span><span>Ultraviolet</span><span>Freezing Temperatures</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Gia tốc điện trường: Khi cầu dao bật, Jinn sở hữu tốc độ lao tới cực nhanh từ xa khi thấy người chơi. Ngoài ra nó có thể kích hoạt khả năng xả điện làm tụt ngay lập tức 25% Sanity của người chơi ở gần cầu dao (tạo EMF 2/5 tại cầu dao).</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Mất điện là phế: Tắt cầu dao sẽ vô hiệu hóa hoàn toàn năng lực tăng tốc và hút Sanity của Jinn. Jinn KHÔNG BAO GIỜ tự tay gạt tắt cầu dao.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Khi Cầu Dao BẬT và nhìn thấy người chơi ở xa, nó phóng như tên lửa với tốc độ 2.5 m/s, sau đó phanh gấp về 1.7 m/s khi tới cự ly 3m.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Jinn không bao giờ tự tay gạt công tắc cầu dao xuống (nó chỉ có thể làm nhảy cầu dao nếu người chơi bật quá số lượng bóng đèn quy định của map). Nếu bạn thấy cầu dao bị gạt tắt trực tiếp bằng tay, 100% loại trừ Jinn.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Ác Mộng Bóng Đêm (Mare)</h3><div class="d-en">Mare • Ma sợ ánh sáng • Ma tắt đèn • Ác mộng bóng tối</div></div>
+      <span class="danger d-mid">Cao (trong bóng tối)</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>60% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Spirit Box</span><span>Ghost Orb</span><span>Ghost Writing</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Chúa tể bóng tối: Trong phòng tối, Mare có thể đi săn ở ngưỡng 60% Sanity và có xu hướng tấn công hung hãn hơn rất nhiều.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Sợ ánh sáng: Khi bật đèn trong phòng, Mare chỉ có thể đi săn ở mức 40% Sanity. Mare KHÔNG BAO GIỜ bật đèn và ghét cay ghét đắng ánh sáng.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Mare có một phản xạ độc quyền: Kỹ năng Tắt Công Tắc Đèn Tức Thì (Instant Light Switch Flip). Khi người chơi vừa bấm bật công tắc đèn, Mare có tỉ lệ cao gạt tắt phụt ngay lập tức trong vòng 0.1 - 0.2 giây. Nó cũng rất hay làm nổ tung bóng đèn phòng.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Báo Oán / Kẻ Hủy Diệt (Revenant)</h3><div class="d-en">Revenant • Rev • Ma chạy nhanh nhất khi thấy người • Kẻ rùa bò</div></div>
+      <span class="danger d-mid">Cực Kỳ Nguy Hiểm</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1 m/s → 3 m/s</b></div>
+      <div><span>Nhịp chân</span><b>70 → 210 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Ghost Orb</span><span>Ghost Writing</span><span>Freezing Temperatures</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Tốc độ tử thần: Khi phát hiện mục tiêu, Revenant lao tới với vận tốc 3.0 m/s (nhanh hơn tốc độ chạy tối đa của người chơi), gần như không ai chạy thoát được nếu không có nhang hoặc chỗ trốn ngay trước mắt.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Chậm chạp khi mất dấu: Khi không nhìn thấy người chơi và không bắt được sóng thiết bị điện, Revenant lê bước chân cực kỳ chậm chạp (1.0 m/s - chậm hơn người đi bộ bình thường).</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ cực đoan: Khi tuần tra không thấy ai chạy siêu chậm (1.0 m/s). Khi thấy người chơi hoặc phát hiện thiết bị điện tử lập tức tăng tốc lên 3.0 m/s (siêu tốc).</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Revenant tăng tốc lên 3.0 m/s ngay tức khắc khi có Line of Sight (LOS) hoặc khi nó bắt được tín hiệu giọng nói/đèn pin của bạn. Nó giữ tốc độ 3.0 m/s cho đến khi đến được vị trí nhìn thấy bạn lần cuối, sau đó giảm tốc độ về 1.0 m/s dần dần.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Bóng Đen Nhút Nhát (Shade)</h3><div class="d-en">Shade • Ma trầm cảm • Ma nhát gan • Ma lười tương tác</div></div>
+      <span class="danger d-low">Thấp</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>35% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>EMF 5</span><span>Ghost Writing</span><span>Freezing Temperatures</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Rất khó tìm kiếm bằng chứng vì nó hầu như không tương tác khi có nhiều người ở gần phòng của nó.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Cực kỳ nhút nhát: KHÔNG BAO GIỜ đi săn nếu có người chơi đứng cùng trong phòng ma. Chỉ có thể đi săn khi Sanity trung bình tụt xuống dưới 35%.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Shade không bao giờ thực hiện Ghost Event dạng toàn thân (Full Physical Form) khi có người chơi ở cùng phòng. Nó chỉ làm dạng bóng đen mờ ảo hoặc dạng thở vào tai (Airball). Đốt nhang trong phòng ma sẽ ngăn Shade tương tác trong 180s.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Ác Quỷ Săn Sớm (Demon)</h3><div class="d-en">Demon • Ma cắn trộm • Ma săn 100% sanity • Ác quỷ</div></div>
+      <span class="danger d-mid">Cực Kỳ Nguy Hiểm</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>70% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Ultraviolet</span><span>Ghost Writing</span><span>Freezing Temperatures</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Kỹ năng cắn trộm bất ngờ (Early Hunt Ability): Ngưỡng hunt tự nhiên là 70% Sanity. ĐẶC BIỆT: Demon sở hữu kỹ năng hiếm có thể kích hoạt cuộc săn ở BẤT KỲ MỨC SANITY NÀO (kể cả 100% Sanity ngay khi vừa mở cửa bước vào nhà 10 giây). Thời gian hồi giữa 2 đợt hunt chỉ có 20 giây (ma khác là 25s).</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Sợ thánh giá: Phạm vi bảo vệ của thánh giá tăng thêm 50% đối với Demon (Tier 1: 4.5m, Tier 2: 6m, Tier 3: 7.5m). Đốt nhang chỉ làm nó ngừng hunt trong 60 giây (thay vì 90 giây như ma thường).</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Demon là loài ma hung bạo nhất game. Khả năng săn ở 100% Sanity có thể kích hoạt bất cứ lúc nào. Khoảng cách cắn nát thánh giá của nó cực kỳ xa.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>U Hồn Cửa (Yurei)</h3><div class="d-en">Yurei • Ma đóng sập cửa • Ma trừ sanity cửa</div></div>
+      <span class="danger d-mid">Trung Bình</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Ghost Orb</span><span>Freezing Temperatures</span><span>D.O.T.S Projector</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Đóng sập cửa trừ Sanity: Có kỹ năng đóng sập hoàn toàn một cánh cửa đang mở (kèm âm thanh click đúp) và trừ lập tức 15% Sanity của tất cả người chơi ở gần trong phạm vi 7.5m.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Bị khóa chân bởi nhang: Đốt nhang trong phòng của Yurei sẽ khóa chặt nó trong phòng đó và không thể đi lang thang ra ngoài trong vòng 90 giây.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Yurei là con ma duy nhất ngoài lúc Ghost Event có thể đóng sầm cánh cửa chính ra vào nhà (Front Door Slam). Khi nó dùng kỹ năng đóng cửa, cánh cửa sẽ đóng từ từ rồi đóng sầm lại kèm tiếng click đúp trễ khoảng 0.2s.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Quỷ Mặt Đỏ Hiếu Động (Oni)</h3><div class="d-en">Oni • Ma tăng động • Ma ném đồ xa • Ma hiện hình liên tục</div></div>
+      <span class="danger d-high">Cao</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>EMF 5</span><span>Freezing Temperatures</span><span>D.O.T.S Projector</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Cực kỳ hung hăng và hiếu động khi có nhiều người ở gần. Khi làm Ghost Event chạm vào người chơi sẽ trừ 20% Sanity (gấp đôi bình thường).</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>KHÔNG BAO GIỜ làm Ghost Event dạng bóng khói/hơi sương thở vào tai (Airball/Hiss event). Khi đi săn, Oni hiện hình liên tục và rất ít khi tàng hình (ngược lại hoàn toàn với Phantom).</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Khi Hunt, Oni hiện hình gần như liên tục (thời gian hiện hình chiếm 80% thời gian chớp nháy, chỉ tàng hình thoáng qua 0.1s). Bạn sẽ nhìn thấy rõ mồn một cơ thể của nó đuổi theo bạn.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Yêu Quái Ghét Tiếng Ồn (Yokai)</h3><div class="d-en">Yokai • Ma điếc • Ma cấm nói chuyện</div></div>
+      <span class="danger d-mid">Cao (khi nói chuyện)</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>80% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Spirit Box</span><span>Ghost Orb</span><span>D.O.T.S Projector</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Thính tai khi ở ngoài cuộc săn: Nếu người chơi nói chuyện bằng Micro gần Yokai, nó có thể đi săn ở mức Sanity lên tới 80%.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Bị 'điếc' khi đi săn: Khi hunt, Yokai chỉ có thể nghe thấy tiếng nói hoặc phát hiện thiết bị điện tử của người chơi trong phạm vi cực hẹp (dưới 2.5m, so với 10m của ma thường).</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Yokai có thể bị bạn trêu ngươi trong lúc hunt nếu bạn giữ khoảng cách trên 2.5 mét. Bật đèn pin hoặc nói chuyện to ở khoảng cách 3-4 mét nó hoàn toàn không phát hiện ra.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Hồn Ma Xứ Lạnh (Hantu)</h3><div class="d-en">Hantu • Ma thở ra khói • Ma chạy nhanh phòng lạnh • Ma sợ nóng</div></div>
+      <span class="danger d-mid">Cực Cao (khi tắt cầu dao)</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.4 m/s → 2.7 m/s</b></div>
+      <div><span>Nhịp chân</span><b>90 → 190 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Ultraviolet</span><span>Ghost Orb</span><span>Freezing Temperatures</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Sát thủ băng giá: Di chuyển cực nhanh trong các căn phòng lạnh giá khi cầu dao bị tắt (lên tới 2.7 m/s). BẮT BUỘC có Freezing Temperatures ở mọi độ khó.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Rùa bò khi ấm áp: Rất chậm ở nơi ấm áp (1.4 m/s). Khi Hunt trong phòng lạnh nếu cầu dao TẮT, Hantu sẽ thở ra luồng hơi sương trắng từ miệng.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ phụ thuộc nhiệt độ phòng: Phòng ấm (&gt;15°C) chạy 1.4 m/s. Phòng lạnh (&lt;0°C) chạy 2.7 m/s. KHÔNG tăng tốc theo đường nhìn (LOS).</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Hantu không có Line of Sight acceleration (không tăng tốc dần khi nhìn thấy người chơi). Tốc độ của nó chỉ phụ thuộc vào nhiệt độ của căn phòng mà nó đang bước chân qua.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Oan Hồn Ẩn Dật (Goryo)</h3><div class="d-en">Goryo • Ma DOTS camera • Ma không đổi phòng</div></div>
+      <span class="danger d-mid">Trung Bình</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>EMF 5</span><span>Ultraviolet</span><span>D.O.T.S Projector</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Ẩn mình trước mắt thường: Chỉ có thể nhìn thấy bóng ma D.O.T.S qua màn hình Video Camera, và TUYỆT ĐỐI KHÔNG HIỆN nếu có người chơi đứng cùng trong phòng.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>BẮT BUỘC có bằng chứng D.O.T.S Projector ở mọi độ khó (kể cả 1 evidence). Hầu như KHÔNG BAO GIỜ đổi phòng yêu thích (Favorite Room) và ít khi đi lang thang xa.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Nếu bạn đứng trong phòng nhìn máy DOTS thì 100% không bao giờ thấy Goryo. Bạn phải đặt camera quay vào máy DOTS rồi ra ngoài xe tải hoặc đứng ngoài cửa nhìn qua màn hình.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Hài Nhi Yên Lặng (Myling)</h3><div class="d-en">Myling • Ma bước chân im lặng • Ma test đèn pin</div></div>
+      <span class="danger d-mid">Cực Cao (dễ bị móc lốp)</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>EMF 5</span><span>Ultraviolet</span><span>Ghost Writing</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Bước chân sát thủ vô thanh: Khi đi săn, tiếng bước chân và tiếng rên rỉ của Myling cực kỳ êm ái, chỉ có thể nghe thấy ở cự ly dưới 10m (ngang bằng với tầm làm nhấp nháy đèn pin).</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Phát ra âm thanh qua Parabolic Microphone thường xuyên hơn các loài ma khác.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Với ma thường, bạn nghe tiếng bước chân từ xa 20m, trước khi đèn pin nhấp nháy (10m). Với Myling, tiếng bước chân và đèn pin nhấp nháy xảy ra CÙNG MỘT LÚC.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Oan Hồn Sợ Lửa (Onryo)</h3><div class="d-en">Onryo • Ma thổi nến • Ma sợ nến • Ma hunt nến</div></div>
+      <span class="danger d-mid">Cực Cao (khi hết nến)</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>60% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Spirit Box</span><span>Ghost Orb</span><span>Freezing Temperatures</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Săn sớm khi không có lửa: Nếu không có ngọn lửa nào xung quanh, Onryo có thể đi săn ở mức 60% Sanity. Cứ mỗi 3 lần thổi tắt nến, Onryo sẽ LẬP TỨC ĐI SĂN ở bất kỳ mức Sanity nào.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Sợ lửa: Onryo coi ngọn nến như một chiếc Thánh Giá trong cự ly 4m. Nếu có nến đang cháy, nó PHẢI thổi tắt nến trước khi cắn thánh giá.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Đặt 1 cây thánh giá chồng lên 1 cây nến đang cháy: Nếu thánh giá bị cắn trong khi nến vẫn đang cháy -&gt; Loại Onryo. Ngược lại nếu nến bị thổi tắt liên tục mà thánh giá nguyên vẹn -&gt; Onryo.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Cặp Song Sinh (The Twins)</h3><div class="d-en">The Twins • Ma sinh đôi • Con nhanh con chậm • Hai con ma</div></div>
+      <span class="danger d-high">Cao</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.53 m/s → 2.52 m/s</b></div>
+      <div><span>Nhịp chân</span><b>110 → 140 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>EMF 5</span><span>Spirit Box</span><span>Freezing Temperatures</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Phân thân tương tác 2 nơi: Con chính ở phòng ma, con phụ đi phá ở phòng khác cách xa. Bất kỳ con nào cũng có thể bắt đầu cuộc săn (50/50 cơ hội).</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Con phụ không bao giờ cho bằng chứng Spirit Box hay nhiệt độ đóng băng.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Con chính (Main) 1.53 m/s và con phụ (Decoy) nhanh hơn (~1.9 m/s), đều cộng thêm tăng tốc theo LOS (tối đa ~2.52 m/s).</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Trên bảng hoạt động trong xe tải, bạn sẽ thấy 2 đường cong tương tác vọt lên cùng một giây (Twin Interaction Curve). Nhịp bước chân giữa các đợt hunt khác nhau rõ rệt (đợt này nghe chân chậm, đợt sau lại nghe chân chạy nhanh dồn dập).</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Lôi Thú Hút Điện (Raiju)</h3><div class="d-en">Raiju • Ma điện tử • Ma chạy nhanh gần đồ điện • Lôi thú</div></div>
+      <span class="danger d-mid">Cực Kỳ Nguy Hiểm</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>65% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.5 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 180 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>EMF 5</span><span>Ghost Orb</span><span>D.O.T.S Projector</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Hút năng lượng từ thiết bị điện tử: Hunt ở mức 65% Sanity nếu có đồ điện tử bật gần nó. Khi hunt, tốc độ tăng vọt lên 2.5 m/s trong vùng có đồ điện.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Làm nhiễu sóng thiết bị điện tử từ khoảng cách xa hơn rất nhiều (15m thay vì 10m).</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Bình thường chạy 1.7 m/s. Khi đến gần thiết bị điện tử đang bật phóng vọt lên 2.5 m/s.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Raiju tăng tốc khi ở gần bất kỳ thiết bị điện tử nào đang bật: Đèn pin, máy EMF, camera, D.O.T.S dưới sàn. Tắt hết thiết bị điện tử nó sẽ chạy chậm lại bình thường.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Yêu Quái Biến Hình / Ma 6 Ngón (Obake)</h3><div class="d-en">Obake • Ma 6 ngón tay • Ma đổi hình dạng • Ma giấu vân tay</div></div>
+      <span class="danger d-high">Cao</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>EMF 5</span><span>Ultraviolet</span><span>Ghost Orb</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Giấu vân tay: Có 25% tỉ lệ chạm vào cửa mà không để lại dấu vân tay UV. Dấu vân tay biến mất nhanh gấp đôi bình thường (sau 1 phút thay vì 2 phút).</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Dấu vân tay 6 ngón độc quyền (16.7% cơ hội). Khi Hunt, có ít nhất 1 lần chớp nhấp nháy biến hình thành một Model ma khác (Shape-shift Flash).</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>BẮT BUỘC có bằng chứng UV ở mọi độ khó. Nhìn dấu bàn tay trên cửa: Nếu đếm được 6 ngón tay -&gt; 100% Obake. Khi Hunt: Nhìn kỹ lúc nó chớp nháy, nó sẽ đổi sang model ma khác trong 1 khung hình.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Ma Lừa / Ma Bắt Chước (The Mimic)</h3><div class="d-en">The Mimic • Ma lừa • Ma 4 bằng chứng • The Mimic • Bậc thầy sao chép</div></div>
+      <span class="danger d-mid">Biến Thiên Khó Lường</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>Thay đổi liên tục (tùy con bắt chước: 0% - 100%)</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.8 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 210 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Spirit Box</span><span>Ultraviolet</span><span>Freezing Temperatures</span><div class="fake">+ Ghost Orb (Quả cầu ma giả - LUÔN XUẤT HIỆN Ở MỌI ĐỘ KHÓ) — luôn xuất hiện (kể cả 0-evidence)</div></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Sao chép hoàn hảo mọi loài ma: Cứ sau mỗi 30 giây đến 2 phút, Mimic sẽ chọn một loài ma ngẫu nhiên để sao chép toàn bộ hành vi, tốc độ và ngưỡng săn (kể cả Demon săn 100%, Deogen thở dốc, Revenant phi nước đại).</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>LUÔN CÓ GHOST ORB: Ở chế độ Professional có 4 bằng chứng. Ở chế độ Nightmare hiện 3 bằng chứng. Ở chế độ 0 Evidence VẪN HIỆN Ghost Orb!</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>The Mimic là nguyên nhân số 1 khiến thợ săn ma đoán sai. Nó lừa bạn bằng quả cầu ma giả. Nếu bạn thấy Ghost Orb kèm Spirit Box, UV, Freezing (đủ 4 bằng chứng) thì chắc chắn 100% là The Mimic.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Nguyền Hồn Khát Máu (Moroi)</h3><div class="d-en">Moroi • Ma nguyền rủa • Ma chạy siêu nhanh 0% sanity • Ma sợ nhang 12s</div></div>
+      <span class="danger d-mid">Cực Kỳ Nguy Hiểm</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.5 m/s → 3.71 m/s</b></div>
+      <div><span>Nhịp chân</span><b>105 → 250 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Spirit Box</span><span>Ghost Writing</span><span>Freezing Temperatures</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Lời nguyền Moroi: Nghe giọng nó qua Spirit Box hoặc Paramic sẽ bị dính lời nguyền, tốc độ tụt Sanity tăng gấp đôi và không thể chặn dù đứng dưới ánh đèn sáng.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>BẮT BUỘC có Spirit Box. Sợ nhang: Đốt nhang khi Moroi đang hunt sẽ làm nó bị mù và mất phương hướng trong 12 giây (thay vì 6 giây như ma khác).</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Càng mất Sanity chạy càng nhanh: 50% Sanity chạy 1.5 m/s; 0% Sanity chạy 2.25 m/s. Khi có đường nhìn LOS tối đa đạt tới 3.71 m/s (nhanh nhất toàn game).</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Ở 0% Sanity, Moroi di chuyển với tốc độ cơ bản 2.25 m/s, và nếu nhìn thấy bạn trong đường thẳng dài, LOS acceleration sẽ đẩy tốc độ của nó lên tới 3.71 m/s - nhanh hơn cả người chơi chạy Sprint (3.0 m/s).</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Deogen (Ma Thở Dốc • Luôn Biết Chỗ Trốn)</h3><div class="d-en">Deogen • Deogen • Ma thở dốc • Ma biết chỗ trốn • Ma dắt bộ • Kẻ săn đuổi</div></div>
+      <span class="danger d-mid">Cực Cao (nếu trốn tủ) / Cực Dễ (nếu dắt bộ)</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>40% Sanity</b></div>
+      <div><span>Tốc độ</span><b>3 m/s → 0.4 m/s</b></div>
+      <div><span>Nhịp chân</span><b>210 → 30 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Spirit Box</span><span>Ghost Writing</span><span>D.O.T.S Projector</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>LUÔN BIẾT VỊ TRÍ CỦA TẤT CẢ NGƯỜI CHƠI: Deogen nhìn xuyên tường và đi thẳng đến chỗ bạn dù bạn trốn trong tủ đóng cửa kín hay góc khuất. TRỐN TRONG TỦ LÀ CHẾT 100%!</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>TỐC ĐỘ RÙA BÒ KHI Ở GẦN: Khi đến gần bạn trong cự ly 2.5m, nó chậm lại chỉ còn 0.4 m/s. Bạn chỉ cần đi bộ thong thả vòng quanh bàn ăn (Looping) là nó không bao giờ bắt được bạn!</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ đảo ngược: Ở xa (&gt;6m) phi 3.0 m/s. Khi đến gần (&lt;2.5m) tự động phanh lại cực chậm 0.4 m/s (chậm hơn người đi bộ 1.6 m/s).</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Âm thanh thở dốc độc quyền: Cầm Spirit Box đứng sát ma trong vòng 1m, có 33% cơ hội Deogen phát ra TIẾNG THỞ DỐC KHÒ KHÈ / TIẾNG THỞ NẶNG NỀ (Heavy Breathing / Groan) trực tiếp vào tai. BẮT BUỘC có Spirit Box ở mọi độ khó.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Lão Quỷ Trẻ Hóa (Thaye)</h3><div class="d-en">Thaye • Ma lão hóa • Ma già đi • Ma chạy nhanh lúc đầu</div></div>
+      <span class="danger d-mid">Cực Cao (đầu game) -&gt; Thấp (cuối game)</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>75% Sanity</b></div>
+      <div><span>Tốc độ</span><b>2.75 m/s → 1 m/s</b></div>
+      <div><span>Nhịp chân</span><b>195 → 70 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Ghost Orb</span><span>Ghost Writing</span><span>D.O.T.S Projector</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Hung dữ đầu game: Khi còn trẻ, Thaye đi săn ở ngưỡng 75% Sanity, tốc độ chạy 2.75 m/s, quậy phá liên tục.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Già đi theo thời gian: Mỗi khi có người chơi đứng cùng phòng, Thaye sẽ già đi sau mỗi 1-2 phút (tối đa 10 lần). Càng già càng chậm và hiền.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tuổi 0 (Trẻ): Hunt ở 75% Sanity, tốc độ 2.75 m/s. Tuổi 10 (Già): Hunt ở 15% Sanity, tốc độ 1.0 m/s. Không tăng tốc theo LOS.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Hỏi tuổi qua bàn cầu cơ Ouija 'How old are you?': Đầu trận hỏi nó trả lời 20 tuổi. Đứng chơi 5 phút sau hỏi lại, nó sẽ trả lời 45 tuổi hoặc 70 tuổi!</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Quỷ Hút Máu Biến Hình (Aswang)</h3><div class="d-en">Aswang • Ma hút máu • Quỷ biến hình Philippines • Aswang 2026</div></div>
+      <span class="danger d-high">Cao</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.53 m/s → 2.52 m/s</b></div>
+      <div><span>Nhịp chân</span><b>125 → 185 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Ghost Writing</span><span>Freezing Temperatures</span><span>D.O.T.S Projector</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Săn mồi đơn độc: Rất hung dữ khi người chơi ở một mình. Có khả năng tạo ra âm thanh giả tiếng động vật (chó sủa, mèo kêu, chim vỗ cánh) để dụ người chơi.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Sợ muối: Khi dẫm lên muối trong lúc hunt, Aswang bị khựng chân lại rít lên đau đớn trong 1.5 giây.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Base 1.53 m/s (chậm hơn chuẩn) nhưng tăng tốc theo LOS NHANH nhất game (tối đa ~2.52 m/s). Có thể hunt với grace period = 0.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Rải muối dày ở các cửa thoát hiểm. Khi bị săn, dụ Aswang bước qua đống muối sẽ cho bạn 1.5 giây quý giá để cắt góc thoát thân.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Phù Thủy Chân Ngược (Dayan / Daayan)</h3><div class="d-en">Dayan • Phù thủy ma Ấn Độ • Ma chân ngược • Daayan</div></div>
+      <span class="danger d-high">Cao</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.25 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 170 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>EMF 5</span><span>Spirit Box</span><span>Ghost Orb</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Ảo ảnh mê hoặc: Làm lệch hướng kim la bàn và di chuyển đồ vật sau lưng người chơi. Dấu chân UV có ngón chân QUAY NGƯỢC 180 ĐỘ!</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Sợ nhìn thẳng: Duy trì giao tiếp mắt (Eye contact) khi nó làm Ghost Event sẽ giảm 50% lượng Sanity bị trừ.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ cố định: 2.25 m/s khi người chơi di chuyển trong 10m, 1.2 m/s khi người chơi đứng yên, và 1.7 m/s khi không có ai trong 10m (bỏ qua tăng tốc LOS).</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Khi Dayan rượt đuổi, nếu bạn vừa đi lùi vừa nhìn thẳng vào nó, nó chỉ chạy 1.7 m/s. Nếu bạn quay lưng chạy trốn, nó phóng vọt lên 2.4 m/s.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Hồn Ma Ranh Giới (Deildegast)</h3><div class="d-en">Deildegast • Ma ranh giới • Ma đá Bắc Âu • Deildegast</div></div>
+      <span class="danger d-mid">Trung Bình</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>3 m/s → 0.4 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 180 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>EMF 5</span><span>Ghost Writing</span><span>D.O.T.S Projector</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Luồng hàn khí di động: Tạo ra các dải nhiệt độ âm (-°C) di chuyển dọc theo ngưỡng cửa. Ném đồ kim loại nặng với lực cực mạnh.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Bị giam hãm bởi ranh giới: Rất khó rời khỏi khu vực phòng ban đầu. Đốt nhang ép nó lùi sâu về tâm phòng 90s.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Tốc độ cố định 0.4–3.0 m/s tùy số đồ vật đã bị xê dịch (KHÔNG tăng tốc theo LOS).</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Ranh giới căn phòng là vương quốc của nó. Khi ở trong phòng nó tương tác rất mạnh, nhưng khi bạn bước ra khỏi cửa nó sẽ hung hãn hơn.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Quỷ Đoạt Hồn Địa Ngục (Gallu)</h3><div class="d-en">Gallu • Quỷ Sumer • Quỷ lôi kéo linh hồn • Gallu</div></div>
+      <span class="danger d-high">Cao</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 1.955 m/s</b></div>
+      <div><span>Nhịp chân</span><b>130 → 170 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>EMF 5</span><span>Spirit Box</span><span>Ultraviolet</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Săn sớm ở mức 65% Sanity. Có khả năng tạo ra các ảo ảnh phân thân (Ghost Event giả lập 2 bóng đen cùng lúc) làm người chơi hoảng loạn.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Sợ thánh tích cổ: Cây thánh giá (Crucifix) có phạm vi cản săn tăng thêm 35% đối với Gallu.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>1.7 m/s (bình thường), 1.96 m/s (Enraged), 1.36 m/s (Weakened), cộng thêm tăng tốc LOS chuẩn.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Gallu là loài ma hung bạo chuyên tấn công phủ đầu. Cắm thánh giá sớm ở phòng ma là chìa khóa vô hiệu hóa nó.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Ác Thú Hắc Ám (Kormos)</h3><div class="d-en">Kormos • Ma bóng đêm • Ma ghét ánh sáng • Kormos</div></div>
+      <span class="danger d-mid">Cực Cao (trong bóng tối)</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>50% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.7 m/s → 2.21 m/s</b></div>
+      <div><span>Nhịp chân</span><b>95 → 170 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Spirit Box</span><span>Ultraviolet</span><span>Ghost Orb</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Sát thủ bóng đêm: Rất thích dập cầu dao điện. Một khi căn nhà mất điện, Kormos trở thành một cỗ máy săn mồi chạy cực nhanh 2.4 m/s.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Sợ ánh sáng: Chiếu đèn pin thẳng vào mặt Kormos khi đang hunt sẽ làm chậm tốc độ di chuyển của nó xuống 1.4 m/s.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>Base 1.7 m/s; nhanh hơn (tới ~2.21 m/s) khi lao tới điểm phát hiện mà không có LOS.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Đèn pin là vũ khí sinh tồn chống lại Kormos. Luôn bật đèn pin chiếu vào hướng nó đuổi theo bạn.</p></div>
+  </article><article class="dossier">
+    <div class="d-head">
+      <div><h3>Oan Linh Phiêu Bạt (Obambo)</h3><div class="d-en">Obambo • Ma lang thang • Linh hồn rừng thiêng • Obambo</div></div>
+      <span class="danger d-mid">Trung Bình</span>
+    </div>
+    <div class="d-stats">
+      <div><span>Ngưỡng săn</span><b>65% Sanity</b></div>
+      <div><span>Tốc độ</span><b>1.445 m/s → 1.955 m/s</b></div>
+      <div><span>Nhịp chân</span><b>120 → 160 BPM</b></div>
+    </div>
+    <div class="d-ev"><span>Ultraviolet</span><span>Ghost Writing</span><span>D.O.T.S Projector</span></div>
+    <div class="d-block"><h4>Sức mạnh &amp; hành vi</h4><p>Âm thanh đánh lạc hướng: Tạo ra âm thanh tiếng bước chân giả ở căn phòng cách xa nơi nó đang đứng. Thích mở vòi nước bẩn đổi màu đen.</p></div>
+    <div class="d-block wk"><h4>Điểm yếu &amp; khắc chế</h4><p>Phát ra tiếng khóc than ai oán rất rõ ràng và thường xuyên qua máy thu âm định hướng Parabolic Microphone.</p></div>
+    <div class="d-block"><h4>Tốc độ chi tiết</h4><p>1.96 m/s khi Aggressive, 1.45 m/s khi Calm.</p></div>
+    <div class="d-block deep"><h4>Cơ chế sâu — mẹo bắt thóp</h4><p>Đừng để bị lừa bởi tiếng chân giả ở phòng khác. Hãy tin tưởng máy đo EMF và Paramic để định vị phòng thực sự của nó.</p></div>
+  </article></div>
+</section>
+<section class="page chapter"><h2 class="ch-num">CHƯƠNG 04</h2><h2>Chuyên Đề Đặc Biệt: Những Con Ma Tránh Khó Nhất</h2></section>
+<section class="page chapter"><h2 class="ch-num">CHƯƠNG 05</h2><h2>Kỹ Thuật Nhận Diện Ma Không Cần Bằng Chứng (0-Evidence)</h2><ol><li><strong>Bằng Chứng Bắt Buộc (Forced Evidence):</strong></li></ol><ul><li><strong>Goryo</strong>: BẮT BUỘC có <strong>D.O.T.S</strong>.</li><li><strong>Obake</strong>: BẮT BUỘC có <strong>Ultraviolet</strong>.</li><li><strong>Hantu</strong>: BẮT BUỘC có <strong>Freezing Temperatures</strong>.</li><li><strong>Moroi / Deogen</strong>: BẮT BUỘC có <strong>Spirit Box</strong>.</li></ul><ol><li><strong>Bài Test Muối:</strong> Rải muối ở cửa: Nếu ma dẫm qua muối nhưng <strong>hoàn toàn không có dấu chân UV</strong> -&gt; <strong>Wraith</strong>.</li><li><strong>Bài Test Đèn Pin:</strong> Ném đèn pin đang bật xuống đất khi Hunt:</li></ol><ul><li>Nghe tiếng chân cùng lúc đèn pin bắt đầu nhấp nháy (&lt; 10m) -&gt; <strong>Myling</strong>.</li><li>Đèn pin bị nhiễu từ khoảng cách rất xa (&gt; 15m) -&gt; <strong>Raiju</strong>.</li></ul><ol><li><strong>Bài Test Chụp Ảnh:</strong> Khi có Ghost Event, bấm chụp ảnh: Bóng ma biến mất ngay lập tức và ảnh 3 sao không bị nhiễu sóng -&gt; <strong>Phantom</strong>.</li><li><strong>Bài Test Nhang:</strong></li></ol><ul><li>Hunt lại trong <strong>60s - 89s</strong>: <strong>Demon</strong>.</li><li>Không hunt cho đến tận sau <strong>180s</strong> (3 phút): <strong>Spirit</strong>.</li></ul><hr></section>
+<section class="page chapter"><h2 class="ch-num">CHƯƠNG 06</h2><h2>Độ Khó &amp; Bản Đồ Điều Tra</h2><table><thead><tr><th>Độ khó</th><th>unlock_level</th><th>reward</th><th>insurance</th><th>starting_sanity</th><th>sanity_pill</th><th>sanity_drain</th><th>setup_time</th><th>grace_period</th><th>hunt_duration</th><th>evidence_given</th><th>hiding_places</th><th>fuse_box</th><th>cursed_count</th><th>monitors</th></tr></thead>
+<tbody><tr><td><b>Tân Binh</b></td><td>Mặc định</td><td>x1</td><td>50%</td><td>100%</td><td>40%</td><td>100%</td><td>300 giây (5 phút)</td><td>5 giây</td><td>Ngắn</td><td>3</td><td>Rất nhiều</td><td>BẬT lúc bắt đầu</td><td>1</td><td>Sanity &amp; Activity: BẬT</td></tr><tr><td><b>Trung Cấp</b></td><td>Level 10</td><td>x2</td><td>25%</td><td>100%</td><td>35%</td><td>150%</td><td>120 giây (2 phút)</td><td>4 giây</td><td>Trung bình</td><td>3</td><td>Nhiều</td><td>TẮT lúc bắt đầu</td><td>1</td><td>Sanity &amp; Activity: BẬT</td></tr><tr><td><b>Chuyên Nghiệp</b></td><td>Level 20</td><td>x3</td><td>0%</td><td>100%</td><td>30%</td><td>200%</td><td>Không có (0 giây)</td><td>3 giây</td><td>Dài</td><td>3</td><td>Trung bình</td><td>TẮT lúc bắt đầu</td><td>1</td><td>Sanity &amp; Activity: BẬT</td></tr><tr><td><b>Ác Mộng</b></td><td>Level 30</td><td>x4</td><td>0%</td><td>100%</td><td>25%</td><td>200%</td><td>Không có (0 giây)</td><td>2 giây</td><td>Dài</td><td>2</td><td>Ít</td><td>TẮT và ẨN trên bản đồ</td><td>1</td><td>Sanity &amp; Activity: HỎNG (hiện số ngẫu nhiên)</td></tr><tr><td><b>Điên Loạn</b></td><td>Level 40</td><td>x6</td><td>0%</td><td>75%</td><td>20%</td><td>200%</td><td>Không có (0 giây)</td><td>2 giây</td><td>Dài + giết người kéo dài hunt</td><td>1</td><td>Gần như không có</td><td>TẮT và ẨN trên bản đồ</td><td>0 (KHÔNG có đồ nguyền rủa)</td><td>Sanity &amp; Activity: HỎNG</td></tr></tbody></table>
+<p class="note"><b>Tân Binh:</b> Dễ nhất, dành cho người mới: setup dài, grace period dài, hunt ngắn, thuốc hồi nhiều Sanity.</p><p class="note"><b>Trung Cấp:</b> Bậc 'chuẩn' (The standard Ghost Huntin' experience): setup/hunt/grace trung bình, cầu dao tắt, ít chỗ ẩn hơn.</p><p class="note"><b>Chuyên Nghiệp:</b> Không setup time, hunt dài hơn, phòng ma ít khi đổi, bảng mục tiêu ẩn thông tin phản hồi đám đông.</p><p class="note"><b>Ác Mộng:</b> Chỉ 2 bằng chứng; giết người chơi có thể kéo dài hunt; gần như chặn hết chỗ ẩn.</p><p class="note"><b>Điên Loạn:</b> Khó nhất: chỉ 1 bằng chứng, không cursed possession, phòng ma đổi thường xuyên, hunt dài nhất.</p><p class="note">Hunt length ghi theo cỡ map: Amateur / Intermediate / Professional trở lên. Nhiều map còn có bản Restricted nhỏ hơn.</p><ul><li><b></b> — </li><li><b></b> — </li><li><b></b> — </li><li><b></b> — </li><li><b></b> — </li><li><b></b> — </li><li><b></b> — </li><li><b></b> — </li><li><b></b> — </li><li><b></b> — </li><li><b></b> — </li><li><b></b> — </li><li><b></b> — </li><li><b></b> — </li><li><b></b> — </li></ul></section>
+<section class="page chapter"><h2 class="ch-num">CHƯƠNG 07</h2><h2>Vật Phẩm Nguyền Rủa (Cursed Possessions)</h2><h3>Bộ Bài Tarot Ma Quái — 10 lá &amp; màu lửa</h3><div class="tarot-grid"><div class="tarot"><img src="../assets/tarot/sun.jpg" alt=""><div><b>Mặt Trời (The Sun)</b><span>Vàng cam rực rỡ</span><p>Hồi phục Sanity của người rút lên 100% ngay lập tức.</p></div></div><div class="tarot"><img src="../assets/tarot/moon.jpg" alt=""><div><b>Mặt Trăng (The Moon)</b><span>Trắng bạc / Xanh nhạt</span><p>Hạ Sanity của người rút xuống 0% ngay lập tức.</p></div></div><div class="tarot"><img src="../assets/tarot/tower.jpg" alt=""><div><b>Tòa Tháp (The Tower)</b><span>Xanh da trời</span><p>Ép ma thực hiện một tương tác mạnh (ném đồ, gõ cửa...) và tăng hoạt tính ma trong 20 giây.</p></div></div><div class="tarot"><img src="../assets/tarot/wheel_of_fortune.jpg" alt=""><div><b>Vòng Quay May Mắn (The Wheel of Fortune)</b><span>Xanh lá (+25% Sanity) hoặc Đỏ rực (-25% Sanity)</span><p>Nếu cháy lửa xanh lá cây: Tăng 25% Sanity. Nếu cháy lửa đỏ: Trừ 25% Sanity của người rút.</p></div></div><div class="tarot"><img src="../assets/tarot/devil.jpg" alt=""><div><b>Ác Quỷ (The Devil)</b><span>Đỏ thẫm</span><p>Kích hoạt sự kiện Ghost Event ngay tại vị trí người rút bài gần ma nhất.</p></div></div><div class="tarot"><img src="../assets/tarot/death.jpg" alt=""><div><b>Tử Thần (Death)</b><span>Tím đen u ám</span><p>KÍCH HOẠT CUỘC ĐI SĂN NGUYỀN RỦA (Cursed Hunt) ngay lập tức! Thời gian chuẩn bị chỉ 1 giây.</p></div></div><div class="tarot"><img src="../assets/tarot/hermit.jpg" alt=""><div><b>Ẩn Sĩ (The Hermit)</b><span>Ngọc lam nhạt</span><p>Dịch chuyển ma về phòng yêu thích và khóa chân ma trong phòng đó trong 1 phút (không thể đi săn hoặc rời phòng).</p></div></div><div class="tarot"><img src="../assets/tarot/high_priestess.jpg" alt=""><div><b>Nữ Đại Tư Tế (The High Priestess)</b><span>Vàng kim nhạt</span><p>HỒI SINH 1 đồng đội đã chết ngẫu nhiên tại vị trí xác chết. Nếu chưa có ai chết, lá bài này sẽ dự trữ mạng: người tiếp theo bị siết cổ sẽ được hồi sinh lập tức!</p></div></div><div class="tarot"><img src="../assets/tarot/hanged_man.jpg" alt=""><div><b>Kẻ Treo Cổ (The Hanged Man)</b><span>Không cháy (bay lên rồi biến mất)</span><p>GIẾT CHẾT NGƯỜI RÚT BÀI NGAY TỨC THÌ! Không có cách nào ngăn cản.</p></div></div><div class="tarot"><img src="../assets/tarot/fool.jpg" alt=""><div><b>Kẻ Ngốc (The Fool)</b><span>Hồng nhạt</span><p>Lá bài bịp bợm: Ban đầu hiện ra một lá bài khác (VD The Sun, Death...), nhưng sau 0.5s biến thành The Fool và HỦY BỎ hoàn toàn hiệu ứng của lá bài đó.</p></div></div></div><h3>Các vật phẩm nguyền rủa còn lại</h3><div class="tool"><h3>Bàn Cầu Cơ <small>Ouija Board</small></h3><p>Đặt xuống đất hoặc cầm trên tay, bấm chuột phải để đặt con cơ lên bàn. Hỏi các câu hỏi tiếng Anh để lấy thông tin. BẮT BUỘC nói 'Goodbye' trước khi bỏ đi!</p></div><div class="tool"><h3>Bàn Tay Khỉ <small>Monkey Paw</small></h3><p>Ban cho người chơi một số điều ước tùy độ khó. Mỗi điều ước mang lại lợi ích lớn nhưng luôn kèm PHẢN PHỆ. Mỗi ngón tay ứng với 1 điều ước; ước xong một ngón sẽ gập xuống, gập hết cả bàn tay là hết lượt.</p></div><div class="tool"><h3>Gương Ma Ám <small>Haunted Mirror</small></h3><p>Nhìn vào gương để thấy góc nhìn trực tiếp bên trong căn phòng ma yêu thích (Favorite Room).</p></div><div class="tool"><h3>Hộp Nhạc Ma Quái <small>Music Box</small></h3><p>Lên dây cót và thả xuống đất hoặc cầm trên tay. Hộp nhạc phát ra giai điệu ru êm ái khiến con ma hát theo từ xa.</p></div><div class="tool"><h3>Búp Bê Voodoo <small>Voodoo Doll</small></h3><p>Có 10 cây kim cắm trên thân. Bấm chuột phải để ghim 1 cây kim ngẫu nhiên vào sâu trong búp bê.</p></div><div class="tool"><h3>Vòng Tròn Triệu Hồi <small>Summoning Circle</small></h3><p>Vòng tròn vẽ bằng máu trên sàn nhà với 5 ngọn nến đỏ xung quanh. Dùng bật lửa/diêm để thắp từng ngọn nến.</p></div></section>
+<section class="page chapter"><h2 class="ch-num">CHƯƠNG 08</h2><h2>Trang Bị &amp; Dụng Cụ Điều Tra</h2><div class="tool"><h3>Máy Dò EMF <small>EMF Reader — Bằng chứng (Evidence Tool)</small></h3>
+    <div class="tier"><b>Tier 1</b> Máy Đo Cơ Analog — Kim chỉ analog rung giật. Tầm quét ngắn (1.5m), độ nhạy thấp, khó nhận biết giữa vạch 4 và 5.</div><div class="tier"><b>Tier 2</b> Máy K2 LED Kinh Điển — 5 vạch đèn LED rõ ràng (Xanh -&gt; Đỏ). Kêu tít tít lớn khi có EMF 5. Tầm quét 2m.</div><div class="tier"><b>Tier 3</b> Máy Kỹ Thuật Số Hiển Thị Màn Hình — Màn hình điện tử hiển thị chính xác cấp EMF, âm thanh định vị 3D và hiển thị hướng phát ra tín hiệu. Tầm quét 3.5m, có thể theo dõi cùng lúc 3 nguồn EMF.</div></div><div class="tool"><h3>Hộp Thu Âm Linh Hồn <small>Spirit Box — Bằng chứng (Evidence Tool)</small></h3>
+    <div class="tier"><b>Tier 1</b> Đài Radio Cổ AM — Tốc độ quét sóng chậm, tầm bắt hẹp (3m), âm thanh rè nhiều, tỉ lệ phản hồi thấp.</div><div class="tier"><b>Tier 2</b> Spirit Box Kỹ Thuật Số — Tốc độ quét nhanh, màn hình LED hiện biểu tượng ma hoặc dấu X khi hỏi. Tầm bắt 4m.</div><div class="tier"><b>Tier 3</b> Spirit Box Lọc Nhiễu Cao Cấp — Tốc độ quét cực nhanh, âm thanh rõ nét, bán kính phản hồi 5m, màn hình hiển thị cả cường độ tín hiệu.</div></div><div class="tool"><h3>Đèn Tia Cực Tím / Soi Vân Tay <small>Ultraviolet Light — Bằng chứng (Evidence Tool)</small></h3>
+    <div class="tier"><b>Tier 1</b> Đèn Pin UV Quay Tay — Chùm tia sáng hẹp, phải sạc bằng tay định kỳ, thời gian giữ sáng ngắn.</div><div class="tier"><b>Tier 2</b> Đèn Pin UV Bóng LED — Chùm tia UV sáng rộng, soi rõ dấu vân tay và vết chân nhanh chóng.</div><div class="tier"><b>Tier 3</b> Đèn UV Huỳnh Quang Đặt Sàn 360° — Đèn tuýp tỏa ánh sáng UV 360 độ khắp phòng, soi sáng mọi dấu chân và vân tay tự động mà không cần cầm tay.</div></div><div class="tool"><h3>Sổ Ghi Chép Ma Ám <small>Ghost Writing Book — Bằng chứng (Evidence Tool)</small></h3>
+    <div class="tier"><b>Tier 1</b> Sổ Tay Bìa Mềm &amp; Bút Chì — Phạm vi tương tác hẹp (2m), ma mất nhiều thời gian hơn để chịu viết vào sổ.</div><div class="tier"><b>Tier 2</b> Sổ Bọc Da &amp; Bút Máy — Phạm vi tương tác 3m, tốc độ viết trung bình.</div><div class="tier"><b>Tier 3</b> Cổ Thư Mạ Vàng &amp; Bút Lông Vũ — Phạm vi tương tác rộng (4m), ma bị kích thích viết vào sổ cực kỳ nhanh chóng.</div></div><div class="tool"><h3>Nhiệt Kế <small>Thermometer — Bằng chứng (Evidence Tool)</small></h3>
+    <div class="tier"><b>Tier 1</b> Nhiệt Kế Thủy Ngân — Đo chậm theo thời gian thực, phải đợi cột thủy ngân tụt xuống để biết nhiệt độ.</div><div class="tier"><b>Tier 2</b> Súng Đo Nhiệt Độ Laser — Bấm cò để bắn tia laser đo nhiệt độ tức thì trên màn hình điện tử.</div><div class="tier"><b>Tier 3</b> Nhiệt Kế Kỹ Thuật Số Quét Liên Tục — Tự động quét nhiệt độ liên tục với độ chính xác cao và cập nhật cực nhanh trên màn hình LCD.</div></div><div class="tool"><h3>Máy Chiếu Ma D.O.T.S <small>D.O.T.S Projector — Bằng chứng (Evidence Tool)</small></h3>
+    <div class="tier"><b>Tier 1</b> Bút Chiếu Laser Cầm Tay — Phạm vi lưới laser hẹp, chiếu dạng chùm nhỏ, khó quan sát.</div><div class="tier"><b>Tier 2</b> Máy Chiếu Quét Nón Đặt Sàn — Phủ lưới laser xanh hình nón rộng khắp một khu vực phòng.</div><div class="tier"><b>Tier 3</b> Máy Chiếu Xoay 360° Tích Hợp Quét — Quét lưới laser xanh 360 độ toàn bộ căn phòng, có cảm biến phát hiện chuyển động của ma.</div></div><div class="tool"><h3>Cây Thánh Giá Trừ Tà <small>Crucifix — Trang bị bảo vệ sinh tồn</small></h3>
+    <div class="tier"><b>Tier 1</b> Thánh Giá Gỗ Thô Sơ — Sử dụng được 1 lần cản hunt. Bán kính cản 3 mét (Demon: 4.5m).</div><div class="tier"><b>Tier 2</b> Thánh Giá Sắt Rèn — Sử dụng được 2 lần cản hunt (cháy từng nhánh). Bán kính cản 4 mét (Demon: 6m).</div><div class="tier"><b>Tier 3</b> Thánh Giá Bạc Trừ Tà Tối Thượng — Sử dụng được 2 lần. Bán kính cản cực đại 5 mét (Demon: 7.5m). ĐẶC BIỆT: Có thể ngăn chặn cả Cursed Hunt (Săn Nguyền Rủa)!</div></div><div class="tool"><h3>Nhang Xua Đuổi Tà Ma <small>Incense / Smudge Sticks — Trang bị cứu mạng &amp; Làm nhiệm vụ</small></h3>
+    <div class="tier"><b>Tier 1</b> Bó Lá Xô Thơm (Smudge Stick) — Đốt bằng bật lửa. Khi Hunt: Làm mù ma trong 5 giây để bỏ chạy. Ngoài Hunt: Ngăn ma săn trong 90s (Demon: 60s, Spirit: 180s).</div><div class="tier"><b>Tier 2</b> Nhang Ống Kim Loại — Tỏa khói rộng hơn. Khi Hunt: Làm mù ma trong 5 giây VÀ làm chậm tốc độ chạy của ma đi 25% trong 5 giây.</div><div class="tier"><b>Tier 3</b> Lư Hương Trừ Tà Hoàng Gia — Khi Hunt: Làm mù ma trong 5 giây VÀ KHÓA CHÂN ma đứng bất động hoàn toàn tại chỗ trong 5 giây!</div></div><div class="tool"><h3>Thuốc Hồi Phục Sanity <small>Sanity Medication — Trang bị sinh tồn</small></h3>
+    <div class="tier"><b>Tier 1</b> Lọ Thuốc Viên Uống — Hồi phục 20% Sanity nhưng hồi rất chậm trong vòng 30 giây.</div><div class="tier"><b>Tier 2</b> Thuốc Con Nhộng Hấp Thu Nhanh — Hồi phục 35% Sanity trong vòng 20 giây.</div><div class="tier"><b>Tier 3</b> Ống Tiêm Adrenaline Khẩn Cấp — Hồi phục 50% Sanity NGAY LẬP TỨC và tăng tốc độ chạy (Sprint vô hạn) cho người tiêm trong 10 giây!</div></div><div class="tool"><h3>Muối Trừ Tà <small>Salt — Trang bị phát hiện &amp; Làm chậm</small></h3>
+    <div class="tier"><b>Tier 1</b> Lọ Muối Ăn Rải 2 Lần — Rải được 2 đống muối trên sàn. Khi ma dẫm vào sẽ để lại dấu chân UV (trừ Wraith).</div><div class="tier"><b>Tier 2</b> Hộp Muối Hạt Rải 3 Lần — Rải được 3 đống muối trên sàn.</div><div class="tier"><b>Tier 3</b> Lọ Muối Đen Trừ Tà — Rải được 3 vạch muối dài chắn ngang cửa. Khi ma bước qua vạch muối đen trong lúc Hunt, nó sẽ bị làm chậm tốc độ đáng kể!</div></div></section>
+<section class="page chapter"><h2 class="ch-num">CHƯƠNG 09</h2><h2>Câu Thoại Nhận Diện &amp; Thuật Ngữ Anh—Việt</h2><div class="tool"><h3>spirit box phrases</h3><ul><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li></ul></div><div class="tool"><h3>trigger anger phrases</h3><ul><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li></ul></div><div class="tool"><h3>ouija board phrases</h3><ul><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li></ul></div><div class="tool"><h3>monkey paw phrases</h3><ul><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li><li><code>[object Object]</code></li></ul></div></section>
+
+</body></html>

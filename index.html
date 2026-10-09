@@ -2446,15 +2446,6 @@
             <span class="chip-badge">30</span>
           </div>
 
-          <div class="hud-chip-separator"></div>
-
-          <!-- COMPENDIUM TOGGLE BUTTON (GHÉP CHUNG MÂM VỚI TẤT CẢ) -->
-          <button class="compendium-toggle-chip" id="btnToggleCompendium" type="button" title="Mở cẩm nang toàn diện, bảng ký hiệu &amp; mẹo bắt thóp khoa học">
-            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-            <span class="chip-text">Cẩm Nang</span>
-            <span class="chip-badge manual-badge">MANUAL</span>
-            <span class="toggle-indicator" id="compendiumArrow">▾</span>
-          </button>
         </div>
       </div>
       <div class="hud-filter-status" id="hudFilterStatus">Hiển thị toàn bộ 30 loài ma</div>
@@ -3570,6 +3561,72 @@
             osc.start(t); osc.stop(t + 0.86);
           });
         } catch(e){}
+      },
+
+      // Sound FX: mở trang / mở sổ (whoosh đi lên)
+      open() {
+        try {
+          this.ensureContext();
+          if (this.isMuted || this.volume <= 0) return;
+          const t = this.ctx.currentTime;
+          const dur = 0.35;
+          const bufferSize = Math.floor(this.ctx.sampleRate * dur);
+          const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+          const data = buffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) {
+            data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.6));
+          }
+          const noise = this.ctx.createBufferSource();
+          noise.buffer = buffer;
+          const bp = this.ctx.createBiquadFilter();
+          bp.type = 'bandpass';
+          bp.frequency.setValueAtTime(480, t);
+          bp.frequency.exponentialRampToValueAtTime(2200, t + dur);
+          bp.Q.value = 0.8;
+          const g = this.ctx.createGain();
+          g.gain.setValueAtTime(0.0001, t);
+          g.gain.exponentialRampToValueAtTime(0.22, t + 0.06);
+          g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+          noise.connect(bp); bp.connect(g); g.connect(this.masterGain);
+          noise.start(t);
+        } catch(e){}
+      },
+
+      // Sound FX: đóng trang / gấp sổ (thud đi xuống)
+      close() {
+        try {
+          this.ensureContext();
+          if (this.isMuted || this.volume <= 0) return;
+          const t = this.ctx.currentTime;
+          const dur = 0.3;
+          const bufferSize = Math.floor(this.ctx.sampleRate * dur);
+          const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+          const data = buffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) {
+            data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.3));
+          }
+          const noise = this.ctx.createBufferSource();
+          noise.buffer = buffer;
+          const lp = this.ctx.createBiquadFilter();
+          lp.type = 'lowpass';
+          lp.frequency.setValueAtTime(1400, t);
+          lp.frequency.exponentialRampToValueAtTime(300, t + dur);
+          const g = this.ctx.createGain();
+          g.gain.setValueAtTime(0.24, t);
+          g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+          noise.connect(lp); lp.connect(g); g.connect(this.masterGain);
+          noise.start(t);
+
+          const osc = this.ctx.createOscillator();
+          const og = this.ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(140, t);
+          osc.frequency.exponentialRampToValueAtTime(60, t + 0.18);
+          og.gain.setValueAtTime(0.28, t);
+          og.gain.exponentialRampToValueAtTime(0.001, t + 0.2);
+          osc.connect(og); og.connect(this.masterGain);
+          osc.start(t); osc.stop(t + 0.2);
+        } catch(e){}
       }
     };
 
@@ -4270,12 +4327,16 @@
         flashPulseLight();
       };
 
-      document.getElementById("dossierModalBackdrop").style.display = "flex";
+      const backdrop = document.getElementById("dossierModalBackdrop");
+      const wasOpen = backdrop.style.display === "flex";
+      backdrop.style.display = "flex";
+      if (!wasOpen) AudioEngine.open();
     }
 
     function closeDossierModal() {
       stopFootstepAudio();
       document.getElementById("dossierModalBackdrop").style.display = "none";
+      AudioEngine.close();
     }
 
     function flashPulseLight() {
@@ -4296,6 +4357,7 @@
       if (nextIndex >= ghostsData.length) nextIndex = 0;
 
       selectGhost(ghostsData[nextIndex].id);
+      AudioEngine.pageFlip();
       openDossierModal();
     }
 
@@ -5075,11 +5137,13 @@
           compContainer.style.display = "block";
           compContainer.scrollTop = 0;
           document.body.style.overflow = "hidden";
+          AudioEngine.open();
           if (btnToggleComp) btnToggleComp.classList.add("active");
           if (compArrow) compArrow.textContent = "▴";
         } else {
           compContainer.style.display = "none";
           document.body.style.overflow = "";
+          AudioEngine.close();
           if (btnToggleComp) btnToggleComp.classList.remove("active");
           if (compArrow) compArrow.textContent = "▾";
         }
