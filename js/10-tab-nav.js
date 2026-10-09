@@ -13,7 +13,10 @@
 
     function switchTab(tabKey) {
       const prevTab = currentTab;
-      AudioEngine.pageFlip();
+      const fromIdx = TAB_KEYS.indexOf(prevTab);
+      const toIdx = TAB_KEYS.indexOf(tabKey);
+      const dir = (fromIdx >= 0 && toIdx >= 0) ? (toIdx > fromIdx ? "next" : "prev") : "next";
+      AudioEngine.pageFlip(dir);
       currentTab = tabKey;
 
       document.querySelectorAll(".j-tab").forEach(tab => {
@@ -41,9 +44,6 @@
       // Lật trang sổ (page-turn) mượt khi chuyển qua lại
       const book = document.querySelector(".book");
       if (book) {
-        const fromIdx = TAB_KEYS.indexOf(prevTab);
-        const toIdx = TAB_KEYS.indexOf(tabKey);
-        const dir = (fromIdx >= 0 && toIdx >= 0) ? (toIdx > fromIdx ? "next" : "prev") : "next";
         book.classList.remove("turn-next", "turn-prev");
         void book.offsetWidth;
         book.classList.add(dir === "next" ? "turn-next" : "turn-prev");

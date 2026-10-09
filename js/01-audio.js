@@ -144,34 +144,70 @@
         } catch(e){}
       },
 
-      // Sound FX: Page Flip
-      pageFlip() {
+      // Sound FX: Page Flip (dày, "yomost": flutter giấy + tiếng tách + đặt trang)
+      pageFlip(dir = 'next') {
         try {
           this.ensureContext();
-          if (this.isMuted) return;
+          if (this.isMuted || this.volume <= 0) return;
           const t = this.ctx.currentTime;
-          const dur = 0.14;
+          const up = dir !== 'prev';
+
+          // 1) Flutter giấy: noise bandpass quét tần, biên độ rung nhẹ
+          const dur = 0.30;
           const bufferSize = Math.floor(this.ctx.sampleRate * dur);
           const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
           const data = buffer.getChannelData(0);
           for (let i = 0; i < bufferSize; i++) {
-            data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.35));
+            const p = i / bufferSize;
+            const env = Math.sin(Math.PI * p);          // vào/ra mượt
+            const flutter = 0.6 + 0.4 * Math.sin(p * 62); // rung lật trang
+            data[i] = (Math.random() * 2 - 1) * env * flutter;
           }
           const noise = this.ctx.createBufferSource();
           noise.buffer = buffer;
-
-          const filter = this.ctx.createBiquadFilter();
-          filter.type = 'lowpass';
-          filter.frequency.setValueAtTime(700, t);
-
-          const gain = this.ctx.createGain();
-          gain.gain.setValueAtTime(0.18, t);
-          gain.gain.exponentialRampToValueAtTime(0.001, t + dur);
-
-          noise.connect(filter);
-          filter.connect(gain);
-          gain.connect(this.masterGain);
+          const bp = this.ctx.createBiquadFilter();
+          bp.type = 'bandpass';
+          bp.Q.value = 0.7;
+          if (up) {
+            bp.frequency.setValueAtTime(700, t);
+            bp.frequency.exponentialRampToValueAtTime(3200, t + dur * 0.6);
+            bp.frequency.exponentialRampToValueAtTime(1200, t + dur);
+          } else {
+            bp.frequency.setValueAtTime(3200, t);
+            bp.frequency.exponentialRampToValueAtTime(800, t + dur * 0.6);
+            bp.frequency.exponentialRampToValueAtTime(500, t + dur);
+          }
+          const g = this.ctx.createGain();
+          g.gain.setValueAtTime(0.0001, t);
+          g.gain.exponentialRampToValueAtTime(0.32, t + 0.04);
+          g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+          noise.connect(bp); bp.connect(g); g.connect(this.masterGain);
           noise.start(t);
+
+          // 2) Tiếng tách sắc ở đầu
+          const tick = this.ctx.createOscillator();
+          const tg = this.ctx.createGain();
+          tick.type = 'triangle';
+          tick.frequency.setValueAtTime(up ? 950 : 720, t);
+          tick.frequency.exponentialRampToValueAtTime(320, t + 0.05);
+          tg.gain.setValueAtTime(0.12, t);
+          tg.gain.exponentialRampToValueAtTime(0.001, t + 0.06);
+          tick.connect(tg); tg.connect(this.masterGain);
+          tick.start(t); tick.stop(t + 0.06);
+
+          // 3) Tiếng đặt trang (thud trầm) gần cuối
+          const tt = t + dur * 0.72;
+          const thud = this.ctx.createOscillator();
+          const hg = this.ctx.createGain();
+          thud.type = 'sine';
+          thud.frequency.setValueAtTime(175, tt);
+          thud.frequency.exponentialRampToValueAtTime(68, tt + 0.12);
+          hg.gain.setValueAtTime(0.0001, t);
+          hg.gain.setValueAtTime(0.0001, tt);
+          hg.gain.exponentialRampToValueAtTime(0.17, tt + 0.02);
+          hg.gain.exponentialRampToValueAtTime(0.001, tt + 0.14);
+          thud.connect(hg); hg.connect(this.masterGain);
+          thud.start(tt); thud.stop(tt + 0.16);
         } catch(e){}
       },
 

@@ -5,8 +5,6 @@
       const g = ghostsData.find(x => x.id === selectedGhostId);
       if (!g) return;
 
-      AudioEngine.pageFlip();
-
       const currentIndex = ghostsData.findIndex(x => x.id === selectedGhostId);
       const counterEl = document.getElementById("modalGhostCounter");
       if (counterEl) {
@@ -83,7 +81,7 @@
       if (nextIndex >= ghostsData.length) nextIndex = 0;
 
       selectGhost(ghostsData[nextIndex].id);
-      AudioEngine.pageFlip();
+      AudioEngine.pageFlip(direction < 0 ? "prev" : "next");
       openDossierModal();
     }
 
