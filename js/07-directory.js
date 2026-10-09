@@ -18,7 +18,7 @@
         card.innerHTML = `
           <div class="dir-card-header">
             <span class="dir-name-en">${g.name_en}</span>
-            <span class="dir-hunt-tag">${g.hunt_sanity}% Hunt</span>
+            <span class="dir-hunt-tag">${typeof g.hunt_sanity === "number" ? g.hunt_sanity + "% Hunt" : "??? Hunt"}</span>
           </div>
           <div class="dir-name-vi">${cleanVi}</div>
           <div class="dir-speed-tag">Tốc độ: ${g.speed.base} m/s</div>
