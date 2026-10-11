@@ -266,19 +266,27 @@
     }
 
     /* ==============================================================
-       ★ BẢNG TRẠNG THÁI 30 GHOST ★
+       ★ BẢNG TRẠNG THÁI 30 GHOST — TỰ LỌC THEO TAB 01 EVIDENCE ★
        ============================================================== */
     function renderGhostStatusTable() {
       const tbl = document.getElementById("ghostStatusTable");
       if (!tbl || !ghostsData) return;
+      const res = (typeof getEvidenceFilteredGhosts === "function")
+        ? getEvidenceFilteredGhosts()
+        : { possible: ghostsData, ruledOut: [], included: [], excluded: [] };
+      const hasFilter = res.included.length > 0 || res.excluded.length > 0 || activeFilters.length > 0;
+      // Đưa ma còn khả nghi lên đầu cho nhìn nhanh, ma bị loại xuống cuối + làm mờ
+      const ordered = [...res.possible, ...res.ruledOut];
+      const ruledIds = new Set(res.ruledOut.map(g => g.id));
       let html = `<thead><tr>
-        <th>Ma</th><th>Bằng chứng</th><th>Hunt</th><th>Tốc độ (m/s)</th><th>Nhận diện nhanh</th>
+        <th>Ma ${hasFilter ? `(${res.possible.length}/${ghostsData.length})` : ""}</th><th>Bằng chứng</th><th>Hunt</th><th>Tốc độ (m/s)</th><th>Nhận diện nhanh</th>
       </tr></thead><tbody>`;
-      ghostsData.forEach(g => {
+      ordered.forEach(g => {
         const sp = g.speed ? `${g.speed.base} → ${g.speed.max_los}` : "-";
         const hunt = typeof g.hunt_sanity === "number" ? g.hunt_sanity + "%" : (g.hunt_sanity || "-");
         const alias = (g.alias && g.alias.length) ? g.alias.join(", ") : "";
-        html += `<tr>
+        const cls = !hasFilter ? "" : (ruledIds.has(g.id) ? "comp-ruled-out" : "comp-match");
+        html += `<tr class="${cls}" data-ghost="${g.id}">
           <td><strong>${g.name_en}</strong><br><span style="font-size:.72rem;color:#ab9575;">${g.name_vi}</span></td>
           <td style="font-size:.76rem;">${(g.evidences || []).join("<br>")}</td>
           <td>${hunt}</td>
@@ -288,5 +296,51 @@
       });
       html += "</tbody>";
       tbl.innerHTML = html;
+      syncCompEvidenceUI();
+    }
+
+    /* BANNER + LỌC LƯỚI MẸO 0-EVIDENCE THEO TAB 01 */
+    function syncCompEvidenceUI() {
+      const bar = document.getElementById("compEvidenceFilterBar");
+      const txt = document.getElementById("compEvidenceFilterText");
+      const res = (typeof getEvidenceFilteredGhosts === "function")
+        ? getEvidenceFilteredGhosts()
+        : { possible: ghostsData || [], included: [], excluded: [] };
+      const hasFilter = res.included.length > 0 || res.excluded.length > 0 || (typeof activeFilters !== "undefined" && activeFilters.length > 0);
+      if (bar) bar.style.display = hasFilter ? "flex" : "none";
+      if (txt && hasFilter) {
+        const inc = res.included.length ? `CÓ: ${res.included.join(" + ")}` : "";
+        const exc = res.excluded.length ? `KHÔNG: ${res.excluded.join(" + ")}` : "";
+        const grp = (typeof activeFilters !== "undefined" && activeFilters.length) ? `Nhóm: ${activeFilters.join(", ")}` : "";
+        const parts = [inc, exc, grp].filter(Boolean).join(" • ");
+        txt.textContent = `Đang lọc theo tab 01 — ${parts} → còn ${res.possible.length}/${(ghostsData || []).length} ma`;
+      }
+      // Lọc lưới buster: ma khớp đưa lên đầu + viền xanh, ma loại làm mờ
+      const grid = document.querySelector(".quick-buster-grid");
+      if (grid && ghostsData) {
+        const items = Array.from(grid.querySelectorAll(".buster-item"));
+        const ruledIds = new Set(res.ruledOut.map(g => g.id));
+        const norm = s => (s || "").toLowerCase().trim();
+        items.forEach(it => {
+          const nameEl = it.querySelector(".buster-name");
+          const raw = nameEl ? norm(nameEl.textContent.split("(")[0]) : "";
+          const g = ghostsData.find(x => norm(x.name_en) === raw || norm(x.id.replace(/_/g, " ")) === raw || raw.includes(norm(x.name_en)));
+          const gid = g ? g.id : null;
+          it.classList.remove("buster-dimmed", "buster-match");
+          it.removeAttribute("data-ghost");
+          if (!hasFilter || !gid) return;
+          it.setAttribute("data-ghost", gid);
+          if (ruledIds.has(gid)) it.classList.add("buster-dimmed");
+          else it.classList.add("buster-match");
+        });
+        // Sắp xếp: khớp lên trước, loại xuống cuối để nhìn nhanh
+        if (hasFilter) {
+          items.sort((a, b) => {
+            const am = a.classList.contains("buster-match") ? 0 : 1;
+            const bm = b.classList.contains("buster-match") ? 0 : 1;
+            return am - bm;
+          }).forEach(it => grid.appendChild(it));
+        }
+      }
     }
 

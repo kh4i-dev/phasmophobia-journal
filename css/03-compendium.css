@@ -370,7 +370,7 @@
 
 
     /* ==============================================================
-       PANE TU VUNG � dan d�i danh s�ch g?n h�ng cho d? d?c
+       PANE TU VUNG � dan d�i danh s�ch g?n h�ng cho d? d?c
        ============================================================== */
     #compPaneVocab ul {
       list-style: none;
@@ -398,4 +398,59 @@
       font-size: 0.7rem;
       color: #94815f;
       margin: 0 0 5px;
+    }
+
+    /* BANNER LỌC NHANH THEO TAB 01 EVIDENCE */
+    .comp-evidence-filterbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(14, 116, 144, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      color: #bae6fd;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .comp-filter-dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: #38bdf8; box-shadow: 0 0 8px #38bdf8;
+      flex-shrink: 0;
+    }
+    .comp-filter-clear {
+      margin-left: auto;
+      background: rgba(239,68,68,0.12);
+      border: 1px solid rgba(239,68,68,0.4);
+      color: #fca5a5;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      cursor: pointer;
+    }
+    .comp-filter-clear:hover { background: #dc2626; color: #fff; }
+    /* Ma bị loại trong Cẩm Nang: mờ + gạch */
+    .comp-matrix-table tr.comp-ruled-out td {
+      opacity: 0.32;
+      filter: grayscale(0.7);
+      text-decoration: line-through;
+      text-decoration-color: rgba(239,68,68,0.6);
+    }
+    .comp-matrix-table tr.comp-match td {
+      background: rgba(56, 189, 248, 0.07);
+    }
+    .comp-matrix-table tr.comp-match td:first-child {
+      border-left: 3px solid #38bdf8;
+    }
+    /* Buster card bị loại: mờ, còn khớp thì viền xanh nổi lên đầu */
+    .buster-item.buster-dimmed {
+      opacity: 0.28;
+      filter: grayscale(0.8);
+    }
+    .buster-item.buster-match {
+      border-color: #38bdf8;
+      box-shadow: 0 0 10px rgba(56,189,248,0.25);
+      opacity: 1;
     }

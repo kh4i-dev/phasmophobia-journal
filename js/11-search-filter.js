@@ -65,6 +65,12 @@
           AudioEngine.open();
           if (btnToggleComp) btnToggleComp.classList.add("active");
           if (compArrow) compArrow.textContent = "▴";
+          // Mở Cẩm Nang -> lọc ngay theo tab 01 Evidence để nhìn nhanh
+          if (typeof renderGhostStatusTable === "function") {
+            try { renderGhostStatusTable(); } catch (e) {}
+          } else if (typeof syncCompEvidenceUI === "function") {
+            try { syncCompEvidenceUI(); } catch (e) {}
+          }
         } else {
           compContainer.style.display = "none";
           document.body.style.overflow = "";
@@ -117,6 +123,22 @@
           if (targetPane) targetPane.classList.add("active");
         });
       });
+
+      // Nút xóa lọc nhanh trong Cẩm Nang -> reset tab 01 về tất cả 30 ma
+      const btnCompClear = document.getElementById("btnCompClearEvidence");
+      if (btnCompClear) {
+        btnCompClear.addEventListener("click", () => {
+          AudioEngine.pencil();
+          if (typeof EVIDENCES !== "undefined" && typeof evidenceState !== "undefined") {
+            EVIDENCES.forEach(e => evidenceState[e.id] = null);
+          }
+          if (typeof activeFilters !== "undefined") activeFilters = [];
+          if (typeof renderEvidenceList === "function") renderEvidenceList();
+          if (typeof syncGroupFilterUI === "function") { try { syncGroupFilterUI(); } catch (e) {} }
+          if (typeof updateGhostGridStates === "function") updateGhostGridStates();
+          else if (typeof renderGhostStatusTable === "function") renderGhostStatusTable();
+        });
+      }
     }
 
     function renderSearchResults(q) {

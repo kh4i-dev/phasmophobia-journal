@@ -290,6 +290,13 @@
       });
 
       updateQuickActionBar(possibleGhosts);
+
+      // ĐỒNG BỘ CẨM NANG (MANUAL) THEO TAB 01: bảng Trạng Thái + lưới Mẹo 0-Evidence
+      if (typeof renderGhostStatusTable === "function") {
+        try { renderGhostStatusTable(); } catch (e) { /* bỏ qua nếu data chưa load */ }
+      } else if (typeof syncCompEvidenceUI === "function") {
+        try { syncCompEvidenceUI(); } catch (e) {}
+      }
     }
 
     // CẬP NHẬT THẺ DƯỚI CÙNG (QUICK ACTION BAR)

@@ -33,6 +33,39 @@
     let selectedBpmMode = "base";
     let activeFilters = []; //Cho phép chọn nhiều nhóm cùng lúc: 'early_hunt', 'fast_speed'
 
+    /* DÙNG CHUNG: tính ma còn lại / bị loại theo tab 01 Evidence (để Cẩm Nang lọc theo) */
+    function isGhostRuledOut(g) {
+      if (!g) return true;
+      const included = Object.keys(evidenceState).filter(k => evidenceState[k] === true);
+      const excluded = Object.keys(evidenceState).filter(k => evidenceState[k] === false);
+      if (included.length === 0 && excluded.length === 0) {
+        // chưa tick gì -> chỉ check nhóm lọc chiến thuật
+        const ag0 = GROUP_ATTRS.filter(a => activeFilters.includes(a.id));
+        if (ag0.length && !ag0.every(ga => ga.test(g))) return true;
+        return false;
+      }
+      for (const inc of included) {
+        if (g.id === "the_mimic" && inc === "Ghost Orb") continue;
+        if (!g.evidences.includes(inc)) return true;
+      }
+      for (const exc of excluded) {
+        if (g.id === "the_mimic" && exc === "Ghost Orb") return true;
+        if (g.evidences.includes(exc)) return true;
+      }
+      const ag = GROUP_ATTRS.filter(a => activeFilters.includes(a.id));
+      if (ag.length && !ag.every(ga => ga.test(g))) return true;
+      return false;
+    }
+
+    function getEvidenceFilteredGhosts() {
+      if (!ghostsData || !ghostsData.length) return { possible: [], ruledOut: [], included: [], excluded: [] };
+      const included = Object.keys(evidenceState).filter(k => evidenceState[k] === true);
+      const excluded = Object.keys(evidenceState).filter(k => evidenceState[k] === false);
+      const possible = ghostsData.filter(g => !isGhostRuledOut(g));
+      const ruledOut = ghostsData.filter(g => isGhostRuledOut(g));
+      return { possible, ruledOut, included, excluded };
+    }
+
     // Tap tempo variables
     let tapTimestamps = [];
     let tapResetTimer = null;
