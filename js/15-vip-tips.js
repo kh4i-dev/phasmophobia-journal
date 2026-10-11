@@ -186,3 +186,59 @@ function renderVipTipsHtml(gid) {
   }
   return html;
 }
+
+/* ==============================================================
+   ★ MẸO SỐNG SÓT & LOOPING VIP THEO TỪNG MA ★
+   Hiện trong tab dossier "Mẹo Sống Sót & Looping" + gộp vào tìm kiếm.
+   ============================================================== */
+const LOOP_TIPS = {
+  spirit: "Loop chuẩn quanh bàn ăn/đảo bếp, cắt LOS là nó về 1.7. Dễ nhất game.",
+  wraith: "Cẩn thận Teleport tới sát bạn rồi hunt ngay — đừng loop một mình ở phòng lạ, luôn thủ nhang.",
+  phantom: "Khó nhìn khi hunt (tàng hình 1-2s). Đừng căn mắt — nghe tiếng chân + đèn pin nháy để giữ khoảng cách.",
+  poltergeist: "Loop ở chỗ TRỐNG, dọn đồ quanh bàn trước. Đồ bay trúng trừ sanity — đừng loop phòng bừa bộn.",
+  banshee: "Không phải mục tiêu thì đứng yên cũng an toàn. Là mục tiêu thì loop như ma thường.",
+  jinn: "TẮT CẦU DAO trước khi loop — mất điện là Jinn thành ma thường 1.7. Đừng loop hành lang dài khi cầu dao bật.",
+  mare: "BẬT ĐÈN khu loop/hành lang để ép hunt muộn 40%. Đừng loop trong bóng tối.",
+  revenant: "TUYỆT ĐỐI không loop chay. Cắt LOS ngay + trốn tủ + tắt đồ điện. Chỉ câu giờ bằng nhang dí mặt (mù 5s).",
+  shade: "Hiếm khi hunt — loop chuẩn là đủ, nó ít tăng tốc vì ít thấy người.",
+  demon: "Hunt lại sau 20s (ma khác 25s) — vừa thoát là thủ đợt 2 ngay. Cắm thánh giá rộng, nhang sẵn tay.",
+  yurei: "Loop chuẩn. Đừng loop phòng 1 cửa — nó hay đóng sầm cửa, dễ bị nhốt.",
+  oni: "Dễ loop vì hiện hình rõ — nhìn thẳng nó mà cắt góc bàn. Không có airball.",
+  yokai: "Giữ >2.5m + TẮT mic/đài. Nó điếc xa — crouch sau ghế là nó đi qua luôn.",
+  hantu: "BẬT CẦU DAO + loop hành lang ẤM — nó còn 1.4 chậm hơn cả đi bộ. Tắt cầu dao là nó phi 2.7.",
+  goryo: "Loop chuẩn. Nó không đổi phòng nên bàn loop cố định dùng được cả trận.",
+  myling: "Nó êm — đừng chờ nghe chân xa. Đèn pin nháy (<10m) là nó đã sát — giữ vòng loop rộng.",
+  onryo: "Cắm 2-3 nến quanh chỗ loop — nến như thánh giá 4m, nó phải thổi nến trước khi cắn thánh giá.",
+  the_twins: "Mỗi hunt một tốc (1.53 ↔ 1.87) — đừng thuộc bài 1 tốc, nghe lại chân mỗi đợt.",
+  raiju: "TẮT HẾT đèn pin/đồ điện, nhặt sạch đồ dưới sàn trước khi loop. Đồ bật trong 15m là nó phi 2.5.",
+  obake: "Loop chuẩn. Liếc model khi chớp — thấy đổi hình là xác nhận Obake.",
+  the_mimic: "Nguy hiểm khi loop vì có thể copy Revenant 3.0 giữa chừng — thủ nhang, đừng loop đường dài.",
+  moroi: "UỐNG THUỐC sanity trước khi loop để ép chậm (1.5). Sanity 0% + LOS là 3.71 không chạy nổi. Nhang mù 12s.",
+  deogen: "KHÔNG TRỐN TỦ — ra bàn ăn đi bộ dắt nó vòng quanh. Xa phi 3.0, gần <2.5m bò 0.4 — bình tĩnh đi lùi.",
+  thaye: "Đầu game trốn trước (2.75 rất nhanh). Ở gần cho nó già → cuối game loop dễ như ma thường.",
+  aswang: "Rải muối T3 quanh bàn — dẫm muối nó khựng 1.5s. Đề phòng hunt grace = 0 (khóa cửa là giết được ngay).",
+  dayan: "Giữ >10m để ép về 1.7. Trong 10m càng chạy nó càng nhanh (2.25) — vừa lùi vừa nhìn mặt, đừng quay lưng sprint.",
+  deildegast: "Trước khi loop, xê dịch/ném ~20+ đồ quanh map để ép chậm dần về 0.4. Loop ngoài phòng ma của nó.",
+  gallu: "Đề phòng Enraged 1.96 — đừng loop đường thẳng dài. Sau 1 hunt nó Weakened 1.36 rất dễ. Muối/nhang/thánh giá làm đổi trạng thái nên đặt trước rồi hãy loop.",
+  kormos: "ĐI BỘ, không sprint. Chiếu đèn pin thẳng mặt khi hunt để ép chậm 1.4. Đứng yên + tắt đèn là nó đi qua.",
+  obambo: "Nghe đổi tốc NGAY TRONG 1 hunt (1.45 ↔ 1.96) là nó — giữ vòng ngắn + nhang trong tay. Kệ tiếng chân giả phòng khác."
+};
+
+const LOOP_GENERAL = [
+  "Chỉ sprint khi ma đã lấy khoảng cách; cắt góc thật gấp.",
+  "Crouch sau ghế/island/xe để cắt LOS — KHÔNG crouch sau bàn ăn/sofa.",
+  "Salt T3: mỗi đống làm chậm ma 2s — rải quanh bàn loop.",
+  "Nhang dí mặt khi hunt: mù ~5s (T2 chậm thêm 25%, T3 đứng im 5s).",
+  "Tắt Head Gear đầu tiên khi hunt bắt đầu; đã vào chỗ ẩn thì đừng tắt đồ nữa."
+];
+
+function renderLoopTipsHtml(gid) {
+  const t = LOOP_TIPS[gid];
+  let html = "";
+  if (t) html += `<div class="vip-row vip-speed"><span class="vip-tag vip-tag-speed">LOOPING VIP</span><div class="vip-speed-text">${t}</div></div>`;
+  if (typeof LOOP_GENERAL !== "undefined" && LOOP_GENERAL.length) {
+    html += `<div class="vip-row vip-general"><span class="vip-tag vip-tag-general">MẸO SỐNG SÓT CHUNG</span><ul>` +
+      LOOP_GENERAL.map(x => `<li>${x}</li>`).join("") + `</ul></div>`;
+  }
+  return html;
+}

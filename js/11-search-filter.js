@@ -153,6 +153,9 @@
             const all = [...(v.chot || []), ...(v.gach || []), v.speed || ""].join(" ").toLowerCase();
             vipHit = all.includes(q);
           }
+          if (!vipHit && typeof LOOP_TIPS !== "undefined" && LOOP_TIPS[g.id]) {
+            vipHit = LOOP_TIPS[g.id].toLowerCase().includes(q);
+          }
         } catch (e) {}
         return g.name_en.toLowerCase().includes(q)
           || g.name_vi.toLowerCase().includes(q)

@@ -53,6 +53,14 @@
 
       document.getElementById("modalLoopingGuide").textContent = g.looping_guide || "Looping tiêu chuẩn quanh chướng ngại vật kín góc (bàn ăn, đảo bếp). Chú ý cắt tầm nhìn (break LOS) để ma giảm tốc độ.";
 
+      // MẸO LOOPING VIP theo từng ma
+      const loopVipBox = document.getElementById("modalLoopingVip");
+      if (loopVipBox) {
+        loopVipBox.innerHTML = (typeof renderLoopTipsHtml === "function")
+          ? renderLoopTipsHtml(g.id)
+          : "";
+      }
+
       stopFootstepAudio();
       resetTapTempo();
 
