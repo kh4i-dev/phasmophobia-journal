@@ -33,6 +33,14 @@
       document.getElementById("modalDeepWeakness").textContent = g.traits.weakness;
       document.getElementById("modalDeepWarning").textContent = g.deep_mechanics || g.notes;
 
+      // TELL ẨN + CHỐT 100% trong tab Cơ Chế Ẩn Chi Tiết
+      const tellBox = document.getElementById("modalTellTips");
+      if (tellBox) {
+        tellBox.innerHTML = (typeof renderTellHtml === "function") ? renderTellHtml(g.id) : "";
+        const tellCard = document.getElementById("modalTellCard");
+        if (tellCard) tellCard.style.display = tellBox.innerHTML ? "block" : "none";
+      }
+
       const instantClue = INSTANT_CLUES[g.id] || g.traits.weakness;
       document.getElementById("modalInstantClueText").textContent = instantClue;
 

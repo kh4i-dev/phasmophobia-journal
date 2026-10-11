@@ -29,7 +29,7 @@ const VIP_TIPS = {
     speed: "Chuẩn 1.7 m/s. Không phải mục tiêu thì đứng trước mặt khi hunt cũng không chết."
   },
   jinn: {
-    chot: [],
+    chot: ["Từ xa phi 2.5 về gần chậm lại + cầu dao đang BẬT → chốt Jinn (kết hợp gạch bên dưới)."],
     gach: ["Thấy ma TẮT cầu dao → gạch Jinn (Jinn không bao giờ tự tắt)."],
     speed: "2.5 m/s khi CẦU DAO BẬT + thấy bạn >3m, lại gần <3m về 1.7. Cầu dao tắt = mất khả năng."
   },
@@ -39,12 +39,12 @@ const VIP_TIPS = {
     speed: "Chuẩn 1.7 m/s. Hunt 60% khi tối / 40% khi sáng — bật đèn chỗ loop để hạ ngưỡng."
   },
   revenant: {
-    chot: [],
+    chot: ["Bò 1.0 (70 BPM) rồi vọt 3.0 (210 BPM) ngay khi thấy bạn → chốt Revenant."],
     gach: [],
     speed: "Bò 1.0 m/s (70 BPM) khi không thấy bạn → đột ngột 3.0 m/s (210 BPM) khi thấy → Revenant. Không loop chay, cắt LOS + trốn tủ ngay."
   },
   shade: {
-    chot: [],
+    chot: ["Cả đội 0% sanity + đứng trong phòng ma mà vẫn không hunt → chốt Shade."],
     gach: ["Thấy event hát / thấy nâng & ném đồ (update Chronicle) → gạch Shade."],
     speed: "Chuẩn 1.7 m/s. Không bao giờ hunt/event khi có người cùng phòng, chỉ hunt <35%."
   },
@@ -64,17 +64,17 @@ const VIP_TIPS = {
     speed: "Chuẩn 1.7 m/s. Siêu tăng động khi đông người."
   },
   yokai: {
-    chot: [],
+    chot: ["Nói micro gần nó mà hunt ở ~80% sanity → chốt Yokai. Khi hunt dí đèn/nói to ở 3-4m nó không phản ứng → càng chắc."],
     gach: [],
     speed: "Chuẩn 1.7 m/s. Hunt 80% nếu nói micro gần nó (<2.5m). Khi hunt bị điếc: bật đèn/nói to ở 3-4m nó không phát hiện."
   },
   hantu: {
-    chot: ["Khi hunt + CẦU DAO TẮT mà thấy thở hơi khói trắng từ miệng → Hantu (chốt). Bắt buộc có Freezing."],
+    chot: ["Khi hunt + CẦU DAO TẮT mà thấy thở hơi khói trắng từ miệng → Hantu (chốt). Bắt buộc có Freezing.", "Nightmare/Insanity: Hantu luôn cho Freezing (bằng chứng bắt buộc)."],
     gach: ["Thấy ma BẬT cầu dao ON → gạch Hantu."],
     speed: "Lạnh (<0°C) 2.7 m/s / ấm (>15°C) 1.4 m/s. Không tăng tốc LOS. Luôn BẬT cầu dao để nó thành rùa."
   },
   goryo: {
-    chot: ["D.O.T.S chỉ thấy qua Video Camera khi không ai trong phòng + không đổi phòng → Goryo. Bắt buộc có D.O.T.S."],
+    chot: ["D.O.T.S chỉ thấy qua Video Camera khi không ai trong phòng + không đổi phòng → Goryo. Bắt buộc có D.O.T.S.", "Nightmare/Insanity: Goryo luôn cho DOTS (bằng chứng bắt buộc) — dùng để khoanh nhanh."],
     gach: ["Ma hunt ngoài phòng yêu thích / đổi phòng → gạch Goryo."],
     speed: "Chuẩn 1.7 m/s."
   },
@@ -99,7 +99,7 @@ const VIP_TIPS = {
     speed: "1.7 → 2.5 m/s khi gần đồ điện đang bật. Nghi là tắt hết đèn pin/đồ điện, dọn sàn."
   },
   obake: {
-    chot: ["Dấu tay 6 ngón (16.7%) / chớp biến hình model khác khi hunt → Obake. Bắt buộc có UV."],
+    chot: ["Dấu tay 6 ngón (16.7%) / chớp biến hình model khác khi hunt → Obake. Bắt buộc có UV.", "Nightmare/Insanity: Obake luôn cho UV (bằng chứng bắt buộc)."],
     gach: [],
     speed: "Chuẩn 1.7 m/s. Giấu vân tay 25%, vân tay mất sau 60s (ma khác 120s)."
   },
@@ -109,12 +109,12 @@ const VIP_TIPS = {
     speed: "Sao chép tốc độ ma khác mỗi 30-120s (lúc nhanh lúc chậm thất thường giữa các hunt)."
   },
   moroi: {
-    chot: [],
+    chot: ["Dính nguyền qua Spirit Box (tụt sanity x2 trong tối) + càng thấp sanity càng nhanh → chốt Moroi. Nhang mù 12s.", "Nightmare/Insanity: Moroi luôn cho Spirit Box (bằng chứng bắt buộc)."],
     gach: [],
     speed: "Nhanh dần khi sanity tụt: 1.5 (cao) → 2.25 (0%) + LOS tới 3.71 NHANH NHẤT game. Uống thuốc để làm chậm. Bắt buộc Spirit Box, dính nguyền tụt sanity x2."
   },
   deogen: {
-    chot: ["Áp Spirit Box ~1m nghe thở dốc khò khè (33%) → Deogen. Bắt buộc Spirit Box."],
+    chot: ["Áp Spirit Box ~1m nghe thở dốc khò khè (33%) → Deogen. Bắt buộc Spirit Box.", "Nightmare/Insanity: Deogen luôn cho Spirit Box (bằng chứng bắt buộc)."],
     gach: [],
     speed: "Xa >6m: 3.0 (210 BPM) → gần <2.5m: 0.4 (30 BPM). Luôn biết chỗ trốn — KHÔNG trốn tủ, dắt loop quanh bàn."
   },
@@ -129,27 +129,27 @@ const VIP_TIPS = {
     speed: "Base 1.53 (chậm hơn chuẩn) nhưng tăng tốc LOS NHANH nhất game. Có thể hunt grace = 0."
   },
   dayan: {
-    chot: [],
+    chot: ["Dấu chân UV ngón quay ngược 180° → chốt Dayan."],
     gach: ["Thấy model/tên NAM → gạch Dayan (Dayan chỉ nữ, giống Banshee)."],
     speed: "Trong 10m: bạn DI CHUYỂN → 2.25 + hunt 65%; bạn ĐỨNG YÊN → 1.2 + hunt 45%. Không tăng tốc LOS. Dấu chân UV ngón quay ngược 180°."
   },
   deildegast: {
-    chot: [],
+    chot: ["Mới vào hunt phi 3.0 rồi chậm dần theo số đồ bị xê dịch (26 món → 0.4) → chốt Deildegast."],
     gach: [],
     speed: "Bắt đầu hunt 3.0 → mỗi đồ bị xê dịch -0.1, 26 món → còn 0.4. Không tăng tốc LOS."
   },
   gallu: {
-    chot: [],
+    chot: ["Event 2 bóng đen cùng lúc / cắn thánh giá từ xa hơn bình thường → chốt Gallu. Enraged không dẫm muối (đừng nhầm Wraith)."],
     gach: [],
     speed: "Normal 1.7 / Enraged 1.96 / Weakened 1.36. Dẫm muối/nhang/thánh giá → đổi trạng thái. Enraged KHÔNG dẫm muối (cẩn thận khi chốt Wraith)."
   },
   kormos: {
-    chot: [],
+    chot: ["Chiếu đèn thẳng mặt khi hunt là nó khựng chậm còn 1.4 → Kormos. Sprint gần là hunt sớm 70%."],
     gach: [],
     speed: "1.7, xa >5m lên 2.21. Gần như MÙ — đứng yên là nó đi qua không thấy. Sprint gần nó → hunt sớm 70%, nên ĐI BỘ."
   },
   obambo: {
-    chot: [],
+    chot: ["Đổi tốc NGAY TRONG 1 hunt (1.45 ↔ 1.96) + tiếng chân giả phòng khác + vòi nước đen → chốt Obambo."],
     gach: [],
     speed: "Aggressive 1.96 + hunt 65% (hunt ngắn hơn) ↔ Calm 1.45 + hunt 10%. ĐỔI NGAY TRONG 1 HUNT (khác Twins đổi giữa các hunt). Đổi trạng thái mỗi ~2 phút."
   }
@@ -239,6 +239,22 @@ function renderLoopTipsHtml(gid) {
   if (typeof LOOP_GENERAL !== "undefined" && LOOP_GENERAL.length) {
     html += `<div class="vip-row vip-general"><span class="vip-tag vip-tag-general">MẸO SỐNG SÓT CHUNG</span><ul>` +
       LOOP_GENERAL.map(x => `<li>${x}</li>`).join("") + `</ul></div>`;
+  }
+  return html;
+}
+
+/* Tell ẩn + chốt 100% cho tab Cơ Chế Ẩn Chi Tiết (dossier) */
+function renderTellHtml(gid) {
+  const v = getVipTips(gid);
+  if (!v) return "";
+  let html = "";
+  if (v.chot && v.chot.length) {
+    html += `<div class="vip-row vip-chot"><span class="vip-tag vip-tag-chot">TELL ẨN — CHỐT</span><ul>` +
+      v.chot.map(t => `<li>${t}</li>`).join("") + `</ul></div>`;
+  }
+  if (v.gach && v.gach.length) {
+    html += `<div class="vip-row vip-gach"><span class="vip-tag vip-tag-gach">THẤY LÀ GẠCH</span><ul>` +
+      v.gach.map(t => `<li>${t}</li>`).join("") + `</ul></div>`;
   }
   return html;
 }
