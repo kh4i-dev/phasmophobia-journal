@@ -146,6 +146,14 @@
       dropdown.innerHTML = "";
 
       const matchedGhosts = ghostsData.filter(g => {
+        let vipHit = false;
+        try {
+          if (typeof VIP_TIPS !== "undefined" && VIP_TIPS[g.id]) {
+            const v = VIP_TIPS[g.id];
+            const all = [...(v.chot || []), ...(v.gach || []), v.speed || ""].join(" ").toLowerCase();
+            vipHit = all.includes(q);
+          }
+        } catch (e) {}
         return g.name_en.toLowerCase().includes(q)
           || g.name_vi.toLowerCase().includes(q)
           || (g.alias && g.alias.some(a => a.toLowerCase().includes(q)))
@@ -153,6 +161,7 @@
           || g.traits.strength.toLowerCase().includes(q)
           || g.traits.weakness.toLowerCase().includes(q)
           || g.hidden_test.toLowerCase().includes(q)
+          || vipHit
           || (q === "2026" && ["aswang", "dayan", "deildegast", "gallu", "kormos", "obambo"].includes(g.id))
           || (q.includes("săn") && g.hunt_sanity >= 60)
           || (q.includes("nhanh") && (g.speed.max_los >= 2.5 || g.speed.base >= 2.0));

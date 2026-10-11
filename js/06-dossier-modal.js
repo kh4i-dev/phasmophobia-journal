@@ -36,6 +36,19 @@
       const instantClue = INSTANT_CLUES[g.id] || g.traits.weakness;
       document.getElementById("modalInstantClueText").textContent = instantClue;
 
+      // MẸO VIP theo từng ma (CHỐT / GẠCH / SPEED) + mẹo chung
+      const vipBox = document.getElementById("modalVipTips");
+      if (vipBox) {
+        let vipHtml = (typeof renderVipTipsHtml === "function") ? renderVipTipsHtml(g.id) : "";
+        if (typeof VIP_GENERAL !== "undefined" && VIP_GENERAL.length) {
+          vipHtml += `<div class="vip-row vip-general"><span class="vip-tag vip-tag-general">MẸO CHUNG</span><ul>` +
+            VIP_GENERAL.map(t => `<li>${t}</li>`).join("") + `</ul></div>`;
+        }
+        vipBox.innerHTML = vipHtml || "Chưa có mẹo VIP riêng — dùng checklist trên + mẹo chung.";
+        const vipCard = document.getElementById("modalVipCard");
+        if (vipCard) vipCard.style.display = "block";
+      }
+
       renderTestingChecklist(g.hidden_test);
 
       document.getElementById("modalLoopingGuide").textContent = g.looping_guide || "Looping tiêu chuẩn quanh chướng ngại vật kín góc (bàn ăn, đảo bếp). Chú ý cắt tầm nhìn (break LOS) để ma giảm tốc độ.";

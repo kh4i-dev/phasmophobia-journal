@@ -391,6 +391,14 @@
       document.getElementById("infoWeakness").textContent = g.traits.weakness;
       document.getElementById("infoHiddenTest").textContent = g.hidden_test;
 
+      // MẸO VIP theo từng ma trong tab 02
+      const vipEl = document.getElementById("infoVipTips");
+      if (vipEl) {
+        vipEl.innerHTML = (typeof renderVipTipsHtml === "function")
+          ? (renderVipTipsHtml(g.id) || "Xem checklist trên + mở Dossier để coi mẹo chung.")
+          : (g.notes || "");
+      }
+
       const alertBox = document.getElementById("infoSpecialAlert");
       alertBox.innerHTML = "";
       if (g.id === "deogen") {
