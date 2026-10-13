@@ -44,6 +44,20 @@
       ]
     },
     {
+      "id": "hiding_map",
+      "title": "Chỗ Ẩn Theo Map & Cỡ Map",
+      "items": [
+        "Chỗ ẩn CHÍNH THỨC (tủ, hộc, thùng, tường gấp) sinh NGẪU NHIÊN mỗi hợp đồng — phải học lại mỗi ván, đừng thuộc lòng máy móc.",
+        "Số đèn tối đa theo cỡ map: Nhỏ 9 • Trung bình 8 • Lớn 7 — bật quá là cầu dao nhảy, cả nhà tối.",
+        "Lượng chỗ ẩn theo độ khó: Amateur 'Rất nhiều' → Intermediate 'Nhiều' → Professional 'Trung bình' → Nightmare 'Ít' → Insanity 'Gần như không có'.",
+        "Map NHỎ: 6 Tanglewood Drive, 42 Edgefield Road, 10 Ridgeview Court, 13 Willow Street, Grafton Farmhouse, Camp Woodwind, Nell's Diner.",
+        "Map TRUNG BÌNH: Point Hope, Bleasdale Farmhouse, Prison, Maple Lodge Campsite, Sunny Meadows (Restricted).",
+        "Map LỚN: Brownstone High School, Sunny Meadows Mental Institution.",
+        "Vài chỗ ẩn 'không chính thức' cộng đồng hay dùng (CHỈ cắt LOS, bản mới có thể KHÔNG còn an toàn): tủ lạnh Ridgeview, bàn gara Willow, bàn phòng trẻ Tanglewood, bàn ăn Edgefield.",
+        "Chọn chỗ ẩn ở GÓC KHUẤT / cuối hướng ma hay roam, tránh chỗ nằm trên đường di chuyển của nó."
+      ]
+    },
+    {
       "id": "evidence",
       "title": "7 Bằng Chứng — Mẹo Lấy Nhanh",
       "items": [
@@ -55,6 +69,19 @@
         "Ghost Writing: đặt sổ trong phòng ma; ma có thể NÉM sổ mà không viết → gạch Ghost Writing.",
         "D.O.T.S Projector: đứng ngoài chiếu vào phòng để bắt bóng ma lướt qua; Goryo chỉ hiện qua CAMERA và khi phòng không người.",
         "Số bằng chứng 'bắt buộc' theo độ khó: Amateur/Inter/Pro = 3, Nightmare = 2, Insanity = 1."
+      ]
+    },
+    {
+      "id": "media",
+      "title": "Ảnh / Video / Âm Thanh (Media)",
+      "items": [
+        "Từ bản Chronicle (2025): hệ thống Media (Ảnh, Video, Âm thanh) ăn thêm tiền/XP và được tính vào 'Perfect Investigation'.",
+        "Ảnh chụp (Photo Camera) tính: Ma hiện hình, Xương, Xác đồng đội, Vân tay, Dấu chân, Vạch EMF, Nhiệt độ đóng băng, Nước bẩn, Thánh giá đã dùng, Chữ viết của ma, Đồ nguyền rủa.",
+        "Ảnh Ma lúc hiện hình rõ ràng là loại giá trị cao nhất (ảnh 3 sao).",
+        "Video (Video Camera): quay Ma, Ghost Orbs, D.O.T.S, đồ vật bay... nhớ bật night vision.",
+        "Âm thanh (Sound Recorder): ghi 2 âm thanh kỳ lạ KHÁC NHAU để ăn tiền và hoàn thành Objective.",
+        "Perfect Investigation = nhận đúng ma + đủ bằng chứng + chụp/nhặt sạch mục tiêu media + xong objective → thưởng tiền & XP lớn.",
+        "Giá trị media tăng theo Tier dụng cụ; lần chụp đầu tiên mỗi loại còn được 'Unique stamp' cộng thêm."
       ]
     },
     {
@@ -93,7 +120,8 @@
         "Nên chụp: Xương (bone), xác đồng đội đã chết, đồ vật ma tương tác, cửa bị mở, Ghost Orbs... mỗi thứ đều có giá trị.",
         "Xương (Bone) KHÔNG phải bằng chứng nhưng vẫn nhặt + chụp để ăn tiền — có thể hỏi Ouija 'Where is the bone?' để định vị.",
         "Hoàn thành đủ Objective + thu 3/3 bằng chứng + dọn dẹp = 'Perfect Investigation' thưởng thêm.",
-        "Càng khó reward càng cao: Amateur x1 → Insanity x6; bảo hiểm giảm dần về 0% ở Professional trở lên."
+        "Càng khó reward càng cao: Amateur x1 → Insanity x6; bảo hiểm giảm dần về 0% ở Professional trở lên.",
+        "Weekly Task 'Complete Challenge Mode on [map]' thưởng ~$5,000 và 5,000 XP — Challenge Mode không mất tiền khi chết."
       ]
     },
     {
@@ -105,6 +133,19 @@
         "Nightmare & Insanity: cầu dao tắt và ẩn trên bản đồ; bảng Sanity/Activity ở xe bị HỎNG (báo số nhiễu).",
         "Insanity: KHÔNG có đồ nguyền rủa, phòng ma đổi thường xuyên, hunt dài và giết người còn kéo dài hunt thêm.",
         "Insanity khởi đầu chỉ 75% sanity; Nightmare 100%."
+      ]
+    },
+    {
+      "id": "events",
+      "title": "Sự Kiện Theo Mùa",
+      "items": [
+        "3 sự kiện chính lặp hằng năm, mỗi cái kéo dài ~3 tuần: Cursed Hollow (mùa Xuân), Crimson Eye (Halloween), Winter's Jest (Giáng Sinh).",
+        "Cursed Hollow (Easter, khoảng cuối tháng 3 – giữa tháng 4): săn trứng ma & Jackalope, thu điểm mở khoá cosmetic.",
+        "Crimson Eye (Halloween, khoảng đầu tháng 10 – đầu tháng 11): 'Blood Moon' (trăng máu), bộ map sự kiện cố định, điểm cá nhân & cộng đồng, Twitch drop áo.",
+        "Winter's Jest (tháng 12): chủ đề Krampus / Giáng Sinh.",
+        "Sự kiện có CẢ quà cộng đồng lẫn quà cá nhân; tiến trình được giữ qua các năm — một số kỷ vật cũ đã ngừng nên không lấy lại được.",
+        "Trong sự kiện thường có Double XP & Rewards (mọi hợp đồng được x2) vài ngày — thời điểm cày tiền/level nhanh nhất.",
+        "Đôi khi có event ngoài lịch / crossover (vd crossover Alan Wake 2 tháng 5/2026) và Twitch Drops cosmetic."
       ]
     },
     {

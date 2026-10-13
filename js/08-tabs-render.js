@@ -341,6 +341,41 @@
 
       build(leftC, sections.slice(0, mid));
       build(rightC, sections.slice(mid));
+
+      if (ghostsData && ghostsData.length && rightC) {
+        const wrap = document.createElement("div");
+        wrap.style.marginTop = "14px";
+
+        const h = document.createElement("div");
+        h.style.fontFamily = "var(--font-hand)";
+        h.style.fontSize = "1.5rem";
+        h.style.color = "#8f2020";
+        h.style.borderBottom = "1px solid rgba(143,32,32,0.35)";
+        h.style.marginBottom = "6px";
+        h.textContent = "Bảng Nhanh 30 Ma (Hunt • Tốc Độ • Bằng Chứng)";
+        wrap.appendChild(h);
+
+        const tbl = document.createElement("table");
+        tbl.style.width = "100%";
+        tbl.style.borderCollapse = "collapse";
+        tbl.style.fontSize = "0.72rem";
+        tbl.innerHTML = `<thead><tr style="text-align:left;background:rgba(143,32,32,0.12);">
+            <th style="padding:3px 4px;">Ma</th><th style="padding:3px 4px;">Hunt</th>
+            <th style="padding:3px 4px;">m/s</th><th style="padding:3px 4px;">Bằng chứng</th></tr></thead><tbody>` +
+          ghostsData.map((g, i) => {
+            const hunt = typeof g.hunt_sanity === "number" ? g.hunt_sanity + "%" : "đổi";
+            const sp = g.speed ? `${g.speed.base}→${g.speed.max_los}` : "-";
+            const ev = (g.evidences || []).join(", ");
+            const bg = i % 2 ? "background:rgba(255,255,255,0.35);" : "";
+            return `<tr style="${bg}">
+              <td style="padding:3px 4px;"><strong>${g.name_en}</strong></td>
+              <td style="padding:3px 4px;">${hunt}</td>
+              <td style="padding:3px 4px;white-space:nowrap;">${sp}</td>
+              <td style="padding:3px 4px;color:#5a4b37;">${ev}</td></tr>`;
+          }).join("") + `</tbody>`;
+        wrap.appendChild(tbl);
+        rightC.appendChild(wrap);
+      }
     }
 
     function renderVoiceTab() {
