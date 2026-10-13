@@ -162,7 +162,15 @@ const VIP_GENERAL = [
   "Salt T3 + loop: mỗi đống muối làm chậm ma 2s — rải quanh bàn loop để sống cả hunt.",
   "Head Gear: phải GIỮ Special để tắt → tắt ĐẦU TIÊN khi hunt bắt đầu, không thì hút ma.",
   "Đốt nhang PHẢI gần ma (trong/sát phòng) mới tính; đốt xa = vô ích. Nhang không cộng dồn.",
-  "Nightmare/Insanity chốt nhanh: Goryo=DOTS • Obake=UV • Hantu=Freezing • Moroi/Deogen=Spirit Box."
+  "Nightmare/Insanity chốt nhanh: Goryo=DOTS • Obake=UV • Hantu=Freezing • Moroi/Deogen=Spirit Box.",
+  "Sanity chỉ tụt khi bạn ở TRONG toà nhà (nghe tiếng gió nền). Ra thềm cửa/ngoài là hết tụt — ra hồi sức rồi vào tiếp.",
+  "Đứng ở vùng CÓ ĐÈN SÁNG giúp tụt sanity chậm hơn hẳn so với trong tối; đặt nến cũng tạo 'ốc đảo sáng' nhỏ.",
+  "Đóng cửa lại khi rời phòng: cửa tự mở/đóng là dấu hiệu ma tương tác → khoanh vùng phòng ma và dễ bắt UV.",
+  "Nấp TRƯỚC khi ma thấy bạn; mỗi chỗ chỉ nấp 1 lần, đừng nấp chung chỗ (ma sẽ lục ra cả hai).",
+  "Đặt sẵn 1 nhang dưới đất ở chỗ ẩn + cầm bật lửa: hunt vừa bùng là đốt ngay để giữ mạng.",
+  "Mannequin (ma-nơ-canh) nằm lệch khỏi vị trí thường ngày = gợi ý mạnh phòng ma.",
+  "Head Gear Tier 3 bị mờ: bật/tắt nó một lần ngay trong xe (van) để khử nhoè.",
+  "Chụp ảnh Ma (3 sao), xác đồng đội, đồ vật ma tương tác và xương để tối đa tiền/XP — nhặt xương không phải bằng chứng nhưng vẫn ăn tiền."
 ];
 
 function getVipTips(gid) {
@@ -229,7 +237,9 @@ const LOOP_GENERAL = [
   "Crouch sau ghế/island/xe để cắt LOS — KHÔNG crouch sau bàn ăn/sofa.",
   "Salt T3: mỗi đống làm chậm ma 2s — rải quanh bàn loop.",
   "Nhang dí mặt khi hunt: mù ~5s (T2 chậm thêm 25%, T3 đứng im 5s).",
-  "Tắt Head Gear đầu tiên khi hunt bắt đầu; đã vào chỗ ẩn thì đừng tắt đồ nữa."
+  "Tắt Head Gear đầu tiên khi hunt bắt đầu; đã vào chỗ ẩn thì đừng tắt đồ nữa.",
+  "Đừng nấp lại đúng chỗ vừa nấp, và tránh nấp cùng chỗ với đồng đội — ma sẽ lục ra.",
+  "Trước khi hunt: tắt hết đồ điện đang cầm (đèn pin, EMF, camera) vì đồ bật hút ma (nhất là Raiju/Yokai)."
 ];
 
 function renderLoopTipsHtml(gid) {
