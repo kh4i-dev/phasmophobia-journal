@@ -85,6 +85,19 @@
       ]
     },
     {
+      "id": "media_rewards",
+      "title": "Bảng Thưởng Media ($ / XP)",
+      "items": [
+        "Cơ chế: lần đầu ghi một loại = 'Unique' (thưởng cao); ghi lại cùng loại = 'Duplicate' (thưởng thấp); Tier dụng cụ cao hơn thì thưởng thêm.",
+        "ẢNH — Ma / Bóng ma / Ma mờ: $15 & 15 XP (dup $3). Chữ viết của ma: $10 (dup $2). Đồ vật bay (tính là Interaction): $5 (dup $1).",
+        "ẢNH — Đồ nguyền rủa (Gương, Tay Khỉ, Voodoo, Moon Totem, Shadow...): $5.",
+        "VIDEO — Ma biến hình / Ma đang hunt: $20 & 20 XP (dup $5). Ma / Bóng ma: $15. Công tắc tự bật / cảm biến chuyển động / đồ bị ném / nhạc méo: $5.",
+        "ÂM THANH — Tiếng thét / Tiếng thở kỳ lạ: $10 & 10 XP (dup $2). Ma đang hunt (thu qua Sound Recorder): $20.",
+        "Một số mục chỉ xuất hiện ở sự kiện (vd Moon Totem mùa Crimson Eye, Shadow ở crossover Alan Wake) — thưởng $5.",
+        "Điền sổ toàn media 'Unique' là điều kiện cho Perfect Investigation; ghi trùng loại chỉ được 'Duplicate' thưởng thấp."
+      ]
+    },
+    {
       "id": "cursed",
       "title": "Đồ Nguyền Rủa — Chiến Thuật Dùng",
       "items": [
@@ -125,6 +138,19 @@
       ]
     },
     {
+      "id": "objectives",
+      "title": "Nhiệm Vụ (Objectives) & Thưởng",
+      "items": [
+        "Mỗi hợp đồng có 4 nhiệm vụ: 1 luôn là 'Tìm đúng loại ma', 3 còn lại chọn ngẫu nhiên — tất cả đều TÙY CHỌN.",
+        "Thưởng 'Tìm đúng loại ma': $100 (map Nhỏ) • $150 (Trung bình) • $200 (Lớn). Bạn phải TỰ tick đúng ma trong sổ mới tính.",
+        "Nhiệm vụ phụ thường ~$25–30 mỗi cái, ví dụ: chụp ảnh số EMF (≥2), chặn hunt bằng Thánh giá, xua ma bằng Nhang khi đang đuổi, để ma tự thổi tắt nến, chụp ảnh ma, quay video ma, ghi 2 âm thanh kỳ lạ khác nhau.",
+        "Vài nhiệm vụ bắt buộc cần dụng cụ cụ thể (Nhang, Thánh giá, Lửa/Nến) — đồ chơi mặc định có thể không đủ.",
+        "Perfect Investigation thưởng thêm $50: nhận đúng ma + xong cả 3 nhiệm vụ phụ + nhặt xương + điền sổ toàn media 'Unique'.",
+        "Bảng mục tiêu ở xe có 3 ô nhiệm vụ + nhiều ô ảnh/video/âm thanh để dán media.",
+        "Daily Task (reset hằng ngày UTC): thưởng $50–150. Weekly Task (reset thứ Hai): thưởng $500."
+      ]
+    },
+    {
       "id": "difficulty",
       "title": "Khác Biệt Theo Độ Khó",
       "items": [
@@ -133,6 +159,23 @@
         "Nightmare & Insanity: cầu dao tắt và ẩn trên bản đồ; bảng Sanity/Activity ở xe bị HỎNG (báo số nhiễu).",
         "Insanity: KHÔNG có đồ nguyền rủa, phòng ma đổi thường xuyên, hunt dài và giết người còn kéo dài hunt thêm.",
         "Insanity khởi đầu chỉ 75% sanity; Nightmare 100%."
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "Thời Tiết (Weather)",
+      "items": [
+        "Mỗi hợp đồng có 1 kiểu thời tiết ngẫu nhiên; hiệu ứng thời tiết bị GIẢM KHI VÀO TRONG NHÀ (trừ tiếng sấm).",
+        "Clear (trời trong): mặc định, không thêm gì. Độ sáng kém, nhiệt độ 8–13°C.",
+        "Sunrise (bình minh): ánh sáng & tầm nhìn cao — dễ nhìn nhất.",
+        "Fog (sương mù): giảm tầm nhìn ngoài trời rõ rệt (rất ảnh hưởng map ngoài trời).",
+        "Light Rain (mưa nhỏ): nhiệt độ 5–8°C, gây tiếng ồn vừa — khó nghe bước chân ma hơn.",
+        "Heavy Rain (mưa lớn): ồn ào, có sấm sét; làm TẮT lửa/nến/nhang ngoài trời.",
+        "Windy (gió lớn): cây cối xào xạc ồn ào, độ sáng kém.",
+        "Snow (tuyết): lạnh, để lại dấu chân trên tuyết — hữu ích để lần theo ma ở map ngoài trời.",
+        "Blood Moon (trăng máu — sự kiện Crimson Eye): tăng mạnh hoạt động & độ hung hãn của ma.",
+        "Thời tiết ẤM khiến phòng ma bớt lạnh đi → khó nhận ra Freezing; hãy đo cẩn thận.",
+        "Monkey Paw 'I wish for weather' đổi được thời tiết, nhưng KHÔNG xoá hiệu ứng gameplay của Blood Moon."
       ]
     },
     {
@@ -158,6 +201,19 @@
         "Đặt nến sẵn khắp map làm 'ốc đảo sáng' giúp chống tụt sanity trên đường di chuyển.",
         "Đừng bật quá nhiều đèn cùng lúc (Nhỏ 9 / Trung bình 8 / Lớn 7) — vượt ngưỡng là cầu dao nhảy, cả nhà tối.",
         "Nếu mic / nhận diện giọng nói kém: dùng UI dạng chữ để hỏi Spirit Box hoặc Cầu Cơ."
+      ]
+    },
+    {
+      "id": "misconceptions",
+      "title": "Hiểu Lầm Thường Gặp",
+      "items": [
+        "SAI: 'Bật đèn pin chống tụt sanity'. ĐÚNG: chỉ đèn TRONG PHÒNG/ánh sáng mới chặn tụt; đèn pin không.",
+        "SAI: 'Nhìn thẳng vào ma làm nó chậm'. ĐÚNG: chỉ khi bạn CẮT đường nhìn (LOS) nó mới giảm tốc.",
+        "SAI: 'Phải soi đèn UV mới chụp được vân tay'. ĐÚNG: chụp thẳng vào chỗ có dấu bằng Photo Camera vẫn tính.",
+        "SAI: 'Đứng gần đồng đội thì tụt sanity ít hơn'. ĐÚNG: sanity tính riêng từng người (trừ cơ chế đặc biệt của Shade/Banshee).",
+        "SAI: 'Nhang đốt ở đâu cũng chặn hunt'. ĐÚNG: phải đốt SÁT ma; đốt ở van hoặc cách xa là vô ích.",
+        "SAI: 'Phải chạy tới khi hunt hết'. ĐÚNG: hunt tự kết thúc theo thời gian — trốn thoát là an toàn.",
+        "SAI: 'Bấm bộ đàm liên tục để báo vị trí ma'. ĐÚNG: khi hunt nó CHE tiếng bước chân, khiến bạn nghe kém hơn."
       ]
     },
     {
