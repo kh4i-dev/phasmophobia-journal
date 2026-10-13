@@ -123,6 +123,84 @@
           rightC.appendChild(row);
         });
       }
+
+      const remaining = toolsAndCursedData.cursed_possessions.filter(c =>
+        ["haunted_mirror", "music_box", "voodoo_doll", "summoning_circle"].includes(c.id));
+
+      if (remaining.length) {
+        const head = document.createElement("h3");
+        head.style.marginTop = "12px";
+        head.style.fontFamily = "var(--font-hand)";
+        head.style.fontSize = "1.6rem";
+        head.style.color = "#8f2020";
+        head.textContent = "Các Vật Phẩm Nguyền Rủa Còn Lại";
+        rightC.appendChild(head);
+
+        remaining.forEach(c => {
+          const box = document.createElement("div");
+          box.style.marginBottom = "10px";
+          box.style.background = "rgba(255,255,255,0.5)";
+          box.style.borderRadius = "6px";
+          box.style.padding = "7px 10px";
+          box.style.boxShadow = "0 1px 2px rgba(0,0,0,0.06)";
+
+          const costRow = c.sanity_cost
+            ? `<div style="font-size:0.8rem;line-height:1.35;margin-top:3px;"><strong>Cái giá:</strong> ${c.sanity_cost}</div>`
+            : "";
+          const effectRow = c.effects
+            ? `<div style="font-size:0.8rem;line-height:1.35;margin-top:3px;"><strong>Hiệu ứng:</strong> ${c.effects}</div>`
+            : "";
+          const warnRow = c.warning
+            ? `<div style="font-size:0.8rem;line-height:1.35;margin-top:4px;color:#991b1b;font-weight:600;"><span style="display:inline-block;background:#fee2e2;color:#991b1b;font-weight:700;font-size:0.68rem;padding:1px 7px;border-radius:999px;margin-right:4px;">NGUY HIỂM</span>${c.warning}</div>`
+            : "";
+
+          box.innerHTML = `
+            <div style="font-family:var(--font-hand);font-size:1.35rem;color:#1e3a8a;font-weight:bold;line-height:1.1;">
+              ${c.name_vi} <span style="font-size:0.85rem;opacity:0.75;">(${c.name_en})</span>
+            </div>
+            <div style="font-size:0.82rem;line-height:1.35;margin-top:3px;">${c.description}</div>
+            ${costRow}${effectRow}${warnRow}
+          `;
+          rightC.appendChild(box);
+        });
+      }
+
+      const mapTips = toolsAndCursedData.cursed_map_tips;
+      if (mapTips && mapTips.length) {
+        const head = document.createElement("h3");
+        head.style.marginTop = "14px";
+        head.style.fontFamily = "var(--font-hand)";
+        head.style.fontSize = "1.6rem";
+        head.style.color = "#8f2020";
+        head.textContent = "Mẹo Tìm Đồ Nguyền Rủa Theo Map";
+        rightC.appendChild(head);
+
+        const note = document.createElement("div");
+        note.style.fontSize = "0.78rem";
+        note.style.fontStyle = "italic";
+        note.style.color = "#5a4b37";
+        note.style.margin = "0 0 6px";
+        note.textContent = "Mỗi hợp đồng chỉ có 1 món (chọn ngẫu nhiên trong 7, trừ khi bật trong Custom). Vị trí có thể đổi sau các bản rework map (Willow/Tanglewood 2026).";
+        rightC.appendChild(note);
+
+        mapTips.forEach(m => {
+          const det = document.createElement("details");
+          det.style.marginBottom = "6px";
+          det.style.background = "rgba(255,255,255,0.5)";
+          det.style.borderRadius = "6px";
+          det.style.padding = "5px 9px";
+          det.style.boxShadow = "0 1px 2px rgba(0,0,0,0.06)";
+          const spots = (m.spots && m.spots.length)
+            ? `<ul style="margin:5px 0 2px 16px;padding:0;font-size:0.78rem;line-height:1.45;">${m.spots.map(s => `<li>${s}</li>`).join("")}</ul>`
+            : "";
+          det.innerHTML = `
+            <summary style="cursor:pointer;font-weight:700;font-size:0.85rem;color:#1e3a8a;">${m.map}</summary>
+            <div style="font-size:0.8rem;line-height:1.4;margin-top:4px;color:#3b2f22;">${m.summary || ""}</div>
+            ${spots}
+          `;
+          rightC.appendChild(det);
+        });
+      }
     }
 
     function renderReferenceTab() {
@@ -230,39 +308,46 @@
 
       const v = toolsAndCursedData.voice_commands_en;
 
-      v.spirit_box_phrases.forEach(p => {
-        const box = document.createElement("div");
-        box.className = "voice-line-box";
-        box.innerHTML = `
-          <div>
-            <div class="voice-line-en">"${p.phrase}"</div>
-            <div class="voice-line-vi">${p.meaning}</div>
-          </div>
-          <div class="copy-pill">Copy</div>
-        `;
-        box.addEventListener("click", () => {
-          navigator.clipboard.writeText(p.phrase);
-          alert(`Đã copy câu hỏi: "${p.phrase}"`);
-        });
-        leftC.appendChild(box);
-      });
+      const pushSectionTitle = (container, text) => {
+        const h = document.createElement("h3");
+        h.style.marginTop = "12px";
+        h.style.fontFamily = "var(--font-hand)";
+        h.style.fontSize = "1.5rem";
+        h.style.color = "#8f2020";
+        h.textContent = text;
+        container.appendChild(h);
+      };
 
-      v.trigger_anger_phrases.forEach(p => {
-        const box = document.createElement("div");
-        box.className = "voice-line-box";
-        box.innerHTML = `
-          <div>
-            <div class="voice-line-en">"${p.phrase}"</div>
-            <div class="voice-line-vi">${p.meaning}</div>
-          </div>
-          <div class="copy-pill">Copy</div>
-        `;
-        box.addEventListener("click", () => {
-          navigator.clipboard.writeText(p.phrase);
-          alert(`Đã copy câu thoại: "${p.phrase}"`);
+      const pushPhraseList = (container, list, label) => {
+        list.forEach(p => {
+          const box = document.createElement("div");
+          box.className = "voice-line-box";
+          box.innerHTML = `
+            <div>
+              <div class="voice-line-en">"${p.phrase}"</div>
+              <div class="voice-line-vi">${p.meaning}</div>
+            </div>
+            <div class="copy-pill">Copy</div>
+          `;
+          box.addEventListener("click", () => {
+            navigator.clipboard.writeText(p.phrase);
+            alert(`Đã copy ${label}: "${p.phrase}"`);
+          });
+          container.appendChild(box);
         });
-        rightC.appendChild(box);
-      });
+      };
+
+      pushPhraseList(leftC, v.spirit_box_phrases, "câu hỏi");
+      if (v.ouija_board_phrases) {
+        pushSectionTitle(leftC, "Bàn Cầu Cơ (Ouija)");
+        pushPhraseList(leftC, v.ouija_board_phrases, "câu hỏi cầu cơ");
+      }
+
+      pushPhraseList(rightC, v.trigger_anger_phrases, "câu thoại");
+      if (v.monkey_paw_phrases) {
+        pushSectionTitle(rightC, "Ước Bàn Tay Khỉ (Monkey Paw)");
+        pushPhraseList(rightC, v.monkey_paw_phrases, "điều ước");
+      }
     }
 
     /* ==============================================================

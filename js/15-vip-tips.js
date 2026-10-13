@@ -139,12 +139,12 @@ const VIP_TIPS = {
     speed: "Bắt đầu hunt 3.0 → mỗi đồ bị xê dịch -0.1, 26 món → còn 0.4. Không tăng tốc LOS."
   },
   gallu: {
-    chot: ["Event 2 bóng đen cùng lúc / cắn thánh giá từ xa hơn bình thường → chốt Gallu. Enraged không dẫm muối (đừng nhầm Wraith)."],
+    chot: ["Đổi tốc độ theo 3 mức 1.7/1.96/1.36 trong lúc hunt → chốt Gallu. Enraged dẫm muối KHÔNG để lại dấu chân (đừng nhầm Wraith)."],
     gach: [],
     speed: "Normal 1.7 / Enraged 1.96 / Weakened 1.36. Dẫm muối/nhang/thánh giá → đổi trạng thái. Enraged KHÔNG dẫm muối (cẩn thận khi chốt Wraith)."
   },
   kormos: {
-    chot: ["Chiếu đèn thẳng mặt khi hunt là nó khựng chậm còn 1.4 → Kormos. Sprint gần là hunt sớm 70%."],
+    chot: ["Sprint gần nó → hunt sớm tới 70%; đứng yên thì nó lướt qua không phát hiện bạn → chốt Kormos."],
     gach: [],
     speed: "1.7, xa >5m lên 2.21. Gần như MÙ — đứng yên là nó đi qua không thấy. Sprint gần nó → hunt sớm 70%, nên ĐI BỘ."
   },

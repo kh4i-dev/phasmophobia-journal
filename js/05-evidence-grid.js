@@ -146,12 +146,12 @@
       "moroi":       { tag: "Nhanh nhất",   full: "Sanity thấp chạy nhanh nhất game (tới 3.71 m/s); nhang mù 12s" },
       "deogen":      { tag: "Thấy bạn",     full: "Luôn biết vị trí bạn; xa lao nhanh, gần <2.5m bò 0.4 m/s" },
       "thaye":       { tag: "Trẻ→già",      full: "Mới vào săn 75% chạy nhanh; càng già càng yếu/chậm" },
-      "aswang":      { tag: "Số người",     full: "Tốc độ săn tăng theo số người trong phòng; sợ muối" },
-      "dayan":       { tag: "Chân ngược",   full: "Dấu chân UV quay ngược 180°; nhanh khi bạn quay lưng" },
-      "deildegast":  { tag: "Qua cửa",      full: "Bước qua ngưỡng cửa phòng ma là kích đi săn" },
-      "gallu":       { tag: "Săn 65%",      full: "Săn sớm 65%; cắn thánh giá từ xa; ảo ảnh phân thân" },
-      "kormos":      { tag: "Tối nhanh",    full: "Càng trong bóng tối chạy càng nhanh; đèn rọi thì khựng" },
-      "obambo":      { tag: "Chân giả",     full: "Tạo tiếng chân giả nhiều hướng trước khi lao tới" }
+      "aswang":      { tag: "Ẩn nấp",       full: "Đang hunt bước vào chỗ ẩn chính thức → hunt kết thúc; tăng tốc LOS nhanh nhất game; có thể grace = 0" },
+      "dayan":       { tag: "Theo bước",    full: "Nữ; đứng yên → 1.2 m/s (hunt 45%); đi bộ trong 10m → 2.25 m/s (hunt 65%)" },
+      "deildegast":  { tag: "Đồ vật",       full: "Tốc độ 3.0 → 0.4 m/s theo số đồ bị xê dịch (26 món); reset sau hunt" },
+      "gallu":       { tag: "3 trạng thái", full: "Normal/Enraged/Weakened: hunt 50/60/40%, tốc độ 1.7/1.96/1.36 m/s; Enraged bỏ qua muối" },
+      "kormos":      { tag: "Sprint 70%",   full: "Gần như mù, cảm nhận chuyển động 30m; sprint gần → hunt sớm 70%; nên ĐI BỘ" },
+      "obambo":      { tag: "Calm/Agg",     full: "Đổi mỗi 2 phút: Calm 10%/1.45 m/s ↔ Aggressive 65%/1.96 m/s" }
     };
 
     // RENDER 30 GHOSTS GRID (3 CỘT X 10 HÀNG ĐỒNG BỘ CÂN ĐỐI)

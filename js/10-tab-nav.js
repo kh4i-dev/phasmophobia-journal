@@ -1,5 +1,5 @@
     /* ==============================================================
-       ★ MAIN TAB NAVIGATION (6 TABS) ★
+       ★ MAIN TAB NAVIGATION (7 TABS) ★
        ============================================================== */
     const TABS_CONFIG = {
       "main-journal": { left: "leftViewEvidence", right: "rightViewGhosts", leftNum: 23, rightNum: 24 },

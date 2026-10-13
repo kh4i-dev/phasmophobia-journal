@@ -789,12 +789,12 @@
       "description": "Base 1.53 m/s (chậm hơn chuẩn) nhưng tăng tốc theo LOS NHANH nhất game (tối đa ~2.52 m/s). Có thể hunt với grace period = 0."
     },
     "traits": {
-      "strength": "Săn mồi đơn độc: Rất hung dữ khi người chơi ở một mình. Có khả năng tạo ra âm thanh giả tiếng động vật (chó sủa, mèo kêu, chim vỗ cánh) để dụ người chơi.",
-      "weakness": "Sợ muối: Khi dẫm lên muối trong lúc hunt, Aswang bị khựng chân lại rít lên đau đớn trong 1.5 giây."
+      "strength": "Săn mồi đơn độc: Rất hung dữ, có thể hunt với grace period = 0 và tăng tốc theo LOS nhanh nhất trong các loài ma. Có thể tạo tiếng động vật giả để dụ người chơi.",
+      "weakness": "Không giết được người đang trốn: Hễ nó bước vào chỗ ẩn chính thức (tủ/hộc) đang có người, cuộc đi săn kết thúc ngay lập tức."
     },
-    "deep_mechanics": "Rải muối dày ở các cửa thoát hiểm. Khi bị săn, dụ Aswang bước qua đống muối sẽ cho bạn 1.5 giây quý giá để cắt góc thoát thân.",
-    "hidden_test": "1. Ma bị khựng lại kêu rít khi giẫm muối trong lúc hunt.\n2. Nghe thấy tiếng động vật lạ trong căn nhà.",
-    "looping_guide": "Rải muối quanh bàn loop để làm gián đoạn nhịp chạy của nó.",
+    "deep_mechanics": "Đừng đua tốc độ với nó; hãy nấp vào chỗ ẩn chính thức — chỉ cần nó bước vào là hunt kết thúc, cho bạn thoát thân.",
+    "hidden_test": "Đang hunt mà nó chui vào chỗ ẩn chính thức (tủ/hộc) thì hunt kết thúc ngay → Aswang. Cũng có thể hunt với grace period = 0.",
+    "looping_guide": "Loop sát các chỗ ẩn chính thức để phòng pha grace = 0.",
     "notes": "Loài ma truyền thuyết Nam Đảo/Philippines trong bản mở rộng folklore Phasmophobia."
   },
   {
@@ -821,12 +821,12 @@
       "description": "Tốc độ cố định: 2.25 m/s khi người chơi di chuyển trong 10m, 1.2 m/s khi người chơi đứng yên, và 1.7 m/s khi không có ai trong 10m (bỏ qua tăng tốc LOS)."
     },
     "traits": {
-      "strength": "Ảo ảnh mê hoặc: Làm lệch hướng kim la bàn và di chuyển đồ vật sau lưng người chơi. Dấu chân UV có ngón chân QUAY NGƯỢC 180 ĐỘ!",
-      "weakness": "Sợ nhìn thẳng: Duy trì giao tiếp mắt (Eye contact) khi nó làm Ghost Event sẽ giảm 50% lượng Sanity bị trừ."
+      "strength": "Bám theo chuyển động: Trong phạm vi 10m, khi bạn ĐI BỘ nó tăng tốc lên 2.25 m/s (ngưỡng săn 65%); khi bạn ĐỨNG YÊN nó chậm còn 1.2 m/s (ngưỡng săn 45%).",
+      "weakness": "Mù với người đứng yên: Chỉ dò theo bước chân — đứng yên gần nó là cách hạ tốc độ lẫn ngưỡng săn của nó. (Chỉ có model/tên NỮ.)"
     },
-    "deep_mechanics": "Khi Dayan rượt đuổi, nếu bạn vừa đi lùi vừa nhìn thẳng vào nó, nó chỉ chạy 1.7 m/s. Nếu bạn quay lưng chạy trốn, nó phóng vọt lên 2.4 m/s.",
-    "hidden_test": "Soi đèn UV vào dấu bàn chân trên sàn: Thấy hướng ngón chân quay ngược về phía sau lưng hướng di chuyển.",
-    "looping_guide": "Vừa lùi vừa nhìn thẳng vào mặt nó để ngăn nó tăng tốc.",
+    "deep_mechanics": "Ở gần nó thì ĐỨNG YÊN để ép chậm; chỉ chạy khi đã ra xa hơn 10m. Dấu chân UV ngón quay ngược 180° là tố bổ trợ.",
+    "hidden_test": "Chỉ model/tên NỮ. Trong 10m: đứng yên → 1.2 m/s (hunt 45%); đi bộ → vọt 2.25 m/s (hunt 65%); xa hơn 10m → 1.7 m/s (hunt 50%).",
+    "looping_guide": "Đứng yên hoặc bước chậm khi nó ở gần để không kích tăng tốc.",
     "notes": "Ma nữ phù thủy móng vuốt dài và bàn chân xoay ngược trong truyền thuyết Ấn Độ."
   },
   {
@@ -853,12 +853,12 @@
       "description": "Tốc độ cố định 0.4–3.0 m/s tùy số đồ vật đã bị xê dịch (KHÔNG tăng tốc theo LOS)."
     },
     "traits": {
-      "strength": "Luồng hàn khí di động: Tạo ra các dải nhiệt độ âm (-°C) di chuyển dọc theo ngưỡng cửa. Ném đồ kim loại nặng với lực cực mạnh.",
-      "weakness": "Bị giam hãm bởi ranh giới: Rất khó rời khỏi khu vực phòng ban đầu. Đốt nhang ép nó lùi sâu về tâm phòng 90s."
+      "strength": "Lợi thế đầu ván: Hung hãn và chạy nhanh tối đa (3.0 m/s) khi chưa có đồ vật nào trong nhà bị xê dịch.",
+      "weakness": "Chậm dần theo đồ vật: Mỗi món đồ bị xê dịch giảm tốc độ (đủ 26 món → còn 0.4 m/s). Tốc độ reset về tối đa sau mỗi hunt hoặc khi bị thánh giá chặn."
     },
-    "deep_mechanics": "Ranh giới căn phòng là vương quốc của nó. Khi ở trong phòng nó tương tác rất mạnh, nhưng khi bạn bước ra khỏi cửa nó sẽ hung hãn hơn.",
-    "hidden_test": "Nhiệt độ âm (-°C) di chuyển dọc theo ngưỡng cửa ra vào thay vì chỉ cố định ở giữa phòng.",
-    "looping_guide": "Loop ở các phòng khác ngoài phòng ma yêu thích của nó.",
+    "deep_mechanics": "Ném/xê dịch đồ để ép tốc độ nó xuống; nó mạnh nhất ở giai đoạn đầu ván.",
+    "hidden_test": "Mới vào hunt chạy 3.0 m/s rồi chậm dần khi đồ đạc trong nhà bị xê dịch.",
+    "looping_guide": "Loop quanh bàn; vừa loop vừa ném đồ để giảm tốc nó.",
     "notes": "Linh hồn kẻ lừa đảo dời cột mốc đất đai trong truyền thuyết dân gian Bắc Âu."
   },
   {
@@ -885,12 +885,12 @@
       "description": "1.7 m/s (bình thường), 1.96 m/s (Enraged), 1.36 m/s (Weakened), cộng thêm tăng tốc LOS chuẩn."
     },
     "traits": {
-      "strength": "Săn sớm ở mức 65% Sanity. Có khả năng tạo ra các ảo ảnh phân thân (Ghost Event giả lập 2 bóng đen cùng lúc) làm người chơi hoảng loạn.",
-      "weakness": "Sợ thánh tích cổ: Cây thánh giá (Crucifix) có phạm vi cản săn tăng thêm 35% đối với Gallu."
+      "strength": "Xoay vòng 3 trạng thái Normal / Enraged / Weakened — đổi cả ngưỡng săn (50% / 60% / 40%) lẫn tốc độ (1.7 / 1.96 / 1.36 m/s).",
+      "weakness": "Đổi trạng thái bởi muối, nhang và thánh giá. Khi Enraged nó đi qua muối không để lại dấu chân và tầm thánh giá giảm 2m; khi Weakened chỉ hunt 40% và chạy 1.36 m/s."
     },
-    "deep_mechanics": "Gallu là loài ma hung bạo chuyên tấn công phủ đầu. Cắm thánh giá sớm ở phòng ma là chìa khóa vô hiệu hóa nó.",
-    "hidden_test": "Làm Ghost Event xuất hiện 2 ảo ảnh ma ở 2 góc phòng cùng lúc hoặc cắn thánh giá từ khoảng cách xa hơn bình thường.",
-    "looping_guide": "Tốc độ 1.85 m/s hơi nhanh hơn bình thường một chút, hãy cẩn thận khi loop.",
+    "deep_mechanics": "Đặt sẵn muối/thánh giá để ép trạng thái; chờ nó chuyển Weakened (1.36 m/s) rồi mới loop.",
+    "hidden_test": "Đổi tốc độ theo 3 mức 1.7/1.96/1.36 m/s. Ở trạng thái Enraged, dẫm lên muối KHÔNG để lại dấu chân.",
+    "looping_guide": "Enraged (1.96 m/s) đừng loop đường dài; Weakened (1.36 m/s) loop thoải mái.",
     "notes": "Ác quỷ cõi âm Mesopotamia / Sumer cổ đại chuyên kéo người sống xuống địa ngục."
   },
   {
@@ -914,15 +914,15 @@
       "max_los": 2.21,
       "bpm_base": 95,
       "bpm_max": 170,
-      "description": "Base 1.7 m/s; nhanh hơn (tới ~2.21 m/s) khi lao tới điểm phát hiện mà không có LOS."
+      "description": "Base 1.7 m/s; tăng tốc khi đuổi theo chuyển động của bạn (tối đa ~2.21 m/s)."
     },
     "traits": {
-      "strength": "Sát thủ bóng đêm: Rất thích dập cầu dao điện. Một khi căn nhà mất điện, Kormos trở thành một cỗ máy săn mồi chạy cực nhanh 2.4 m/s.",
-      "weakness": "Sợ ánh sáng: Chiếu đèn pin thẳng vào mặt Kormos khi đang hunt sẽ làm chậm tốc độ di chuyển của nó xuống 1.4 m/s."
+      "strength": "Săn theo chuyển động: Gần như mù nhưng cảm nhận chuyển động của người chơi tới 30m — vào hunt ở 50%, và tới 70% nếu bạn SPRINT ở gần nó.",
+      "weakness": "Không thấy người đứng yên: nó định vị bằng chuyển động, nên đi bộ chậm hoặc đứng yên là nó mất dấu."
     },
-    "deep_mechanics": "Đèn pin là vũ khí sinh tồn chống lại Kormos. Luôn bật đèn pin chiếu vào hướng nó đuổi theo bạn.",
-    "hidden_test": "Đang tắt đèn nó chạy cực nhanh, vừa bật đèn pin chiếu thẳng vào mặt là nghe tiếng chân nó khựng chậm hẳn lại.",
-    "looping_guide": "Bật đèn pin chiếu thẳng vào nó trong lúc loop quanh bàn.",
+    "deep_mechanics": "TUYỆT ĐỐI không sprint khi nó ở gần. Đứng yên là cách qua mặt nó.",
+    "hidden_test": "SPRINT gần nó → hunt sớm tới 70%. Đứng yên thì nó lướt qua mà không phát hiện bạn.",
+    "looping_guide": "Đi bộ chậm, tránh sprint gần nó; đứng yên khi nó lướt qua.",
     "notes": "Sinh vật bóng tối săn mồi trong bóng đen hoàn toàn."
   },
   {
@@ -949,12 +949,12 @@
       "description": "1.96 m/s khi Aggressive, 1.45 m/s khi Calm."
     },
     "traits": {
-      "strength": "Âm thanh đánh lạc hướng: Tạo ra âm thanh tiếng bước chân giả ở căn phòng cách xa nơi nó đang đứng. Thích mở vòi nước bẩn đổi màu đen.",
-      "weakness": "Phát ra tiếng khóc than ai oán rất rõ ràng và thường xuyên qua máy thu âm định hướng Parabolic Microphone."
+      "strength": "Âm thanh đánh lạc hướng + đổi trạng thái: Tạo tiếng bước chân giả ở phòng xa và mở vòi nước bẩn; đồng thời đổi trạng thái mỗi 2 phút (Calm: săn 10%, 1.45 m/s ↔ Aggressive: săn 65%, 1.96 m/s).",
+      "weakness": "Ở trạng thái Aggressive, thời lượng hunt ngắn hơn 20%; đổi trạng thái giữa hunt làm tốc độ thất thường. Nghe tiếng khóc than rõ qua Parabolic Microphone để định vị."
     },
-    "deep_mechanics": "Đừng để bị lừa bởi tiếng chân giả ở phòng khác. Hãy tin tưởng máy đo EMF và Paramic để định vị phòng thực sự của nó.",
-    "hidden_test": "Nghe thấy tiếng bước chân giả từ xa nhưng máy đo EMF trong phòng bạn lại giật lên mức 5, hoặc vòi nước trong nhà liên tục tự bật chảy nước bẩn.",
-    "looping_guide": "Tốc độ 1.7 m/s chuẩn. Loop bình thường quanh bàn.",
+    "deep_mechanics": "Cố định vòng loop ngắn và cầm nhang, đề phòng pha Aggressive bất chợt.",
+    "hidden_test": "Nghe tốc độ đổi NGAY trong cùng một hunt (1.45 ↔ 1.96 m/s) là Obambo (The Twins đổi giữa các hunt).",
+    "looping_guide": "Loop vòng ngắn; tốc độ đổi giữa hunt nên đừng chủ quan.",
     "notes": "Linh hồn không nơi nương tựa trong văn hóa Trung Phi."
   }
 ]
