@@ -23,6 +23,7 @@
         renderReferenceTab();
         renderVoiceTab();
         renderKnowledgeTab();
+        renderTraining();
         renderGhostStatusTable();
         renderFootstepPresets();
         updateQuickActionBar();

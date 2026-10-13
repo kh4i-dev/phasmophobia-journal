@@ -375,6 +375,36 @@
           }).join("") + `</tbody>`;
         wrap.appendChild(tbl);
         rightC.appendChild(wrap);
+
+        if (typeof INSTANT_CLUES !== "undefined") {
+          const wrap2 = document.createElement("div");
+          wrap2.style.marginTop = "14px";
+
+          const h2 = document.createElement("div");
+          h2.style.fontFamily = "var(--font-hand)";
+          h2.style.fontSize = "1.5rem";
+          h2.style.color = "#8f2020";
+          h2.style.borderBottom = "1px solid rgba(143,32,32,0.35)";
+          h2.style.marginBottom = "6px";
+          h2.textContent = "Bảng Tell Ẩn 30 Ma (Chốt Nhanh)";
+          wrap2.appendChild(h2);
+
+          const tbl2 = document.createElement("table");
+          tbl2.style.width = "100%";
+          tbl2.style.borderCollapse = "collapse";
+          tbl2.style.fontSize = "0.74rem";
+          tbl2.innerHTML = `<thead><tr style="text-align:left;background:rgba(143,32,32,0.12);">
+              <th style="padding:3px 4px;width:78px;">Ma</th><th style="padding:3px 4px;">Dấu hiệu nhận diện nhanh</th></tr></thead><tbody>` +
+            ghostsData.map((g, i) => {
+              const tell = INSTANT_CLUES[g.id] || "-";
+              const bg = i % 2 ? "background:rgba(255,255,255,0.35);" : "";
+              return `<tr style="${bg}">
+                <td style="padding:3px 4px;vertical-align:top;"><strong>${g.name_en}</strong></td>
+                <td style="padding:3px 4px;color:#3b2f22;">${tell}</td></tr>`;
+            }).join("") + `</tbody>`;
+          wrap2.appendChild(tbl2);
+          rightC.appendChild(wrap2);
+        }
       }
     }
 

@@ -851,8 +851,15 @@
           <span class="j-tab-sub">Kiến Thức</span>
         </div>
       </div>
-      <div class="j-tab j-tab-manual" data-tab="compendium" id="jTabCompendium" title="Mở Cẩm Nang điều tra toàn diện &amp; mẹo 0-evidence">
+      <div class="j-tab" data-tab="training">
         <span class="j-tab-badge">09</span>
+        <div class="j-tab-content">
+          <span class="j-tab-title">TRAINING</span>
+          <span class="j-tab-sub">Luyện Nhận Diện</span>
+        </div>
+      </div>
+      <div class="j-tab j-tab-manual" data-tab="compendium" id="jTabCompendium" title="Mở Cẩm Nang điều tra toàn diện &amp; mẹo 0-evidence">
+        <span class="j-tab-badge">10</span>
         <div class="j-tab-content">
           <span class="j-tab-title">MANUAL</span>
           <span class="j-tab-sub">Cẩm Nang</span>
@@ -959,6 +966,16 @@
           </div>
           <p class="page-subtitle">Cơ chế &amp; mẹo cộng đồng — Phần 1:</p>
           <div class="scrollable-page-content" id="leftKnowledgeContent"></div>
+        </div>
+
+        <!-- View 9: Training Left Page (Tab 09) -->
+        <div id="leftViewTraining" style="display: none; height: 100%;">
+          <div class="page-title">
+            <span>Training</span>
+            <small>(Luyện Nhận Diện)</small>
+          </div>
+          <p class="page-subtitle">Chọn đáp án đúng để luyện phản xạ nhận ma:</p>
+          <div class="scrollable-page-content" id="leftTrainingContent"></div>
         </div>
 
         <div class="page-number" id="leftPageNum">23</div>
@@ -1068,6 +1085,16 @@
           </div>
           <p class="page-subtitle">Cơ chế &amp; mẹo cộng đồng — Phần 2:</p>
           <div class="scrollable-page-content" id="rightKnowledgeContent"></div>
+        </div>
+
+        <!-- View 9: Training Right Page (Tab 09) -->
+        <div id="rightViewTraining" style="display: none; height: 100%;">
+          <div class="page-title">
+            <span>Score</span>
+            <small>(Điểm &amp; Chế Độ)</small>
+          </div>
+          <p class="page-subtitle">Chọn chế độ và theo dõi thành tích luyện tập:</p>
+          <div class="scrollable-page-content" id="rightTrainingContent"></div>
         </div>
 
         <!-- View 5: Trigger Phrases (Tab 05) -->
@@ -1333,7 +1360,8 @@
   <script src="js/12-jumpscare.js"></script>
   <script src="js/13-comp-tip.js"></script>
   <script src="js/14-haunt.js"></script>
-  <script src="js/15-vip-tips.js"></script>
+    <script src="js/15-vip-tips.js"></script>
+    <script src="js/16-training.js"></script>
 
   </script>
 

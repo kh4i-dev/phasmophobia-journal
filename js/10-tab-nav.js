@@ -1,5 +1,5 @@
     /* ==============================================================
-       ★ MAIN TAB NAVIGATION (8 TABS) ★
+       ★ MAIN TAB NAVIGATION (9 TABS) ★
        ============================================================== */
     const TABS_CONFIG = {
       "main-journal": { left: "leftViewEvidence", right: "rightViewGhosts", leftNum: 23, rightNum: 24 },
@@ -9,7 +9,8 @@
       "voice-commands": { left: "leftViewVoice", right: "rightViewVoice", leftNum: 31, rightNum: 32 },
       "audio-studio": { left: "leftViewAudio", right: "rightViewAudio", leftNum: 33, rightNum: 34 },
       "reference": { left: "leftViewReference", right: "rightViewReference", leftNum: 35, rightNum: 36 },
-      "knowledge": { left: "leftViewKnowledge", right: "rightViewKnowledge", leftNum: 37, rightNum: 38 }
+      "knowledge": { left: "leftViewKnowledge", right: "rightViewKnowledge", leftNum: 37, rightNum: 38 },
+      "training": { left: "leftViewTraining", right: "rightViewTraining", leftNum: 39, rightNum: 40 }
     };
 
     function switchTab(tabKey) {
@@ -27,12 +28,12 @@
       const config = TABS_CONFIG[tabKey];
       if (!config) return;
 
-      ["leftViewEvidence", "leftViewGhostInfo", "leftViewItems", "leftViewCursed", "leftViewVoice", "leftViewAudio", "leftViewReference", "leftViewKnowledge"].forEach(id => {
+      ["leftViewEvidence", "leftViewGhostInfo", "leftViewItems", "leftViewCursed", "leftViewVoice", "leftViewAudio", "leftViewReference", "leftViewKnowledge", "leftViewTraining"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.display = "none";
       });
 
-      ["rightViewGhosts", "rightViewGhostInfo", "rightViewItems", "rightViewCursed", "rightViewVoice", "rightViewAudio", "rightViewReference", "rightViewKnowledge"].forEach(id => {
+      ["rightViewGhosts", "rightViewGhostInfo", "rightViewItems", "rightViewCursed", "rightViewVoice", "rightViewAudio", "rightViewReference", "rightViewKnowledge", "rightViewTraining"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.display = "none";
       });
@@ -61,7 +62,7 @@
       tab.addEventListener("click", () => switchTab(tab.dataset.tab));
     });
 
-    const TAB_KEYS = ["main-journal", "ghost-info", "items-tier", "cursed-possessions", "voice-commands", "audio-studio", "reference", "knowledge"];
+    const TAB_KEYS = ["main-journal", "ghost-info", "items-tier", "cursed-possessions", "voice-commands", "audio-studio", "reference", "knowledge", "training"];
     document.getElementById("btnNextPage").addEventListener("click", () => {
       let idx = (TAB_KEYS.indexOf(currentTab) + 1) % TAB_KEYS.length;
       switchTab(TAB_KEYS[idx]);

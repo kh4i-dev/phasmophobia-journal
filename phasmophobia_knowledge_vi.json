@@ -217,6 +217,21 @@
       ]
     },
     {
+      "id": "glitches",
+      "title": "Lỗi Thường Gặp (Glitch) & Cách Xử Lý",
+      "items": [
+        "Voice recognition kém/nuốt chữ: kiểm tra mic trong Settings, nói to–rõ; nếu vẫn lỗi, dùng UI dạng chữ để hỏi Spirit Box/Cầu Cơ.",
+        "Ảnh ma không được tính (hay gặp trên CẦU THANG): chụp lại ở góc/phòng khác, tránh chụp khi ma đang ở vùng cầu thang.",
+        "Không thấy Ghost Orbs: phải xem qua MÀN HÌNH Video Camera với night vision, và máy phải đặt trong phòng ma.",
+        "D.O.T.S không hiện: đứng NGOÀI phòng chiếu vào; với Goryo phải xem qua camera và phòng không có người.",
+        "Đồ điện 'chết' giữa chừng (EMF, camera): tắt rồi bật lại; đồ Tier thấp hết pin/sạc theo tier.",
+        "Head Gear Tier 3 bị mờ: bật rồi tắt nó một lần ngay trong xe (van) để khử nhoè.",
+        "Ma kẹt / không hoạt động / orbs sai chỗ (glitch ở cell block Prison, thư viện trường học): thử đổi phòng hoặc để yên vài phút.",
+        "Multiplayer lệch trạng thái (cửa, cầu dao, evidence không khớp): chỉ host nên tương tác nhiều, thoát vào lại nếu desync nặng.",
+        "Cửa/cầu dao/đồ nguyền rủa tương tác 'đơ': restart hợp đồng — tránh mang theo sai slot cho lần sau."
+      ]
+    },
+    {
       "id": "team",
       "title": "Phối Hợp Nhóm",
       "items": [
