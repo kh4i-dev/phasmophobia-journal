@@ -1,6 +1,6 @@
     /* ĐẢM BẢO TẤT CẢ CÁC TRANG CON ĐỀU XẾP DỌC (FLEX COLUMN), KHÔNG BỊ TRÀN NGANG */
-    #leftViewEvidence, #leftViewGhostInfo, #leftViewItems, #leftViewCursed, #leftViewVoice, #leftViewAudio, #leftViewReference,
-    #rightViewGhosts, #rightViewGhostInfo, #rightViewItems, #rightViewCursed, #rightViewVoice, #rightViewAudio, #rightViewReference {
+    #leftViewEvidence, #leftViewGhostInfo, #leftViewItems, #leftViewCursed, #leftViewVoice, #leftViewAudio, #leftViewReference, #leftViewKnowledge,
+    #rightViewGhosts, #rightViewGhostInfo, #rightViewItems, #rightViewCursed, #rightViewVoice, #rightViewAudio, #rightViewReference, #rightViewKnowledge {
       display: flex;
       flex-direction: column !important;
       height: 100%;

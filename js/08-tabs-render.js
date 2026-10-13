@@ -300,6 +300,49 @@
       }
     }
 
+    function renderKnowledgeTab() {
+      if (!knowledgeData || !knowledgeData.sections) return;
+      const leftC = document.getElementById("leftKnowledgeContent");
+      const rightC = document.getElementById("rightKnowledgeContent");
+      if (!leftC || !rightC) return;
+      leftC.innerHTML = "";
+      rightC.innerHTML = "";
+
+      const sections = knowledgeData.sections;
+      const mid = Math.ceil(sections.length / 2);
+
+      const build = (container, list) => {
+        list.forEach(sec => {
+          const wrap = document.createElement("div");
+          wrap.style.marginBottom = "12px";
+
+          const h = document.createElement("div");
+          h.id = "kb-" + sec.id;
+          h.style.fontFamily = "var(--font-hand)";
+          h.style.fontSize = "1.5rem";
+          h.style.color = "#8f2020";
+          h.style.borderBottom = "1px solid rgba(143,32,32,0.35)";
+          h.style.marginBottom = "5px";
+          h.textContent = sec.title;
+          wrap.appendChild(h);
+
+          const ul = document.createElement("ul");
+          ul.style.margin = "0";
+          ul.style.padding = "0 0 0 16px";
+          ul.style.fontSize = "0.85rem";
+          ul.style.lineHeight = "1.45";
+          ul.style.color = "#3b2f22";
+          ul.innerHTML = sec.items.map(it => `<li style="margin-bottom:4px;">${it}</li>`).join("");
+          wrap.appendChild(ul);
+
+          container.appendChild(wrap);
+        });
+      };
+
+      build(leftC, sections.slice(0, mid));
+      build(rightC, sections.slice(mid));
+    }
+
     function renderVoiceTab() {
       if (!toolsAndCursedData) return;
       const leftC = document.getElementById("leftVoiceContent");

@@ -26,6 +26,7 @@
     let ghostsData = [];
     let toolsAndCursedData = null;
     let referenceData = null;
+    let knowledgeData = null;
     let pinnedGhostId = null; // CHỈ KHOANH KHI NGƯỜI DÙNG BẤM
     let selectedGhostId = "the_mimic"; // Ghost active trong dossier modal
     let currentTab = "main-journal";

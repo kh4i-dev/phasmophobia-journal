@@ -1,5 +1,5 @@
     /* ==============================================================
-       ★ MAIN TAB NAVIGATION (7 TABS) ★
+       ★ MAIN TAB NAVIGATION (8 TABS) ★
        ============================================================== */
     const TABS_CONFIG = {
       "main-journal": { left: "leftViewEvidence", right: "rightViewGhosts", leftNum: 23, rightNum: 24 },
@@ -8,7 +8,8 @@
       "cursed-possessions": { left: "leftViewCursed", right: "rightViewCursed", leftNum: 29, rightNum: 30 },
       "voice-commands": { left: "leftViewVoice", right: "rightViewVoice", leftNum: 31, rightNum: 32 },
       "audio-studio": { left: "leftViewAudio", right: "rightViewAudio", leftNum: 33, rightNum: 34 },
-      "reference": { left: "leftViewReference", right: "rightViewReference", leftNum: 35, rightNum: 36 }
+      "reference": { left: "leftViewReference", right: "rightViewReference", leftNum: 35, rightNum: 36 },
+      "knowledge": { left: "leftViewKnowledge", right: "rightViewKnowledge", leftNum: 37, rightNum: 38 }
     };
 
     function switchTab(tabKey) {
@@ -26,12 +27,12 @@
       const config = TABS_CONFIG[tabKey];
       if (!config) return;
 
-      ["leftViewEvidence", "leftViewGhostInfo", "leftViewItems", "leftViewCursed", "leftViewVoice", "leftViewAudio", "leftViewReference"].forEach(id => {
+      ["leftViewEvidence", "leftViewGhostInfo", "leftViewItems", "leftViewCursed", "leftViewVoice", "leftViewAudio", "leftViewReference", "leftViewKnowledge"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.display = "none";
       });
 
-      ["rightViewGhosts", "rightViewGhostInfo", "rightViewItems", "rightViewCursed", "rightViewVoice", "rightViewAudio", "rightViewReference"].forEach(id => {
+      ["rightViewGhosts", "rightViewGhostInfo", "rightViewItems", "rightViewCursed", "rightViewVoice", "rightViewAudio", "rightViewReference", "rightViewKnowledge"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.display = "none";
       });
@@ -60,7 +61,7 @@
       tab.addEventListener("click", () => switchTab(tab.dataset.tab));
     });
 
-    const TAB_KEYS = ["main-journal", "ghost-info", "items-tier", "cursed-possessions", "voice-commands", "audio-studio", "reference"];
+    const TAB_KEYS = ["main-journal", "ghost-info", "items-tier", "cursed-possessions", "voice-commands", "audio-studio", "reference", "knowledge"];
     document.getElementById("btnNextPage").addEventListener("click", () => {
       let idx = (TAB_KEYS.indexOf(currentTab) + 1) % TAB_KEYS.length;
       switchTab(TAB_KEYS[idx]);

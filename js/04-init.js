@@ -3,14 +3,16 @@
        ============================================================== */
     async function loadData() {
       try {
-        const [gRes, tRes, rRes] = await Promise.all([
+        const [gRes, tRes, rRes, kRes] = await Promise.all([
           fetch("phasmophobia_ghosts_vi.json"),
           fetch("phasmophobia_tools_and_cursed_vi.json"),
-          fetch("phasmophobia_reference_vi.json")
+          fetch("phasmophobia_reference_vi.json"),
+          fetch("phasmophobia_knowledge_vi.json")
         ]);
         ghostsData = await gRes.json();
         toolsAndCursedData = await tRes.json();
         referenceData = await rRes.json();
+        knowledgeData = await kRes.json();
 
         renderEvidenceList();
         renderGroupFilterList();
@@ -20,6 +22,7 @@
         renderCursedTab();
         renderReferenceTab();
         renderVoiceTab();
+        renderKnowledgeTab();
         renderGhostStatusTable();
         renderFootstepPresets();
         updateQuickActionBar();

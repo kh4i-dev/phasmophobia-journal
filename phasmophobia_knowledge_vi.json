@@ -1,0 +1,133 @@
+{
+  "title": "Kiến Thức Cẩm Nang Toàn Diện",
+  "subtitle": "Tổng hợp cơ chế & mẹo cộng đồng — từ người mới đến thợ săn chuyên nghiệp",
+  "sections": [
+    {
+      "id": "sanity",
+      "title": "Sanity & Quản Lý Tinh Thần",
+      "items": [
+        "Sanity khởi đầu: hầu hết độ khó 100%; riêng Insanity chỉ 75%.",
+        "Sanity CHỈ tụt khi bạn ở TRONG toà nhà (nhận ra bằng tiếng gió nền). Ra thềm cửa / ngoài sân = 0 tụt — đây là chỗ hồi sức cho cả đội.",
+        "Đứng trong vùng CÓ ĐÈN SÁNG thì không tụt (hoặc tụt rất chậm); trong bóng tối tụt liên tục. ĐÈN PIN không tính là 'vùng sáng'.",
+        "Nến đặt dưới đất tạo vùng sáng nhỏ chống tụt sanity; riêng Onryo coi nến như thánh giá.",
+        "Tốc độ tụt nền tăng theo độ khó: Amateur 100% → Intermediate 150% → Professional+ 200%.",
+        "Sanity Pills: T1 +20% (hồi trong 30s), T2 +35% (20s), T3 +50% TỨC THÌ + sprint vô hạn 10s. Không vượt 100% nên uống khi đã tụt sẽ tối đa.",
+        "Ghost Event, hunt và kỹ năng riêng của ma tụt nhanh hơn nhiều. Ví dụ Yurei đóng sầm cửa -15%, Phantom nhìn thấy tụt nhanh.",
+        "Sanity TRUNG BÌNH của đội quyết định phần lớn ngưỡng hunt — nhưng một số ma tính riêng mục tiêu (Banshee)."
+      ]
+    },
+    {
+      "id": "hunt",
+      "title": "Đi Săn (Hunt) — Cơ Chế & Sinh Tồn",
+      "items": [
+        "Setup phase: Amateur 5 phút → Intermediate 2 phút → Professional trở lên KHÔNG có. Dùng bất kỳ cursed possession nào sẽ kết thúc setup ngay.",
+        "Grace period (khoảng trống trước khi ma hiện hình tấn công): Amateur 5s → Insanity 2s.",
+        "Thời lượng hunt theo cỡ map: Nhỏ ~15s, Trung bình 20s+, Lớn 30s+ (dài hơn khi độ khó cao / có người chết).",
+        "Hunt cooldown ~25s (riêng Demon ~20s). Khi sanity trung bình dưới 25%, hunt xảy ra thường xuyên hơn.",
+        "Khi hunt: cửa ra vào bị khoá. Ma di chuyển về phía người gần / mục tiêu và tăng tốc khi có LOS (đường nhìn thẳng).",
+        "Ma ném đồ mạnh và dồn dập hơn khi hunt (Poltergeist gấp đôi).",
+        "Cursed Hunt (Tarot Death, cầu cơ vỡ, gương vỡ, vòng triệu hồi...): kéo dài hơn, gần như bỏ qua grace — nguy hiểm nhất.",
+        "Ngưỡng sanity săn của từng ma: xem bảng Trạng Thái ở tab Bằng Chứng hoặc hồ sơ từng ma."
+      ]
+    },
+    {
+      "id": "hiding",
+      "title": "Nấp (Hiding) — Sống Sót",
+      "items": [
+        "Chỗ ẩn chính thức gồm: tủ, hộc, thùng carton, tường gấp... sinh ra NGẪU NHIÊN mỗi ván — hãy nhớ vị trí chúng ngay khi vào.",
+        "QUY TẮC VÀNG: mỗi chỗ chỉ nấp 1 lần/ván và KHÔNG nấp 2 người cùng chỗ — ma sẽ lục ra cả hai.",
+        "Nấp TRƯỚC khi ma thấy bạn. Nếu nó đã thấy bạn rồi mới chui tủ thì nó đi thẳng tới lục.",
+        "Cắt LOS trước khi nấp: chạy vòng qua góc bàn / xe để nó mất dấu rồi mới chui vào.",
+        "Đồ điện cầm tay khi nấp sẽ hút ma — nhưng nếu bạn ĐÃ yên vị trong chỗ ẩn thì ĐỪNG tắt (tiếng tắt cũng hút ma).",
+        "Deogen LUÔN biết vị trí bạn — đừng trốn tủ; hãy đi bộ giữ khoảng (nó chậm còn 0.4 m/s khi gần).",
+        "Cúi / ngồi sau đồ nội thất thấp (ghế, island bếp, xe) để giấu đầu — vì tia LOS của ma nhắm vào đầu / thân trên."
+      ]
+    },
+    {
+      "id": "evidence",
+      "title": "7 Bằng Chứng — Mẹo Lấy Nhanh",
+      "items": [
+        "EMF Level 5: máy nhảy vạch đỏ số 5 khi ma tương tác/event. EMF 2 chỉ là tương tác thường (KHÔNG tính bằng chứng).",
+        "Spirit Box: phải ở trong TỐI và gần như 1 MÌNH trong phòng mới dễ trả lời; hỏi câu ngắn tiếng Anh.",
+        "Ultraviolet (UV): dấu tay / vân ngón / dấu chân bằng đèn UV; tồn tại ~2 phút (Obake có dấu 6 ngón và tự biến nhanh hơn).",
+        "Freezing Temperatures: nhiệt kế dưới 0°C là chắc chắn; hơi thở trắng khi đứng trong phòng cũng là dấu.",
+        "Ghost Orb: CHỈ thấy qua màn hình Video Camera (đặt máy trong phòng, bật night vision). The Mimic luôn có orb giả.",
+        "Ghost Writing: đặt sổ trong phòng ma; ma có thể NÉM sổ mà không viết → gạch Ghost Writing.",
+        "D.O.T.S Projector: đứng ngoài chiếu vào phòng để bắt bóng ma lướt qua; Goryo chỉ hiện qua CAMERA và khi phòng không người.",
+        "Số bằng chứng 'bắt buộc' theo độ khó: Amateur/Inter/Pro = 3, Nightmare = 2, Insanity = 1."
+      ]
+    },
+    {
+      "id": "cursed",
+      "title": "Đồ Nguyền Rủa — Chiến Thuật Dùng",
+      "items": [
+        "Mỗi ván có ĐÚNG 1 đồ (Insanity: 0). Dùng đồ nào sẽ khoá các đồ khác, kết thúc setup ngay và có thể gây Cursed Hunt.",
+        "Cầu Cơ: câu hỏi càng giá trị càng tốn sanity. BẮT BUỘC nói 'Goodbye' trước khi rời, không thì bàn vỡ + cursed hunt.",
+        "Gương Ma Ám: soi thấy trực tiếp phòng ma (tốn ~20% sanity/giây). Soi tới khi sanity cạn = gương vỡ + cursed hunt.",
+        "Hộp Nhạc: lên dây cho ma hát theo (lộ vị trí). Đến quá gần (<5m) / thả hộp vỡ / ma chạm vào = hiện hình + cursed hunt.",
+        "Búp Bê Voodoo: mỗi cây kim -5% sanity và ép ma tương tác. Ghim trúng KIM TRÁI TIM = cursed hunt ngay.",
+        "Vòng Triệu Hồi: thắp 5 nến (mỗi nến -16% sanity), ma đứng yên giữa vòng 5 giây rồi cursed hunt — thời điểm vàng chụp ma 3 sao.",
+        "Tarot: rút lá ngẫu nhiên. Lá Death = cursed hunt với grace chỉ 1s; Wheel of Fortune lửa đỏ -25% hoặc lửa xanh +25%.",
+        "Monkey Paw: đọc điều ước bằng tiếng Anh, luôn kèm PHẢN PHỆ. 'I wish for knowledge' xoá 1 bằng chứng sai nhưng rủi ro hunt ngay."
+      ]
+    },
+    {
+      "id": "equipment",
+      "title": "Dụng Cụ — Mẹo Nâng Cao",
+      "items": [
+        "Thánh giá (Crucifix): T1 bán kính 3m/1 lần, T2 4m/2 lần, T3 5m/2 lần + chặn được cả Cursed Hunt. Đặt trong phòng ma để chặn hunt.",
+        "Nhang/Incense: PHẢI đốt SÁT ma mới tính. Khi hunt: mù ma 5s (T2 thêm -25% tốc, T3 khoá chân đứng im 5s). Ngoài hunt: chặn hunt 90s (Demon 60s, Spirit 180s).",
+        "Nhiệt kế: dùng T2/T3 đo nhanh. Phòng ma thường dưới 10°C; dưới 0°C là Freezing.",
+        "Đèn UV T3 đặt sàn toả 360° soi mọi dấu tự động — tiện nhất để bắt UV diện rộng.",
+        "Muối T3 (vạch dài): ma dẫm qua bị làm chậm; muối cũng để lộ dấu chân (trừ Wraith) và mỗi đống quanh bàn loop làm chậm ~2s.",
+        "Video Camera: bật night vision để bắt Orbs & D.O.T.S; đặt trên Tripod để rảnh tay làm việc khác.",
+        "Motion / Sound Sensor: gắn quanh map để theo dõi ma roaming & phát hiện phòng — nhưng là đồ điện khiến ma hút khi hunt, cân nhắc khi nấp.",
+        "Head Gear: giữ Special để bật/tắt. Tắt ĐẦU TIÊN khi hunt bắt đầu (đồ bật hút ma). T3 bị mờ → bật/tắt một lần trong xe (van) để clear."
+      ]
+    },
+    {
+      "id": "money",
+      "title": "Tiền / XP / Nhiệm Vụ",
+      "items": [
+        "Chụp ảnh Ma lúc nó hiện hình (= ảnh 3 sao) ăn tiền & XP cao nhất.",
+        "Nên chụp: Xương (bone), xác đồng đội đã chết, đồ vật ma tương tác, cửa bị mở, Ghost Orbs... mỗi thứ đều có giá trị.",
+        "Xương (Bone) KHÔNG phải bằng chứng nhưng vẫn nhặt + chụp để ăn tiền — có thể hỏi Ouija 'Where is the bone?' để định vị.",
+        "Hoàn thành đủ Objective + thu 3/3 bằng chứng + dọn dẹp = 'Perfect Investigation' thưởng thêm.",
+        "Càng khó reward càng cao: Amateur x1 → Insanity x6; bảo hiểm giảm dần về 0% ở Professional trở lên."
+      ]
+    },
+    {
+      "id": "difficulty",
+      "title": "Khác Biệt Theo Độ Khó",
+      "items": [
+        "Amateur → Insanity: setup 5 phút → 0s, grace 5s → 2s, hunt ngắn → dài, số đèn / chỗ ẩn giảm dần.",
+        "Số bằng chứng: Amateur/Inter/Pro = 3, Nightmare = 2, Insanity = 1.",
+        "Nightmare & Insanity: cầu dao tắt và ẩn trên bản đồ; bảng Sanity/Activity ở xe bị HỎNG (báo số nhiễu).",
+        "Insanity: KHÔNG có đồ nguyền rủa, phòng ma đổi thường xuyên, hunt dài và giết người còn kéo dài hunt thêm.",
+        "Insanity khởi đầu chỉ 75% sanity; Nightmare 100%."
+      ]
+    },
+    {
+      "id": "misc",
+      "title": "Mẹo Lặt Vặt Hữu Ích",
+      "items": [
+        "Mannequin (ma-nơ-canh) nằm lệch khỏi vị trí thường ngày = gợi ý mạnh về phòng ma.",
+        "Đóng cửa lại khi rời phòng: cửa tự mở/đóng là dấu hiệu ma tương tác → khoanh vùng phòng ma và dễ bắt UV.",
+        "Tắt TV / radio / vòi nước đang chảy — ma hay tương tác với chúng, và tiếng ồn có thể hút (Yokai nghe tiếng nói gần).",
+        "Đặt nến sẵn khắp map làm 'ốc đảo sáng' giúp chống tụt sanity trên đường di chuyển.",
+        "Đừng bật quá nhiều đèn cùng lúc (Nhỏ 9 / Trung bình 8 / Lớn 7) — vượt ngưỡng là cầu dao nhảy, cả nhà tối.",
+        "Nếu mic / nhận diện giọng nói kém: dùng UI dạng chữ để hỏi Spirit Box hoặc Cầu Cơ."
+      ]
+    },
+    {
+      "id": "team",
+      "title": "Phối Hợp Nhóm",
+      "items": [
+        "Banshee chỉ nhắm DUY NHẤT 1 người: nếu bạn KHÔNG phải mục tiêu, cứ đi cùng đồng đội cho an toàn.",
+        "Chia vai: 1 người giữ đèn / cầu dao, 1 người quét bằng chứng, 1 người theo dõi camera & van.",
+        "Báo sanity cho nhau qua bảng ở xe; nhớ một số ma (Banshee) tính theo sanity MỤC TIÊU chứ không theo cả đội.",
+        "Người đã chết vẫn hữu ích: quan sát qua camera và chỉ điểm vị trí ma cho người còn sống."
+      ]
+    }
+  ]
+}
