@@ -52,6 +52,8 @@
         "Lượng chỗ ẩn theo độ khó: Amateur 'Rất nhiều' → Intermediate 'Nhiều' → Professional 'Trung bình' → Nightmare 'Ít' → Insanity 'Gần như không có'.",
         "Map NHỎ: 6 Tanglewood Drive, 42 Edgefield Road, 10 Ridgeview Court, 13 Willow Street, Grafton Farmhouse, Camp Woodwind, Nell's Diner.",
         "Map TRUNG BÌNH: Point Hope, Bleasdale Farmhouse, Prison, Maple Lodge Campsite, Sunny Meadows (Restricted).",
+        "Từ v0.19.0 (08/2026) có thêm 3 bản Restricted thu gọn: Point Hope (Restricted), Prison (Restricted), Brownstone High School (Restricted) — xe tải dời sát cửa chính ở trường học và nhà tù.",
+        "13 Willow Street đã rework (07/2026): gara cũ thành Gym + tắm phụ, ngủ 2 thành Art Studio, hầm mở (Laundry/Sports/Bar-bi-a); cầu dao chỉ còn ở Gym hoặc Laundry. 6 Tanglewood Drive đã rework (v0.16.0, 03/2026: bếp, hầm).",
         "Map LỚN: Brownstone High School, Sunny Meadows Mental Institution.",
         "Vài chỗ ẩn 'không chính thức' cộng đồng hay dùng (CHỈ cắt LOS, bản mới có thể KHÔNG còn an toàn): tủ lạnh Ridgeview, bàn gara Willow, bàn phòng trẻ Tanglewood, bàn ăn Edgefield.",
         "Chọn chỗ ẩn ở GÓC KHUẤT / cuối hướng ma hay roam, tránh chỗ nằm trên đường di chuyển của nó."
@@ -89,6 +91,8 @@
       "title": "Bảng Thưởng Media ($ / XP)",
       "items": [
         "Cơ chế: lần đầu ghi một loại = 'Unique' (thưởng cao); ghi lại cùng loại = 'Duplicate' (thưởng thấp); Tier dụng cụ cao hơn thì thưởng thêm.",
+        "Từ v0.19.0 (08/2026) máy báo trùng trực tiếp: camera/máy quay/máy ghi âm Tier 1 hiện đèn LED vàng khi đối tượng đã trùng; Tier 2 & 3 hiện chữ/sóng âm bị mờ đi (thay vì trắng đậm như Unique) — thấy mờ/LED vàng thì đổi mục tiêu khác.",
+        "Bảng tên ma trên xe tải đã có icon giới tính Nam/Nữ (v0.19.0): thấy icon Nam thì gạch ngay Banshee và Dayan (2 con này 100% nữ).",
         "ẢNH — Ma / Bóng ma / Ma mờ: $15 & 15 XP (dup $3). Chữ viết của ma: $10 (dup $2). Đồ vật bay (tính là Interaction): $5 (dup $1).",
         "ẢNH — Đồ nguyền rủa (Gương, Tay Khỉ, Voodoo, Moon Totem, Shadow...): $5.",
         "VIDEO — Ma biến hình / Ma đang hunt: $20 & 20 XP (dup $5). Ma / Bóng ma: $15. Công tắc tự bật / cảm biến chuyển động / đồ bị ném / nhạc méo: $5.",

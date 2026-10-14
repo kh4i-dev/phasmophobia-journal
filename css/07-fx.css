@@ -206,3 +206,17 @@
       100% { transform: translateY(-50%) scaleX(1.06); opacity: 0; }
     }
     body.haunt-shake { animation: bodyQuake 0.5s ease; }
+
+    /* ===== PRINT / PDF: mở hết <details>, nền sáng tiết kiệm mực ===== */
+    @media print {
+      .fx-overlays, .jumpscare-layer, .haunt-layer, .screen-overlay,
+      .truck-dashboard, .quick-action-bar, .compendium-tabs-nav,
+      #compTip, .timer-phase { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+      #ghostsGrid { display: block !important; }
+      .ghost-slot { break-inside: avoid; border: 1px solid #999 !important; }
+      details { display: block !important; }
+      details > *:not(summary) { display: block !important; }
+      details summary { font-weight: 700; }
+      .scrollable-page-content { overflow: visible !important; max-height: none !important; }
+    }
