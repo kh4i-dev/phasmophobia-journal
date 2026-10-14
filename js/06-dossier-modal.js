@@ -282,6 +282,12 @@
     function stopFootstepAudio() {
       AudioEngine.stopFootstepLoop();
       isFootstepPlaying = false;
+      if (typeof activePresetId !== "undefined") activePresetId = null;
+      document.querySelectorAll(".footstep-preset-card.playing").forEach(c => {
+        c.classList.remove("playing");
+        const b = c.querySelector(".preset-btn-play");
+        if (b) b.textContent = "▶ Nghe Thử";
+      });
       const btn = document.getElementById("btnPlayFootstep");
       if (btn) {
         btn.textContent = "BẬT TIẾNG BƯỚC CHÂN";

@@ -389,7 +389,7 @@
       "type": "Trang bị phát hiện & Làm chậm",
       "evidence": "Test Wraith & Chụp ảnh",
       "tiers": [
-        { "tier": "Tier 1", "item": "Lọ Muối Ăn Rải 2 Lần", "desc": "Rải được 2 đống muối trên sàn. Khi ma dẫm vào sẽ để lại dấu chân UV (trừ Wraith)." },
+        { "tier": "Tier 1", "item": "Lọ Muối Ăn Rải 2 Lần", "desc": "Rải được 2 đống muối trên sàn. Ma có UV dẫm vào để lại dấu chân UV. Wraith không bao giờ dẫm lún." },
         { "tier": "Tier 2", "item": "Muối Hồng Himalaya Rải Vạch", "desc": "Rải 3 vạch muối dài chắn ngang lối đi (3 lượt/hộp) để chặn cửa và bắt dấu." },
         { "tier": "Tier 3", "item": "Muối Đen Trừ Tà Rải Vạch", "desc": "Rải 3 vạch dài. Hunt: ma dẫm qua bị chậm 50% trong 2s (Gallu Weakened 3s). Ngoài hunt: ép ma đang roam quay đầu đi ngược lại!" }
       ]

@@ -9,8 +9,8 @@ const VIP_TIPS = {
     speed: "Chuẩn 1.7 m/s, LOS lên 2.8 m/s. Không có speed tell riêng — chốt bằng nhang 180s."
   },
   wraith: {
-    chot: ["Không dẫm muối / không dấu chân UV sau khi nghe sột soạt → Wraith (nhớ loại Gallu-Enraged trước vì nó cũng không dẫm muối)."],
-    gach: ["Thấy dù chỉ 1 dấu chân UV trong muối → gạch Wraith ngay."],
+    chot: ["Muối nguyên chóp dù ma đi qua (check cảm biến/DOTS) → Wraith (loại Gallu-Enraged trước vì nó cũng đi xuyên muối)."],
+    gach: ["Thấy muối BỊ LÚN (dù có/không dấu UV) → gạch Wraith ngay (Wraith không bao giờ dẫm lún)."],
     speed: "Chuẩn 1.7 m/s. Dấu hiệu riêng là Teleport tới người chơi + EMF 2/5 tại điểm đến."
   },
   phantom: {
@@ -139,9 +139,9 @@ const VIP_TIPS = {
     speed: "3.0 đầu trận → mỗi món xê dịch TRƯỚC hunt -0.1 (26 món → 0.4). Ném GIỮA hunt vô ích. Reset về 3.0 sau hunt/crucifix. Không tăng tốc LOS."
   },
   gallu: {
-    chot: ["Đổi tốc độ theo 3 mức 1.7/1.96/1.36 trong lúc hunt → chốt Gallu. Enraged dẫm muối KHÔNG để lại dấu chân (đừng nhầm Wraith)."],
+    chot: ["Đổi tốc độ theo 3 mức 1.7/1.96/1.36 trong lúc hunt → chốt Gallu. Enraged đi xuyên muối không lún (đừng nhầm Wraith)."],
     gach: [],
-    speed: "Normal 1.7 / Enraged 1.96 / Weakened 1.36. Dẫm muối/nhang/thánh giá → đổi trạng thái. Enraged KHÔNG dẫm muối (cẩn thận khi chốt Wraith)."
+    speed: "Normal 1.7 / Enraged 1.96 / Weakened 1.36. Dẫm muối/nhang/thánh giá → đổi trạng thái. Enraged KHÔNG làm lún muối (cẩn thận khi chốt Wraith)."
   },
   kormos: {
     chot: ["SPRINT cùng phòng nó → hunt sớm 70%; đứng yên + im lặng giữa hunt mà nó đi ngang qua không đổi hướng → chốt Kormos."],

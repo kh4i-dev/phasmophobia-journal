@@ -41,6 +41,7 @@
         promptLabel = "Ba bằng chứng này thuộc con ma nào?";
       } else {
         prompt = INSTANT_CLUES[correct.id] || correct.hidden_test || "(không có dữ liệu)";
+        prompt = prompt.replace(new RegExp("^" + correct.name_en + "\\s*(?:2026)?\\s*:\\s*", "i"), "").replace(new RegExp("\\b" + correct.name_en + "\\b", "gi"), "loài ma này");
         promptLabel = "Dấu hiệu nhận diện này thuộc con ma nào?";
       }
 

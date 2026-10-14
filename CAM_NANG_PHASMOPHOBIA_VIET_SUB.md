@@ -46,7 +46,7 @@
 | STT | Loài Ma | 3 Bằng Chứng Chính | Ngưỡng Hunt (% Sanity) | Tốc Độ Săn (m/s) | Đặc Điểm Nhận Diện Nhanh Nhất |
 | :---: | :--- | :--- | :---: | :---: | :--- |
 | 1 | **Spirit** | EMF 5, Spirit Box, Writing | 50% | 1.7 (Chuẩn) | Đốt nhang chặn hunt trong **180 giây** (3 phút). |
-| 2 | **Wraith** | EMF 5, Spirit Box, D.O.T.S | 50% | 1.7 (Chuẩn) | Dẫm muối **KHÔNG BAO GIỜ** để lại dấu chân tia UV. Dịch chuyển tức thời đến người chơi. |
+| 2 | **Wraith** | EMF 5, Spirit Box, D.O.T.S | 50% | 1.7 (Chuẩn) | KHÔNG BAO GIỜ dẫm lún muối (không sột soạt). Muối bị lún → gạch Wraith ngay. Dịch chuyển tức thời đến người chơi. |
 | 3 | **Phantom** | Spirit Box, UV, D.O.T.S | 50% | 1.7 (Chuẩn) | Chụp ảnh **biến mất ngay lập tức** (ảnh không nhiễu). Khi hunt tàng hình chớp nháy rất lâu. |
 | 4 | **Poltergeist** | Spirit Box, UV, Writing | 50% | 1.7 (Chuẩn) | Ném đồ nổ chùm (**Polty Bomb**), hunt cứ 0.5s ném 1 đồ vật xung quanh (tỉ lệ 100%). |
 | 5 | **Banshee** | UV, Ghost Orb, D.O.T.S | 50% (Mục tiêu) | 1.7 (Chuẩn) | **Hú/thở dài độc quyền** qua Paramic (tỉ lệ 33%). Chỉ nhắm giết 1 mục tiêu duy nhất. |
@@ -170,7 +170,7 @@
    - **Obake**: BẮT BUỘC có **Ultraviolet**.
    - **Hantu**: BẮT BUỘC có **Freezing Temperatures**.
    - **Moroi / Deogen**: BẮT BUỘC có **Spirit Box**.
-2. **Bài Test Muối:** Rải muối ở cửa: Nếu ma dẫm qua muối nhưng **hoàn toàn không có dấu chân UV** -> **Wraith**.
+2. **Bài Test Muối:** Rải muối + cảm biến chuyển động: ma đi qua làm sáng cảm biến mà **muối vẫn nguyên chóp không lún** -> **Wraith** (hoặc Gallu Enraged). Thiếu dấu chân UV KHÔNG chốt được Wraith (16 ma không-UV dẫm lún cũng không có dấu).
 3. **Bài Test Đèn Pin:** Ném đèn pin đang bật xuống đất khi Hunt:
    - Nghe tiếng chân (~12m) gần như cùng lúc đèn pin nháy (10m) -> **Myling**.
    - Đèn pin bị nhiễu từ khoảng cách rất xa (> 15m) -> **Raiju**.
@@ -286,7 +286,7 @@ Ban cho **3–5 điều ước** tùy độ khó (0x–1x = **5**, 1.01x–2x = 
   * *Tier 2:* Cùng lượng theo độ khó, hồi trong 10 giây.
   * *Tier 3:* Cùng lượng theo độ khó, hồi trong 10 giây + Sprint vô hạn 10 giây (KHÔNG hồi tức thì).
 * **Muối (Salt):**
-  * *Tier 1:* Lọ rải 2 đống muối trên sàn (test chân UV Wraith).
+  * *Tier 1:* Lọ rải 2 đống muối trên sàn (test Wraith: muối nguyên chóp dù ma đi qua).
   * *Tier 2:* Hộp rải 3 đống muối.
   * *Tier 3:* Lọ muối đen trừ tà rải 3 vạch dài chắn cửa, làm chậm tốc độ ma khi bước qua trong lúc Hunt!
 

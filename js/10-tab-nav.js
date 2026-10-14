@@ -19,6 +19,9 @@
       const toIdx = TAB_KEYS.indexOf(tabKey);
       const dir = (fromIdx >= 0 && toIdx >= 0) ? (toIdx > fromIdx ? "next" : "prev") : "next";
       AudioEngine.pageFlip(dir);
+      if (prevTab === "audio-studio" && tabKey !== "audio-studio" && typeof stopFootstepAudio === "function") {
+        try { stopFootstepAudio(); } catch (e) {}
+      }
       currentTab = tabKey;
 
       document.querySelectorAll(".j-tab").forEach(tab => {

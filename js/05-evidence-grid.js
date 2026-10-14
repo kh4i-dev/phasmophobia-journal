@@ -123,7 +123,7 @@
     // THUỘC TÍNH NHẬN DIỆN NHANH — HIỂN THỊ ĐỒNG BỘ TRÊN CẢ 30 THẺ MA
     const GHOST_ROSTER_ATTRS = {
       "spirit":      { tag: "Nhang 180s",   full: "Đốt nhang khóa đi săn 180 giây — gấp đôi ma thường" },
-      "wraith":      { tag: "Khoá muối",    full: "Giẫm muối không để lại dấu chân; bay xuyên tường" },
+      "wraith":      { tag: "Khoá muối",    full: "Không dẫm lún muối (muối nguyên chóp); bay/teleport xuyên tường" },
       "phantom":     { tag: "Ảnh trống",    full: "Chụp ảnh lúc biến mất ra ảnh trống; tàng hình lâu khi hunt" },
       "poltergeist": { tag: "Vứt đồ",       full: "Ném/vứt đồ dồn dập tỉ lệ cao (Polty Bomb) khi hunt" },
       "banshee":     { tag: "1 mục tiêu",   full: "Chỉ nhắm duy nhất 1 người chơi; thét trên Paramic" },

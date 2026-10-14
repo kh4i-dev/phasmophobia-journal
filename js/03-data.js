@@ -82,7 +82,7 @@
 
     const INSTANT_CLUES = {
       spirit: "Đốt nhang (Smudge Stick / Incense) khóa khả năng đi săn trong 180 giây (3 phút) - gấp đôi mốc 90 giây của các loài ma thông thường.",
-      wraith: "Dẫm vào đống muối KHÔNG BAO GIỜ để lại dấu chân huỳnh quang phát sáng dưới ánh đèn UV. Có kỹ năng Teleport đến sát lưng người chơi.",
+      wraith: "KHÔNG BAO GIỜ dẫm lún muối (kể cả muối T3). Muối bị lún (dù có/không dấu UV) → gạch Wraith ngay. Teleport tới sát người chơi kèm EMF 2/5.",
       phantom: "Chụp ảnh lúc ghost event ma biến mất ngay lập tức và ảnh trong album hoàn toàn TRỐNG TRƠN không bị nhiễu hạt. Lúc hunt tàng hình rất lâu (1-2s mới chớp hiện 0.3s).",
       poltergeist: "Nổ tung đống 5-10 đồ vật cùng lúc (Polty Bomb). Lúc hunt ném đồ liên tục dồn dập mỗi 0.5 giây với tỷ lệ 100%.",
       banshee: "Tiếng thét rên rỉ kỳ dị độc quyền trên Parabolic Microphone (Paramic). Chỉ nhắm duy nhất 1 người chơi làm mục tiêu cho tới khi người đó chết.",

@@ -16,8 +16,6 @@
   <link rel="stylesheet" href="css/05-views-grid.css">
   <link rel="stylesheet" href="css/06-studio-dossier.css">
   <link rel="stylesheet" href="css/07-fx.css">
-
-  </style>
 </head>
 <body>
 
@@ -70,6 +68,12 @@
           <div class="filter-chip active" data-filter="all">
             <span class="chip-text">Tất Cả</span>
             <span class="chip-badge">30</span>
+          </div>
+          <div class="filter-chip" data-filter="early_hunt">
+            <span class="chip-text">Săn Sớm</span>
+          </div>
+          <div class="filter-chip" data-filter="fast_speed">
+            <span class="chip-text">Tốc Độ Cao</span>
           </div>
 
         </div>
@@ -346,7 +350,7 @@
         </div>
         <div class="buster-item">
           <div class="buster-header"><span class="buster-name">Wraith</span><span class="buster-badge">Không UV Muối</span></div>
-          <div class="buster-tip">Dẫm muối tạo tiếng sột soạt nhưng <strong>KHÔNG BAO GIỜ</strong> để lại dấu chân UV huỳnh quang. Dịch chuyển tạo EMF 2/5.</div>
+          <div class="buster-tip">KHÔNG BAO GIỜ dẫm lún muối (không sột soạt, muối nguyên chóp). Muối bị lún → gạch Wraith ngay. Dịch chuyển tạo EMF 2/5.</div>
         </div>
         <div class="buster-item">
           <div class="buster-header"><span class="buster-name">Phantom</span><span class="buster-badge">Chụp Ảnh Mất</span></div>
@@ -616,7 +620,7 @@
           <div class="comp-card-title"><span>CHỐT 100% — DẤU HIỆU ĐỘC QUYỀN</span><span class="badge">VIP</span></div>
           <ul>
             <li><strong>Ghost Orb khi tắt HẾT bằng chứng (0-evidence/Apocalypse)</strong> → <strong>The Mimic</strong> (chốt). Vì Orb của Mimic là <em>khả năng</em> luôn tồn tại, không phải bằng chứng — mọi ma khác đều <strong>không nhả gì</strong> khi tắt bằng chứng. <em>(Ở Insanity 1-bằng-chứng thì Orb CHƯA chốt được, vì nhiều ma có Orb thật.)</em></li>
-            <li data-detail="Wraith không dẫm muối và không để lại dấu chân UV. LƯU Ý: Gallu ở trạng thái Enraged cũng không dẫm muối → phải loại Gallu trước khi chốt Wraith."><strong>Không dẫm muối / không dấu chân UV</strong> → <strong>Wraith</strong> (loại Gallu-Enraged trước).</li>
+            <li data-detail="Wraith không dẫm LÚN muối (muối nguyên chóp dù ma đi qua — check cảm biến/DOTS). Gallu Enraged cũng vậy → phải loại Gallu trước khi chốt Wraith."><strong>Không dẫm LÚN muối</strong> → <strong>Wraith</strong> (loại Gallu-Enraged trước).</li>
             <li data-detail="Obake có 16.7% để lại vân tay 6 ngón, và trong lúc hunt có thể chớp biến hình thành model ma khác (cùng giới). Thấy 1 trong 2 → Obake."><strong>Dấu tay 6 ngón / biến hình model khác khi hunt</strong> → <strong>Obake</strong>.</li>
             <li data-detail="Poltergeist ném nhiều đồ vật cùng lúc (polty bomb) với lực mạnh; khi hunt ném mỗi 0.5 giây. Thấy ném chùm → Poltergeist."><strong>Ném chùm nhiều đồ cùng lúc</strong> → <strong>Poltergeist</strong>.</li>
             <li data-detail="The Twins có 2 vùng tương tác, đôi khi tương tác ở 2 nơi gần như cùng lúc (Twinteraction). Thấy vậy → Twins."><strong>2 tương tác cùng lúc 2 nơi</strong> → <strong>The Twins</strong>.</li>
@@ -1362,8 +1366,6 @@
   <script src="js/14-haunt.js"></script>
     <script src="js/15-vip-tips.js"></script>
     <script src="js/16-training.js"></script>
-
-  </script>
 
   <!-- U ÁM: lớp vignette + hạt nhiễu + đèn chập chờn -->
   <div class="fx-overlays" aria-hidden="true">

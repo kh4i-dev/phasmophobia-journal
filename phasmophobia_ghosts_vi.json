@@ -54,10 +54,10 @@
     },
     "traits": {
       "strength": "Bay lơ lửng trên mặt đất. Có kỹ năng dịch chuyển tức thời (Teleport) xuyên tường đến ngay vị trí của một người chơi ngẫu nhiên, để lại chỉ số EMF 2 hoặc EMF 5 tại điểm đến.",
-      "weakness": "Sợ muối: Không bao giờ để lại dấu chân phát quang dưới ánh đèn cực tím (UV) sau khi giẫm vào đống muối."
+      "weakness": "Bay nên KHÔNG BAO GIỜ dẫm lún muối (đống muối nguyên chóp, không sột soạt; muối T3 cũng không chậm được Wraith). Thấy muối BỊ LÚN (dù có/không dấu UV) → gạch ngay Wraith."
     },
     "deep_mechanics": "Kỹ năng Teleport của Wraith cực kỳ nguy hiểm vì nó có thể dịch chuyển đến sát lưng bạn rồi bất ngờ kích hoạt cuộc săn ngay tại chỗ bạn đang đứng, biến vị trí trốn của bạn thành tử địa.",
-    "hidden_test": "BÀI TEST MUỐI (Footstep UV Test):\n1. Rải 2-3 đống muối ở cửa phòng hoặc hành lang.\n2. Chờ ma bước qua: Bạn sẽ nghe tiếng 'sột soạt' và đống muối bị lún xuống.\n3. Cầm đèn UV soi ngay vào đống muối và xung quanh trong 15 giây: Ma thường sẽ hiện dấu bàn chân màu xanh/tím huỳnh quang. NẾU KHÔNG CÓ BẤT KỲ DẤU CHÂN UV NÀO -> 100% là Wraith!\n(Lưu ý: Nếu thấy dấu chân UV dù chỉ 1 vết -> Gạch bỏ Wraith ngay lập tức).",
+    "hidden_test": "BÀI TEST MUỐI ĐÚNG:\n1. Rải 2-3 đống muối ở cửa phòng/hành lang + đặt cảm biến chuyển động (Motion Sensor) hoặc chĩa D.O.T.S/camera vào vạch muối.\n2. Ma đi qua làm sáng cảm biến mà ĐỐNG MUỐI VẪN NGUYÊN CHÓP (không lún, không sột soạt) -> 100% Wraith (hoặc Gallu Enraged)!\n(Lưu ý: chỉ ma có UV mới để lại dấu chân UV — 16 ma không-UV dẫm lún cũng không có dấu, nên thiếu dấu chân KHÔNG chốt được Wraith!)",
     "looping_guide": "Tốc độ bình thường 1.7 m/s. Không thể bay xuyên tường khi hunt như lời đồn, nhưng có thể bắt đầu hunt ở vị trí bất ngờ do dịch chuyển trước đó.",
     "notes": "Không thể bay xuyên tường khi hunt, nhưng có thể dịch chuyển tức thời tới người chơi ngoài lúc hunt."
   },
@@ -375,7 +375,7 @@
       "strength": "Cực kỳ hung hăng và hiếu động khi có nhiều người ở gần. Khi làm Ghost Event chạm vào người chơi sẽ trừ 20% Sanity (gấp đôi bình thường).",
       "weakness": "KHÔNG BAO GIỜ làm Ghost Event dạng bóng khói/hơi sương thở vào tai (Airball/Hiss event). Khi đi săn, Oni hiện hình liên tục và rất ít khi tàng hình (ngược lại hoàn toàn với Phantom)."
     },
-    "deep_mechanics": "Khi Hunt, Oni hiện hình gần như liên tục (thời gian hiện hình chiếm 80% thời gian chớp nháy, chỉ tàng hình thoáng qua 0.1s). Bạn sẽ nhìn thấy rõ mồn một cơ thể của nó đuổi theo bạn.",
+    "deep_mechanics": "Khi Hunt, Oni hiện hình ~60% thời gian (so với ~32% của ma thường; nhịp tàng hình 0.01s–0.50s). Bạn sẽ nhìn thấy rõ mồn một cơ thể của nó đuổi theo bạn.",
     "hidden_test": "1. QUẢ CẦU KHÓI: Nếu thấy sự kiện quả cầu sương mù khói bay tới phà tiếng thở 'Hù' vào mặt -> GẠCH BỎ Oni NGAY LẬP TỨC (Oni không bao giờ làm event này)!\n2. QUAN SÁT KHI HUNT: Thấy bóng ma hầu như không tàng hình mà hiện hình rõ ràng suốt cuộc săn.",
     "looping_guide": "Rất dễ loop vì bạn luôn nhìn thấy rõ vị trí của nó qua các khe bàn ghế.",
     "notes": "Dễ nhận biết qua việc không có airball event và tần suất quậy phá cực cao."
@@ -702,7 +702,7 @@
   {
     "id": "deogen",
     "name_en": "Deogen",
-    "name_vi": "Deogen (Ma Thở Dốc • Luôn Biết Chỗ Trốn)",
+    "name_vi": "Ma Thở Dốc (Deogen)",
     "alias": [
       "Deogen",
       "Ma thở dốc",
@@ -889,7 +889,7 @@
       "weakness": "Đổi trạng thái bởi muối, nhang và thánh giá. Khi Enraged nó đi qua muối không để lại dấu chân và tầm thánh giá giảm 2m; khi Weakened chỉ hunt 40% và chạy 1.36 m/s. Weakened: tầm thánh giá +1m, dẫm muối để lại 6 dấu chân (tồn tại 3 giây), muối T3 làm chậm 3 giây, nhang mù 6 giây (Normal 5 giây, Enraged 4 giây)."
     },
     "deep_mechanics": "Đặt sẵn muối/thánh giá để ép trạng thái; chờ nó chuyển Weakened (1.36 m/s) rồi mới loop. Kích Enraged: đốt cháy thánh giá, hết hiệu ứng mù nhang (trong hunt), nhang ngoài hunt, dẫm muối (2 giây sau nếu đang Normal). Hết hunt Enraged → rớt ngay về Weakened.",
-    "hidden_test": "Đổi tốc theo 3 mức 1.7/1.96/1.36. Enraged dẫm muối KHÔNG để lại dấu chân (đừng nhầm Wraith — Wraith cũng chia sẻ EMF 5 + Spirit Box). Weakened dẫm muối để lại 6 dấu chân.",
+    "hidden_test": "Đổi tốc theo 3 mức 1.7/1.96/1.36. Enraged đi xuyên muối KHÔNG làm lún (giống Wraith — lại còn chia sẻ EMF 5 + Spirit Box, nên loại Gallu trước khi chốt Wraith). Weakened dẫm lún để lại 6 dấu chân.",
     "looping_guide": "Enraged (1.96 m/s) đừng loop đường dài; Weakened (1.36 m/s) loop thoải mái.",
     "notes": "Ác quỷ cõi âm Mesopotamia / Sumer cổ đại chuyên kéo người sống xuống địa ngục."
   },

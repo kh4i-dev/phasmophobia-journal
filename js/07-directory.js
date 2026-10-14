@@ -13,7 +13,7 @@
         card.dataset.name = (g.name_vi + " " + g.name_en + " " + (g.alias ? g.alias.join(" ") : "")).toLowerCase();
 
         // Làm sạch phụ đề tiếng Việt (bỏ phần lặp lại tên tiếng Anh trong ngoặc nếu có)
-        const cleanVi = g.name_vi.replace(/\s*\([A-Za-z\s]+\)$/, '').trim();
+        const cleanVi = g.name_vi.replace(/\s*\([^)]*\)/g, '').trim();
 
         card.innerHTML = `
           <div class="dir-card-header">

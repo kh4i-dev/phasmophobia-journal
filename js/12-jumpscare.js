@@ -23,4 +23,5 @@
       }, delay);
     }
 
+    scheduleJumpscares();
     loadData();
