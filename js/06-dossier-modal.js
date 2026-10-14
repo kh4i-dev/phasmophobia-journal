@@ -226,7 +226,31 @@
             verdictEl.innerHTML = `<span style="color:#ef4444; font-weight:bold;">⚠️ CỰC KỲ NHANH (~${bpm} BPM):</span> Thaye trẻ, Revenant LOS, hoặc Deogen ở xa!`;
           } else if (bpm < 85) {
             verdictEl.innerHTML = `<span style="color:#38bdf8; font-weight:bold;">🐢 RẤT CHẬM (~${bpm} BPM):</span> Revenant không thấy người hoặc Deogen ở sát người!`;
-          } else {
+      } else if (g.id === "deildegast") {
+        descEl.textContent = `Mới vào: 3.0 m/s (210 BPM) • Sau 26 món xê dịch TRƯỚC hunt: 0.4 m/s (30 BPM)`;
+        btnBase.textContent = `Mới vào: 3.0 m/s (210 BPM)`;
+        btnMax.textContent = `Sau 26 món: 0.4 m/s (30 BPM)`;
+      } else if (g.id === "dayan") {
+        descEl.textContent = `Đứng yên (≤10m): 1.2 m/s (84 BPM) • Di chuyển (≤10m): 2.25 m/s (157 BPM) • Ngoài 10m: 1.7 m/s`;
+        btnBase.textContent = `Đứng yên: 1.2 m/s (84 BPM)`;
+        btnMax.textContent = `Di chuyển: 2.25 m/s (157 BPM)`;
+      } else if (g.id === "gallu") {
+        descEl.textContent = `Normal: 1.7 m/s (120 BPM) • Enraged: 1.955 m/s (138 BPM) • Weakened: 1.36 m/s`;
+        btnBase.textContent = `Normal: 1.7 m/s (120 BPM)`;
+        btnMax.textContent = `Enraged: 1.955 m/s (138 BPM)`;
+      } else if (g.id === "obambo") {
+        descEl.textContent = `Calm: 1.445 m/s (102 BPM) • Aggressive: 1.955 m/s (138 BPM) — tự đổi mỗi 2 phút`;
+        btnBase.textContent = `Calm: 1.445 m/s (102 BPM)`;
+        btnMax.textContent = `Aggressive: 1.955 m/s (138 BPM)`;
+      } else if (g.id === "the_twins") {
+        descEl.textContent = `Hunt chậm: 1.5 m/s (106 BPM) • Hunt nhanh: 1.9 m/s (134 BPM) — đổi mỗi hunt`;
+        btnBase.textContent = `Chậm: 1.5 m/s (106 BPM)`;
+        btnMax.textContent = `Nhanh: 1.9 m/s (134 BPM)`;
+      } else if (g.id === "kormos") {
+        descEl.textContent = `Roam / trong 5m LoS: 1.7 m/s (120 BPM) • Tới điểm âm thanh: 2.21 m/s (156 BPM)`;
+        btnBase.textContent = `Roam: 1.7 m/s (120 BPM)`;
+        btnMax.textContent = `Tới điểm âm: 2.21 m/s (156 BPM)`;
+      } else {
             verdictEl.innerHTML = `Đo được ~${bpm} BPM (Loài ma này: ${baseBpm} BPM tuần tra • ${maxBpm} BPM khi thấy người).`;
           }
         }

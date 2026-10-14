@@ -74,7 +74,7 @@
       "grace_period": "2 giây",
       "hunt_duration": "Dài",
       "evidence_given": "2",
-      "hiding_places": "Ít",
+      "hiding_places": "Ít (mức Low)",
       "fuse_box": "TẮT và ẨN trên bản đồ",
       "cursed_count": "1",
       "monitors": "Sanity & Activity: HỎNG (hiện số ngẫu nhiên)",
@@ -94,7 +94,7 @@
       "grace_period": "2 giây",
       "hunt_duration": "Dài + giết người kéo dài hunt",
       "evidence_given": "1",
-      "hiding_places": "Gần như không có",
+      "hiding_places": "Ít (mức Low, bằng Nightmare)",
       "fuse_box": "TẮT và ẨN trên bản đồ",
       "cursed_count": "0 (KHÔNG có đồ nguyền rủa)",
       "monitors": "Sanity & Activity: HỎNG",
@@ -113,14 +113,14 @@
     { "name": "Camp Woodwind", "size": "Nhỏ", "rooms": "11", "floors": "1", "unlock": "Level 13", "hunt_length": "15s / 20s / 30s+" },
     { "name": "Bleasdale Farmhouse", "size": "Trung bình", "rooms": "21", "floors": "3", "unlock": "Level 4", "hunt_length": "30s / 40s / 50s+" },
     { "name": "Prison", "size": "Trung bình", "rooms": "31 (29 phòng ma)", "floors": "2", "unlock": "Level 11", "hunt_length": "30s / 40s / 50s+" },
-    { "name": "Maple Lodge Campsite", "size": "Trung bình", "rooms": "28", "floors": "3", "unlock": "Level 13", "hunt_length": "30s / 40s / 50s+" },
+    { "name": "Maple Lodge Campsite", "size": "Trung bình", "rooms": "28 (25 phòng ma)", "floors": "3", "unlock": "Level 13", "hunt_length": "30s / 40s / 50s+" },
     { "name": "Point Hope", "size": "Trung bình", "rooms": "16", "floors": "10", "unlock": "Level 15", "hunt_length": "30s / 40s / 50s+" },
     { "name": "Point Hope (Restricted)", "size": "Trung bình", "rooms": "7", "floors": "4", "unlock": "Level 15", "hunt_length": "30s / 40s / 50s+", "note": "Biến thể thu gọn v0.19.0 (08/2026)" },
     { "name": "Prison (Restricted)", "size": "Trung bình", "rooms": "12", "floors": "1", "unlock": "Level 11", "hunt_length": "30s / 40s / 50s+", "note": "Biến thể thu gọn v0.19.0 (08/2026); xe tải dời sát cửa chính" },
     { "name": "Sunny Meadows (Restricted)", "size": "Trung bình", "rooms": "17", "floors": "1", "unlock": "Level 17", "hunt_length": "30s / 40s / 50s+" },
     { "name": "Brownstone High School", "size": "Lớn", "rooms": "64 (58 phòng ma)", "floors": "2", "unlock": "Level 8", "hunt_length": "40s / 50s / 60s+" },
     { "name": "Brownstone High School (Restricted)", "size": "Trung bình", "rooms": "20", "floors": "1", "unlock": "Level 8", "hunt_length": "30s / 40s / 50s+", "note": "Biến thể thu gọn v0.19.0 (08/2026); xe tải dời sát cửa chính" },
-    { "name": "Sunny Meadows Mental Institution", "size": "Lớn", "rooms": "69", "floors": "2", "unlock": "Level 17", "hunt_length": "40s / 50s / 60s+" }
+    { "name": "Sunny Meadows Mental Institution", "size": "Lớn", "rooms": "69 (53 phòng ma)", "floors": "2", "unlock": "Level 17", "hunt_length": "40s / 50s / 60s+" }
   ],
   "maps_note": "Hunt length ghi theo cỡ map: Amateur / Intermediate / Professional trở lên. Từ v0.19.0 (08/2026) có 4 bản Restricted cỡ Nhỏ/Vừa: Sunny Meadows, Point Hope, Prison, Brownstone High School (xe tải dời sát cửa chính ở trường học và nhà tù). 6 Tanglewood Drive đã rework toàn bộ (v0.16.0, 03/2026: bếp, hầm, environmental storytelling); 13 Willow Street đã đại tu (07/2026: gara cũ thành Gym + tắm phụ, ngủ 2 thành Art Studio, hầm mở gồm Laundry/Sports/Bar-bi-a; cầu dao chỉ còn ở Gym hoặc Laundry)."
 }

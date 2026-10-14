@@ -137,7 +137,7 @@
       "yokai":       { tag: "Săn khi ồn",   full: "Nói/đài gần sẽ kích săn ở 80% Sanity" },
       "hantu":       { tag: "Phòng lạnh",   full: "Nhanh ở phòng lạnh, chậm ở phòng ấm, không tăng tốc LOS" },
       "goryo":       { tag: "D.O.T.S cam",  full: "D.O.T.S chỉ thấy qua video camera, phòng không người" },
-      "myling":      { tag: "Chân gần",     full: "Tiếng bước chân chỉ nghe khi rất gần (<10m)" },
+      "myling":      { tag: "Chân gần",     full: "Tiếng bước chân chỉ nghe trong ~12m (ma khác 20m), gần như cùng lúc đèn nháy 10m" },
       "onryo":       { tag: "3 nến",        full: "Thổi tắt ngọn nến thứ 3 kích đi săn ngay" },
       "the_twins":   { tag: "2 tốc độ",     full: "Hai tốc độ săn luân phiên 90% / 110%" },
       "raiju":       { tag: "Gần điện",     full: "Tăng tốc gần thiết bị điện; nhiễu từ 15m" },

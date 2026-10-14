@@ -223,7 +223,7 @@
           </div>
           <ul>
             <li><strong class="tag-red">Demon (100% / 70%):</strong> Sở hữu chiêu cắn trộm (Ability Hunt) có thể kích hoạt cuộc săn ở <strong>100% Sanity</strong> ngay phút đầu tiên! Đốt nhang chỉ cản được 60 giây.</li>
-            <li><strong class="tag-red">Yokai (80%):</strong> Săn sớm ở 80% nếu người chơi nói chuyện qua micro gần ma trong vòng 2.5m.</li>
+            <li><strong class="tag-red">Yokai (80%):</strong> Săn sớm ở 80% nếu người chơi nói chuyện trong CÙNG PHÒNG với nó (2.5m chỉ là bán kính điếc khi hunt).</li>
             <li><strong class="tag-red">Thaye (75%):</strong> Săn sớm ở 75% khi mới vào nhà (tuổi 0), chạy siêu tốc 2.75 m/s.</li>
             <li><strong class="tag-amber">Raiju (65%):</strong> Săn sớm ở 65% nếu có thiết bị điện tử đang mở gần ma.</li>
             <li><strong class="tag-amber">Onryo (60%):</strong> Coi nến như thánh giá. Thổi tắt 3 ngọn lửa liên tiếp là hunt ngay; hunt ở 60% nếu phòng không có lửa.</li>
@@ -529,7 +529,7 @@
             <li><strong>Khi hunt — làm CHOÁNG:</strong> đốt nhang rồi áp/ném về phía mặt ma lúc nó đang đuổi → <strong>làm mù ma ~5 giây</strong> để chạy trốn. <em>Không cần canh thời điểm</em>, chỉ cần đốt lúc ma ở gần.</li>
             <li><strong>Theo Tier:</strong> T1 mù 5s • T2 mù 5s + <strong>chậm 50%</strong> (5s) • T3 mù 5s + <strong>khóa chân đứng im</strong> (5s).</li>
             <li><strong>Ngoài hunt:</strong> chặn hunt <strong>90s</strong> (Spirit 180s, Demon 60s). Nhang <strong>KHÔNG cộng dồn/reset</strong> cooldown đang chạy — đừng đốt phí.</li>
-            <li><strong>Crucifix</strong> chỉ chặn hunt <em>mới</em> (vô dụng khi đang hunt). Đặt dọc lối thoát gần phòng ma; <strong>T3 chặn cả Cursed Hunt</strong>.</li>
+            <li><strong>Crucifix</strong> chỉ chặn hunt <em>mới</em> (vô dụng khi đang hunt). Đặt dọc lối thoát gần phòng ma; <strong>T3 chặn cả Cursed Hunt chỉ khi còn nguyên 2/2 lượt</strong>.</li>
             <li><strong>Hunt vs Event:</strong> cửa thoát <strong>LOCK</strong> = đang hunt; event có thể đóng cửa nhưng KHÔNG khóa.</li>
           </ul>
         </div>
@@ -606,7 +606,7 @@
             <li data-detail="Oni không bao giờ làm event bóng khói (airball/mist form). Thấy airball → gạch Oni.">Thấy <strong>airball</strong> (bóng khói) → gạch <strong>Oni</strong>.</li>
             <li data-detail="Banshee và Dayan chỉ có model/tên NỮ. Thấy model hoặc tên NAM → gạch cả hai con này.">Thấy <strong>model/tên NAM</strong> → gạch <strong>Banshee</strong> &amp; <strong>Dayan</strong> (2 con này chỉ nữ).</li>
             <li data-detail="Yurei chỉ mở/đóng cửa và tủ HOÀN TOÀN (đóng sầm). Nếu cửa chỉ hé/mở dở → gạch Yurei.">Thấy <strong>hé cửa</strong> (không mở/đóng hoàn toàn) → gạch <strong>Yurei</strong>.</li>
-            <li data-detail="Goryo không đổi phòng yêu thích và ít đi xa khỏi phòng. Ma hunt ở ngoài phòng / có đổi phòng → gạch Goryo.">Ma <strong>hunt ngoài phòng yêu thích / đổi phòng</strong> → gạch <strong>Goryo</strong>.</li>
+            <li data-detail="Goryo không đổi phòng yêu thích (trừ ước Monkey Paw) nhưng vẫn Short Roam phòng sát vách. Chỉ gạch khi đổi hẳn phòng / hunt rất xa phòng gốc.">Ma <strong>ĐỔI hẳn phòng yêu thích / hunt rất xa phòng gốc</strong> → gạch <strong>Goryo</strong> (vẫn Short Roam phòng sát vách).</li>
             <li data-detail="Onryo không thắp được nến nhà hoặc campfire. Thấy ma thắp nến/campfire → gạch Onryo.">Thấy ma <strong>thắp nến/campfire</strong> → gạch <strong>Onryo</strong>.</li>
             <li data-detail="Nếu đốt nhang ĐÚNG (đứng gần ma) mà ma hunt lại dưới 60s → gạch mọi loài trừ Demon. CẢNH BÁO: nếu đứng xa ma thì nhang không ăn → kết quả sai.">Đốt nhang mà <strong>hunt lại &lt;60s</strong> → gạch mọi loài trừ <strong>Demon</strong> (nếu chắc bạn đứng gần ma).</li>
           </ul>
@@ -685,7 +685,7 @@
           <div class="comp-card-title"><span>ĐỒ NGUYỀN RỦA &amp; DỤNG CỤ</span><span class="badge">VIỆT</span></div>
           <ul>
             <li><strong>Cursed Possession</strong> = Đồ nguyền rủa (7 món): Tarot, Ouija, Monkey Paw, Gương ma ám, Hộp nhạc, Voodoo, Vòng triệu hồi.</li>
-            <li><strong>Cursed Hunt</strong> = Săn nguyền rủa: hunt do đồ nguyền rủa, KHÔNG chặn được bằng thánh giá/nhang.</li>
+            <li><strong>Cursed Hunt</strong> = Săn nguyền rủa: hunt do đồ nguyền rủa. Thánh giá T1/T2 không chặn được; T3 còn NGUYÊN 2/2 lượt mới chặn được (1 lần chặn đốt cả 2 nhánh).</li>
             <li><strong>Smudge / Incense</strong> = Nhang: chặn hunt (ngoài hunt) / làm mù ma (trong hunt).</li>
             <li><strong>Crucifix</strong> = Thánh giá: chặn hunt trong bán kính.</li>
             <li><strong>Salt</strong> = Muối: bắt dấu chân; Tier 3 làm chậm ma.</li>

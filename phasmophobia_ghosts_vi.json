@@ -181,7 +181,7 @@
       "description": "Khi Cầu Dao BẬT và nhìn thấy người chơi ở xa, nó phóng như tên lửa với tốc độ 2.5 m/s, sau đó phanh gấp về 1.7 m/s khi tới cự ly 3m."
     },
     "traits": {
-      "strength": "Gia tốc điện trường: Khi cầu dao bật, Jinn sở hữu tốc độ lao tới cực nhanh từ xa khi thấy người chơi. Ngoài ra nó có thể kích hoạt khả năng xả điện làm tụt ngay lập tức 25% Sanity của người chơi ở gần cầu dao (tạo EMF 2/5 tại cầu dao).",
+      "strength": "Gia tốc điện trường: Khi cầu dao bật, Jinn sở hữu tốc độ lao tới cực nhanh từ xa khi thấy người chơi. Ngoài ra nó có thể kích hoạt khả năng xả điện làm tụt ngay 25% Sanity của người chơi đứng cùng phòng với nó hoặc trong 3m quanh nó (tín hiệu EMF 2/5 phát ra tại cầu dao điện).",
       "weakness": "Mất điện là phế: Tắt cầu dao sẽ vô hiệu hóa hoàn toàn năng lực tăng tốc và hút Sanity của Jinn. Jinn KHÔNG BAO GIỜ tự tay gạt tắt cầu dao."
     },
     "deep_mechanics": "Jinn không bao giờ tự tay gạt công tắc cầu dao xuống (nó chỉ có thể làm nhảy cầu dao nếu người chơi bật quá số lượng bóng đèn quy định của map). Nếu bạn thấy cầu dao bị gạt tắt trực tiếp bằng tay, 100% loại trừ Jinn.",
@@ -216,9 +216,9 @@
       "strength": "Chúa tể bóng tối: Trong phòng tối, Mare có thể đi săn ở ngưỡng 60% Sanity và có xu hướng tấn công hung hãn hơn rất nhiều.",
       "weakness": "Sợ ánh sáng: Khi bật đèn trong phòng, Mare chỉ có thể đi săn ở mức 40% Sanity. Mare KHÔNG BAO GIỜ bật đèn và ghét cay ghét đắng ánh sáng."
     },
-    "deep_mechanics": "Mare có một phản xạ độc quyền: Kỹ năng Tắt Công Tắc Đèn Tức Thì (Instant Light Switch Flip). Khi người chơi vừa bấm bật công tắc đèn, Mare có tỉ lệ cao gạt tắt phụt ngay lập tức trong vòng 0.1 - 0.2 giây. Nó cũng rất hay làm nổ tung bóng đèn phòng.",
+    "deep_mechanics": "Mare có một phản xạ độc quyền: Kỹ năng Tắt Công Tắc Đèn Tức Thì (Instant Light Switch Flip). Khi người chơi bật công tắc trong 4m cùng tầng với nó, Mare có tỉ lệ 1/7 gạt tắt lại trong tối đa 1s (mỗi công tắc cooldown 10 giây/người; vẫn hoạt động cả khi cầu dao TẮT/hỏng). Mare không bao giờ làm tương tác nhấp nháy đèn để lại EMF ở công tắc. Nó cũng rất hay làm nổ tung bóng đèn phòng.",
     "hidden_test": "1. TEST CÔNG TẮC ĐÈN: Đứng trong phòng ma và bật công tắc đèn lên. Nếu công tắc bị ma tắt phụt lại NGAY LẬP TỨC trong chớp mắt -> 99% là Mare!\n2. QUY TẮC VÀNG: Nếu thấy con ma tự tay BẬT đèn sáng -> 100% KHÔNG PHẢI LÀ MARE!\n3. Nếu bạn bật đèn phòng ma liên tục, Mare sẽ có xu hướng bỏ phòng đó để chuyển sang một phòng tối khác gần đó.",
-    "looping_guide": "Bật đèn ở các khu vực hành lang và phòng bạn định loop để hạ ngưỡng săn của Mare xuống 40%.",
+    "looping_guide": "Ngưỡng 40% (sáng) / 60% (tối) tính theo căn phòng nơi MARE ĐANG ĐỨNG lúc phát động hunt — bật đèn chỗ bạn loop không hạ ngưỡng, phải bật đèn phòng nó đang đứng.",
     "notes": "Quy tắc vàng: Nếu con ma tự tay BẬT đèn, 100% không phải là Mare."
   },
   {
@@ -403,7 +403,7 @@
       "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
-      "strength": "Thính tai khi ở ngoài cuộc săn: Nếu người chơi nói chuyện bằng Micro gần Yokai, nó có thể đi săn ở mức Sanity lên tới 80%.",
+      "strength": "Thính tai ngoài hunt: nói chuyện trong CÙNG PHÒNG với nó (phòng rộng hơn 2.5m vẫn tính) cộng +30 activity và có thể hunt ở 80% Sanity.",
       "weakness": "Bị 'điếc' khi đi săn: Khi hunt, Yokai chỉ có thể nghe thấy tiếng nói hoặc phát hiện thiết bị điện tử của người chơi trong phạm vi cực hẹp (dưới 2.5m, so với 10m của ma thường)."
     },
     "deep_mechanics": "Yokai có thể bị bạn trêu ngươi trong lúc hunt nếu bạn giữ khoảng cách trên 2.5 mét. Bật đèn pin hoặc nói chuyện to ở khoảng cách 3-4 mét nó hoàn toàn không phát hiện ra.",
@@ -436,7 +436,7 @@
     },
     "traits": {
       "strength": "Sát thủ băng giá: Di chuyển cực nhanh trong các căn phòng lạnh giá khi cầu dao bị tắt (lên tới 2.7 m/s). BẮT BUỘC có Freezing Temperatures ở mọi độ khó.",
-      "weakness": "Rùa bò khi ấm áp: Rất chậm ở nơi ấm áp (1.4 m/s). Khi Hunt trong phòng lạnh nếu cầu dao TẮT, Hantu sẽ thở ra luồng hơi sương trắng từ miệng."
+      "weakness": "Rùa bò khi ấm áp: Rất chậm ở nơi ấm áp (1.4 m/s). Khi cầu dao TẮT, Hantu thở ra khói trắng ở BẤT KỲ PHÒNG NÀO khi hunt (kể cả phòng ấm; người chết không thấy khói)."
     },
     "deep_mechanics": "Hantu không có Line of Sight acceleration (không tăng tốc dần khi nhìn thấy người chơi). Tốc độ của nó chỉ phụ thuộc vào nhiệt độ của căn phòng mà nó đang bước chân qua.",
     "hidden_test": "1. BẬT CẦU DAO: Nhịp chân chạy chậm rề rề 1.4 m/s.\n2. TẮT CẦU DAO: Nhịp chân phóng nhanh như bão 2.7 m/s trong phòng ma lạnh giá.\n3. HƠI THỞ SƯƠNG: Quan sát miệng ma khi hunt (nếu tắt cầu dao) thấy phà ra sương trắng rõ rệt.",
@@ -467,7 +467,7 @@
     },
     "traits": {
       "strength": "Ẩn mình trước mắt thường: Chỉ có thể nhìn thấy bóng ma D.O.T.S qua màn hình Video Camera, và TUYỆT ĐỐI KHÔNG HIỆN nếu có người chơi đứng cùng trong phòng.",
-      "weakness": "BẮT BUỘC có bằng chứng D.O.T.S Projector ở mọi độ khó (kể cả 1 evidence). Hầu như KHÔNG BAO GIỜ đổi phòng yêu thích (Favorite Room) và ít khi đi lang thang xa."
+      "weakness": "BẮT BUỘC có bằng chứng D.O.T.S Projector ở mọi độ khó (kể cả 1 evidence). KHÔNG BAO GIỜ đổi phòng yêu thích (trừ ước Monkey Paw) và không đi lang thang xa (Long Roam), nhưng vẫn Short Roam sang phòng sát vách và có thể hunt từ đó."
     },
     "deep_mechanics": "Nếu bạn đứng trong phòng nhìn máy DOTS thì 100% không bao giờ thấy Goryo. Bạn phải đặt camera quay vào máy DOTS rồi ra ngoài xe tải hoặc đứng ngoài cửa nhìn qua màn hình.",
     "hidden_test": "1. Đứng mắt thường nhìn DOTS không thấy gì, nhưng nhìn qua camera video lại thấy bóng ma chạy qua máy chiếu.\n2. Cả game không hề đổi phòng yêu thích.",
@@ -532,7 +532,7 @@
       "strength": "Săn sớm khi không có lửa: Nếu không có ngọn lửa nào xung quanh, Onryo có thể đi săn ở mức 60% Sanity. Cứ mỗi 3 lần thổi tắt nến, Onryo sẽ LẬP TỨC ĐI SĂN ở bất kỳ mức Sanity nào.",
       "weakness": "Sợ lửa: Onryo coi ngọn nến như một chiếc Thánh Giá trong cự ly 4m. Nếu có nến đang cháy, nó PHẢI thổi tắt nến trước khi cắn thánh giá."
     },
-    "deep_mechanics": "Đặt 1 cây thánh giá chồng lên 1 cây nến đang cháy: Nếu thánh giá bị cắn trong khi nến vẫn đang cháy -> Loại Onryo. Ngược lại nếu nến bị thổi tắt liên tục mà thánh giá nguyên vẹn -> Onryo.",
+    "deep_mechanics": "Test nến đè thánh giá chỉ chuẩn với Thánh giá Tier 1 (3m nằm gọn trong 4m của nến): Thánh giá T2 (4m) ngang bằng, T3 (5m) thò ra ngoài — Onryo hunt ở cự ly 4.01-5m sẽ cắn T3 trong khi nến vẫn cháy! Rải nhiều nến phủ hết tầm T3 nếu dùng T3. Ngược lại nếu nến bị thổi tắt liên tục mà thánh giá nguyên vẹn -> Onryo.",
     "hidden_test": "BÀI TEST 3 CÂY NẾN:\nThắp nến cho nó thổi: Thổi tắt lần 1, thắp lại -> Thổi tắt lần 2, thắp lại -> Vừa thổi tắt lần 3 là lập tức cửa sập đi săn ngay (trừ khi có cây nến thứ 4 gần đó cản lại).",
     "looping_guide": "Đem theo thật nhiều nến và bật lửa cắm xung quanh chỗ bạn đứng.",
     "notes": "Đem theo thật nhiều nến và bật lửa khi nghi ngờ Onryo."
@@ -556,8 +556,8 @@
     "speed": {
       "base": 1.5,
       "max_los": 1.9,
-      "bpm_base": 110,
-      "bpm_max": 140,
+      "bpm_base": 106,
+      "bpm_max": 134,
       "description": "Chỉ 1 thực thể duy nhất với 2 tốc độ 1.7 ± 0.2 m/s (chậm 1.5 / nhanh 1.9); tối đa LOS ~2.6 m/s (chậm) và ~3.0 m/s (nhanh)."
     },
     "traits": {
@@ -784,7 +784,7 @@
     "speed": {
       "base": 1.53,
       "max_los": 2.52,
-      "bpm_base": 125,
+      "bpm_base": 108,
       "bpm_max": 185,
       "description": "Base 1.53 m/s (chậm hơn chuẩn) nhưng tăng tốc theo LOS NHANH nhất game (tối đa ~2.52 m/s). Có thể hunt với grace period = 0."
     },
@@ -816,8 +816,8 @@
     "speed": {
       "base": 1.7,
       "max_los": 2.25,
-      "bpm_base": 120,
-      "bpm_max": 170,
+      "bpm_base": 84,
+      "bpm_max": 157,
       "description": "2.25 m/s khi người chơi di chuyển trong 10m, 1.2 m/s khi đứng yên, 1.7 m/s khi không ai trong 10m (áp dụng tăng tốc LOS chuẩn; gia tốc LOS tích ngầm trong 10m và bung ra khi bạn ra ngoài 10m)."
     },
     "traits": {
@@ -848,8 +848,8 @@
     "speed": {
       "base": 3.0,
       "max_los": 0.4,
-      "bpm_base": 120,
-      "bpm_max": 180,
+      "bpm_base": 210,
+      "bpm_max": 30,
       "description": "Tốc độ cố định 0.4–3.0 m/s tùy số đồ vật đã bị xê dịch (KHÔNG tăng tốc theo LOS)."
     },
     "traits": {
@@ -880,8 +880,8 @@
     "speed": {
       "base": 1.7,
       "max_los": 1.955,
-      "bpm_base": 130,
-      "bpm_max": 170,
+      "bpm_base": 120,
+      "bpm_max": 138,
       "description": "1.7 m/s (bình thường), 1.96 m/s (Enraged), 1.36 m/s (Weakened), cộng thêm tăng tốc LOS chuẩn."
     },
     "traits": {
@@ -912,8 +912,8 @@
     "speed": {
       "base": 1.7,
       "max_los": 2.21,
-      "bpm_base": 95,
-      "bpm_max": 170,
+      "bpm_base": 120,
+      "bpm_max": 156,
       "description": "Base 1.7 m/s khi roam. Nghe tiếng động thì lao tới điểm phát âm với tốc độ ×1.3 = 2.21 m/s (chưa có LoS). Chỉ lấy được LoS trong phạm vi ≤5m không vật cản."
     },
     "traits": {
@@ -944,8 +944,8 @@
     "speed": {
       "base": 1.445,
       "max_los": 1.955,
-      "bpm_base": 120,
-      "bpm_max": 160,
+      "bpm_base": 102,
+      "bpm_max": 138,
       "description": "1.96 m/s khi Aggressive, 1.45 m/s khi Calm."
     },
     "traits": {

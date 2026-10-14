@@ -36,7 +36,7 @@ const VIP_TIPS = {
   mare: {
     chot: ["Tắt công tắc đèn ngay (0.1s) sau khi bạn vừa bật + không bao giờ bật đèn → nghi Mare nặng."],
     gach: ["Thấy ma BẬT đèn/TV/màn hình → gạch Mare (Mare không bật được)."],
-    speed: "Chuẩn 1.7 m/s. Hunt 60% khi tối / 40% khi sáng — bật đèn chỗ loop để hạ ngưỡng."
+    speed: "Chuẩn 1.7 m/s. Hunt 60% (phòng nó đứng đang tối) / 40% (phòng nó đứng đang sáng) — phải bật đèn phòng NÓ, không phải chỗ bạn loop."
   },
   revenant: {
     chot: ["Bò 1.0 (70 BPM) rồi vọt 3.0 (210 BPM) ngay khi thấy bạn → chốt Revenant."],
@@ -64,9 +64,9 @@ const VIP_TIPS = {
     speed: "Chuẩn 1.7 m/s. Siêu tăng động khi đông người."
   },
   yokai: {
-    chot: ["Nói micro gần nó mà hunt ở ~80% sanity → chốt Yokai. Khi hunt dí đèn/nói to ở 3-4m nó không phản ứng → càng chắc."],
+    chot: ["Nói micro trong CÙNG PHÒNG với nó mà hunt ở ~80% sanity → chốt Yokai (không cần trong 2.5m). Khi hunt dí đèn/nói to ở 3-4m nó không phản ứng → càng chắc."],
     gach: [],
-    speed: "Chuẩn 1.7 m/s. Hunt 80% nếu nói micro gần nó (<2.5m). Khi hunt bị điếc: bật đèn/nói to ở 3-4m nó không phát hiện."
+    speed: "Chuẩn 1.7 m/s. Hunt 80% nếu nói micro trong cùng phòng nó (2.5m chỉ là bán kính điếc KHI hunt + bán kính nghe Music Box)."
   },
   hantu: {
     chot: ["Khi hunt + CẦU DAO TẮT mà thấy thở hơi khói trắng từ miệng → Hantu (chốt). Bắt buộc có Freezing.", "Nightmare/Insanity: Hantu luôn cho Freezing (bằng chứng bắt buộc)."],
@@ -75,7 +75,7 @@ const VIP_TIPS = {
   },
   goryo: {
     chot: ["D.O.T.S chỉ thấy qua Video Camera khi không ai trong phòng + không đổi phòng → Goryo. Bắt buộc có D.O.T.S.", "Nightmare/Insanity: Goryo luôn cho DOTS (bằng chứng bắt buộc) — dùng để khoanh nhanh."],
-    gach: ["Ma hunt ngoài phòng yêu thích / đổi phòng → gạch Goryo."],
+    gach: ["Ma ĐỔI hẳn phòng yêu thích / hunt ở rất xa phòng gốc → gạch Goryo (nó vẫn Short Roam sang phòng sát vách và hunt từ đó)."],
     speed: "Chuẩn 1.7 m/s."
   },
   myling: {
@@ -206,7 +206,7 @@ const LOOP_TIPS = {
   poltergeist: "Loop ở chỗ TRỐNG, dọn đồ quanh bàn trước. Đồ bay trúng trừ sanity — đừng loop phòng bừa bộn.",
   banshee: "Không phải mục tiêu thì đứng yên cũng an toàn. Là mục tiêu thì loop như ma thường.",
   jinn: "TẮT CẦU DAO trước khi loop — mất điện là Jinn thành ma thường 1.7. Đừng loop hành lang dài khi cầu dao bật.",
-  mare: "BẬT ĐÈN khu loop/hành lang để ép hunt muộn 40%. Đừng loop trong bóng tối.",
+  mare: "BẬT ĐÈN phòng nó đang đứng để ép hunt muộn 40%. Tắt đèn là nó tắt phụt lại trong 1s (4m cùng tầng).",
   revenant: "TUYỆT ĐỐI không loop chay. Cắt LOS ngay + trốn tủ + tắt đồ điện. Chỉ câu giờ bằng nhang dí mặt (mù 5s).",
   shade: "Hiếm khi hunt — loop chuẩn là đủ, nó ít tăng tốc vì ít thấy người.",
   demon: "Hunt lại sau 20s (ma khác 25s) — vừa thoát là thủ đợt 2 ngay. Cắm thánh giá rộng, nhang sẵn tay.",

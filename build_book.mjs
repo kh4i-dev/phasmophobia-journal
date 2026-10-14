@@ -76,7 +76,7 @@ const S = mdSections();
 const keyOf = (re) => Object.keys(S).find(k => re.test(k));
 
 /* ---------- render data ---------- */
-const dangerClass = { "Thấp": "d-low", "Trung Bình": "d-mid", "Cao": "d-high" };
+const dangerClass = (d) => /^thấp/i.test(d || "") ? "d-low" : /^trung bình/i.test(d || "") ? "d-mid" : "d-high";
 
 const ghostCard = (g) => {
   const alias = (g.alias || []).length ? g.alias.join(" • ") : "—";
@@ -88,7 +88,7 @@ const ghostCard = (g) => {
   return `<article class="dossier">
     <div class="d-head">
       <div><h3>${esc(g.name_vi)}</h3><div class="d-en">${esc(g.name_en)} • ${esc(alias)}</div></div>
-      <span class="danger ${dangerClass[g.danger_level] || "d-mid"}">${esc(g.danger_level)}</span>
+      <span class="danger ${dangerClass(g.danger_level)}">${esc(g.danger_level)}</span>
     </div>
     <div class="d-stats">
       <div><span>Ngưỡng săn</span><b>${esc(hunt)}</b></div>
@@ -107,8 +107,19 @@ const tarotGrid = (tc.cursed_possessions.find(c => c.id === "tarot_cards")?.card
   .map(c => `<div class="tarot"><img src="${esc(c.image).replace(/^assets\//, "../assets/")}" alt=""><div><b>${esc(c.name_vi)}</b><span>${esc(c.flame_color || "")}</span><p>${esc(c.effect)}</p></div></div>`)
   .join("");
 
+const cursedItemHtml = (c) => {
+  let body = `<div class="tool"><h3>${esc(c.name_vi)} <small>${esc(c.name_en)}</small></h3><p>${esc(c.description)}</p>`;
+  if (c.usage) body += `<p class="note">${esc(c.usage)}</p>`;
+  if (c.sanity_cost) body += `<p><b>Cái giá:</b> ${esc(c.sanity_cost)}</p>`;
+  if (c.effects) body += `<p><b>Hiệu ứng:</b> ${esc(c.effects)}</p>`;
+  if (c.warning) body += `<p><b>Cảnh báo:</b> ${esc(c.warning)}</p>`;
+  if (c.questions) body += `<ul>${c.questions.map(q => `<li><code>${esc((q.questions_en || []).join(" / "))}</code> — ${esc(q.meaning_vi || "")} <i>(${esc(q.sanity_cost || "")})</i><br>${esc(q.notes || "")}</li>`).join("")}</ul>`;
+  if (c.wishes) body += `${c.wishes.map(w => `<div class="tier"><b>${esc(w.wish_en || "")}</b> — ${esc(w.meaning_vi || "")}<br>Ước: ${esc(w.benefit || "")}<br>Phản phệ: ${esc(w.penalty || "")}</div>`).join("")}`;
+  return body + `</div>`;
+};
+
 const cursedList = tc.cursed_possessions.filter(c => c.id !== "tarot_cards")
-  .map(c => `<div class="tool"><h3>${esc(c.name_vi)} <small>${esc(c.name_en)}</small></h3><p>${esc(c.description)}</p></div>`)
+  .map(cursedItemHtml)
   .join("");
 
 const toolList = (tc.tools_and_equipment || [])
@@ -239,7 +250,7 @@ ${ch("CHƯƠNG 05", "Kỹ Thuật Nhận Diện Ma Không Cần Bằng Chứng (
 ${ch("CHƯƠNG 06", "Độ Khó &amp; Bản Đồ Điều Tra", diffTable + (ref.maps_note ? `<p class="note">${esc(ref.maps_note)}</p>` : "") + `<ul>${mapList}</ul>`)}
 ${ch("CHƯƠNG 07", "Vật Phẩm Nguyền Rủa (Cursed Possessions)", `<h3>Bộ Bài Tarot Ma Quái — 10 lá &amp; màu lửa</h3><div class="tarot-grid">${tarotGrid}</div><h3>Các vật phẩm nguyền rủa còn lại</h3>${cursedList}`)}
 ${ch("CHƯƠNG 08", "Trang Bị &amp; Dụng Cụ Điều Tra", toolList)}
-${ch("CHƯƠNG 09", "Câu Thoại Nhận Diện &amp; Thuật Ngữ Anh—Việt", voiceHtml + mdToHtml((S[keyOf(/THU.R NG/i)] || "")))}
+${ch("CHƯƠNG 09", "Câu Thoại Nhận Diện &amp; Thuật Ngữ Anh—Việt", voiceHtml + mdToHtml((S[keyOf(/THUẬT NGỮ/i)] || "")))}
 
 </body></html>`;
 

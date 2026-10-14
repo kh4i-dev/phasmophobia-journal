@@ -253,14 +253,14 @@
       "name_vi": "Hộp Nhạc Ma Quái",
       "description": "Lên dây cót và thả xuống đất hoặc cầm trên tay. Hộp nhạc phát ra giai điệu ru êm ái khiến con ma hát theo từ xa.",
       "sanity_cost": "Làm tụt Sanity của bất cứ ai đứng gần nghe tiếng nhạc.",
-      "warning": "Nếu bạn cầm hộp nhạc đi đến quá gần ma (<5m), hoặc thả hộp nhạc rơi vỡ khi đang phát nhạc, hoặc ma đi tới chạm vào hộp nhạc -> Ma sẽ lập tức hiện hình và kích hoạt Cursed Hunt!"
+      "warning": "Vào <5m quanh ma (2.5m với Yokai) chỉ làm ma hiện hình + bước về phía hộp. Cursed Hunt chỉ nổ khi: ma chạm trong 1m (0.5m Yokai) / ma đi bộ quá 5 giây / bạn NÉM hộp đang phát (bấm Đặt/Place thì an toàn) / người nghe trong 3m (tụt 2.6%/giây) chạm 0% sanity!"
     },
     {
       "id": "voodoo_doll",
       "name_en": "Voodoo Doll",
       "name_vi": "Búp Bê Voodoo",
       "description": "Có 10 cây kim cắm trên thân. Bấm chuột phải để ghim 1 cây kim ngẫu nhiên vào sâu trong búp bê.",
-      "effects": "Mỗi cây kim thường: Trừ 5% Sanity và ép ma thực hiện 1 tương tác tại vị trí của nó.",
+      "effects": "Mỗi cây kim thường: Trừ 5% Sanity và ép ma tương tác môi trường (có thể ra EMF 5 hoặc UV) — nhưng KHÔNG ép viết sổ, KHÔNG kích D.O.T.S, KHÔNG ép thổi tắt lửa.",
       "warning": "Nếu ghim trúng cây kim ở Trái Tim (Heart Pin): Trừ 10% Sanity và KÍCH HOẠT CURSED HUNT LẬP TỨC! Nếu Sanity < 5% mà bấm ghim, toàn bộ kim còn lại tự cắm vào và Hunt ngay."
     },
     {
@@ -281,7 +281,7 @@
       "type": "Bằng chứng (Evidence Tool)",
       "evidence": "EMF Level 5",
       "tiers": [
-        { "tier": "Tier 1", "item": "Máy Đo Cơ Analog", "desc": "Kim chỉ analog rung giật. Tầm quét ngắn (1.5m), độ nhạy thấp, khó nhận biết giữa vạch 4 và 5." },
+        { "tier": "Tier 1", "item": "Máy Đo Cơ Analog", "desc": "Kim chỉ analog rung giật. Tầm quét ngắn (1.7m), độ nhạy thấp, khó nhận biết giữa vạch 4 và 5." },
         { "tier": "Tier 2", "item": "Máy K2 LED Kinh Điển", "desc": "5 vạch đèn LED rõ ràng (Xanh -> Đỏ). Kêu tít tít lớn khi có EMF 5. Tầm quét 2m." },
         { "tier": "Tier 3", "item": "Máy Kỹ Thuật Số Hiển Thị Màn Hình", "desc": "Màn hình điện tử hiển thị chính xác cấp EMF, âm thanh định vị 3D và hiển thị hướng phát ra tín hiệu. Tầm quét 3.5m, có thể theo dõi cùng lúc 3 nguồn EMF." }
       ]
@@ -317,9 +317,9 @@
       "type": "Bằng chứng (Evidence Tool)",
       "evidence": "Ghost Writing",
       "tiers": [
-        { "tier": "Tier 1", "item": "Sổ Tay Bìa Mềm & Bút Chì", "desc": "Phạm vi tương tác hẹp (2m), ma mất nhiều thời gian hơn để chịu viết vào sổ." },
-        { "tier": "Tier 2", "item": "Sổ Bọc Da & Bút Máy", "desc": "Phạm vi tương tác 3m, tốc độ viết trung bình." },
-        { "tier": "Tier 3", "item": "Cổ Thư Mạ Vàng & Bút Lông Vũ", "desc": "Phạm vi tương tác rộng (4m), ma bị kích thích viết vào sổ cực kỳ nhanh chóng." }
+        { "tier": "Tier 1", "item": "Sổ Tay Bìa Mềm & Bút Chì", "desc": "Phạm vi 3m, xác suất viết 51% — ma mất nhiều thời gian hơn để chịu viết." },
+        { "tier": "Tier 2", "item": "Sổ Bọc Da & Bút Máy", "desc": "Phạm vi 4m, xác suất viết 67%, tốc độ viết trung bình." },
+        { "tier": "Tier 3", "item": "Cổ Thư Mạ Vàng & Bút Lông Vũ", "desc": "Phạm vi 5m, xác suất viết 76%, ma viết cực kỳ nhanh chóng." }
       ]
     },
     {
@@ -355,7 +355,7 @@
       "tiers": [
         { "tier": "Tier 1", "item": "Thánh Giá Gỗ Thô Sơ", "desc": "Sử dụng được 1 lần cản hunt. Bán kính cản 3 mét (Demon: 4.5m)." },
         { "tier": "Tier 2", "item": "Thánh Giá Sắt Rèn", "desc": "Sử dụng được 2 lần cản hunt (cháy từng nhánh). Bán kính cản 4 mét (Demon: 6m)." },
-        { "tier": "Tier 3", "item": "Thánh Giá Bạc Trừ Tà Tối Thượng", "desc": "Sử dụng được 2 lần. Bán kính cản cực đại 5 mét (Demon: 7.5m). ĐẶC BIỆT: Có thể ngăn chặn cả Cursed Hunt (Săn Nguyền Rủa)!" }
+        { "tier": "Tier 3", "item": "Thánh Giá Bạc Trừ Tà Tối Thượng", "desc": "Sử dụng được 2 lần. Bán kính cản cực đại 5 mét (Demon: 7.5m). ĐẶC BIỆT: Chặn được cả Cursed Hunt — CHỈ khi còn nguyên 2/2 lượt (1 lần chặn đốt cả 2 nhánh)!" }
       ]
     },
     {

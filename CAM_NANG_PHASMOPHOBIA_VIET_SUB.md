@@ -60,7 +60,7 @@
 | 13 | **Yokai** | Spirit Box, Orb, D.O.T.S | **80%** (Nói chuyện) | 1.7 (Chuẩn) | Hunt ở 80% nếu nói to gần nó. Khi hunt bị "điếc" (chỉ nghe thấy người chơi < 2.5m). |
 | 14 | **Hantu** | UV, Ghost Orb, Freezing | 50% | 1.4 (Ấm) → 2.7 (Lạnh) | Chạy nhanh trong phòng lạnh, chậm khi ấm. **Thở ra hơi sương trắng** khi tắt cầu dao. |
 | 15 | **Goryo** | EMF 5, UV, D.O.T.S | 50% | 1.7 (Chuẩn) | D.O.T.S **chỉ nhìn thấy qua Video Camera** khi không có ai trong phòng. Không đổi phòng. |
-| 16 | **Myling** | EMF 5, UV, Writing | 50% | 1.7 (Chuẩn) | **Bước chân cực êm khi hunt**: Chỉ nghe thấy tiếng bước chân khi đèn pin đã nhấp nháy (< 10m). |
+| 16 | **Myling** | EMF 5, UV, Writing | 50% | 1.7 (Chuẩn) | **Bước chân cực êm khi hunt**: Chỉ nghe thấy tiếng bước chân trong ~12m (ma khác 20m) — gần như cùng lúc đèn pin nháy ở 10m. |
 | 17 | **Onryo** | Spirit Box, Orb, Freezing | 60% (Không nến) | 1.7 (Chuẩn) | **Sợ lửa**: Coi nến như thánh giá. Thổi tắt 3 ngọn nến liên tiếp là **lập tức đi săn**. |
 | 18 | **The Twins** | EMF 5, Spirit Box, Freezing | 50% | Chậm 1.5 / Nhanh 1.9 (1 thực thể) | Tương tác 2 nơi cùng lúc. Đợt săn này chạy chậm (90%), đợt sau chạy nhanh (110%). |
 | 19 | **Raiju** | EMF 5, Ghost Orb, D.O.T.S | 65% (Gần đồ điện) | 1.7 → 2.5 (Kích điện) | Hút sóng điện tử. Làm nhiễu đèn pin từ xa (15m). **Tăng tốc vọt lên 2.5 m/s** gần thiết bị điện. |
@@ -230,7 +230,7 @@ Ban cho **3–5 điều ước** tùy độ khó (0x–1x = **5**, 1.01x–2x = 
 * **"I wish to leave"** — Mở khóa toàn bộ cửa thoát ra vào ngay cả khi ma đang Hunt. Phản phệ: Tốc độ người ước giảm mạnh trong chốc lát và tầm nhìn bị tối mờ.
 * **"I wish for life"** (alias *"I wish to revive my friend"*) — Hồi sinh người chơi đã chết ĐẦU TIÊN (theo thứ tự danh sách lobby). Phản phệ: **50%** người ước bị chết thay ngay lập tức!
 * **"I wish for sanity"** (alias *"I wish to be sane"*) — Đặt Sanity của TẤT CẢ người chơi về đúng 50%. Phản phệ: Tốc độ tụt Sanity thụ động tăng gấp **1.5 lần** suốt ván + ma có thể đổi phòng yêu thích sang phòng ngẫu nhiên.
-* **"I wish for knowledge"** — Gạch bỏ 1 bằng chứng SAI (và các loài ma tương ứng) khỏi sổ. Phản phệ: Ma teleport tới sát người ước và mở Cursed Hunt; tầm nhìn phủ sương đen + thính giác bị bịt tới khi bạn chết hoặc hết ván.
+* **"I wish for knowledge"** — Gạch bỏ 1 bằng chứng SAI (và các loài ma tương ứng) khỏi sổ. Phản phệ: Ma teleport tới sát người ước và mở Cursed Hunt; (lưu ý bản 0.19.0 đang bug gạch sai bằng chứng!); tầm nhìn phủ sương đen + thính giác bị bịt tới khi bạn chết hoặc hết ván.
 * **"I wish for weather"** (Clear Sky / Fog / Rain / Snow / Sunrise) — Đổi thời tiết ván chơi (Rain có 50% thành mưa nhỏ hoặc mưa lớn). Phản phệ: Mọi người chơi bị lóa mắt trong chốc lát + người ước mất 25% Sanity.
 * **"I wish for anything"** — Thực hiện NGẪU NHIÊN một điều ước còn lại chưa dùng (chỉ dùng được bằng voice chat). Phản phệ: đúng hậu quả của điều ước được chọn.
 
@@ -238,8 +238,8 @@ Ban cho **3–5 điều ước** tùy độ khó (0x–1x = **5**, 1.01x–2x = 
 
 ### 🔮 CÁC VẬT PHẨM NGUYỀN RỦA CÒN LẠI
 1. **Gương Ma Ám (Haunted Mirror):** Soi vào gương để nhìn thấy phòng ma yêu thích. Tiêu tốn 7.5% Sanity mỗi giây (tối thiểu 20% mỗi lần soi). Nếu Sanity về 0% khi đang soi, gương vỡ vụn và kích hoạt Cursed Hunt!
-2. **Hộp Nhạc Ma Quái (Music Box):** Lên dây cót phát nhạc du dương, ma sẽ cất tiếng hát theo từ xa. Nếu bạn cầm hộp nhạc lại gần ma (<5m), thả hộp nhạc rơi vỡ hoặc ma chạm vào hộp -> Kích hoạt Cursed Hunt lập tức!
-3. **Búp Bê Voodoo (Voodoo Doll):** Có 10 cây kim. Mỗi lần ghim trừ 5% Sanity và ép ma làm 1 tương tác. Nếu ghim trúng **cây kim ở Trái Tim (Heart Pin)** -> Kích hoạt Cursed Hunt ngay lập tức!
+2. **Hộp Nhạc Ma Quái (Music Box):** Lên dây cót phát nhạc du dương, ma sẽ cất tiếng hát theo từ xa. Vào <5m quanh ma (2.5m Yokai) chỉ làm ma hiện hình + bước tới. Cursed Hunt chỉ nổ khi ma chạm trong 1m (0.5m Yokai) / đi bộ quá 5s / bạn NÉM hộp đang phát (Đặt/Place thì an toàn) / người nghe trong 3m chạm 0% sanity!
+3. **Búp Bê Voodoo (Voodoo Doll):** Có 10 cây kim. Mỗi lần ghim trừ 5% Sanity và ép ma tương tác môi trường (có thể ra EMF 5/UV — không ép viết sổ, D.O.T.S hay thổi lửa). Nếu ghim trúng **cây kim ở Trái Tim (Heart Pin)** -> Kích hoạt Cursed Hunt ngay lập tức!
 4. **Vòng Tròn Triệu Hồi (Summoning Circle):** Thắp 5 cây nến đỏ bằng bật lửa (mỗi ngọn trừ 16% Sanity của TẤT CẢ người đứng gần trong 3m). Khi thắp đủ 5 nến, ma bị triệu hồi đứng im giữa vòng tròn 5 giây (cơ hội vàng chụp ảnh ma). Thắp nến thứ 5 khi Sanity < 16%: ma bỏ qua đứng yên, hunt ngay sau 1s grace! Đúng sau 5 giây, ma lập tức bắt đầu Cursed Hunt!
 
 ---
@@ -260,9 +260,9 @@ Ban cho **3–5 điều ước** tùy độ khó (0x–1x = **5**, 1.01x–2x = 
   * *Tier 2:* Đèn pin UV bóng LED sáng rộng, soi nhanh vết tay.
   * *Tier 3:* Đèn tuýp huỳnh quang UV 360° đặt sàn, chiếu sáng toàn bộ căn phòng không cần cầm tay.
 * **Sổ Ghi Chép Ma Ám (Ghost Writing Book):**
-  * *Tier 1:* Sổ nhỏ bìa mềm + bút chì, tầm 2m, ma lâu viết.
-  * *Tier 2:* Sổ bọc da + bút máy, tầm 3m, tốc độ viết trung bình.
-  * *Tier 3:* Cổ thư mạ vàng + bút lông, tầm 4m, ma bị kích thích viết cực kỳ nhanh chóng.
+  * *Tier 1:* Sổ nhỏ bìa mềm + bút chì, tầm 3m (viết 51%), ma lâu viết.
+  * *Tier 2:* Sổ bọc da + bút máy, tầm 4m (viết 67%), tốc độ viết trung bình.
+  * *Tier 3:* Cổ thư mạ vàng + bút lông, tầm 5m (viết 76%), ma viết cực kỳ nhanh chóng.
 * **Nhiệt Kế (Thermometer):**
   * *Tier 1:* Nhiệt kế thủy ngân cổ điển, cập nhật chậm theo thời gian thực.
   * *Tier 2:* Súng bắn laser đo tức thì khi bấm cò.
@@ -276,7 +276,7 @@ Ban cho **3–5 điều ước** tùy độ khó (0x–1x = **5**, 1.01x–2x = 
 * **Cây Thánh Giá (Crucifix):**
   * *Tier 1 (Gỗ):* Dùng 1 lần, bán kính 3m (Demon: 4.5m).
   * *Tier 2 (Sắt):* Dùng 2 lần (cháy từng nhánh), bán kính 4m (Demon: 6m).
-  * *Tier 3 (Bạc Trừ Tà):* Dùng 2 lần, bán kính cực đại 5m (Demon: 7.5m). **Đặc biệt: Chặn được cả Cursed Hunt!**
+  * *Tier 3 (Bạc Trừ Tà):* Dùng 2 lần, bán kính cực đại 5m (Demon: 7.5m). **Đặc biệt: Chặn được cả Cursed Hunt — CHỈ khi còn nguyên 2/2 lượt (1 lần chặn đốt cả 2 nhánh)!**
 * **Nhang Trừ Tà (Incense / Smudge Sticks):**
   * *Tier 1:* Bó xô thơm, làm mù ma 5 giây khi hunt, ngoài hunt chặn hunt 90s (Demon: 60s, Spirit: 180s).
   * *Tier 2:* Nhang ống kim loại, làm mù 5s VÀ làm chậm ma 50% trong 5s.

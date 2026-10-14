@@ -22,7 +22,7 @@
       "items": [
         "Setup phase: Amateur 5 phút → Intermediate 2 phút → Professional trở lên KHÔNG có. Dùng bất kỳ cursed possession nào sẽ kết thúc setup ngay.",
         "Grace period (khoảng trống trước khi ma hiện hình tấn công): Amateur 5s → Insanity 2s.",
-        "Thời lượng hunt theo cỡ map: Nhỏ ~15s, Trung bình 20s+, Lớn 30s+ (dài hơn khi độ khó cao / có người chết).",
+        "Thời lượng hunt theo cỡ map và độ khó — Nhỏ: 15s / 20s / 30s+; Vừa: 30s / 40s / 50s+; Lớn: 40s / 50s / 60s+ (Amateur / Intermediate / Professional+; dài hơn khi có người chết).",
         "Hunt cooldown ~25s (riêng Demon ~20s). Khi sanity trung bình dưới 25%, hunt xảy ra thường xuyên hơn.",
         "Khi hunt: cửa ra vào bị khoá. Ma di chuyển về phía người gần / mục tiêu và tăng tốc khi có LOS (đường nhìn thẳng).",
         "Ma ném đồ mạnh và dồn dập hơn khi hunt (Poltergeist gấp đôi).",
@@ -49,7 +49,7 @@
       "items": [
         "Chỗ ẩn CHÍNH THỨC (tủ, hộc, thùng, tường gấp) sinh NGẪU NHIÊN mỗi hợp đồng — phải học lại mỗi ván, đừng thuộc lòng máy móc.",
         "Số đèn tối đa theo cỡ map: Nhỏ 9 • Trung bình 8 • Lớn 7 — bật quá là cầu dao nhảy, cả nhà tối.",
-        "Lượng chỗ ẩn theo độ khó: Amateur 'Rất nhiều' → Intermediate 'Nhiều' → Professional 'Trung bình' → Nightmare 'Ít' → Insanity 'Gần như không có'.",
+        "Lượng chỗ ẩn theo độ khó: Amateur 'Rất nhiều' → Intermediate 'Nhiều' → Professional 'Trung bình' → Nightmare và Insanity cùng mức Low (Ít), số chỗ trốn mở sẵn bằng hệt nhau.",
         "Map NHỎ: 6 Tanglewood Drive, 42 Edgefield Road, 10 Ridgeview Court, 13 Willow Street, Grafton Farmhouse, Camp Woodwind, Nell's Diner.",
         "Map TRUNG BÌNH: Point Hope, Bleasdale Farmhouse, Prison, Maple Lodge Campsite, Sunny Meadows (Restricted).",
         "Từ v0.19.0 (08/2026) có thêm 3 bản Restricted thu gọn: Point Hope (Restricted), Prison (Restricted), Brownstone High School (Restricted) — xe tải dời sát cửa chính ở trường học và nhà tù.",
@@ -69,7 +69,7 @@
         "Ultraviolet (UV): dấu tay / vân ngón / dấu chân bằng đèn UV; tồn tại ~2 phút (Obake có dấu 6 ngón và tự biến nhanh hơn).",
         "Freezing = nhiệt kế ≤0°C (điện tử ≤0.9°C là chốt vì ma không-Freezing bị chặn ở 1.0°C). Hơi thở trắng xuất hiện dưới ~5°C nên mọi ma đều thở khói — không phải bằng chứng.",
         "Ghost Orb: CHỈ thấy qua màn hình Video Camera (đặt máy trong phòng, bật night vision). The Mimic luôn có orb giả.",
-        "Ghost Writing: đặt sổ trong phòng ma; ma có thể NÉM sổ mà không viết → gạch Ghost Writing.",
+        "Ghost Writing: đặt sổ trong phòng ma; ma NÉM sổ mà không viết → gạch Writing — CHỈ ở độ khó 3 bằng chứng (Nightmare/Insanity bị ẩn vẫn ném).",
         "D.O.T.S Projector: đứng ngoài chiếu vào phòng để bắt bóng ma lướt qua; Goryo chỉ hiện qua CAMERA và khi phòng không người.",
         "Số bằng chứng 'bắt buộc' theo độ khó: Amateur/Inter/Pro = 3, Nightmare = 2, Insanity = 1."
       ]
@@ -111,8 +111,8 @@
         "Mỗi ván có ĐÚNG 1 đồ (Insanity: 0). Dùng đồ nào sẽ khoá các đồ khác, kết thúc setup ngay và có thể gây Cursed Hunt.",
         "Cầu Cơ: câu hỏi càng giá trị càng tốn sanity. BẮT BUỘC nói 'Goodbye' trước khi rời, không thì bàn vỡ + cursed hunt.",
         "Gương Ma Ám: soi thấy trực tiếp phòng ma (tốn 7.5% sanity/giây, tối thiểu 20% mỗi lần soi). Soi tới khi sanity cạn = gương vỡ + cursed hunt.",
-        "Hộp Nhạc: lên dây cho ma hát theo (lộ vị trí). Đến quá gần (<5m) / thả hộp vỡ / ma chạm vào = hiện hình + cursed hunt.",
-        "Búp Bê Voodoo: mỗi cây kim -5% sanity và ép ma tương tác. Ghim trúng KIM TRÁI TIM = cursed hunt ngay.",
+        "Hộp Nhạc: vào <5m quanh ma (2.5m Yokai) chỉ làm ma hiện hình + bước tới. Cursed Hunt chỉ nổ khi ma chạm trong 1m (0.5m Yokai) / đi bộ quá 5s / bạn NÉM hộp đang phát (Đặt/Place thì an toàn) / người nghe trong 3m chạm 0% sanity.",
+        "Búp Bê Voodoo: mỗi kim -5% sanity và ép tương tác (có thể ra EMF 5/UV — nhưng không ép viết sổ, D.O.T.S hay thổi lửa). Ghim trúng KIM TRÁI TIM = cursed hunt ngay.",
         "Vòng Triệu Hồi: thắp 5 nến (mỗi nến -16% sanity), ma đứng yên giữa vòng 5 giây rồi cursed hunt — thời điểm vàng chụp ma 3 sao.",
         "Tarot: rút lá ngẫu nhiên. Lá Death = cursed hunt với grace chỉ 1s; Wheel of Fortune lửa đỏ -25% hoặc lửa xanh +25%.",
         "Monkey Paw: đọc điều ước bằng tiếng Anh, luôn kèm PHẢN PHỆ. 'I wish for knowledge' xoá 1 bằng chứng sai nhưng rủi ro hunt ngay."
@@ -122,7 +122,7 @@
       "id": "equipment",
       "title": "Dụng Cụ — Mẹo Nâng Cao",
       "items": [
-        "Thánh giá (Crucifix): T1 bán kính 3m/1 lần, T2 4m/2 lần, T3 5m/2 lần + chặn được cả Cursed Hunt. Đặt trong phòng ma để chặn hunt.",
+        "Thánh giá (Crucifix): T1 bán kính 3m/1 lần, T2 4m/2 lần, T3 5m/2 lần + chặn được cả Cursed Hunt (chỉ khi còn nguyên 2/2 lượt — 1 lần chặn đốt cả 2 nhánh). Đặt trong phòng ma để chặn hunt.",
         "Nhang/Incense: PHẢI đốt SÁT ma mới tính. Khi hunt: mù ma 5s (T2 thêm -50% tốc, T3 khoá chân đứng im 5s; Moroi mù 7s, Gallu Enraged 4s / Weakened 6s). Ngoài hunt: chặn hunt 90s (Demon 60s, Spirit 180s). Nhang còn làm ma năng động hơn (+20 đến +29 activity).",
         "Nhiệt kế: dùng T2/T3 đo nhanh. Phòng ma thường dưới 10°C; chốt Freezing ở ≤0°C (điện tử ≤0.9°C). Hơi thở trắng dưới ~5°C không phải bằng chứng.",
         "Đèn UV T3 đặt sàn toả 360° soi mọi dấu tự động — tiện nhất để bắt UV diện rộng.",
