@@ -124,9 +124,9 @@ const VIP_TIPS = {
     speed: "Mới vào 2.75 (195 BPM) + hunt 75% → già còn 1.0 (70 BPM) + hunt 15%. Đứng gần nó để ép già."
   },
   aswang: {
-    chot: ["Đang hunt mà nó đi vào chỗ ẩn chính thức (closet/locker) thì hunt KẾT THÚC ngay → Aswang."],
-    gach: [],
-    speed: "Base 1.53 (chậm hơn chuẩn) nhưng tăng tốc LOS NHANH nhất game. Có thể hunt grace = 0."
+    chot: ["Đang hunt mà nó bước vào tủ/locker đang có người thì hunt KẾT THÚC ngay, không ai chết → Aswang. Hunt sau nó lao thẳng tới chỗ bạn với grace ≈ 0 → càng chắc."],
+    gach: ["Thấy nó giết người đang trốn trong tủ/locker CHÍNH THỨC → gạch Aswang. (Nấp sau bàn ghế tự chế vẫn chết — không tính.)"],
+    speed: "Base 1.53 nhưng tăng tốc LOS NHANH nhất game (max ~2.52 chỉ sau ~8.7 giây; ma thường 13 giây). Mất dấu giảm tốc cực chậm (~65 giây)."
   },
   dayan: {
     chot: ["Dấu chân UV ngón quay ngược 180° → chốt Dayan."],
@@ -134,9 +134,9 @@ const VIP_TIPS = {
     speed: "Trong 10m: bạn DI CHUYỂN → 2.25 + hunt 65%; bạn ĐỨNG YÊN → 1.2 + hunt 45%. Không tăng tốc LOS. Dấu chân UV ngón quay ngược 180°."
   },
   deildegast: {
-    chot: ["Mới vào hunt phi 3.0 rồi chậm dần theo số đồ bị xê dịch (26 món → 0.4) → chốt Deildegast."],
+    chot: ["Hunt đầu phi 3.0; ném ~26 món TRƯỚC hunt sau → còn 0.4 → chốt Deildegast. Ngoài hunt nó gần như không đụng cửa/công tắc mà chỉ ném đồ (~85% tương tác)."],
     gach: [],
-    speed: "Bắt đầu hunt 3.0 → mỗi đồ bị xê dịch -0.1, 26 món → còn 0.4. Không tăng tốc LOS."
+    speed: "3.0 đầu trận → mỗi món xê dịch TRƯỚC hunt -0.1 (26 món → 0.4). Ném GIỮA hunt vô ích. Reset về 3.0 sau hunt/crucifix. Không tăng tốc LOS."
   },
   gallu: {
     chot: ["Đổi tốc độ theo 3 mức 1.7/1.96/1.36 trong lúc hunt → chốt Gallu. Enraged dẫm muối KHÔNG để lại dấu chân (đừng nhầm Wraith)."],
@@ -144,9 +144,9 @@ const VIP_TIPS = {
     speed: "Normal 1.7 / Enraged 1.96 / Weakened 1.36. Dẫm muối/nhang/thánh giá → đổi trạng thái. Enraged KHÔNG dẫm muối (cẩn thận khi chốt Wraith)."
   },
   kormos: {
-    chot: ["Sprint gần nó → hunt sớm tới 70%; đứng yên thì nó lướt qua không phát hiện bạn → chốt Kormos."],
-    gach: [],
-    speed: "1.7, xa >5m lên 2.21. Gần như MÙ — đứng yên là nó đi qua không thấy. Sprint gần nó → hunt sớm 70%, nên ĐI BỘ."
+    chot: ["SPRINT cùng phòng nó → hunt sớm 70%; đứng yên + im lặng giữa hunt mà nó đi ngang qua không đổi hướng → chốt Kormos."],
+    gach: ["Thấy event khói (Mist Form) hoặc event giả săn đuổi (Chase) → gạch Kormos (nó không bao giờ làm 2 event này)."],
+    speed: "Roam 1.7; nghe tiếng động → lao 2.21 (×1.3) tới điểm phát âm. LoS chỉ ≤5m không vật cản. Nghe: sprint 30m / đi bộ 15m / crouch 10m. Nên ĐI BỘ + im mic."
   },
   obambo: {
     chot: ["Đổi tốc NGAY TRONG 1 hunt (1.45 ↔ 1.96) + tiếng chân giả phòng khác + vòi nước đen → chốt Obambo."],
@@ -224,11 +224,11 @@ const LOOP_TIPS = {
   moroi: "UỐNG THUỐC sanity trước khi loop để ép chậm (1.5). Sanity 0% + LOS là 3.71 không chạy nổi. Nhang mù 12s.",
   deogen: "KHÔNG TRỐN TỦ — ra bàn ăn đi bộ dắt nó vòng quanh. Xa phi 3.0, gần <2.5m bò 0.4 — bình tĩnh đi lùi.",
   thaye: "Đầu game trốn trước (2.75 rất nhanh). Ở gần cho nó già → cuối game loop dễ như ma thường.",
-  aswang: "Rải muối T3 quanh bàn — dẫm muối nó khựng 1.5s. Đề phòng hunt grace = 0 (khóa cửa là giết được ngay).",
+  aswang: "Chỉ tủ/locker CHÍNH THỨC mới cứu bạn (nó bước vào là hunt kết thúc) — nấp sau bàn ghế tự chế vẫn chết. Rải muối T3 quanh bàn. Hunt sau grace ≈ 0 và nó lao tới chỗ bạn: đổi chỗ nấp ngay.",
   dayan: "Giữ >10m để ép về 1.7. Trong 10m càng chạy nó càng nhanh (2.25) — vừa lùi vừa nhìn mặt, đừng quay lưng sprint.",
-  deildegast: "Trước khi loop, xê dịch/ném ~20+ đồ quanh map để ép chậm dần về 0.4. Loop ngoài phòng ma của nó.",
+  deildegast: "Ném ~20+ đồ TRƯỚC hunt để ép chậm về 0.4 (kể cả đồ do đồng đội đã chết ném). Đang hunt thì đừng ném — vô ích. Sau hunt/crucifix phải ném lại từ đầu.",
   gallu: "Đề phòng Enraged 1.96 — đừng loop đường thẳng dài. Sau 1 hunt nó Weakened 1.36 rất dễ. Muối/nhang/thánh giá làm đổi trạng thái nên đặt trước rồi hãy loop.",
-  kormos: "ĐI BỘ, không sprint. Chiếu đèn pin thẳng mặt khi hunt để ép chậm 1.4. Đứng yên + tắt đèn là nó đi qua.",
+  kormos: "ĐI BỘ, không sprint (sprint/ngồi-nghe: crouch 10m, đi bộ 15m, sprint 30m). Đứng yên + tắt đồ điện + im mic là nó đi qua không thấy.",
   obambo: "Nghe đổi tốc NGAY TRONG 1 hunt (1.45 ↔ 1.96) là nó — giữ vòng ngắn + nhang trong tay. Kệ tiếng chân giả phòng khác."
 };
 

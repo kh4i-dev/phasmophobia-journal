@@ -56,7 +56,8 @@
         "13 Willow Street đã rework (07/2026): gara cũ thành Gym + tắm phụ, ngủ 2 thành Art Studio, hầm mở (Laundry/Sports/Bar-bi-a); cầu dao chỉ còn ở Gym hoặc Laundry. 6 Tanglewood Drive đã rework (v0.16.0, 03/2026: bếp, hầm).",
         "Map LỚN: Brownstone High School, Sunny Meadows Mental Institution.",
         "Vài chỗ ẩn 'không chính thức' cộng đồng hay dùng (CHỈ cắt LOS, bản mới có thể KHÔNG còn an toàn): tủ lạnh Ridgeview, bàn gara Willow, bàn phòng trẻ Tanglewood, bàn ăn Edgefield.",
-        "Chọn chỗ ẩn ở GÓC KHUẤT / cuối hướng ma hay roam, tránh chỗ nằm trên đường di chuyển của nó."
+        "Chọn chỗ ẩn ở GÓC KHUẤT / cuối hướng ma hay roam, tránh chỗ nằm trên đường di chuyển của nó.",
+        "Từ v0.19.0.1 (09/2026) sảnh cổng Prison được bổ sung thêm props và điểm lưu vân tay — ma ở sảnh giờ có đồ để tương tác và in UV, dễ lấy bằng chứng hơn."
       ]
     },
     {
@@ -79,6 +80,8 @@
       "items": [
         "Từ bản Chronicle (2025): hệ thống Media (Ảnh, Video, Âm thanh) ăn thêm tiền/XP và được tính vào 'Perfect Investigation'.",
         "Ảnh chụp (Photo Camera) tính: Ma hiện hình, Xương, Xác đồng đội, Vân tay, Dấu chân, Vạch EMF, Nhiệt độ đóng băng, Nước bẩn, Thánh giá đã dùng, Chữ viết của ma, Đồ nguyền rủa.",
+        "Từ 2026 Photo Camera có khung ngắm nhận diện mục tiêu (Target Indicator) hiện trực tiếp đối tượng đang bắt dính trước khi bấm chụp — canh khung rồi hãy chụp để ăn Unique.",
+        "Xương (Bone) sau khi nhặt đã được lưu hình ảnh/thông tin vào Journal — không cần nhớ vị trí cũ nữa.",
         "Ảnh Ma lúc hiện hình rõ ràng là loại giá trị cao nhất (ảnh 3 sao).",
         "Video (Video Camera): quay Ma, Ghost Orbs, D.O.T.S, đồ vật bay... nhớ bật night vision.",
         "Âm thanh (Sound Recorder): ghi 2 âm thanh kỳ lạ KHÁC NHAU để ăn tiền và hoàn thành Objective.",
@@ -126,7 +129,9 @@
         "Muối T3 (vạch dài): ma dẫm qua bị làm chậm; muối cũng để lộ dấu chân (trừ Wraith) và mỗi đống quanh bàn loop làm chậm ~2s.",
         "Video Camera: bật night vision để bắt Orbs & D.O.T.S; đặt trên Tripod để rảnh tay làm việc khác.",
         "Motion / Sound Sensor: gắn quanh map để theo dõi ma roaming & phát hiện phòng — nhưng là đồ điện khiến ma hút khi hunt, cân nhắc khi nấp.",
-        "Head Gear: giữ Special để bật/tắt. Tắt ĐẦU TIÊN khi hunt bắt đầu (đồ bật hút ma). T3 bị mờ → bật/tắt một lần trong xe (van) để clear."
+        "Head Gear: giữ Special để bật/tắt. Tắt ĐẦU TIÊN khi hunt bắt đầu (đồ bật hút ma). T3 bị mờ → bật/tắt một lần trong xe (van) để clear.",
+        "Có thể giơ Đồng hồ (Watch) lên xem ngay cả khi đang cầm thiết bị trên tay — tiện canh Smudge Timer và chu kỳ 2 phút của Obambo.",
+        "Trên PC có phím tắt 1, 2, 3, 4 rút thẳng từng ô trang bị, bỏ qua animation mở sổ/đổi đồ."
       ]
     },
     {
@@ -189,6 +194,7 @@
         "3 sự kiện chính lặp hằng năm, mỗi cái kéo dài ~3 tuần: Cursed Hollow (mùa Xuân), Crimson Eye (Halloween), Winter's Jest (Giáng Sinh).",
         "Cursed Hollow (Easter, khoảng cuối tháng 3 – giữa tháng 4): săn trứng ma & Jackalope, thu điểm mở khoá cosmetic.",
         "Crimson Eye (Halloween, khoảng đầu tháng 10 – đầu tháng 11): 'Blood Moon' (trăng máu), bộ map sự kiện cố định, điểm cá nhân & cộng đồng, Twitch drop áo.",
+        "Từ v0.19.1.0 (10/2026) có nút Seasonal Event Toggle: chủ động bật/tắt thời tiết Blood Moon cho phòng chơi của mình.",
         "Winter's Jest (tháng 12): chủ đề Krampus / Giáng Sinh.",
         "Sự kiện có CẢ quà cộng đồng lẫn quà cá nhân; tiến trình được giữ qua các năm — một số kỷ vật cũ đã ngừng nên không lấy lại được.",
         "Trong sự kiện thường có Double XP & Rewards (mọi hợp đồng được x2) vài ngày — thời điểm cày tiền/level nhanh nhất.",

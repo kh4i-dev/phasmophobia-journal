@@ -105,11 +105,11 @@
       moroi: "Nghe Spirit Box bị dính nguyền tụt Sanity gấp đôi trong bóng tối. Sanity càng thấp chạy càng nhanh (0% Sanity chạy 2.25 m/s, có LOS lên tới 3.71 m/s - NHANH NHẤT GAME!). Nhang làm mù Moroi 12s lúc hunt.",
       deogen: "LUÔN BIẾT VỊ TRÍ CỦA BẠN (KHÔNG ĐƯỢC TRỐN TỦ). Ở xa lao tới cực nhanh (3.0 m/s), khi lại gần bạn (<2.5m) đi bộ dưỡng sinh cực chậm (0.4 m/s). Spirit Box ở cự ly <1m có tiếng thở dốc ồ ồ độc quyền!",
       thaye: "Mới vào game cực kỳ trẻ và hung hãn (săn ở 75% Sanity, chạy 2.75 m/s). Càng về sau càng già đi nếu người chơi ở gần nó (săn tụt xuống 15%, chạy chậm 1.0 m/s). Không tăng tốc theo LOS.",
-      aswang: "Aswang 2026: Base 1.53 m/s tăng tốc theo LOS nhanh nhất game. Đang hunt mà nó bước vào chỗ ẩn chính thức (tủ/hộc) thì hunt KẾT THÚC ngay; có thể hunt với grace = 0.",
+      aswang: "Aswang 2026: Base 1.53 m/s, tăng tốc LOS nhanh nhất game (max ~2.52 sau ~8.7 giây). Bước vào tủ/locker có người → hunt KẾT THÚC ngay; hunt sau lao tới chỗ bạn với grace ≈ 0. Chỉ chỗ ẩn CHÍNH THỨC mới miễn tử.",
       dayan: "Dayan 2026: Chỉ NỮ. Trong 10m: bạn ĐI BỘ → 2.25 m/s (hunt 65%); bạn ĐỨNG YÊN → 1.2 m/s (hunt 45%); xa hơn 10m → 1.7 m/s (hunt 50%).",
-      deildegast: "Deildegast 2026: Tốc độ 3.0 m/s (chưa xê dịch đồ) giảm dần tới 0.4 m/s khi đủ 26 món bị xê dịch; reset về max sau hunt hoặc khi bị thánh giá chặn.",
+      deildegast: "Deildegast 2026: 3.0 đầu trận, mỗi món xê dịch TRƯỚC hunt −0.1 (26 món → 0.4). Ném giữa hunt VÔ ÍCH; reset về 3.0 sau hunt/crucifix. Không tính: đồ mang theo, đồ nguyền, cửa, đồ ma ném, cờ vua.",
       gallu: "Gallu 2026: 3 trạng thái Normal/Enraged/Weakened — hunt 50%/60%/40%, tốc độ 1.7/1.96/1.36 m/s. Enraged đi qua muối không để lại dấu chân; tầm thánh giá −2m.",
-      kormos: "Kormos 2026: Gần như MÙ nhưng cảm nhận chuyển động tới 30m; SPRINT gần nó → hunt sớm tới 70% (bình thường 50%). Nên ĐI BỘ.",
+      kormos: "Kormos 2026: Gần như MÙ (LoS chỉ ≤5m không vật cản) nhưng nghe bước chân 30m sprint / 15m đi bộ / 10m crouch. Nghe tiếng → lao 2.21 m/s. SPRINT cùng phòng → hunt 70%. Không bao giờ event khói/Chase. Nên ĐI BỘ + im lặng.",
       obambo: "Obambo 2026: Đổi trạng thái mỗi 2 phút (kể cả giữa hunt): Calm (hunt 10%, 1.45 m/s) ↔ Aggressive (hunt 65%, 1.96 m/s); hunt Aggressive ngắn hơn 20%."
     };
 

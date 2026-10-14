@@ -792,9 +792,9 @@
       "strength": "Săn mồi đơn độc: Rất hung dữ, có thể hunt với grace period = 0 và tăng tốc theo LOS nhanh nhất trong các loài ma. Có thể tạo tiếng động vật giả để dụ người chơi.",
       "weakness": "Không giết được người đang trốn: Hễ nó bước vào chỗ ẩn chính thức (tủ/hộc) đang có người, cuộc đi săn kết thúc ngay lập tức."
     },
-    "deep_mechanics": "Đừng đua tốc độ với nó; hãy nấp vào chỗ ẩn chính thức — chỉ cần nó bước vào là hunt kết thúc, cho bạn thoát thân.",
-    "hidden_test": "Đang hunt mà nó chui vào chỗ ẩn chính thức (tủ/hộc) thì hunt kết thúc ngay → Aswang. Cũng có thể hunt với grace period = 0.",
-    "looping_guide": "Loop sát các chỗ ẩn chính thức để phòng pha grace = 0.",
+    "deep_mechanics": "Tăng tốc LoS 0.075×base/giây (ma thường 0.05×) → chạm trần ~2.52 m/s chỉ sau ~8.7 giây (ma thường 13 giây). Mất dấu thì giảm tốc cực chậm (~65 giây mới về 1.53). Chỉ miễn tử trong chỗ ẩn CHÍNH THỨC (tủ/locker đúng chuẩn) — nấp sau bàn ghế tự chế vẫn chết.",
+    "hidden_test": "Đang hunt mà nó bước vào tủ/locker đang có người → hunt KẾT THÚC ngay, không ai chết → Aswang. Nhớ: hunt sau nó lao thẳng tới vị trí hiện tại của người đó với grace ≈ 0 giây.",
+    "looping_guide": "Đừng đua đường dài (nó đạt tốc tối đa sau ~9 giây). Loop sát chỗ ẩn chính thức; cắt LoS sớm vì nó giảm tốc rất chậm.",
     "notes": "Loài ma truyền thuyết Nam Đảo/Philippines trong bản mở rộng folklore Phasmophobia."
   },
   {
@@ -856,9 +856,9 @@
       "strength": "Lợi thế đầu ván: Hung hãn và chạy nhanh tối đa (3.0 m/s) khi chưa có đồ vật nào trong nhà bị xê dịch.",
       "weakness": "Chậm dần theo đồ vật: Mỗi món đồ bị xê dịch giảm tốc độ (đủ 26 món → còn 0.4 m/s). Tốc độ reset về tối đa sau mỗi hunt hoặc khi bị thánh giá chặn."
     },
-    "deep_mechanics": "Ném/xê dịch đồ để ép tốc độ nó xuống; nó mạnh nhất ở giai đoạn đầu ván.",
-    "hidden_test": "Mới vào hunt chạy 3.0 m/s rồi chậm dần khi đồ đạc trong nhà bị xê dịch.",
-    "looping_guide": "Loop quanh bàn; vừa loop vừa ném đồ để giảm tốc nó.",
+    "deep_mechanics": "Chỉ đồ bị xê dịch TRƯỚC hunt mới tính (kể cả đồ do người chơi đã chết ném). Ném đồ GIỮA hunt không giảm tốc hunt đó. Sau mỗi hunt HOẶC mỗi lần cháy 1 Thánh Giá, tốc độ reset về 3.0 (phải ném lại). Không tính: đồ mang theo, đồ nguyền rủa, cửa/công tắc, đồ do ma ném, quân cờ vua.",
+    "hidden_test": "Hunt đầu phi 3.0 m/s. Ném ~26 món TRƯỚC hunt sau → còn 0.4 m/s. Ngoài hunt nó ít đụng cửa/công tắc (10% so với 25% ma thường), dành ~85% tương tác để ném đồ.",
+    "looping_guide": "Chuẩn bị TRƯỚC hunt: ném ~20+ đồ quanh map để ép chậm. Giữa hunt đang chạy thì ném đồ vô ích — tập trung loop. Sau hunt/crucifix phải ném lại từ đầu.",
     "notes": "Linh hồn kẻ lừa đảo dời cột mốc đất đai trong truyền thuyết dân gian Bắc Âu."
   },
   {
@@ -914,15 +914,15 @@
       "max_los": 2.21,
       "bpm_base": 95,
       "bpm_max": 170,
-      "description": "Base 1.7 m/s; tăng tốc khi đuổi theo chuyển động của bạn (tối đa ~2.21 m/s)."
+      "description": "Base 1.7 m/s khi roam. Nghe tiếng động thì lao tới điểm phát âm với tốc độ ×1.3 = 2.21 m/s (chưa có LoS). Chỉ lấy được LoS trong phạm vi ≤5m không vật cản."
     },
     "traits": {
-      "strength": "Săn theo chuyển động: Gần như mù nhưng cảm nhận chuyển động của người chơi tới 30m — vào hunt ở 50%, và tới 70% nếu bạn SPRINT ở gần nó.",
-      "weakness": "Không thấy người đứng yên: nó định vị bằng chuyển động, nên đi bộ chậm hoặc đứng yên là nó mất dấu."
+      "strength": "Săn theo âm thanh: cảm nhận bước chân tới 30m (sprint), 15m (đi bộ), 10m (crouch) + giọng nói/đồ điện. SPRINT cùng phòng với nó → hunt sớm tới 70% (bình thường 50%).",
+      "weakness": "Gần như MÙ: không có LoS mặc định, chỉ lấy LoS trong ≤5m không vật cản. Đứng yên + im lặng là nó mất dấu. Không bao giờ làm event khói (Mist Form) hay event giả săn đuổi (Chase)."
     },
-    "deep_mechanics": "TUYỆT ĐỐI không sprint khi nó ở gần. Đứng yên là cách qua mặt nó.",
-    "hidden_test": "SPRINT gần nó → hunt sớm tới 70%. Đứng yên thì nó lướt qua mà không phát hiện bạn.",
-    "looping_guide": "Đi bộ chậm, tránh sprint gần nó; đứng yên khi nó lướt qua.",
+    "deep_mechanics": "Mỗi giây trong hunt (trừ grace và lúc bị nhang mù), Kormos quét âm thanh bước chân cùng tầng (trong tầm + đường đi ≤1.5 lần tầm) rồi lao tới điểm ồn nhất với 2.21 m/s. Va chạm trực tiếp vẫn giết được dù không thấy bạn.",
+    "hidden_test": "SPRINT cùng phòng nó → hunt sớm tới 70%. Đứng yên giữa hunt mà nó đi ngang qua không đổi hướng → Kormos. Thấy event khói (Mist/Chase) → gạch Kormos.",
+    "looping_guide": "Đi bộ chậm (crouch càng tốt), tắt đồ điện, im mic; đứng yên khi nó lướt qua. Đừng loop đường dài vì nó lao 2.21 m/s tới mọi tiếng động.",
     "notes": "Sinh vật bóng tối săn mồi trong bóng đen hoàn toàn."
   },
   {
