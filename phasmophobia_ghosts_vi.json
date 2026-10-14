@@ -57,7 +57,7 @@
       "weakness": "Bay nên KHÔNG BAO GIỜ dẫm lún muối (đống muối nguyên chóp, không sột soạt; muối T3 cũng không chậm được Wraith). Thấy muối BỊ LÚN (dù có/không dấu UV) → gạch ngay Wraith."
     },
     "deep_mechanics": "Kỹ năng Teleport của Wraith cực kỳ nguy hiểm vì nó có thể dịch chuyển đến sát lưng bạn rồi bất ngờ kích hoạt cuộc săn ngay tại chỗ bạn đang đứng, biến vị trí trốn của bạn thành tử địa.",
-    "hidden_test": "BÀI TEST MUỐI ĐÚNG:\n1. Rải 2-3 đống muối ở cửa phòng/hành lang + đặt cảm biến chuyển động (Motion Sensor) hoặc chĩa D.O.T.S/camera vào vạch muối.\n2. Ma đi qua làm sáng cảm biến mà ĐỐNG MUỐI VẪN NGUYÊN CHÓP (không lún, không sột soạt) -> 100% Wraith (hoặc Gallu Enraged)!\n(Lưu ý: chỉ ma có UV mới để lại dấu chân UV — 16 ma không-UV dẫm lún cũng không có dấu, nên thiếu dấu chân KHÔNG chốt được Wraith!)",
+    "hidden_test": "BÀI TEST MUỐI ĐÚNG:\n1. Rải 2-3 đống muối ở cửa phòng/hành lang + đặt cảm biến chuyển động (Motion Sensor) hoặc chĩa D.O.T.S/camera vào vạch muối.\n2. Ma đi qua làm sáng cảm biến mà ĐỐNG MUỐI VẪN NGUYÊN CHÓP (không lún, không sột soạt) -> 100% Wraith (hoặc Gallu Enraged)!\n(Lưu ý: Chỉ cần thấy đống muối bị dẫm lún bẹp xuống -> Gạch bỏ Wraith ngay 100%! Tuyệt đối không dùng đèn UV để test Wraith, vì 16 loài ma không có bằng chứng UV khi dẫm lún muối cũng không hiện dấu chân UV.)",
     "looping_guide": "Tốc độ bình thường 1.7 m/s. Không thể bay xuyên tường khi hunt như lời đồn, nhưng có thể bắt đầu hunt ở vị trí bất ngờ do dịch chuyển trước đó.",
     "notes": "Không thể bay xuyên tường khi hunt, nhưng có thể dịch chuyển tức thời tới người chơi ngoài lúc hunt."
   },
