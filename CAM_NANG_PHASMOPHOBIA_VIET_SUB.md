@@ -29,11 +29,11 @@
 
 | Bằng Chứng (English) | Tên Việt Sub | Dụng Cụ Đo | Cách Phát Hiện & Lưu Ý |
 | :--- | :--- | :--- | :--- |
-| **EMF Level 5** | Chỉ Số EMF Cấp 5 | Máy dò EMF | Máy kêu tít tít lớn và nhảy vạch đỏ số 5 khi ma tương tác (xác suất 25% khi ma chạm đồ vật). |
+| **EMF Level 5** | Chỉ Số EMF Cấp 5 | Máy dò EMF | Máy kêu tít tít lớn và nhảy vạch đỏ số 5 khi ma tương tác (xác suất 33% (1/3) khi ma chạm đồ vật). |
 | **Spirit Box** | Hộp Nói Chuyện Ma | Máy thu âm Spirit Box | Tắt hết đèn trong phòng, đứng một mình gần ma, bấm nút nói micro (hỏi *"Where are you?", "How old are you?"*). Ma phản hồi qua loa. |
 | **Ultraviolet (UV)** | Tia Cực Tím / Dấu Vân Tay | Đèn UV, Đèn Neon UV | Soi đèn UV vào cánh cửa, cửa sổ, công tắc đèn vừa bị ma chạm, hoặc rải muối để soi dấu bước chân UV. |
 | **Ghost Writing** | Sổ Ghi Chép Ma Ám | Cuốn sổ tay ma | Đặt sổ gần vị trí ma đi lại. Ma sẽ vẽ hình quỷ hoặc viết chữ nguệch ngoạc vào sổ. |
-| **Freezing Temperatures** | Nhiệt Độ Đóng Băng | Nhiệt kế / Mắt thường | Nhiệt độ phòng tụt xuống dưới 0°C (< 32°F). Người chơi thở ra làn sương khói trắng từ miệng. |
+| **Freezing Temperatures** | Nhiệt Độ Đóng Băng | Nhiệt kế / Mắt thường | Nhiệt độ phòng tụt xuống dưới 0°C (< 32°F). Hơi thở trắng xuất hiện dưới ~5°C nên mọi ma đều thở khói — không phải bằng chứng. Chốt Freezing bằng nhiệt kế ≤0°C (điện tử ≤0.9°C là chốt vì ma không-Freezing bị chặn ở 1.0°C). |
 | **Ghost Orb** | Quả Cầu Ma / Đốm Sáng | Video Camera (Night Vision) | Tắt đèn phòng, bật chế độ hồng ngoại ban đêm của camera, quan sát thấy các đốm sáng nhỏ bay lơ lửng như đom đóm. |
 | **D.O.T.S Projector** | Máy Chiếu Ma D.O.T.S | Máy chiếu lưới xanh D.O.T.S | Bật máy chiếu lưới laser xanh lên sàn/tường. Khi ma bước qua sẽ thấy bóng ma màu xanh chạy qua rất nhanh. |
 
@@ -62,11 +62,11 @@
 | 15 | **Goryo** | EMF 5, UV, D.O.T.S | 50% | 1.7 (Chuẩn) | D.O.T.S **chỉ nhìn thấy qua Video Camera** khi không có ai trong phòng. Không đổi phòng. |
 | 16 | **Myling** | EMF 5, UV, Writing | 50% | 1.7 (Chuẩn) | **Bước chân cực êm khi hunt**: Chỉ nghe thấy tiếng bước chân khi đèn pin đã nhấp nháy (< 10m). |
 | 17 | **Onryo** | Spirit Box, Orb, Freezing | 60% (Không nến) | 1.7 (Chuẩn) | **Sợ lửa**: Coi nến như thánh giá. Thổi tắt 3 ngọn nến liên tiếp là **lập tức đi săn**. |
-| 18 | **The Twins** | EMF 5, Spirit Box, Freezing | 50% | Con chậm 1.53 / Con nhanh 1.87 | Tương tác 2 nơi cùng lúc. Đợt săn này chạy chậm (90%), đợt sau chạy nhanh (110%). |
+| 18 | **The Twins** | EMF 5, Spirit Box, Freezing | 50% | Chậm 1.5 / Nhanh 1.9 (1 thực thể) | Tương tác 2 nơi cùng lúc. Đợt săn này chạy chậm (90%), đợt sau chạy nhanh (110%). |
 | 19 | **Raiju** | EMF 5, Ghost Orb, D.O.T.S | 65% (Gần đồ điện) | 1.7 → 2.5 (Kích điện) | Hút sóng điện tử. Làm nhiễu đèn pin từ xa (15m). **Tăng tốc vọt lên 2.5 m/s** gần thiết bị điện. |
 | 20 | **Obake** | EMF 5, UV, Ghost Orb | 50% | 1.7 (Chuẩn) | **Dấu tay 6 ngón** độc quyền (16.7%). Giấu vân tay 25%. Chớp biến hình dạng khác khi hunt. |
 | 21 | **The Mimic** | Spirit Box, UV, Freezing | *Biến thiên* | *Sao chép tùy con* | **MA LỪA: Luôn có Ghost Orb giả** (tổng 4 bằng chứng, kể cả 0-Evidence). Sao chép năng lực mọi loài ma. |
-| 22 | **Moroi** | Spirit Box, Writing, Freezing | 50% | 1.5 → 3.71 (Sanity thấp + LOS) | Nguyền rủa qua Spirit Box làm tụt đôi Sanity. Càng thấp Sanity chạy càng nhanh. Nhang mù 12s. |
+| 22 | **Moroi** | Spirit Box, Writing, Freezing | 50% | 1.5 → 3.71 (Sanity thấp + LOS) | Nguyền rủa qua Spirit Box làm tụt đôi Sanity. Càng thấp Sanity chạy càng nhanh. Nhang mù 7s (ma thường 5s). |
 | 23 | **Deogen** | Spirit Box, Writing, D.O.T.S | 40% | 3.0 (Ở xa) → **0.4 (Ở gần)** | **MA THỞ DỐC (LUÔN BIẾT CHỖ TRỐN)**: Biết chỗ trốn 100%. Tiếng thở khò khè qua Spirit Box. Ở gần đi chậm như rùa. |
 | 24 | **Thaye** | Ghost Orb, Writing, D.O.T.S | 75% (Trẻ) → 15% (Già) | 2.75 (Trẻ) → 1.0 (Già) | Lão hóa theo thời gian. Mới vào hunt sớm và chạy cực nhanh, về sau già đi thì yếu và chậm. |
 | 25 | **Aswang** | Freezing, Writing, D.O.T.S | 50% | 1.53 → 2.52 (Tăng tốc LOS nhanh nhất game) | **Aswang (2026)**: Base chậm (1.53 m/s) nhưng tăng tốc theo LOS nhanh nhất game; có thể hunt với grace period = 0. Không giết được người trốn trong chỗ ẩn chính thức. |
@@ -110,8 +110,8 @@
   - Khi Deogen kích hoạt cuộc săn, nó **LUÔN BIẾT BẠN Ở ĐÂU**. Dù bạn chui vào tủ đóng cửa, trốn trong kẹt, tắt hết đèn pin, nó vẫn sẽ đi xuyên map thẳng tới chỗ bạn.
   - **Ai trốn tủ gặp Deogen là CẦM CHẮC CÁI CHẾT!**
 - **Cơ chế tốc độ đảo ngược (Cực nhanh ở xa - Cực chậm ở gần):**
-  - Khoảng cách > 6m: Chạy với vận tốc **3.0 m/s** (bằng Revenant), tiếng chân dồn dập rầm rầm.
-  - Khoảng cách < 2.5m: Tự động phanh gấp, đi chậm chạp với vận tốc **0.4 m/s** (chậm hơn cả tốc độ đi bộ của bạn là 1.6 m/s).
+  - Khoảng cách > 5.3m (đường đi): Chạy với vận tốc **3.0 m/s** (bằng Revenant), tiếng chân dồn dập rầm rầm.
+  - Khoảng cách < 2.4m (đường đi, mở khóa khi chủ phòng Level 30+): Tự động phanh gấp, đi chậm chạp với vận tốc **0.4 m/s** (chậm hơn cả tốc độ đi bộ của bạn là 1.6 m/s).
 - **Cách sống sót:**
   - Không được trốn! Hãy chạy ra khu vực có bàn ăn, quầy bếp, đảo bếp hoặc xe hơi trong gara.
   - Đứng nhìn thẳng vào Deogen, vừa đi bộ lùi vừa dắt nó đi vòng quanh cái bàn (**Looping**). Bạn hoàn toàn có thể "dắt Deogen đi dạo" cho tới khi hết giờ hunt!
@@ -145,7 +145,7 @@
 | Loài Ma | Tốc Độ Tối Đa | Cơ Chế Tốc Độ | Cách Khắc Chế / Phân Biệt |
 | :--- | :---: | :--- | :--- |
 | **Revenant** | **3.0 m/s** | Không thấy ai: Đi chậm rùa bò (1.0 m/s). Thấy người/nghe tiếng: Phóng 3.0 m/s. | Nghe nhịp chân. Nếu chậm rì rồi bỗng lao tới điên cuồng khi thấy bạn -> Rev. Trốn kỹ ngay! |
-| **Moroi** | **3.71 m/s** | Sanity càng thấp chạy càng nhanh (0% Sanity chạy 2.25 m/s + tăng tốc theo đường nhìn LOS lên 3.71 m/s). | Uống thuốc Sanity để làm chậm Moroi. Nhang làm mù Moroi tới 12s khi hunt. |
+| **Moroi** | **3.71 m/s** | Sanity càng thấp chạy càng nhanh (0% Sanity chạy 2.25 m/s + tăng tốc theo đường nhìn LOS lên 3.71 m/s). | Uống thuốc Sanity để làm chậm Moroi. Nhang làm mù Moroi tới 7s khi hunt (ma thường 5s). |
 | **Thaye** | **2.75 m/s** | Đầu game còn trẻ: Chạy 2.75 m/s, hunt ở 75% Sanity. Về già: Chậm còn 1.0 m/s, hunt 15%. | Hỏi tuổi qua bảng Ouija thấy tăng tuổi. Không tăng tốc theo LOS. |
 | **Hantu** | **2.7 m/s** | Phụ thuộc nhiệt độ: Phòng lạnh (<0°C) chạy 2.7 m/s. Phòng ấm (>15°C) chạy 1.4 m/s. | **Luôn luôn bật cầu dao** để sưởi ấm căn nhà. Quan sát hơi sương thở ra từ miệng khi tắt cầu dao. |
 
@@ -159,7 +159,7 @@
 2. **Kỹ năng ẩn dấu vân tay:**
    - 25% lần chạm cửa không để lại dấu vân tay. Dấu vân tay của Obake biến mất sau 60 giây (ma khác là 120s).
 3. **Biến hình khi Hunt (Shape-shift Flash):**
-   - Trong mỗi đợt hunt, cứ mỗi 1/15 lần chớp nhấp nháy, Obake có tỉ lệ 6.6% biến đổi hình dạng sang một nhân vật ma khác trong 1 chớp mắt rồi trở lại bình thường.
+   - Trong mỗi đợt hunt, Obake biến hình theo nhịp chớp cố định (nhịp 12, 27, 39... — lần đầu sau ~6-8 giây hết grace). Dấu vân tay thỉnh thoảng bị cắt nửa thời gian tồn tại. Ngoài tay 6 ngón còn có tay 2 ngón trên công tắc và 5 ngón trên bàn phím/cửa buồng giam.
 
 ---
 
@@ -172,9 +172,9 @@
    - **Moroi / Deogen**: BẮT BUỘC có **Spirit Box**.
 2. **Bài Test Muối:** Rải muối ở cửa: Nếu ma dẫm qua muối nhưng **hoàn toàn không có dấu chân UV** -> **Wraith**.
 3. **Bài Test Đèn Pin:** Ném đèn pin đang bật xuống đất khi Hunt:
-   - Nghe tiếng chân cùng lúc đèn pin bắt đầu nhấp nháy (< 10m) -> **Myling**.
+   - Nghe tiếng chân (~12m) gần như cùng lúc đèn pin nháy (10m) -> **Myling**.
    - Đèn pin bị nhiễu từ khoảng cách rất xa (> 15m) -> **Raiju**.
-4. **Bài Test Chụp Ảnh:** Khi có Ghost Event, bấm chụp ảnh: Bóng ma biến mất ngay lập tức và ảnh 3 sao không bị nhiễu sóng -> **Phantom**.
+4. **Bài Test Chụp Ảnh:** Khi có Ghost Event, bấm chụp ảnh: Bóng ma biến mất ngay lập tức và ảnh trống không bị nhiễu sóng -> **Phantom** (máy quay trúng cũng làm nó biến mất).
 5. **Bài Test Nhang:**
    - Hunt lại trong **60s - 89s**: **Demon**.
    - Không hunt cho đến tận sau **180s** (3 phút): **Spirit**.
@@ -192,12 +192,12 @@ Gồm 10 lá bài ngẫu nhiên. Mỗi lần rút sẽ cháy một ngọn lửa 
 | :--- | :---: | :--- | :--- |
 | **The Sun** | 5% | Vàng cam rực rỡ | Hồi phục Sanity của người rút lên **100% ngay lập tức**. |
 | **The Moon** | 5% | Trắng bạc / Xanh nhạt | Hạ Sanity của người rút xuống **0% ngay lập tức**. |
-| **The Tower** | 20% | Xanh da trời | Ép ma tạo một tương tác mạnh và tăng hoạt tính ma trong 20 giây. |
+| **The Tower** | 20% | Xanh da trời | Nhân đôi toàn bộ activity của ma trong 20 giây (không ép tương tác tức thì). |
 | **The Wheel of Fortune** | 20% | Xanh lá hoặc Đỏ | Lửa xanh: **+25% Sanity**. Lửa đỏ: **-25% Sanity**. |
 | **The Devil** | 10% | Đỏ thẫm | Kích hoạt sự kiện **Ghost Event** ngay tại chỗ người rút bài. |
 | **Death** | 10% | Tím đen u ám | **KÍCH HOẠT CURSED HUNT NGAY LẬP TỨC!** Thời gian trễ chuẩn bị chỉ 1s. |
 | **The Hermit** | 10% | Ngọc lam nhạt | Dịch chuyển ma về phòng và **khóa chân ma trong 1 phút**. |
-| **The High Priestess** | **2%** | Vàng kim nhạt | **HỒI SINH 1 ĐỒNG ĐỘI ĐÃ CHẾT**. Nếu chưa ai chết, dự trữ 1 mạng cho người chết tiếp theo! |
+| **The High Priestess** | **2%** | Vàng kim nhạt | **HỒI SINH theo thứ tự vào phòng chờ (lobby order)**. Nếu chưa ai chết, dự trữ 1 mạng cho người chết tiếp theo! |
 | **The Hanged Man** | **1%** | Bay lên không cháy | **GIẾT CHẾT NGƯỜI RÚT BÀI NGAY TỨC THÌ!** |
 | **The Fool** | 17% (100% khi hunt) | Hồng nhạt | Lá bài bịp: Ban đầu hiện hình lá khác rồi đổi thành The Fool và **hủy bỏ hiệu ứng**. |
 
@@ -209,13 +209,13 @@ Gồm 10 lá bài ngẫu nhiên. Mỗi lần rút sẽ cháy một ngọn lửa 
 
 | Câu Hỏi Tiếng Anh | Nghĩa Tiếng Việt | Tiêu Tốn Sanity | Tác Dụng & Ghi Chú |
 | :--- | :--- | :---: | :--- |
-| **"Where are you?"** / **"What is your favorite room?"** | Bạn đang ở đâu? Phòng nào? | **-50%** | Con cơ đánh vần chính xác tên căn phòng ma yêu thích. |
+| **"Where are you?"** / **"What is your favorite room?"** | Bạn đang ở đâu? Phòng nào? | **-50%** | Con cơ LUÔN đánh vần vị trí hiện tại của ma lúc hỏi (trùng phòng yêu thích chỉ khi ma đang ở đó). |
 | **"Where is the bone?"** | Khúc xương ở đâu? | **-20%** | Đánh vần tên phòng có khúc xương (nhặt xương kiếm tiền). |
-| **"Are you close?"** | Bạn có ở gần đây không? | **-20%** | Trả lời 'Yes' (trong vòng 5m) hoặc 'No'. |
+| **"Are you close?"** | Bạn có ở gần đây không? | **-20%** | Trả lời 'Yes' (trong vòng 4m) hoặc 'No'. |
 | **"How old are you?"** | Bạn bao nhiêu tuổi? | **-5%** | Trả lời số tuổi (Dùng để check Thaye xem có tăng tuổi không). |
 | **"What is my sanity?"** | Sanity của tôi là bao nhiêu? | **-5%** | Đánh giá mức độ tỉnh táo (Healthy > Good > Average > Bad > Awful). |
 | **"How many people are in this room?"** | Có bao nhiêu người trong phòng? | **-20%** | Đếm số người trong phòng (kể cả ma nếu có). |
-| **"Hide and seek"** | Chơi trốn tìm nào! | **Toàn bộ** | Đếm ngược 5-4-3-2-1, bàn vỡ và kích hoạt **Cursed Hunt** ngay! |
+| **"Hide and seek"** | Chơi trốn tìm nào! | **0%** | Đếm ngược 5-4-3-2-1, bàn vỡ và kích hoạt **Cursed Hunt** ngay! |
 | **"Goodbye"** | Tạm biệt | **0%** | Con cơ trượt về chữ GOODBYE và biến mất an toàn. |
 
 ---
@@ -237,10 +237,10 @@ Ban cho **3–5 điều ước** tùy độ khó (0x–1x = **5**, 1.01x–2x = 
 ---
 
 ### 🔮 CÁC VẬT PHẨM NGUYỀN RỦA CÒN LẠI
-1. **Gương Ma Ám (Haunted Mirror):** Soi vào gương để nhìn thấy phòng ma yêu thích. Tiêu tốn 20% Sanity mỗi giây. Nếu Sanity về 0% khi đang soi, gương vỡ vụn và kích hoạt Cursed Hunt!
+1. **Gương Ma Ám (Haunted Mirror):** Soi vào gương để nhìn thấy phòng ma yêu thích. Tiêu tốn 7.5% Sanity mỗi giây (tối thiểu 20% mỗi lần soi). Nếu Sanity về 0% khi đang soi, gương vỡ vụn và kích hoạt Cursed Hunt!
 2. **Hộp Nhạc Ma Quái (Music Box):** Lên dây cót phát nhạc du dương, ma sẽ cất tiếng hát theo từ xa. Nếu bạn cầm hộp nhạc lại gần ma (<5m), thả hộp nhạc rơi vỡ hoặc ma chạm vào hộp -> Kích hoạt Cursed Hunt lập tức!
 3. **Búp Bê Voodoo (Voodoo Doll):** Có 10 cây kim. Mỗi lần ghim trừ 5% Sanity và ép ma làm 1 tương tác. Nếu ghim trúng **cây kim ở Trái Tim (Heart Pin)** -> Kích hoạt Cursed Hunt ngay lập tức!
-4. **Vòng Tròn Triệu Hồi (Summoning Circle):** Thắp 5 cây nến đỏ bằng bật lửa (mỗi ngọn trừ 16% Sanity = 80% Sanity tổng). Khi thắp đủ 5 nến, ma bị triệu hồi đứng im giữa vòng tròn 5 giây (cơ hội vàng chụp ảnh 3 sao). Đúng sau 5 giây, ma lập tức bắt đầu Cursed Hunt!
+4. **Vòng Tròn Triệu Hồi (Summoning Circle):** Thắp 5 cây nến đỏ bằng bật lửa (mỗi ngọn trừ 16% Sanity của TẤT CẢ người đứng gần trong 3m). Khi thắp đủ 5 nến, ma bị triệu hồi đứng im giữa vòng tròn 5 giây (cơ hội vàng chụp ảnh ma). Thắp nến thứ 5 khi Sanity < 16%: ma bỏ qua đứng yên, hunt ngay sau 1s grace! Đúng sau 5 giây, ma lập tức bắt đầu Cursed Hunt!
 
 ---
 
@@ -279,12 +279,12 @@ Ban cho **3–5 điều ước** tùy độ khó (0x–1x = **5**, 1.01x–2x = 
   * *Tier 3 (Bạc Trừ Tà):* Dùng 2 lần, bán kính cực đại 5m (Demon: 7.5m). **Đặc biệt: Chặn được cả Cursed Hunt!**
 * **Nhang Trừ Tà (Incense / Smudge Sticks):**
   * *Tier 1:* Bó xô thơm, làm mù ma 5 giây khi hunt, ngoài hunt chặn hunt 90s (Demon: 60s, Spirit: 180s).
-  * *Tier 2:* Nhang ống kim loại, làm mù 5s VÀ làm chậm ma 25% trong 5s.
+  * *Tier 2:* Nhang ống kim loại, làm mù 5s VÀ làm chậm ma 50% trong 5s.
   * *Tier 3:* Lư hương trừ tà, làm mù 5s VÀ **KHÓA CHÂN ma đứng bất động tại chỗ trong 5s**!
 * **Thuốc Sanity (Sanity Medication):**
-  * *Tier 1:* Thuốc viên, hồi 20% Sanity chậm trong 30 giây.
-  * *Tier 2:* Thuốc con nhộng, hồi 35% Sanity trong 20 giây.
-  * *Tier 3:* Ống tiêm Adrenaline, **hồi 50% Sanity ngay lập tức + Sprint chạy không giới hạn trong 10 giây**!
+  * *Tier 1:* Hồi theo ĐỘ KHÓ trong 20 giây (Amateur 40% / Intermediate 35% / Professional 30% / Nightmare 25% / Insanity 20%).
+  * *Tier 2:* Cùng lượng theo độ khó, hồi trong 10 giây.
+  * *Tier 3:* Cùng lượng theo độ khó, hồi trong 10 giây + Sprint vô hạn 10 giây (KHÔNG hồi tức thì).
 * **Muối (Salt):**
   * *Tier 1:* Lọ rải 2 đống muối trên sàn (test chân UV Wraith).
   * *Tier 2:* Hộp rải 3 đống muối.

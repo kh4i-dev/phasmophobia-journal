@@ -18,9 +18,9 @@
     // THUỘC TÍNH NHÓM — dùng chung cơ chế LOẠI với bằng chứng (bấm là gạch thẳng con không liên quan)
     const GROUP_ATTRS = [
       { id: "early_hunt", label: "Săn Sớm (>60%)", desc: "Loài săn ở ngưỡng Sanity cao (>60%)",
-        test: g => (g.hunt_sanity >= 60 || g.id === "demon" || g.id === "yokai" || g.id === "thaye") },
+        test: g => (g.hunt_sanity >= 60 || ["demon", "yokai", "thaye", "dayan", "gallu", "kormos", "the_mimic"].includes(g.id)) },
       { id: "fast_speed", label: "Tốc Độ Cao", desc: "Loài có cơ chế tăng tốc đặc thù (LOS / điện / lạnh / bóng tối)",
-        test: g => ["revenant", "moroi", "deogen", "thaye", "deildegast", "hantu", "jinn", "raiju"].includes(g.id) }
+        test: g => ["revenant", "moroi", "deogen", "thaye", "deildegast", "hantu", "jinn", "raiju", "the_twins", "aswang", "dayan", "gallu", "kormos", "obambo", "the_mimic"].includes(g.id) }
     ];
 
     let ghostsData = [];
@@ -96,14 +96,14 @@
       yokai: "Nói chuyện hoặc dùng bộ đàm gần ma sẽ kích hoạt săn ở 80% Sanity. Lúc hunt bị điếc/mù thiết bị điện xa hơn 2.5m.",
       hantu: "Cực nhanh trong phòng lạnh (<0°C lên tới 2.7 m/s), siêu chậm trong phòng ấm (1.4 m/s). Thở ra khói lúc hunt khi tắt cầu dao. Không tăng tốc theo LOS.",
       goryo: "D.O.T.S chỉ nhìn thấy qua MÀN HÌNH VIDEO CAMERA và KHÔNG ĐƯỢC CÓ NGƯỜI TRONG PHÒNG. Không bao giờ đổi phòng yêu thích.",
-      myling: "Tiếng bước chân lúc hunt chỉ nghe thấy khi đèn pin bắt đầu nhấp nháy (<10m). Bình thường ma khác nghe từ 20m.",
+      myling: "Tiếng bước chân lúc hunt chỉ nghe trong ~12m (ma khác 20m) — gần như cùng lúc đèn pin nháy ở 10m. Hay phát 2 âm siêu nhiên trong 80s qua Paramic.",
       onryo: "Coi ngọn nến như thánh giá. Thổi tắt ngọn nến thứ 3 sẽ ép đi săn ngay lập tức bất kể Sanity (trừ khi có ngọn nến khác chặn).",
-      the_twins: "Có 2 tốc độ săn luân phiên: Con chính chậm 90% (1.5 m/s) và Con phụ nhanh 110% (1.87 m/s). Tương tác đồng thời ở 2 phòng khác nhau.",
+      the_twins: "Tốc độ săn luân phiên mỗi hunt: 1.5 m/s hoặc 1.9 m/s (1 thực thể, 2 bán kính tương tác nên đồ xa vẫn bị đụng).",
       raiju: "Tăng tốc lên tới 2.5 m/s khi ở gần thiết bị điện của người chơi (đèn pin, EMF, video cam). Làm nhiễu thiết bị từ khoảng cách 15m (ma thường 10m).",
-      obake: "Dấu tay UV có 6 ngón tay (16.7% tỷ lệ) hoặc dấu tay tự biến mất sau 10s. Lúc hunt chớp biến hình thành model ma khác ít nhất 1 lần.",
+      obake: "Dấu tay UV 6 ngón (16.7%), 2 ngón trên công tắc, 5 ngón trên bàn phím/cửa buồng giam. Thỉnh thoảng cắt nửa thời gian tồn tại của dấu. Biến hình theo nhịp chớp cố định khi hunt.",
       the_mimic: "LUÔN CÓ GHOST ORB GIẢ (thành 4 bằng chứng, có orb ở cả 0-evidence!). Bắt chước hành vi của loài ma khác mỗi 30-120 giây.",
-      moroi: "Nghe Spirit Box bị dính nguyền tụt Sanity gấp đôi trong bóng tối. Sanity càng thấp chạy càng nhanh (0% Sanity chạy 2.25 m/s, có LOS lên tới 3.71 m/s - NHANH NHẤT GAME!). Nhang làm mù Moroi 12s lúc hunt.",
-      deogen: "LUÔN BIẾT VỊ TRÍ CỦA BẠN (KHÔNG ĐƯỢC TRỐN TỦ). Ở xa lao tới cực nhanh (3.0 m/s), khi lại gần bạn (<2.5m) đi bộ dưỡng sinh cực chậm (0.4 m/s). Spirit Box ở cự ly <1m có tiếng thở dốc ồ ồ độc quyền!",
+      moroi: "Nghe Spirit Box bị dính nguyền tụt Sanity gấp đôi trong bóng tối. Sanity càng thấp chạy càng nhanh (0% Sanity chạy 2.25 m/s, có LOS lên tới 3.71 m/s - NHANH NHẤT GAME!). Nhang làm mù Moroi 7s lúc hunt (ma thường 5s). Dính nguyền qua Spirit Box, Paramic hoặc Sound Recorder.",
+      deogen: "LUÔN BIẾT VỊ TRÍ CỦA BẠN (KHÔNG ĐƯỢC TRỐN TỦ). Ở xa (trên ~5.3m đường đi) lao tới cực nhanh (3.0 m/s), khi lại gần bạn (<2.4m đường đi) đi bộ dưỡng sinh cực chậm (0.4 m/s). Spirit Box ở cự ly <1m có tiếng thở dốc ồ ồ độc quyền!",
       thaye: "Mới vào game cực kỳ trẻ và hung hãn (săn ở 75% Sanity, chạy 2.75 m/s). Càng về sau càng già đi nếu người chơi ở gần nó (săn tụt xuống 15%, chạy chậm 1.0 m/s). Không tăng tốc theo LOS.",
       aswang: "Aswang 2026: Base 1.53 m/s, tăng tốc LOS nhanh nhất game (max ~2.52 sau ~8.7 giây). Bước vào tủ/locker có người → hunt KẾT THÚC ngay; hunt sau lao tới chỗ bạn với grace ≈ 0. Chỉ chỗ ẩn CHÍNH THỨC mới miễn tử.",
       dayan: "Dayan 2026: Chỉ NỮ. Trong 10m: bạn ĐI BỘ → 2.25 m/s (hunt 65%); bạn ĐỨNG YÊN → 1.2 m/s (hunt 45%); xa hơn 10m → 1.7 m/s (hunt 50%).",

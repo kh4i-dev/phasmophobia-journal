@@ -26,7 +26,7 @@ const VIP_TIPS = {
   banshee: {
     chot: ["Tiếng hú/thét gào qua Paramic (33%) → Banshee. Chỉ nhắm 1 mục tiêu duy nhất."],
     gach: ["Thấy model/tên NAM → gạch Banshee (từ update Giáng Sinh 2025 chỉ còn nữ)."],
-    speed: "Chuẩn 1.7 m/s. Không phải mục tiêu thì đứng trước mặt khi hunt cũng không chết."
+    speed: "Chuẩn 1.7 m/s. Không phải mục tiêu thì đứng trước mặt khi hunt cũng không chết — CHỈ khi mục tiêu còn TRONG nhà."
   },
   jinn: {
     chot: ["Từ xa phi 2.5 về gần chậm lại + cầu dao đang BẬT → chốt Jinn (kết hợp gạch bên dưới)."],
@@ -54,8 +54,8 @@ const VIP_TIPS = {
     speed: "Chuẩn 1.7 m/s. Có skill cắn trộm hunt ở 100% sanity — vào nhà 10s đã có thể hunt."
   },
   yurei: {
-    chot: ["Đóng sầm cửa 2 nhịp (double click) trừ 15% sanity + có thể đóng cả cửa chính ngoài event → Yurei. Nhang giam chân 90s."],
-    gach: ["Thấy hé cửa (không mở/đóng hoàn toàn) → gạch Yurei (Yurei chỉ đóng/mở hoàn toàn)."],
+    chot: ["Cửa phòng đóng từ từ KHÔNG tiếng cót két, trừ 15% sanity trong 7.5m + có thể đóng cả cửa chính ngoài event → Yurei. Nhang giam chân 90s."],
+    gach: ["Skill Yurei không tính cửa tủ trốn (closet/locker); lúc hunt nó vẫn hé cửa như ma thường."],
     speed: "Chuẩn 1.7 m/s."
   },
   oni: {
@@ -91,17 +91,17 @@ const VIP_TIPS = {
   the_twins: {
     chot: ["2 tương tác cùng lúc ở 2 nơi xa nhau (Twinteraction) / biểu đồ xe tải 2 dốc cùng giây → Twins."],
     gach: [],
-    speed: "Luân phiên 1.53 (chậm) ↔ 1.87 (nhanh) ĐỔI GIỮA CÁC HUNT. Con phụ không cho Spirit Box/Freezing."
+    speed: "Luân phiên 1.5 (chậm) ↔ 1.9 (nhanh) ĐỔI GIỮA CÁC HUNT. Chỉ 1 thực thể (đừng chốt bằng đường gãy Activity)."
   },
   raiju: {
-    chot: ["Nhịp tim (heartbeat) to & bass hơn mọi ma, nghe cả event lẫn hunt → Raiju. Nhiễu điện tử từ 15m (ma khác 10m)."],
+    chot: ["Nghe nhịp tim từ xa tới 15m (ma khác 10m) → Raiju. Tầm hút điện lên 2.5 m/s: 6m (nhỏ) / 8m (vừa) / 10m (lớn)."],
     gach: [],
-    speed: "1.7 → 2.5 m/s khi gần đồ điện đang bật. Nghi là tắt hết đèn pin/đồ điện, dọn sàn."
+    speed: "1.7 → 2.5 m/s khi gần đồ điện đang bật (6m/8m/10m theo cỡ map). Nghi là tắt hết đèn pin/đồ điện, dọn sàn."
   },
   obake: {
     chot: ["Dấu tay 6 ngón (16.7%) / chớp biến hình model khác khi hunt → Obake. Bắt buộc có UV.", "Nightmare/Insanity: Obake luôn cho UV (bằng chứng bắt buộc)."],
     gach: [],
-    speed: "Chuẩn 1.7 m/s. Giấu vân tay 25%, vân tay mất sau 60s (ma khác 120s)."
+    speed: "Chuẩn 1.7 m/s. Giấu vân tay 25%; thỉnh thoảng cắt nửa thời gian tồn tại của dấu đang có. Biến hình theo nhịp chớp cố định (~6-8s sau grace)."
   },
   the_mimic: {
     chot: ["Ghost Orb khi tắt HẾT bằng chứng (0-evidence/Apocalypse) → Mimic (chốt). Ở Professional đủ 4 bằng chứng = Mimic. Ở Insanity (1 bằng chứng) thì Orb CHƯA chốt được."],
@@ -109,7 +109,7 @@ const VIP_TIPS = {
     speed: "Sao chép tốc độ ma khác mỗi 30-120s (lúc nhanh lúc chậm thất thường giữa các hunt)."
   },
   moroi: {
-    chot: ["Dính nguyền qua Spirit Box (tụt sanity x2 trong tối) + càng thấp sanity càng nhanh → chốt Moroi. Nhang mù 12s.", "Nightmare/Insanity: Moroi luôn cho Spirit Box (bằng chứng bắt buộc)."],
+    chot: ["Dính nguyền qua Spirit Box (tụt sanity x2 trong tối) + càng thấp sanity càng nhanh → chốt Moroi. Nhang mù 7s (ma thường 5s).", "Nightmare/Insanity: Moroi luôn cho Spirit Box (bằng chứng bắt buộc)."],
     gach: [],
     speed: "Nhanh dần khi sanity tụt: 1.5 (cao) → 2.25 (0%) + LOS tới 3.71 NHANH NHẤT game. Uống thuốc để làm chậm. Bắt buộc Spirit Box, dính nguyền tụt sanity x2."
   },
@@ -129,9 +129,9 @@ const VIP_TIPS = {
     speed: "Base 1.53 nhưng tăng tốc LOS NHANH nhất game (max ~2.52 chỉ sau ~8.7 giây; ma thường 13 giây). Mất dấu giảm tốc cực chậm (~65 giây)."
   },
   dayan: {
-    chot: ["Dấu chân UV ngón quay ngược 180° → chốt Dayan."],
+    chot: ["Dayan KHÔNG có UV (chỉ EMF 5 / Orb / Spirit Box) — thấy dấu UV là loại ngay Dayan (trừ Mimic)."],
     gach: ["Thấy model/tên NAM → gạch Dayan (Dayan chỉ nữ, giống Banshee)."],
-    speed: "Trong 10m: bạn DI CHUYỂN → 2.25 + hunt 65%; bạn ĐỨNG YÊN → 1.2 + hunt 45%. Không tăng tốc LOS. Dấu chân UV ngón quay ngược 180°."
+    speed: "Trong 10m: bạn DI CHUYỂN → 2.25 + hunt 65%; bạn ĐỨNG YÊN → 1.2 + hunt 45%. Ngoài 10m chạy chuẩn 1.7 + tăng tốc LOS (tích ngầm cả trong 10m)."
   },
   deildegast: {
     chot: ["Hunt đầu phi 3.0; ném ~26 món TRƯỚC hunt sau → còn 0.4 → chốt Deildegast. Ngoài hunt nó gần như không đụng cửa/công tắc mà chỉ ném đồ (~85% tương tác)."],
@@ -149,9 +149,9 @@ const VIP_TIPS = {
     speed: "Roam 1.7; nghe tiếng động → lao 2.21 (×1.3) tới điểm phát âm. LoS chỉ ≤5m không vật cản. Nghe: sprint 30m / đi bộ 15m / crouch 10m. Nên ĐI BỘ + im mic."
   },
   obambo: {
-    chot: ["Đổi tốc NGAY TRONG 1 hunt (1.45 ↔ 1.96) + tiếng chân giả phòng khác + vòi nước đen → chốt Obambo."],
+    chot: ["Đổi tốc NGAY TRONG 1 hunt (1.445 ↔ 1.955) mà không do LOS/đồ điện → chốt Obambo (bắt đầu ván luôn ở Calm, đổi sau 1 phút mở cửa rồi mỗi 2 phút)."],
     gach: [],
-    speed: "Aggressive 1.96 + hunt 65% (hunt ngắn hơn) ↔ Calm 1.45 + hunt 10%. ĐỔI NGAY TRONG 1 HUNT (khác Twins đổi giữa các hunt). Đổi trạng thái mỗi ~2 phút."
+    speed: "Aggressive 1.96 + hunt 65% (hunt ngắn hơn) ↔ Calm 1.45 + hunt 10%. ĐỔI NGAY TRONG 1 HUNT (khác Twins đổi giữa các hunt). Đổi sau 1 phút mở cửa rồi mỗi ~2 phút. Không có bước chân giả / nước bẩn / khóc Paramic."
   }
 };
 
@@ -166,7 +166,7 @@ const VIP_GENERAL = [
   "Sanity chỉ tụt khi bạn ở TRONG toà nhà (nghe tiếng gió nền). Ra thềm cửa/ngoài là hết tụt — ra hồi sức rồi vào tiếp.",
   "Đứng ở vùng CÓ ĐÈN SÁNG giúp tụt sanity chậm hơn hẳn so với trong tối; đặt nến cũng tạo 'ốc đảo sáng' nhỏ.",
   "Đóng cửa lại khi rời phòng: cửa tự mở/đóng là dấu hiệu ma tương tác → khoanh vùng phòng ma và dễ bắt UV.",
-  "Nấp TRƯỚC khi ma thấy bạn; mỗi chỗ chỉ nấp 1 lần, đừng nấp chung chỗ (ma sẽ lục ra cả hai).",
+  "Nấp TRƯỚC khi ma thấy bạn; đừng nấp chung chỗ. Trốn lại chỗ cũ vẫn an toàn nếu lần trước không bị phát hiện (ma chỉ 50% quay lại chỗ đã thấy bạn).",
   "Đặt sẵn 1 nhang dưới đất ở chỗ ẩn + cầm bật lửa: hunt vừa bùng là đốt ngay để giữ mạng.",
   "Mannequin (ma-nơ-canh) nằm lệch khỏi vị trí thường ngày = gợi ý mạnh phòng ma.",
   "Head Gear Tier 3 bị mờ: bật/tắt nó một lần ngay trong xe (van) để khử nhoè.",
@@ -217,11 +217,11 @@ const LOOP_TIPS = {
   goryo: "Loop chuẩn. Nó không đổi phòng nên bàn loop cố định dùng được cả trận.",
   myling: "Nó êm — đừng chờ nghe chân xa. Đèn pin nháy (<10m) là nó đã sát — giữ vòng loop rộng.",
   onryo: "Cắm 2-3 nến quanh chỗ loop — nến như thánh giá 4m, nó phải thổi nến trước khi cắn thánh giá.",
-  the_twins: "Mỗi hunt một tốc (1.53 ↔ 1.87) — đừng thuộc bài 1 tốc, nghe lại chân mỗi đợt.",
-  raiju: "TẮT HẾT đèn pin/đồ điện, nhặt sạch đồ dưới sàn trước khi loop. Đồ bật trong 15m là nó phi 2.5.",
+  the_twins: "Mỗi hunt một tốc (1.5 ↔ 1.9) — đừng thuộc bài 1 tốc, nghe lại chân mỗi đợt.",
+  raiju: "TẮT HẾT đèn pin/đồ điện, nhặt sạch đồ dưới sàn trước khi loop. Đồ bật trong tầm hút (6m/8m/10m) là nó phi 2.5.",
   obake: "Loop chuẩn. Liếc model khi chớp — thấy đổi hình là xác nhận Obake.",
   the_mimic: "Nguy hiểm khi loop vì có thể copy Revenant 3.0 giữa chừng — thủ nhang, đừng loop đường dài.",
-  moroi: "UỐNG THUỐC sanity trước khi loop để ép chậm (1.5). Sanity 0% + LOS là 3.71 không chạy nổi. Nhang mù 12s.",
+  moroi: "UỐNG THUỐC sanity trước khi loop để ép chậm (1.5). Sanity 0% + LOS là 3.71 không chạy nổi. Nhang mù 7s (ma thường 5s).",
   deogen: "KHÔNG TRỐN TỦ — ra bàn ăn đi bộ dắt nó vòng quanh. Xa phi 3.0, gần <2.5m bò 0.4 — bình tĩnh đi lùi.",
   thaye: "Đầu game trốn trước (2.75 rất nhanh). Ở gần cho nó già → cuối game loop dễ như ma thường.",
   aswang: "Chỉ tủ/locker CHÍNH THỨC mới cứu bạn (nó bước vào là hunt kết thúc) — nấp sau bàn ghế tự chế vẫn chết. Rải muối T3 quanh bàn. Hunt sau grace ≈ 0 và nó lao tới chỗ bạn: đổi chỗ nấp ngay.",
@@ -236,7 +236,7 @@ const LOOP_GENERAL = [
   "Chỉ sprint khi ma đã lấy khoảng cách; cắt góc thật gấp.",
   "Crouch sau ghế/island/xe để cắt LOS — KHÔNG crouch sau bàn ăn/sofa.",
   "Salt T3: mỗi đống làm chậm ma 2s — rải quanh bàn loop.",
-  "Nhang dí mặt khi hunt: mù ~5s (T2 chậm thêm 25%, T3 đứng im 5s).",
+  "Nhang dí mặt khi hunt: mù ~5s (T2 chậm thêm 50%, T3 đứng im 5s). Moroi mù 7s; Gallu Enraged 4s / Weakened 6s.",
   "Tắt Head Gear đầu tiên khi hunt bắt đầu; đã vào chỗ ẩn thì đừng tắt đồ nữa.",
   "Đừng nấp lại đúng chỗ vừa nấp, và tránh nấp cùng chỗ với đồng đội — ma sẽ lục ra.",
   "Trước khi hunt: tắt hết đồ điện đang cầm (đèn pin, EMF, camera) vì đồ bật hút ma (nhất là Raiju/Yokai)."

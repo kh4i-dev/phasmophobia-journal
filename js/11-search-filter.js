@@ -166,8 +166,8 @@
           || g.hidden_test.toLowerCase().includes(q)
           || vipHit
           || (q === "2026" && ["aswang", "dayan", "deildegast", "gallu", "kormos", "obambo"].includes(g.id))
-          || (q.includes("săn") && g.hunt_sanity >= 60)
-          || (q.includes("nhanh") && (g.speed.max_los >= 2.5 || g.speed.base >= 2.0));
+          || (q.includes("săn") && (g.hunt_sanity >= 60 || ["demon", "yokai", "thaye", "dayan", "gallu", "kormos", "the_mimic"].includes(g.id)))
+          || (q.includes("nhanh") && (g.speed.max_los >= 2.5 || g.speed.base >= 2.0 || ["dayan", "gallu", "kormos", "obambo", "the_mimic", "the_twins", "aswang"].includes(g.id)));
       });
 
       let matchedCursed = [];

@@ -4,7 +4,7 @@
       "id": "tarot_cards",
       "name_en": "Tarot Cards",
       "name_vi": "Bộ Bài Tarot Ma Quái",
-      "description": "Gồm 10 lá bài ngẫu nhiên. Mỗi lần rút sẽ kích hoạt một hiệu ứng tức thì.",
+      "description": "Gồm 10 lá bài ngẫu nhiên. Mỗi lần rút sẽ kích hoạt một hiệu ứng tức thì. Rút hết 10 lá: mọi hunt sau trong ván dài thêm 20 giây.",
       "cards": [
         {
           "name_en": "The Sun",
@@ -28,7 +28,7 @@
           "name_vi": "Tòa Tháp (The Tower)",
           "chance": "20%",
           "flame_color": "Xanh da trời",
-          "effect": "Ép ma thực hiện một tương tác mạnh (ném đồ, gõ cửa...) và tăng hoạt tính ma trong 20 giây."
+          "effect": "Nhân đôi toàn bộ hoạt tính (activity) của ma trong 20 giây (không ép tương tác tức thì)."
         },
         {
           "name_en": "The Wheel of Fortune",
@@ -68,7 +68,7 @@
           "name_vi": "Nữ Đại Tư Tế (The High Priestess)",
           "chance": "2%",
           "flame_color": "Vàng kim nhạt",
-          "effect": "HỒI SINH 1 đồng đội đã chết ngẫu nhiên tại vị trí xác chết. Nếu chưa có ai chết, lá bài này sẽ dự trữ mạng: người tiếp theo bị siết cổ sẽ được hồi sinh lập tức!"
+          "effect": "HỒI SINH người chết đầu tiên theo thứ tự vào phòng chờ (lobby order) tại vị trí xác chết. Nếu chưa có ai chết, lá bài này sẽ dự trữ mạng: người tiếp theo bị siết cổ sẽ được hồi sinh lập tức!"
         },
         {
           "name_en": "The Hanged Man",
@@ -98,9 +98,9 @@
         {
           "category": "Vị trí phòng ma",
           "questions_en": ["Where are you?", "What is your favorite room?", "Where is your room?"],
-          "meaning_vi": "Bạn đang ở đâu? Phòng yêu thích của bạn là phòng nào?",
+          "meaning_vi": "Bạn đang ở đâu? (Trả về VỊ TRÍ HIỆN TẠI của ma, không phải phòng yêu thích)",
           "sanity_cost": "50% Sanity",
-          "notes": "Con cơ sẽ chỉ từng chữ cái tên phòng ma yêu thích. Cực kỳ hữu ích đầu game."
+          "notes": "Con cơ đánh vần phòng ma đang đứng lúc hỏi (trùng phòng yêu thích chỉ khi ma ở đó). Cực kỳ hữu ích đầu game."
         },
         {
           "category": "Vị trí xương (Bone)",
@@ -114,7 +114,7 @@
           "questions_en": ["Are you close?", "How close are you?"],
           "meaning_vi": "Bạn có ở gần đây không?",
           "sanity_cost": "20% Sanity",
-          "notes": "Trả lời 'Yes' nếu ma ở trong cùng phòng hoặc trong cự ly 5m, trả lời 'No' nếu ở xa."
+          "notes": "Trả lời 'Yes' nếu ma trong cùng phòng hoặc trong 4m, trả lời 'No' nếu ở xa."
         },
         {
           "category": "Tuổi của ma (Check Thaye)",
@@ -148,7 +148,7 @@
           "category": "Trò chơi trốn tìm (KÍCH HOẠT HUNT)",
           "questions_en": ["Hide and seek", "Do you want to play hide and seek?"],
           "meaning_vi": "Chơi trốn tìm nào!",
-          "sanity_cost": "Trừ hết Sanity",
+          "sanity_cost": "0% Sanity",
           "notes": "Con cơ sẽ đếm ngược 5, 4, 3, 2, 1 -> Bàn cầu cơ nổ vỡ và kích hoạt Cursed Hunt!"
         },
         {
@@ -221,7 +221,7 @@
           "wish_en": "I wish for knowledge",
           "meaning_vi": "Tôi ước có thêm manh mối / kiến thức",
           "benefit": "Gạch bỏ 1 bằng chứng SAI cùng các loài ma tương ứng khỏi cuốn sổ điều tra.",
-          "penalty": "Ma teleport tới sát người ước và mở Cursed Hunt; tầm nhìn bị phủ sương đen và thính giác bị bịt lại cho tới khi bạn chết hoặc hết ván."
+          "penalty": "Ma teleport tới sát người ước và mở Cursed Hunt; tầm nhìn bị phủ sương đen và thính giác bị bịt lại cho tới khi bạn chết hoặc hết ván. Lưu ý bản 0.19.0 đang bug gạch sai bằng chứng trong sổ!"
         },
         {
           "category": "Other (Thông tin & Thời tiết)",
@@ -234,7 +234,7 @@
           "category": "Misc (Bất kỳ)",
           "wish_en": "I wish for anything",
           "meaning_vi": "Tôi ước một điều bất kỳ",
-          "benefit": "Thực hiện NGẪU NHIÊN một điều ước còn lại chưa dùng (chỉ dùng được bằng voice chat).",
+          "benefit": "Thực hiện NGẪU NHIÊN 1 điều ước còn lại TRỪ Knowledge và Weather (trúng điều đã dùng là thất bại; chỉ dùng được bằng voice chat).",
           "penalty": "Chịu đúng phản phệ của điều ước ngẫu nhiên được chọn."
         }
       ]
@@ -244,7 +244,7 @@
       "name_en": "Haunted Mirror",
       "name_vi": "Gương Ma Ám",
       "description": "Nhìn vào gương để thấy góc nhìn trực tiếp bên trong căn phòng ma yêu thích (Favorite Room).",
-      "sanity_cost": "Tụt khoảng 20% Sanity mỗi giây sử dụng (tối thiểu 20%).",
+      "sanity_cost": "Tụt 7.5% Sanity mỗi giây sử dụng (tối thiểu 20% mỗi lần soi — soi dưới ~2.7 giây vẫn mất 20%).",
       "warning": "Nếu Sanity tụt về 0% khi đang soi gương, tấm gương sẽ vỡ vụn và kích hoạt Cursed Hunt ngay lập tức!"
     },
     {
@@ -268,8 +268,8 @@
       "name_en": "Summoning Circle",
       "name_vi": "Vòng Tròn Triệu Hồi",
       "description": "Vòng tròn vẽ bằng máu trên sàn nhà với 5 ngọn nến đỏ xung quanh. Dùng bật lửa/diêm để thắp từng ngọn nến.",
-      "sanity_cost": "Mỗi ngọn nến thắp lên trừ 16% Sanity của người thắp (thắp cả 5 nến tốn 80% Sanity).",
-      "warning": "Khi thắp đủ cả 5 ngọn nến: Con ma sẽ bị triệu hồi đứng im bất động giữa vòng tròn trong 5 giây (cơ hội vàng chụp ảnh ma 3 sao và xem DOTS). Đúng sau 5 giây, ma lập tức bắt đầu Cursed Hunt!"
+      "sanity_cost": "Mỗi ngọn nến trừ 16% Sanity của TẤT CẢ người chơi đứng gần trong 3m.",
+      "warning": "Khi thắp đủ cả 5 ngọn nến: Con ma sẽ bị triệu hồi đứng im bất động giữa vòng tròn trong 5 giây (cơ hội vàng chụp ảnh ma 3 sao và xem DOTS). Đúng sau 5 giây, ma lập tức bắt đầu Cursed Hunt! Thắp nến thứ 5 khi Sanity dưới 16%: ma bỏ qua đứng yên, hunt ngay sau 1 giây grace!"
     }
   ],
 
@@ -305,9 +305,9 @@
       "type": "Bằng chứng (Evidence Tool)",
       "evidence": "Ultraviolet",
       "tiers": [
-        { "tier": "Tier 1", "item": "Đèn Pin UV Quay Tay", "desc": "Chùm tia sáng hẹp, phải sạc bằng tay định kỳ, thời gian giữ sáng ngắn." },
-        { "tier": "Tier 2", "item": "Đèn Pin UV Bóng LED", "desc": "Chùm tia UV sáng rộng, soi rõ dấu vân tay và vết chân nhanh chóng." },
-        { "tier": "Tier 3", "item": "Đèn UV Huỳnh Quang Đặt Sàn 360°", "desc": "Đèn tuýp tỏa ánh sáng UV 360 độ khắp phòng, soi sáng mọi dấu chân và vân tay tự động mà không cần cầm tay." }
+        { "tier": "Tier 1", "item": "Đèn Pin UV Tia Hẹp", "desc": "Chùm tia hẹp tầm xa, sạc dấu nhanh. Là đồ điện tử — cầm bật khi hunt sẽ hút ma." },
+        { "tier": "Tier 2", "item": "Que Phát Sáng Glowstick", "desc": "Tỏa sáng UV 360° (~60s rồi mờ dần, lắc để sáng lại). KHÔNG phải đồ điện — cầm khi hunt không hút ma, đặt cạnh đống muối để tự sạc dấu chân." },
+        { "tier": "Tier 3", "item": "Đèn Pin UV Pro", "desc": "Góc chiếu rộng, sạc dấu nhanh nhất. Là đồ điện tử — chỉ tự tắt khi cất vào túi (khác đèn pin thường vẫn sáng trên vai)." }
       ]
     },
     {
@@ -341,9 +341,9 @@
       "type": "Bằng chứng (Evidence Tool)",
       "evidence": "D.O.T.S Projector",
       "tiers": [
-        { "tier": "Tier 1", "item": "Bút Chiếu Laser Cầm Tay", "desc": "Phạm vi lưới laser hẹp, chiếu dạng chùm nhỏ, khó quan sát." },
-        { "tier": "Tier 2", "item": "Máy Chiếu Quét Nón Đặt Sàn", "desc": "Phủ lưới laser xanh hình nón rộng khắp một khu vực phòng." },
-        { "tier": "Tier 3", "item": "Máy Chiếu Xoay 360° Tích Hợp Quét", "desc": "Quét lưới laser xanh 360 độ toàn bộ căn phòng, có cảm biến phát hiện chuyển động của ma." }
+        { "tier": "Tier 1", "item": "Bút Chiếu Laser Cầm Tay", "desc": "Chiếu hình nón hẹp 7.5m (30°), phải cầm tay chĩa liên tục." },
+        { "tier": "Tier 2", "item": "Máy Chiếu Đặt Sàn/Tường", "desc": "Tỏa hình cầu 360° bán kính 2.4m, rảnh tay làm việc khác." },
+        { "tier": "Tier 3", "item": "Máy Chiếu Xoay Quét Nón Rộng", "desc": "Cơ học quét qua lại hình nón rộng 7m (54°). Không phủ 360° cùng lúc, không có cảm biến chuyển động." }
       ]
     },
     {
@@ -366,7 +366,7 @@
       "evidence": "Không",
       "tiers": [
         { "tier": "Tier 1", "item": "Bó Lá Xô Thơm (Smudge Stick)", "desc": "Đốt bằng bật lửa. Khi Hunt: Làm mù ma trong 5 giây để bỏ chạy. Ngoài Hunt: Ngăn ma săn trong 90s (Demon: 60s, Spirit: 180s)." },
-        { "tier": "Tier 2", "item": "Nhang Ống Kim Loại", "desc": "Tỏa khói rộng hơn. Khi Hunt: Làm mù ma trong 5 giây VÀ làm chậm tốc độ chạy của ma đi 25% trong 5 giây." },
+        { "tier": "Tier 2", "item": "Nhang Ống Kim Loại", "desc": "Tỏa khói rộng hơn. Khi Hunt: Làm mù ma trong 5 giây VÀ làm chậm tốc độ chạy của ma đi 50% trong 5 giây." },
         { "tier": "Tier 3", "item": "Lư Hương Trừ Tà Hoàng Gia", "desc": "Khi Hunt: Làm mù ma trong 5 giây VÀ KHÓA CHÂN ma đứng bất động hoàn toàn tại chỗ trong 5 giây!" }
       ]
     },
@@ -377,9 +377,9 @@
       "type": "Trang bị sinh tồn",
       "evidence": "Không",
       "tiers": [
-        { "tier": "Tier 1", "item": "Lọ Thuốc Viên Uống", "desc": "Hồi phục 20% Sanity nhưng hồi rất chậm trong vòng 30 giây." },
-        { "tier": "Tier 2", "item": "Thuốc Con Nhộng Hấp Thu Nhanh", "desc": "Hồi phục 35% Sanity trong vòng 20 giây." },
-        { "tier": "Tier 3", "item": "Ống Tiêm Adrenaline Khẩn Cấp", "desc": "Hồi phục 50% Sanity NGAY LẬP TỨC và tăng tốc độ chạy (Sprint vô hạn) cho người tiêm trong 10 giây!" }
+        { "tier": "Tier 1", "item": "Lọ Thuốc Viên Uống", "desc": "Hồi lượng Sanity theo ĐỘ KHÓ trong 20 giây (Amateur 40% / Intermediate 35% / Professional 30% / Nightmare 25% / Insanity 20%)." },
+        { "tier": "Tier 2", "item": "Thuốc Con Nhộng Hấp Thu Nhanh", "desc": "Cùng lượng theo độ khó, hồi nhanh trong 10 giây." },
+        { "tier": "Tier 3", "item": "Ống Tiêm Adrenaline Khẩn Cấp", "desc": "Cùng lượng theo độ khó, hồi trong 10 giây + Sprint vô hạn 10 giây (KHÔNG hồi tức thì). Không uống khi Sanity trên 95%." }
       ]
     },
     {
@@ -390,8 +390,8 @@
       "evidence": "Test Wraith & Chụp ảnh",
       "tiers": [
         { "tier": "Tier 1", "item": "Lọ Muối Ăn Rải 2 Lần", "desc": "Rải được 2 đống muối trên sàn. Khi ma dẫm vào sẽ để lại dấu chân UV (trừ Wraith)." },
-        { "tier": "Tier 2", "item": "Hộp Muối Hạt Rải 3 Lần", "desc": "Rải được 3 đống muối trên sàn." },
-        { "tier": "Tier 3", "item": "Lọ Muối Đen Trừ Tà", "desc": "Rải được 3 vạch muối dài chắn ngang cửa. Khi ma bước qua vạch muối đen trong lúc Hunt, nó sẽ bị làm chậm tốc độ đáng kể!" }
+        { "tier": "Tier 2", "item": "Muối Hồng Himalaya Rải Vạch", "desc": "Rải 3 vạch muối dài chắn ngang lối đi (3 lượt/hộp) để chặn cửa và bắt dấu." },
+        { "tier": "Tier 3", "item": "Muối Đen Trừ Tà Rải Vạch", "desc": "Rải 3 vạch dài. Hunt: ma dẫm qua bị chậm 50% trong 2s (Gallu Weakened 3s). Ngoài hunt: ép ma đang roam quay đầu đi ngược lại!" }
       ]
     }
   ],

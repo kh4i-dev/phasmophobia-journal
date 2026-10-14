@@ -118,14 +118,17 @@ const toolList = (tc.tools_and_equipment || [])
 
 const voice = tc.voice_commands_en || {};
 const voiceHtml = Object.entries(voice).map(([k, arr]) =>
-  `<div class="tool"><h3>${esc(k.replace(/_/g, " "))}</h3><ul>${(arr || []).map(v => `<li><code>${esc(v)}</code></li>`).join("")}</ul></div>`).join("");
+  `<div class="tool"><h3>${esc(k.replace(/_/g, " "))}</h3><ul>${(arr || []).map(v => `<li><code>${esc(typeof v === "string" ? v : (v.phrase || ""))}</code>${typeof v === "object" && v.meaning ? ` — ${esc(v.meaning)}` : ""}</li>`).join("")}</ul></div>`).join("");
 
 const statKeys = ref.difficulties.length ? Object.keys(ref.difficulties[0]).filter(k => !["id", "name_en", "name_vi", "notes"].includes(k)) : [];
 const diffTable = `<table><thead><tr><th>Độ khó</th>${statKeys.map(k => `<th>${esc(k)}</th>`).join("")}</tr></thead>
 <tbody>${ref.difficulties.map(d => `<tr><td><b>${esc(d.name_vi)}</b></td>${statKeys.map(k => `<td>${esc(d[k])}</td>`).join("")}</tr>`).join("")}</tbody></table>
 ${ref.difficulties.map(d => `<p class="note"><b>${esc(d.name_vi)}:</b> ${esc(d.notes)}</p>`).join("")}`;
 
-const mapList = (ref.maps || []).map(m => `<li><b>${esc(m.name_en || m.name_vi || "")}</b> — ${esc(m.note || m.description || "")}</li>`).join("");
+const mapList = (ref.maps || []).map(m => {
+  const meta = [m.size, m.rooms ? (m.rooms + " phòng") : "", m.unlock].filter(Boolean).join(" • ");
+  return `<li><b>${esc(m.name || m.name_en || m.name_vi || "")}</b> — ${esc(meta)}${m.hunt_length ? ` (hunt ${esc(m.hunt_length)})` : ""}${m.note ? ` — ${esc(m.note)}` : ""}</li>`;
+}).join("");
 
 const ch = (num, title, body) => `<section class="page chapter"><h2 class="ch-num">${num}</h2><h2>${title}</h2>${body}</section>`;
 
@@ -226,12 +229,12 @@ const html = `<!DOCTYPE html>
   <p class="note">Tài liệu biên tập từ dữ liệu game bản cập nhật 2026 — mọi con số đối chiếu trực tiếp với nguồn trong ứng dụng.</p>
 </section>
 
-${ch("CHƯƠNG 01", "Hệ Thống 7 Loại Bằng Chứng", mdToHtml(S[keyOf(/B[ẨA]NG CH[ỨU]NG/i)] || ""))}
+${ch("CHƯƠNG 01", "Hệ Thống 7 Loại Bằng Chứng", mdToHtml(S[keyOf(/BẰNG CHỨNG/i)] || ""))}
 ${ch("CHƯƠNG 02", "Ma Trận Tổng Hợp 30 Loài Ma", mdToHtml(S[keyOf(/MA TR/i)] || ""))}
 <section class="page chapter"><h2 class="ch-num">CHƯƠNG 03</h2><h2>30 Hồ Sơ Mật — Dossier Đầy Đủ</h2>
   <div class="d-grid">${ghosts.map(ghostCard).join("")}</div>
 </section>
-${ch("CHƯƠNG 04", "Chuyên Đề Đặc Biệt: Những Con Ma Tránh Khó Nhất", mdToHtml(S[keyOf(/D[ỘR]? BI[ỆE]?T|Y?MA L[ỘI]?A/i)] || ""))}
+${ch("CHƯƠNG 04", "Chuyên Đề Đặc Biệt: Những Con Ma Tránh Khó Nhất", mdToHtml(S[keyOf(/CHUYÊN ĐỀ|ĐẶC BIỆT/i)] || ""))}
 ${ch("CHƯƠNG 05", "Kỹ Thuật Nhận Diện Ma Không Cần Bằng Chứng (0-Evidence)", mdToHtml(S[keyOf(/0-EVIDENCE/i)] || ""))}
 ${ch("CHƯƠNG 06", "Độ Khó &amp; Bản Đồ Điều Tra", diffTable + (ref.maps_note ? `<p class="note">${esc(ref.maps_note)}</p>` : "") + `<ul>${mapList}</ul>`)}
 ${ch("CHƯƠNG 07", "Vật Phẩm Nguyền Rủa (Cursed Possessions)", `<h3>Bộ Bài Tarot Ma Quái — 10 lá &amp; màu lửa</h3><div class="tarot-grid">${tarotGrid}</div><h3>Các vật phẩm nguyền rủa còn lại</h3>${cursedList}`)}

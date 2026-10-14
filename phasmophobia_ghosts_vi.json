@@ -85,7 +85,7 @@
       "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
-      "strength": "Ánh nhìn tử thần: Nhìn trực diện vào Phantom sẽ khiến Sanity của bạn tụt dốc cực nhanh với tốc độ 0.5% mỗi giây.",
+      "strength": "Ánh nhìn tử thần: Đứng trong 10m có LOS với Phantom sẽ bị rút 0.5% Sanity mỗi giây. Quay trúng bằng Video Camera cũng làm nó biến mất như chụp ảnh.",
       "weakness": "Sợ máy ảnh: Chụp ảnh Phantom sẽ làm nó biến mất ngay tức khắc và bức ảnh chụp được hoàn toàn không bị nhiễu sóng điện tử."
     },
     "deep_mechanics": "Khi Hunt, mọi loài ma đều chớp nhấp nháy (hiện 0.3s - ẩn 0.3s). Riêng Phantom có chu kỳ tàng hình cực dài: Nó tàng hình biến mất trong 1 đến 2 giây rồi mới chỉ chớp hiện hình thoáng qua 0.3 giây, khiến bạn cảm giác như đang bị một bóng ma vô hình rượt đuổi.",
@@ -120,7 +120,7 @@
       "strength": "Vụ nổ Poltergeist (Polty Bomb): Có khả năng ném đồng loạt nhiều đồ vật (5-10 món) cùng một lúc với lực cực mạnh. Mỗi món đồ ném trúng người chơi sẽ trừ 2% Sanity x số lượng đồ vật.",
       "weakness": "Vô hại trong phòng trống: Khi ở trong căn phòng không có đồ đạc để ném, Poltergeist trở nên yếu thế và không thể sử dụng tuyệt chiêu."
     },
-    "deep_mechanics": "Khi Hunt, cứ mỗi 0.5 giây Poltergeist có tỉ lệ 100% ném một đồ vật xung quanh đường đi của nó (ma thường chỉ có 50% tỉ lệ ném mỗi 1 giây). Điều này tạo ra một cơn bão đồ vật bay tứ tung khi nó đuổi theo bạn.",
+    "deep_mechanics": "Khi Hunt, cứ mỗi 0.5 giây Poltergeist có tỉ lệ 100% ném một đồ vật xung quanh đường đi của nó (ma thường cũng 50% mỗi 0.5 giây). Nổ đồ phát EMF 2 ngang đầu ma; từng món bị ném mang EMF 3. Điều này tạo ra một cơn bão đồ vật bay tứ tung khi nó đuổi theo bạn.",
     "hidden_test": "BÀI TEST XẾP ĐỒ (Polty Pile Test):\n1. Gom 10 - 15 món đồ nhỏ (cốc, chén, đĩa, nến, giày, dụng cụ) xếp thành một đống cao giữa phòng ma.\n2. Đặt máy đo EMF cạnh đống đồ và đứng canh từ xa.\n3. NẾU THẤY ĐỐNG ĐỒ NỔ TUNG TỨ PHÍA CÙNG MỘT LÚC (tạo mức EMF 3 cực mạnh) -> 100% là Poltergeist!\n4. Khi Hunt: Nghe tiếng đồ vật va đập liên tục dồn dập mỗi nửa giây.",
     "looping_guide": "Đừng loop ở những nơi có nhiều đồ vật chưa bị ném vì bạn có thể bị đồ bay trúng trừ Sanity. Loop ở khu vực trống trải.",
     "notes": "Cực kỳ ồn ào và thích quăng quật đồ đạc khắp nơi."
@@ -155,7 +155,7 @@
     },
     "deep_mechanics": "Banshee rất thích bám theo con mồi của nó khắp căn nhà. Nó thường xuyên làm sự kiện Hát Hò (Singing Ghost Event), và nếu con mồi chạm vào nó trong sự kiện này sẽ bị tụt tới 15% Sanity (ma thường chỉ trừ 10%). Khi con mồi chết, nó sẽ chọn một con mồi mới.",
     "hidden_test": "1. DÙNG PARABOLIC MICROPHONE (Paramic): Chĩa mic vào phòng ma. Nếu nghe thấy tiếng thì thầm bình thường thì kiên nhẫn nghe tiếp. Khi nghe thấy một tiếng HÚ DÀI RỢN TÓC GÁY giống tiếng gió gào thét qua mic -> 100% Chắc chắn là Banshee!\n2. TEST ĐỨNG TRƯỚC MẶT KHI HUNT: Nếu bạn biết ai là con mồi, những người chơi còn lại có thể đứng nhảy múa trước mặt Banshee khi nó đang săn mà hoàn toàn không bị siết cổ chết.",
-    "looping_guide": "Nếu bạn là mục tiêu, hãy loop cẩn thận. Nếu bạn không phải mục tiêu, bạn hoàn toàn miễn nhiễm với đòn tấn công của Banshee!",
+    "looping_guide": "Nếu bạn là mục tiêu, hãy loop cẩn thận. Không phải mục tiêu thì an toàn — NHƯNG chỉ khi mục tiêu còn ở TRONG nhà; mục tiêu ra xe là Banshee giết bất kỳ ai như ma thường!",
     "notes": "Đây là một trong hai loài ma hay được gọi là 'ma hú' hoặc 'ma đè hú' trong cộng đồng Việt Nam."
   },
   {
@@ -280,7 +280,7 @@
       "strength": "Rất khó tìm kiếm bằng chứng vì nó hầu như không tương tác khi có nhiều người ở gần phòng của nó.",
       "weakness": "Cực kỳ nhút nhát: KHÔNG BAO GIỜ đi săn nếu có người chơi đứng cùng trong phòng ma. Chỉ có thể đi săn khi Sanity trung bình tụt xuống dưới 35%."
     },
-    "deep_mechanics": "Shade không bao giờ thực hiện Ghost Event dạng toàn thân (Full Physical Form) khi có người chơi ở cùng phòng. Nó chỉ làm dạng bóng đen mờ ảo hoặc dạng thở vào tai (Airball). Đốt nhang trong phòng ma sẽ ngăn Shade tương tác trong 180s.",
+    "deep_mechanics": "Có người cùng phòng là Shade không thể làm BẤT KỲ Ghost Event nào (kể cả khói hay bóng đen). Nhang chỉ chặn hunt 90s (không phải 180s) và còn làm ma năng động hơn (+20 đến +29 activity).",
     "hidden_test": "1. TEST ĐỨNG TRONG PHÒNG: Đứng trong phòng ma khi Sanity cả đội đã tụt xuống 0%. NẾU CON MA KHÔNG THỂ BẮT ĐẦU CUỘC SĂN từ căn phòng đó -> 100% là Shade!\n2. Tương tác cực kỳ thưa thớt, viết sổ rất muộn và chỉ viết khi không có ai trong phòng.",
     "looping_guide": "Tốc độ bình thường 1.7 m/s. Rất hiếm khi hunt nên việc đối phó rất dễ dàng.",
     "notes": "Nếu bạn ở trong nhà mãi mà không thấy động tĩnh gì, Sanity tụt sâu mới hunt thì thường là Shade."
@@ -343,7 +343,7 @@
       "strength": "Đóng sập cửa trừ Sanity: Có kỹ năng đóng sập hoàn toàn một cánh cửa đang mở (kèm âm thanh click đúp) và trừ lập tức 15% Sanity của tất cả người chơi ở gần trong phạm vi 7.5m.",
       "weakness": "Bị khóa chân bởi nhang: Đốt nhang trong phòng của Yurei sẽ khóa chặt nó trong phòng đó và không thể đi lang thang ra ngoài trong vòng 90 giây."
     },
-    "deep_mechanics": "Yurei là con ma duy nhất ngoài lúc Ghost Event có thể đóng sầm cánh cửa chính ra vào nhà (Front Door Slam). Khi nó dùng kỹ năng đóng cửa, cánh cửa sẽ đóng từ từ rồi đóng sầm lại kèm tiếng click đúp trễ khoảng 0.2s.",
+    "deep_mechanics": "Yurei là con ma duy nhất ngoài lúc Ghost Event có thể đóng sầm cánh cửa chính ra vào nhà (Front Door Slam). Khi dùng skill, cửa đóng từ từ KHÔNG tiếng cót két (đừng nhầm tiếng đóng trễ của cửa thường). Cửa tủ trốn (closet/locker) không tính cho skill này. Lúc hunt nó vẫn làm hé cửa như mọi ma khác.",
     "hidden_test": "Âm thanh đóng cửa: Cửa phòng bị đóng sầm lại kèm tiếng click đúp mà KHÔNG PHẢI trong sự kiện Ghost Event. Có thể đóng cả cửa chính ra vào nhà ngoài Ghost Event.",
     "looping_guide": "Tốc độ bình thường 1.7 m/s. Loop bình thường quanh bàn.",
     "notes": "Nếu cửa chính tự đóng sầm lại ngoài lúc hunt/event, hãy nghĩ ngay tới Yurei."
@@ -497,10 +497,10 @@
       "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
-      "strength": "Bước chân sát thủ vô thanh: Khi đi săn, tiếng bước chân và tiếng rên rỉ của Myling cực kỳ êm ái, chỉ có thể nghe thấy ở cự ly dưới 10m (ngang bằng với tầm làm nhấp nháy đèn pin).",
+      "strength": "Bước chân sát thủ vô thanh: Khi đi săn, tiếng bước chân và tiếng rên rỉ của Myling cực kỳ êm ái, chỉ nghe thấy trong ~12m (ma thường 20m), gần như cùng lúc đèn pin nháy ở 10m. Hay phát 2 âm siêu nhiên trong 80 giây qua Paramic/Sound Recorder.",
       "weakness": "Phát ra âm thanh qua Parabolic Microphone thường xuyên hơn các loài ma khác."
     },
-    "deep_mechanics": "Với ma thường, bạn nghe tiếng bước chân từ xa 20m, trước khi đèn pin nhấp nháy (10m). Với Myling, tiếng bước chân và đèn pin nhấp nháy xảy ra CÙNG MỘT LÚC.",
+    "deep_mechanics": "Với ma thường, bạn nghe tiếng bước chân từ xa 20m, trước khi đèn pin nhấp nháy (10m). Với Myling, tiếng bước chân (~12m) và đèn pin nhấp nháy (10m) xảy ra gần như CÙNG MỘT LÚC.",
     "hidden_test": "BÀI TEST NÉM ĐÈN PIN:\n1. Ném 1 cây đèn pin đang bật xuống sàn hành lang.\n2. Khi ma hunt: Đứng cách đèn pin khoảng 10-15m.\n3. Nếu bạn thấy đèn pin bắt đầu chớp nháy mà TIẾNG CHÂN MỚI BẮT ĐẦU NGHE THẤY -> 100% là Myling!",
     "looping_guide": "Cẩn thận vì nó có thể áp sát bạn mà không tạo tiếng động từ xa.",
     "notes": "Rất nguy hiểm vì nó có thể tiếp cận bạn trong im lặng trước khi bạn kịp nhận ra."
@@ -554,20 +554,20 @@
     ],
     "hunt_sanity": 50,
     "speed": {
-      "base": 1.53,
-      "max_los": 2.52,
+      "base": 1.5,
+      "max_los": 1.9,
       "bpm_base": 110,
       "bpm_max": 140,
-      "description": "Con chính (Main) 1.53 m/s và con phụ (Decoy) nhanh hơn (~1.9 m/s), đều cộng thêm tăng tốc theo LOS (tối đa ~2.52 m/s)."
+      "description": "Chỉ 1 thực thể duy nhất với 2 tốc độ 1.7 ± 0.2 m/s (chậm 1.5 / nhanh 1.9); tối đa LOS ~2.6 m/s (chậm) và ~3.0 m/s (nhanh)."
     },
     "traits": {
-      "strength": "Phân thân tương tác 2 nơi: Con chính ở phòng ma, con phụ đi phá ở phòng khác cách xa. Bất kỳ con nào cũng có thể bắt đầu cuộc săn (50/50 cơ hội).",
-      "weakness": "Con phụ không bao giờ cho bằng chứng Spirit Box hay nhiệt độ đóng băng."
+      "strength": "Một thực thể với 2 bán kính tương tác (nhỏ 2.12m/4.24m, lớn 8.48m/16.97m) nên đồ đạc ở xa vẫn bị đụng. Mỗi đợt hunt chạy 1 trong 2 tốc độ.",
+      "weakness": "Đợt này chạy chậm (1.5), đợt sau có thể chạy nhanh (1.9) — nghe lại nhịp chân mỗi hunt."
     },
-    "deep_mechanics": "Trên bảng hoạt động trong xe tải, bạn sẽ thấy 2 đường cong tương tác vọt lên cùng một giây (Twin Interaction Curve). Nhịp bước chân giữa các đợt hunt khác nhau rõ rệt (đợt này nghe chân chậm, đợt sau lại nghe chân chạy nhanh dồn dập).",
-    "hidden_test": "1. Nghe tiếng bước chân khi Hunt: Đợt hunt này chạy chậm rõ rệt (1.53 m/s), đợt sau lại chạy nhanh hơn bình thường (1.87 m/s).\n2. Biểu đồ hoạt động xe tải nét dốc đôi.",
-    "looping_guide": "Cẩn thận vì con phụ có thể bắt đầu hunt ngay trước mặt bạn ở căn phòng khác.",
-    "notes": "Hãy cẩn thận vì con phụ có thể xuất phát cuộc săn từ một vị trí bạn không hề ngờ tới."
+    "deep_mechanics": "Đừng chốt bằng đường gãy khúc trên bảng Activity (ma nào tương tác 2 lần liên tiếp cũng tạo đường y hệt — ngộ nhận Twin Curve). Chốt bằng tốc độ đổi giữa các hunt.",
+    "hidden_test": "1. Nghe tiếng bước chân khi Hunt: Đợt hunt này chạy chậm rõ rệt (1.5 m/s), đợt sau lại chạy nhanh hơn bình thường (1.9 m/s).\n2. Biểu đồ hoạt động xe tải nét dốc đôi.",
+    "looping_guide": "Tương tác có thể xuất hiện ở phòng xa (bán kính lớn) — đừng khoanh phòng ma chỉ bằng 1 món đồ bị ném xa.",
+    "notes": "Tương tác xa không có nghĩa có 2 con ma — chỉ là bán kính tương tác lớn."
   },
   {
     "id": "raiju",
@@ -596,7 +596,7 @@
       "strength": "Hút năng lượng từ thiết bị điện tử: Hunt ở mức 65% Sanity nếu có đồ điện tử bật gần nó. Khi hunt, tốc độ tăng vọt lên 2.5 m/s trong vùng có đồ điện.",
       "weakness": "Làm nhiễu sóng thiết bị điện tử từ khoảng cách xa hơn rất nhiều (15m thay vì 10m)."
     },
-    "deep_mechanics": "Raiju tăng tốc khi ở gần bất kỳ thiết bị điện tử nào đang bật: Đèn pin, máy EMF, camera, D.O.T.S dưới sàn. Tắt hết thiết bị điện tử nó sẽ chạy chậm lại bình thường.",
+    "deep_mechanics": "Tầm nghe nhịp tim của bạn với Raiju mở rộng tới 15m (ma thường 10m) — không phải tim nó đập bass hơn. Tầm hút điện để lên 2.5 m/s và hunt 65%: 6m (map nhỏ) / 8m (map vừa) / 10m (map lớn).",
     "hidden_test": "Đặt 2-3 thiết bị điện tử bật sẵn trên sàn. Khi ma hunt, vừa bước qua đống thiết bị là tốc độ giậm chân tăng vọt lên 2.5 m/s, bước ra khỏi vùng đồ điện lại chạy chậm lại bình thường.",
     "looping_guide": "TẮT HẾT ĐÈN PIN VÀ NHẶT SẠCH THIẾT BỊ ĐIỆN DƯỚI SÀN CẤT ĐI TRƯỚC KHI LOOP.",
     "notes": "Khi nghi ngờ Raiju, hãy tắt hết đèn pin và nhặt sạch thiết bị điện tử dưới sàn nhà cất đi."
@@ -625,10 +625,10 @@
       "description": "Tốc độ chuẩn 1.7 m/s, tăng tốc khi giữ line-of-sight (LOS) lên tới 2.8 m/s sau ~13 giây."
     },
     "traits": {
-      "strength": "Giấu vân tay: Có 25% tỉ lệ chạm vào cửa mà không để lại dấu vân tay UV. Dấu vân tay biến mất nhanh gấp đôi bình thường (sau 1 phút thay vì 2 phút).",
+      "strength": "Giấu vân tay: 25% chạm cửa không để lại dấu; thỉnh thoảng cắt một nửa thời gian tồn tại còn lại của dấu đang có (120s còn 60s...). Ngoài tay 6 ngón còn có tay 2 ngón trên công tắc và 5 ngón (thay vì 4) trên bàn phím/cửa buồng giam.",
       "weakness": "Dấu vân tay 6 ngón độc quyền (16.7% cơ hội). Khi Hunt, có ít nhất 1 lần chớp nhấp nháy biến hình thành một Model ma khác (Shape-shift Flash)."
     },
-    "deep_mechanics": "BẮT BUỘC có bằng chứng UV ở mọi độ khó. Nhìn dấu bàn tay trên cửa: Nếu đếm được 6 ngón tay -> 100% Obake. Khi Hunt: Nhìn kỹ lúc nó chớp nháy, nó sẽ đổi sang model ma khác trong 1 khung hình.",
+    "deep_mechanics": "BẮT BUỘC có bằng chứng UV ở mọi độ khó. Nhìn dấu bàn tay trên cửa: Nếu đếm được 6 ngón tay -> 100% Obake. Khi hunt nó biến hình theo nhịp chớp cố định (nhịp 12, 27, 39... — lần đầu sau ~6-8 giây hết grace), không phải ngẫu nhiên.",
     "hidden_test": "1. Soi đèn UV thấy bàn tay 6 ngón trên cửa kính/gỗ.\n2. Quan sát khi hunt thấy ma đổi hình dạng model khác trong 1 tích tắc.",
     "looping_guide": "Tốc độ 1.7 m/s chuẩn. Loop bình thường quanh bàn.",
     "notes": "Nếu ở Nightmare/Insanity mà không có dấu vân tay UV, loại bỏ Obake."
@@ -674,7 +674,7 @@
     "alias": [
       "Ma nguyền rủa",
       "Ma chạy siêu nhanh 0% sanity",
-      "Ma sợ nhang 12s"
+      "Ma sợ nhang 7s"
     ],
     "danger_level": "Cực Kỳ Nguy Hiểm",
     "evidences": [
@@ -692,11 +692,11 @@
     },
     "traits": {
       "strength": "Lời nguyền Moroi: Nghe giọng nó qua Spirit Box hoặc Paramic sẽ bị dính lời nguyền, tốc độ tụt Sanity tăng gấp đôi và không thể chặn dù đứng dưới ánh đèn sáng.",
-      "weakness": "BẮT BUỘC có Spirit Box. Sợ nhang: Đốt nhang khi Moroi đang hunt sẽ làm nó bị mù và mất phương hướng trong 12 giây (thay vì 6 giây như ma khác)."
+      "weakness": "BẮT BUỘC có Spirit Box. Sợ nhang: Đốt nhang khi Moroi đang hunt sẽ làm nó bị mù 7 giây (thay vì 5 giây như ma khác). Dính nguyền qua 3 đường: trả lời Spirit Box, phát tiếng qua Paramic, hoặc khi bạn thu âm nó bằng Sound Recorder."
     },
     "deep_mechanics": "Ở 0% Sanity, Moroi di chuyển với tốc độ cơ bản 2.25 m/s, và nếu nhìn thấy bạn trong đường thẳng dài, LOS acceleration sẽ đẩy tốc độ của nó lên tới 3.71 m/s - nhanh hơn cả người chơi chạy Sprint (3.0 m/s).",
-    "hidden_test": "1. BẤM GIỜ NHANG KHI HUNT: Đốt nhang vào ma khi nó đuổi theo bạn. Bấm giờ thấy nó đi lang thang vô định tới tận 12 giây mới đuổi tiếp -> 100% Moroi!\n2. Uống thuốc đầy 100% Sanity -> Nó chạy chậm lững thững 1.5 m/s.",
-    "looping_guide": "UỐNG THUỐC SANITY ĐỂ GIẢM TỐC ĐỘ MOROI. Đốt nhang cho bạn tới 12 giây an toàn để thoát thân.",
+    "hidden_test": "1. BẤM GIỜ NHANG KHI HUNT: Đốt nhang vào ma khi nó đuổi theo bạn. Bấm giờ thấy nó đi lang thang vô định tới tận 7 giây mới đuổi tiếp -> 100% Moroi!\n2. Uống thuốc đầy 100% Sanity -> Nó chạy chậm lững thững 1.5 m/s.",
+    "looping_guide": "UỐNG THUỐC SANITY ĐỂ GIẢM TỐC ĐỘ MOROI. Đốt nhang cho bạn tới 7 giây an toàn để thoát thân.",
     "notes": "Nếu vừa vào nghe Spirit Box xong mà thấy Sanity tụt dốc không phanh, bạn đã bị dính lời nguyền Moroi."
   },
   {
@@ -722,7 +722,7 @@
       "max_los": 0.4,
       "bpm_base": 210,
       "bpm_max": 30,
-      "description": "Tốc độ đảo ngược: Ở xa (>6m) phi 3.0 m/s. Khi đến gần (<2.5m) tự động phanh lại cực chậm 0.4 m/s (chậm hơn người đi bộ 1.6 m/s)."
+      "description": "Tốc độ đảo ngược: Ở xa (>5.3m đường đi) phi 3.0 m/s. Khi đến gần (<2.4m) tự động phanh lại cực chậm 0.4 m/s (mở khóa khi chủ phòng từ Level 30) (chậm hơn người đi bộ 1.6 m/s)."
     },
     "traits": {
       "strength": "LUÔN BIẾT VỊ TRÍ CỦA TẤT CẢ NGƯỜI CHƠI: Deogen nhìn xuyên tường và đi thẳng đến chỗ bạn dù bạn trốn trong tủ đóng cửa kín hay góc khuất. TRỐN TRONG TỦ LÀ CHẾT 100%!",
@@ -760,7 +760,7 @@
       "strength": "Hung dữ đầu game: Khi còn trẻ, Thaye đi săn ở ngưỡng 75% Sanity, tốc độ chạy 2.75 m/s, quậy phá liên tục.",
       "weakness": "Già đi theo thời gian: Mỗi khi có người chơi đứng cùng phòng, Thaye sẽ già đi sau mỗi 1-2 phút (tối đa 10 lần). Càng già càng chậm và hiền."
     },
-    "deep_mechanics": "Hỏi tuổi qua bàn cầu cơ Ouija 'How old are you?': Đầu trận hỏi nó trả lời 20 tuổi. Đứng chơi 5 phút sau hỏi lại, nó sẽ trả lời 45 tuổi hoặc 70 tuổi!",
+    "deep_mechanics": "Hỏi tuổi qua bàn cầu cơ Ouija 'How old are you?': Mỗi lần già chỉ tăng thêm 1 đến 4 tuổi trên Ouija (không vọt hàng chục tuổi). Từ cấp tuổi thứ 9 trở đi nó ngừng hẳn việc tự làm Ghost Event.",
     "hidden_test": "1. Hỏi tuổi bàn cầu cơ thấy tuổi tăng lên sau mỗi vài phút.\n2. Đầu trận nhịp chân phóng cực nhanh (2.75 m/s). Về sau nhịp chân lê lết chậm chạp (1.0 m/s).",
     "looping_guide": "Đầu game hãy cẩn thận trốn ngay vì nó chạy 2.75 m/s. Cuối game khi nó đã già bạn có thể loop nó dễ dàng như Revenant.",
     "notes": "Lúc đầu game nguy hiểm không kém Demon, nhưng càng về sau càng hiền."
@@ -789,7 +789,7 @@
       "description": "Base 1.53 m/s (chậm hơn chuẩn) nhưng tăng tốc theo LOS NHANH nhất game (tối đa ~2.52 m/s). Có thể hunt với grace period = 0."
     },
     "traits": {
-      "strength": "Săn mồi đơn độc: Rất hung dữ, có thể hunt với grace period = 0 và tăng tốc theo LOS nhanh nhất trong các loài ma. Có thể tạo tiếng động vật giả để dụ người chơi.",
+      "strength": "Săn mồi đơn độc: Rất hung dữ, có thể hunt với grace period = 0 và tăng tốc theo LOS nhanh nhất trong các loài ma.",
       "weakness": "Không giết được người đang trốn: Hễ nó bước vào chỗ ẩn chính thức (tủ/hộc) đang có người, cuộc đi săn kết thúc ngay lập tức."
     },
     "deep_mechanics": "Tăng tốc LoS 0.075×base/giây (ma thường 0.05×) → chạm trần ~2.52 m/s chỉ sau ~8.7 giây (ma thường 13 giây). Mất dấu thì giảm tốc cực chậm (~65 giây mới về 1.53). Chỉ miễn tử trong chỗ ẩn CHÍNH THỨC (tủ/locker đúng chuẩn) — nấp sau bàn ghế tự chế vẫn chết.",
@@ -818,13 +818,13 @@
       "max_los": 2.25,
       "bpm_base": 120,
       "bpm_max": 170,
-      "description": "Tốc độ cố định: 2.25 m/s khi người chơi di chuyển trong 10m, 1.2 m/s khi người chơi đứng yên, và 1.7 m/s khi không có ai trong 10m (bỏ qua tăng tốc LOS)."
+      "description": "2.25 m/s khi người chơi di chuyển trong 10m, 1.2 m/s khi đứng yên, 1.7 m/s khi không ai trong 10m (áp dụng tăng tốc LOS chuẩn; gia tốc LOS tích ngầm trong 10m và bung ra khi bạn ra ngoài 10m)."
     },
     "traits": {
       "strength": "Bám theo chuyển động: Trong phạm vi 10m, khi bạn ĐI BỘ nó tăng tốc lên 2.25 m/s (ngưỡng săn 65%); khi bạn ĐỨNG YÊN nó chậm còn 1.2 m/s (ngưỡng săn 45%).",
       "weakness": "Mù với người đứng yên: Chỉ dò theo bước chân — đứng yên gần nó là cách hạ tốc độ lẫn ngưỡng săn của nó. (Chỉ có model/tên NỮ.)"
     },
-    "deep_mechanics": "Ở gần nó thì ĐỨNG YÊN để ép chậm; chỉ chạy khi đã ra xa hơn 10m. Dấu chân UV ngón quay ngược 180° là tố bổ trợ.",
+    "deep_mechanics": "Ở gần nó thì ĐỨNG YÊN để ép chậm; chỉ chạy khi đã ra xa hơn 10m. Dayan KHÔNG có UV trong bộ bằng chứng (EMF 5 / Orb / Spirit Box) — thấy dấu UV là loại ngay Dayan (trừ Mimic). Bàn chân quay ngược chỉ là truyền thuyết ngoài đời.",
     "hidden_test": "Chỉ model/tên NỮ. Trong 10m: đứng yên → 1.2 m/s (hunt 45%); đi bộ → vọt 2.25 m/s (hunt 65%); xa hơn 10m → 1.7 m/s (hunt 50%).",
     "looping_guide": "Đứng yên hoặc bước chậm khi nó ở gần để không kích tăng tốc.",
     "notes": "Ma nữ phù thủy móng vuốt dài và bàn chân xoay ngược trong truyền thuyết Ấn Độ."
@@ -886,10 +886,10 @@
     },
     "traits": {
       "strength": "Xoay vòng 3 trạng thái Normal / Enraged / Weakened — đổi cả ngưỡng săn (50% / 60% / 40%) lẫn tốc độ (1.7 / 1.96 / 1.36 m/s).",
-      "weakness": "Đổi trạng thái bởi muối, nhang và thánh giá. Khi Enraged nó đi qua muối không để lại dấu chân và tầm thánh giá giảm 2m; khi Weakened chỉ hunt 40% và chạy 1.36 m/s."
+      "weakness": "Đổi trạng thái bởi muối, nhang và thánh giá. Khi Enraged nó đi qua muối không để lại dấu chân và tầm thánh giá giảm 2m; khi Weakened chỉ hunt 40% và chạy 1.36 m/s. Weakened: tầm thánh giá +1m, dẫm muối để lại 6 dấu chân (tồn tại 3 giây), muối T3 làm chậm 3 giây, nhang mù 6 giây (Normal 5 giây, Enraged 4 giây)."
     },
-    "deep_mechanics": "Đặt sẵn muối/thánh giá để ép trạng thái; chờ nó chuyển Weakened (1.36 m/s) rồi mới loop.",
-    "hidden_test": "Đổi tốc độ theo 3 mức 1.7/1.96/1.36 m/s. Ở trạng thái Enraged, dẫm lên muối KHÔNG để lại dấu chân.",
+    "deep_mechanics": "Đặt sẵn muối/thánh giá để ép trạng thái; chờ nó chuyển Weakened (1.36 m/s) rồi mới loop. Kích Enraged: đốt cháy thánh giá, hết hiệu ứng mù nhang (trong hunt), nhang ngoài hunt, dẫm muối (2 giây sau nếu đang Normal). Hết hunt Enraged → rớt ngay về Weakened.",
+    "hidden_test": "Đổi tốc theo 3 mức 1.7/1.96/1.36. Enraged dẫm muối KHÔNG để lại dấu chân (đừng nhầm Wraith — Wraith cũng chia sẻ EMF 5 + Spirit Box). Weakened dẫm muối để lại 6 dấu chân.",
     "looping_guide": "Enraged (1.96 m/s) đừng loop đường dài; Weakened (1.36 m/s) loop thoải mái.",
     "notes": "Ác quỷ cõi âm Mesopotamia / Sumer cổ đại chuyên kéo người sống xuống địa ngục."
   },
@@ -949,10 +949,10 @@
       "description": "1.96 m/s khi Aggressive, 1.45 m/s khi Calm."
     },
     "traits": {
-      "strength": "Âm thanh đánh lạc hướng + đổi trạng thái: Tạo tiếng bước chân giả ở phòng xa và mở vòi nước bẩn; đồng thời đổi trạng thái mỗi 2 phút (Calm: săn 10%, 1.45 m/s ↔ Aggressive: săn 65%, 1.96 m/s).",
-      "weakness": "Ở trạng thái Aggressive, thời lượng hunt ngắn hơn 20%; đổi trạng thái giữa hunt làm tốc độ thất thường. Nghe tiếng khóc than rõ qua Parabolic Microphone để định vị."
+      "strength": "Đảo 2 trạng thái theo đồng hồ: luôn bắt đầu ở Calm, đổi sang Aggressive 1 phút sau khi mở cửa chính lần đầu, rồi cứ mỗi 2 phút đổi 1 lần (kể cả giữa hunt). Calm: hunt 10%, 1.445 m/s. Aggressive: hunt 65%, 1.955 m/s.",
+      "weakness": "Ở Aggressive, thời lượng hunt ngắn hơn 20%. Đổi trạng thái giữa hunt làm tốc độ thất thường (dễ nhầm Twins — nhưng Twins đổi giữa các hunt, Obambo đổi NGAY trong 1 hunt)."
     },
-    "deep_mechanics": "Cố định vòng loop ngắn và cầm nhang, đề phòng pha Aggressive bất chợt.",
+    "deep_mechanics": "Cố định vòng loop ngắn và cầm nhang, đề phòng pha Aggressive bất chợt. Obambo KHÔNG tạo bước chân giả, không mở vòi nước bẩn, không khóc qua Paramic. Áp dụng tăng tốc LOS chuẩn trên cả 2 trạng thái.",
     "hidden_test": "Nghe tốc độ đổi NGAY trong cùng một hunt (1.45 ↔ 1.96 m/s) là Obambo (The Twins đổi giữa các hunt).",
     "looping_guide": "Loop vòng ngắn; tốc độ đổi giữa hunt nên đừng chủ quan.",
     "notes": "Linh hồn không nơi nương tựa trong văn hóa Trung Phi."

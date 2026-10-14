@@ -126,7 +126,7 @@
       btnMax.classList.toggle("active", selectedBpmMode === "max");
 
       if (g.id === "deogen") {
-        descEl.textContent = `Tần số ở xa: 210 BPM (3.0 m/s) • Tần số sát người (<2.5m): 30 BPM (0.4 m/s - Đi bộ dưỡng sinh)`;
+        descEl.textContent = `Tần số ở xa (>5.3m đường đi): 210 BPM (3.0 m/s) • Tần số sát người (<2.4m): 30 BPM (0.4 m/s - Đi bộ dưỡng sinh)`;
         btnBase.textContent = `Ở xa: 3.0 m/s (210 BPM)`;
         btnMax.textContent = `Ở gần: 0.4 m/s (30 BPM)`;
       } else if (g.id === "revenant") {

@@ -143,7 +143,7 @@
       "raiju":       { tag: "Gần điện",     full: "Tăng tốc gần thiết bị điện; nhiễu từ 15m" },
       "obake":       { tag: "6 ngón",       full: "Dấu tay UV 6 ngón hoặc tự biến mất; biến hình khi hunt" },
       "the_mimic":   { tag: "Orb giả",      full: "Luôn có Ghost Orb giả (thành 4 bằng chứng); bắt chước ma khác" },
-      "moroi":       { tag: "Nhanh nhất",   full: "Sanity thấp chạy nhanh nhất game (tới 3.71 m/s); nhang mù 12s" },
+      "moroi":       { tag: "Nhanh nhất",   full: "Sanity thấp chạy nhanh nhất game (tới 3.71 m/s); nhang mù 7s" },
       "deogen":      { tag: "Thấy bạn",     full: "Luôn biết vị trí bạn; xa lao nhanh, gần <2.5m bò 0.4 m/s" },
       "thaye":       { tag: "Trẻ→già",      full: "Mới vào săn 75% chạy nhanh; càng già càng yếu/chậm" },
       "aswang":      { tag: "Ẩn nấp",       full: "Đang hunt bước vào chỗ ẩn chính thức → hunt kết thúc; tăng tốc LOS nhanh nhất game; có thể grace = 0" },
@@ -410,7 +410,7 @@
       } else if (g.id === "the_mimic") {
         alertBox.innerHTML = `
           <div class="warning-badge" style="border-color: #ec4899; color: #9d174d; background: #fdf2f8;">
-            <strong>THE MIMIC (MA LỪA):</strong> Luôn có Ghost Orb giả ở mọi độ khó (kể cả 0-evidence)! Đừng nhầm lẫn với Hantu hay Onryo.
+            <strong>THE MIMIC (MA LỪA):</strong> Luôn có Ghost Orb giả ở mọi độ khó (kể cả 0-evidence)! Đừng nhầm lẫn với Hantu, Onryo hay Kormos.
           </div>
         `;
       } else if (g.id === "demon") {

@@ -197,7 +197,7 @@
             <li>
               <strong>Bước 1 - Tìm Phòng Ma (Favorite Room):</strong>
               Cầm Nhiệt kế quét từng phòng. Phòng ma luôn có nhiệt độ dưới <strong>10°C</strong> (hoặc &lt;0°C đóng băng).
-              <br><em>*Lưu ý cốt tử:</em> BẬT CẦU DAO (Breaker) ngay khi vào nhà để sưởi ấm, giảm 50% tốc độ tụt Sanity!
+              <br><em>*Lưu ý cốt tử:</em> BẬT CẦU DAO (Breaker) ngay khi vào nhà để dùng được đèn trần (chỉ ánh sáng đèn mới chặn tụt Sanity — nhiệt độ/cầu dao không ảnh hưởng).
             </li>
             <li>
               <strong>Bước 2 - Bố Trí Trang Thiết Bị (3 Evidences):</strong>
@@ -228,8 +228,8 @@
             <li><strong class="tag-amber">Raiju (65%):</strong> Săn sớm ở 65% nếu có thiết bị điện tử đang mở gần ma.</li>
             <li><strong class="tag-amber">Onryo (60%):</strong> Coi nến như thánh giá. Thổi tắt 3 ngọn lửa liên tiếp là hunt ngay; hunt ở 60% nếu phòng không có lửa.</li>
             <li><strong class="tag-amber">Mare (60%):</strong> Săn ở 60% nếu phòng ma đang <strong>TẮT đèn</strong> (ngược lại ở 40% nếu bật đèn).</li>
-            <li><strong class="tag-amber">Aswang (60%):</strong> Săn mồi khi người chơi đứng một mình trong bóng tối.</li>
-            <li><strong class="tag-amber">Gallu (65%):</strong> Quỷ địa ngục hung hãn, cắn thánh giá từ khoảng cách xa.</li>
+            <li><strong class="tag-amber">Aswang (50%):</strong> Base 1.53 chậm nhưng tăng tốc LOS nhanh nhất game; bước vào tủ/locker có người là hunt kết thúc (hunt sau grace ≈ 0).</li>
+            <li><strong class="tag-amber">Gallu (50/60/40%):</strong> Enraged hunt 60% nhưng thánh giá −2m; Weakened hunt 40%, thánh giá +1m, nhang mù 6s.</li>
           </ul>
         </div>
 
@@ -250,7 +250,7 @@
             </li>
             <li>
               <strong class="tag-emerald">Shade (35% Sanity):</strong>
-              Loài ma nhút nhát nhất thế giới game. Hoàn toàn không thể hunt, không tương tác, không thở ra khói nếu có người đứng cùng phòng ma!
+              Loài ma nhút nhát nhất thế giới game. Hoàn toàn không thể hunt hay làm BẤT KỲ event nào nếu có người đứng cùng phòng ma! (Hơi thở lạnh do nhiệt độ phòng, không liên quan.)
             </li>
           </ul>
         </div>
@@ -280,8 +280,8 @@
           <tr>
             <td><strong>Ma tiêu chuẩn (Standard)</strong></td>
             <td>1.7 m/s</td>
-            <td>2.25 m/s (Gia tốc dần)</td>
-            <td>120 → 160 BPM</td>
+            <td>2.8 m/s (Gia tốc dần, +65% sau ~13s)</td>
+            <td>120 → ~198 BPM</td>
             <td>Tăng tốc dần sau mỗi giây nhìn thấy người chơi liên tục.</td>
           </tr>
           <tr>
@@ -289,13 +289,13 @@
             <td>1.5 m/s (Sanity cao)</td>
             <td class="tag-red">3.71 m/s (0% Sanity + LOS)</td>
             <td>106 → 260 BPM</td>
-            <td>Càng thấp Sanity chạy càng như tên bắn. Đốt nhang làm mù tới 12s.</td>
+            <td>Càng thấp Sanity chạy càng như tên bắn. Đốt nhang làm mù tới 7s.</td>
           </tr>
           <tr>
             <td><strong class="tag-red">Revenant (Tên lửa săn mồi)</strong></td>
-            <td>0.4 m/s (Lê lết)</td>
+            <td>1.0 m/s (Rùa bò)</td>
             <td class="tag-red">3.0 m/s (Lao vọt tức thì)</td>
-            <td>30 → 212 BPM</td>
+            <td>70 → 210 BPM</td>
             <td>Mất dấu người chơi đi chậm như rùa; phát hiện người chơi lao vọt cực đại ngay!</td>
           </tr>
           <tr>
@@ -322,7 +322,7 @@
           <tr>
             <td><strong>The Twins (Cặp song sinh)</strong></td>
             <td>1.53 m/s (Ma chính - 90%)</td>
-            <td>1.87 m/s (Ma phụ - 110%)</td>
+            <td>1.9 m/s (110%)</td>
             <td>108 / 132 BPM</td>
             <td>Đợt săn này đi chậm, đợt sau đi nhanh xen kẽ.</td>
           </tr>
@@ -358,7 +358,7 @@
         </div>
         <div class="buster-item">
           <div class="buster-header"><span class="buster-name">Banshee</span><span class="buster-badge">Hú Paramic</span></div>
-          <div class="buster-tip">Tiếng hú/thét xé gió độc quyền qua Parabolic Mic (33%). Chỉ nhắm giết 1 mục tiêu duy nhất trong đội.</div>
+          <div class="buster-tip">Tiếng hú/thét xé gió độc quyền qua Parabolic Mic (33%). Chỉ nhắm giết 1 mục tiêu duy nhất (bỏ qua người khác chỉ khi mục tiêu còn TRONG nhà).</div>
         </div>
         <div class="buster-item">
           <div class="buster-header"><span class="buster-name">Jinn</span><span class="buster-badge">Cầu Dao Bật</span></div>
@@ -370,7 +370,7 @@
         </div>
         <div class="buster-item">
           <div class="buster-header"><span class="buster-name">Revenant</span><span class="buster-badge">Tên Lửa 3.0m/s</span></div>
-          <div class="buster-tip">Đi rề rề 0.4 m/s khi tuần tra, lao vọt với vận tốc 3.0 m/s ngay khi phát hiện người chơi.</div>
+          <div class="buster-tip">Đi rề rề 1.0 m/s khi tuần tra, lao vọt với vận tốc 3.0 m/s ngay khi phát hiện người chơi.</div>
         </div>
         <div class="buster-item">
           <div class="buster-header"><span class="buster-name">Shade</span><span class="buster-badge">Nhút Nhát 35%</span></div>
@@ -410,7 +410,7 @@
         </div>
         <div class="buster-item">
           <div class="buster-header"><span class="buster-name">The Twins</span><span class="buster-badge">2 Tốc Độ Chạy</span></div>
-          <div class="buster-tip">Tương tác 2 phòng khác nhau cùng lúc (đồ thị đường dốc). Luân phiên giữa tốc độ chậm (1.53 m/s) và nhanh (1.87 m/s).</div>
+          <div class="buster-tip">Tương tác 2 phòng khác nhau cùng lúc (đồ thị đường dốc). Luân phiên mỗi hunt giữa tốc độ chậm (1.5 m/s) và nhanh (1.9 m/s).</div>
         </div>
         <div class="buster-item">
           <div class="buster-header"><span class="buster-name">Raiju</span><span class="buster-badge">Nhiễu Sóng 15m</span></div>
@@ -425,8 +425,8 @@
           <div class="buster-tip"><strong>LUÔN CÓ GHOST ORB GIẢ</strong> ở mọi độ khó (kể cả 0-Evidence). Sao chép hành vi và tốc độ của bất kỳ loài ma nào.</div>
         </div>
         <div class="buster-item">
-          <div class="buster-header"><span class="buster-name">Moroi</span><span class="buster-badge">Nhang Mù 12s</span></div>
-          <div class="buster-tip">Nguyền rủa qua Spirit Box làm tụt đôi Sanity. Càng thấp Sanity chạy càng nhanh (tối đa 3.71 m/s). Nhang làm mù 12s.</div>
+          <div class="buster-header"><span class="buster-name">Moroi</span><span class="buster-badge">Nhang Mù 7s</span></div>
+          <div class="buster-tip">Nguyền rủa qua Spirit Box làm tụt đôi Sanity. Càng thấp Sanity chạy càng nhanh (tối đa 3.71 m/s). Nhang làm mù 7s (ma thường 5s).</div>
         </div>
         <div class="buster-item">
           <div class="buster-header"><span class="buster-name">Deogen</span><span class="buster-badge">Thở Khò Khè</span></div>
@@ -442,11 +442,11 @@
         </div>
         <div class="buster-item">
           <div class="buster-header"><span class="buster-name">Dayan (2026)</span><span class="buster-badge">Nhanh Khi Bạn Di Chuyển</span></div>
-          <div class="buster-tip">Hunt sớm 65% và chạy 2.25 m/s khi bạn DI CHUYỂN trong 10m; còn 45% và 1.2 m/s khi bạn ĐỨNG YÊN gần nó. Không tăng tốc theo LOS.</div>
+          <div class="buster-tip">Hunt sớm 65% và chạy 2.25 m/s khi bạn DI CHUYỂN trong 10m; còn 45% và 1.2 m/s khi bạn ĐỨNG YÊN gần nó. Vẫn tăng tốc LOS chuẩn (tích ngầm trong 10m).</div>
         </div>
         <div class="buster-item">
           <div class="buster-header"><span class="buster-name">Deildegast (2026)</span><span class="buster-badge">Tốc Độ Theo Đồ Vật</span></div>
-          <div class="buster-tip">Tốc độ cố định 0.4–3.0 m/s tùy số đồ vật đã bị xê dịch (càng nhiều đồ bị ném càng chậm). Không tăng tốc theo LOS.</div>
+          <div class="buster-tip">Tốc độ cố định 0.4–3.0 m/s tùy số đồ vật đã bị xê dịch (càng nhiều đồ bị xê dịch TRƯỚC hunt càng chậm). Không tăng tốc theo LOS.</div>
         </div>
         <div class="buster-item">
           <div class="buster-header"><span class="buster-name">Gallu (2026)</span><span class="buster-badge">Trạng Thái Hung Hãn</span></div>
@@ -474,14 +474,14 @@
             <li><strong>Spirit (2 nhang):</strong> đốt nhang (gần ma) + bấm giờ. Nếu <strong>2 phút 45 giây</strong> không hunt, đốt nhang lần 2. Nếu hunt trong <strong>60 giây</strong> sau lần 2 → 100% Spirit. <em>(Cần sanity đủ thấp để ma có thể hunt, nếu không bài test vô nghĩa.)</em></li>
             <li><strong>Ouija EMF5:</strong> spam câu rẻ như "How old are you?" — mỗi lần trả lời đều nhả EMF. Dùng để lấy EMF5 (nếu ma có EMF5) + ảnh/media.</li>
             <li><strong>Sách bị ném:</strong> ở độ khó 3 bằng chứng, nếu ma <em>ném</em> sổ mà KHÔNG viết → gạch Ghost Writing.</li>
-            <li><strong>Yurei:</strong> chỉ mở/đóng cửa &amp; tủ <strong>hoàn toàn</strong>. Hé cửa = KHÔNG phải Yurei.</li>
+            <li><strong>Yurei:</strong> đóng cửa phòng từ từ KHÔNG tiếng cót két (skill). Cửa tủ trốn không tính; lúc hunt vẫn hé cửa như ma thường.</li>
           </ul>
         </div>
 
         <div class="comp-card highlight-cyan">
           <div class="comp-card-title"><span>NHẬN DIỆN SIÊU TỐC (TELLS ẨN)</span><span class="badge">PRO</span></div>
           <ul>
-            <li><strong>Raiju:</strong> nhịp tim (heartbeat) <strong>to &amp; bass hơn</strong> mọi ma khác — nghe cả khi event lẫn hunt. Nghe là biết.</li>
+            <li><strong>Raiju:</strong> nghe nhịp tim từ xa tới <strong>15m</strong> (ma thường 10m). Tầm hút điện: 6m (nhỏ) / 8m (vừa) / 10m (lớn).</li>
             <li><strong>Banshee:</strong> KHÔNG BAO GIỜ là nam (model/tên) từ update Giáng Sinh 2025 → <em>thấy model/tên nam = gạch Banshee.</em></li>
             <li><strong>Mare:</strong> <strong>không bật được</strong> TV/màn hình. → <em>Thấy ma BẬT TV/màn hình = gạch Mare.</em> Còn Mare thì hay <strong>tắt đèn ngay</strong> sau khi bạn vừa bật (và không bao giờ bật đèn).</li>
             <li><strong>Onryo:</strong> <strong>không thắp được</strong> nến nhà/campfire → <em>thấy ma thắp nến = gạch Onryo.</em> Onryo còn hay thổi tắt cùng 1 firelight 2 lần trong 20s, và thổi tắt bật lửa của bạn trong &lt;20s.</li>
@@ -527,7 +527,7 @@
           <ul>
             <li><strong>PHẢI đốt GẦN ma</strong> (trong/sát phòng ma) mới có tác dụng — đốt ở cửa hay xa ma là <strong>vô ích</strong>.</li>
             <li><strong>Khi hunt — làm CHOÁNG:</strong> đốt nhang rồi áp/ném về phía mặt ma lúc nó đang đuổi → <strong>làm mù ma ~5 giây</strong> để chạy trốn. <em>Không cần canh thời điểm</em>, chỉ cần đốt lúc ma ở gần.</li>
-            <li><strong>Theo Tier:</strong> T1 mù 5s • T2 mù 5s + <strong>chậm 25%</strong> (5s) • T3 mù 5s + <strong>khóa chân đứng im</strong> (5s).</li>
+            <li><strong>Theo Tier:</strong> T1 mù 5s • T2 mù 5s + <strong>chậm 50%</strong> (5s) • T3 mù 5s + <strong>khóa chân đứng im</strong> (5s).</li>
             <li><strong>Ngoài hunt:</strong> chặn hunt <strong>90s</strong> (Spirit 180s, Demon 60s). Nhang <strong>KHÔNG cộng dồn/reset</strong> cooldown đang chạy — đừng đốt phí.</li>
             <li><strong>Crucifix</strong> chỉ chặn hunt <em>mới</em> (vô dụng khi đang hunt). Đặt dọc lối thoát gần phòng ma; <strong>T3 chặn cả Cursed Hunt</strong>.</li>
             <li><strong>Hunt vs Event:</strong> cửa thoát <strong>LOCK</strong> = đang hunt; event có thể đóng cửa nhưng KHÔNG khóa.</li>
@@ -582,7 +582,7 @@
           <ul>
             <li data-detail="Tạo hunt có kiểm soát: dùng Ouija 'Where are you?' hoặc để sanity hạ xuống thấp. Núp ở chỗ nghe rõ (hành lang/closet) và nghe nhịp bước chân để đo tốc độ."><strong>Cách test:</strong> tạo hunt có kiểm soát (Ouija "Where are you?" / hạ sanity), núp chỗ nghe rõ, nghe <strong>nhịp bước chân</strong>.</li>
             <li data-detail="Không thấy bạn: 1.0 m/s (rất chậm). Vừa phát hiện (thấy bạn / nghe micro / dính thiết bị điện): vọt 3.0 m/s. Nghe chân rề rề rồi đột ngột dồn dập = Revenant."><strong>Bò 1.0 m/s</strong> khi không thấy bạn → đột ngột <strong>3.0</strong> khi thấy → <strong>Revenant</strong>.</li>
-            <li data-detail="Luôn biết bạn ở đâu (trốn vô ích). Xa hơn 6m: 3.0 m/s; lại gần dưới 2.5m: 0.4 m/s. Cứ dắt nó loop quanh bàn là sống."><strong>Xa 3.0 → gần 0.4</strong> (càng gần càng chậm) → <strong>Deogen</strong>.</li>
+            <li data-detail="Luôn biết bạn ở đâu (trốn vô ích). Xa trên ~5.3m (đường đi): 3.0 m/s; lại gần dưới ~2.4m: 0.4 m/s. Cứ dắt nó loop quanh bàn là sống."><strong>Xa 3.0 → gần 0.4</strong> (càng gần càng chậm) → <strong>Deogen</strong>.</li>
             <li data-detail="Mới vào: 2.75 m/s + hunt sớm 75%. Đứng gần nó → nó 'già đi': chậm dần còn 1.0 m/s và hunt muộn 15%."><strong>2.75 → chậm dần 1.0</strong> (già đi) → <strong>Thaye</strong>.</li>
             <li data-detail="Tốc độ theo nhiệt độ phòng: dưới 0°C → 2.7 m/s; trên 15°C → 1.4 m/s. Không tăng tốc theo line-of-sight."><strong>Lạnh nhanh (2.7) / ấm chậm (1.4)</strong> → <strong>Hantu</strong>.</li>
             <li data-detail="Chỉ đạt 2.5 m/s khi CẦU DAO BẬT + có LOS + bạn ở xa hơn 3m; lại gần dưới 3m thì về 1.7. Cầu dao tắt = mất khả năng."><strong>2.5 khi CẦU DAO BẬT + thấy bạn &gt;3m</strong> → <strong>Jinn</strong>.</li>
@@ -623,7 +623,7 @@
             <li data-detail="Khi hunt mà CẦU DAO TẮT, Hantu thở ra hơi khói trắng từ miệng. Thấy hơi thở → Hantu (đây là dấu hiệu chốt)."><strong>Thở khói khi hunt (cầu dao tắt)</strong> → <strong>Hantu</strong>.</li>
             <li data-detail="Áp Spirit Box trong khoảng 1m, Deogen có ~33% phát tiếng thở dốc thay vì trả lời. Nghe thở dốc → Deogen."><strong>Thở dốc qua Spirit Box ở ~1m</strong> → <strong>Deogen</strong>.</li>
             <li data-detail="Banshee có 33% phát tiếng hú/thét gào độc quyền qua Parabolic Microphone. Nghe tiếng đó → Banshee."><strong>Tiếng hú/thét qua Paramic (33%)</strong> → <strong>Banshee</strong>.</li>
-            <li data-detail="Nhịp tim (heartbeat) của Raiju to và bass hơn mọi ma khác — nghe được cả khi ghost event lẫn hunt."><strong>Nhịp tim to/bass hơn</strong> → <strong>Raiju</strong>.</li>
+            <li data-detail="Tầm nghe nhịp tim của bạn với Raiju mở rộng tới 15m (ma thường 10m); tầm hút điện 6m/8m/10m theo cỡ map."><strong>Nghe tim từ 15m</strong> → <strong>Raiju</strong>.</li>
             <li data-detail="Chụp ảnh Phantom → nó biến mất ngay, ảnh chụp ra TRỐNG (không có ma) và không có hạt nhiễu điện tử."><strong>Chụp ảnh ma biến mất (ảnh trống, không nhiễu)</strong> → <strong>Phantom</strong>.</li>
             <li data-detail="Myling đi êm: chỉ nghe bước chân trong ~12m (ma khác ~20m). Còn Raiju thì gây nhiễu thiết bị điện từ 15m (ma khác 10m)."><strong>Bước chân êm (nghe &lt;12m)</strong> → <strong>Myling</strong>; <strong>nhiễu điện tử 15m</strong> → <strong>Raiju</strong>.</li>
             <li data-detail="Nếu ma đang hunt mà đi vào một chỗ ẩn chính thức (closet/locker) thì hunt KẾT THÚC ngay lập tức → Aswang."><strong>Hunt kết thúc ngay</strong> khi nó vào chỗ ẩn chính thức (đang hunt) → <strong>Aswang</strong>.</li>
@@ -1215,7 +1215,7 @@
 
           <div class="dossier-stat-card">
             <span class="stat-label">Tốc Độ Di Chuyển</span>
-            <span class="stat-value highlight-blue" id="modalSpeed">1.7 m/s → 2.25 m/s</span>
+            <span class="stat-value highlight-blue" id="modalSpeed">1.7 m/s → 2.8 m/s</span>
           </div>
 
           <div class="dossier-stat-card" style="grid-column: span 2;">
@@ -1243,7 +1243,7 @@
                 Tuần tra (1.7 m/s • 120 BPM)
               </button>
               <button class="btn-speed-mode" id="btnSpeedMax" data-mode="max">
-                Nhìn thấy người / LOS (2.25 m/s • 160 BPM)
+                Nhìn thấy người / LOS (2.8 m/s • ~198 BPM)
               </button>
             </div>
 

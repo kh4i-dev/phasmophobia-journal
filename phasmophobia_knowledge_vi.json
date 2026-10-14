@@ -11,7 +11,7 @@
         "Đứng trong vùng CÓ ĐÈN SÁNG thì không tụt (hoặc tụt rất chậm); trong bóng tối tụt liên tục. ĐÈN PIN không tính là 'vùng sáng'.",
         "Nến đặt dưới đất tạo vùng sáng nhỏ chống tụt sanity; riêng Onryo coi nến như thánh giá.",
         "Tốc độ tụt nền tăng theo độ khó: Amateur 100% → Intermediate 150% → Professional+ 200%.",
-        "Sanity Pills: T1 +20% (hồi trong 30s), T2 +35% (20s), T3 +50% TỨC THÌ + sprint vô hạn 10s. Không vượt 100% nên uống khi đã tụt sẽ tối đa.",
+        "Sanity hồi theo ĐỘ KHÓ: Amateur 40% / Intermediate 35% / Professional 30% / Nightmare 25% / Insanity 20%. Tier chỉ quyết định tốc độ hồi: T1 20s, T2/T3 10s (T3 thêm sprint 10s, không hồi tức thì).",
         "Ghost Event, hunt và kỹ năng riêng của ma tụt nhanh hơn nhiều. Ví dụ Yurei đóng sầm cửa -15%, Phantom nhìn thấy tụt nhanh.",
         "Sanity TRUNG BÌNH của đội quyết định phần lớn ngưỡng hunt — nhưng một số ma tính riêng mục tiêu (Banshee)."
       ]
@@ -35,7 +35,7 @@
       "title": "Nấp (Hiding) — Sống Sót",
       "items": [
         "Chỗ ẩn chính thức gồm: tủ, hộc, thùng carton, tường gấp... sinh ra NGẪU NHIÊN mỗi ván — hãy nhớ vị trí chúng ngay khi vào.",
-        "QUY TẮC VÀNG: mỗi chỗ chỉ nấp 1 lần/ván và KHÔNG nấp 2 người cùng chỗ — ma sẽ lục ra cả hai.",
+        "Ma chỉ 50% quay lại kiểm tra chỗ đã thấy bạn ở hunt trước — trốn lại chỗ cũ vẫn an toàn nếu lần trước không bị phát hiện. KHÔNG nấp 2 người cùng chỗ.",
         "Nấp TRƯỚC khi ma thấy bạn. Nếu nó đã thấy bạn rồi mới chui tủ thì nó đi thẳng tới lục.",
         "Cắt LOS trước khi nấp: chạy vòng qua góc bàn / xe để nó mất dấu rồi mới chui vào.",
         "Đồ điện cầm tay khi nấp sẽ hút ma — nhưng nếu bạn ĐÃ yên vị trong chỗ ẩn thì ĐỪNG tắt (tiếng tắt cũng hút ma).",
@@ -67,7 +67,7 @@
         "EMF Level 5: máy nhảy vạch đỏ số 5 khi ma tương tác/event. EMF 2 chỉ là tương tác thường (KHÔNG tính bằng chứng).",
         "Spirit Box: phải ở trong TỐI và gần như 1 MÌNH trong phòng mới dễ trả lời; hỏi câu ngắn tiếng Anh.",
         "Ultraviolet (UV): dấu tay / vân ngón / dấu chân bằng đèn UV; tồn tại ~2 phút (Obake có dấu 6 ngón và tự biến nhanh hơn).",
-        "Freezing Temperatures: nhiệt kế dưới 0°C là chắc chắn; hơi thở trắng khi đứng trong phòng cũng là dấu.",
+        "Freezing = nhiệt kế ≤0°C (điện tử ≤0.9°C là chốt vì ma không-Freezing bị chặn ở 1.0°C). Hơi thở trắng xuất hiện dưới ~5°C nên mọi ma đều thở khói — không phải bằng chứng.",
         "Ghost Orb: CHỈ thấy qua màn hình Video Camera (đặt máy trong phòng, bật night vision). The Mimic luôn có orb giả.",
         "Ghost Writing: đặt sổ trong phòng ma; ma có thể NÉM sổ mà không viết → gạch Ghost Writing.",
         "D.O.T.S Projector: đứng ngoài chiếu vào phòng để bắt bóng ma lướt qua; Goryo chỉ hiện qua CAMERA và khi phòng không người.",
@@ -79,10 +79,10 @@
       "title": "Ảnh / Video / Âm Thanh (Media)",
       "items": [
         "Từ bản Chronicle (2025): hệ thống Media (Ảnh, Video, Âm thanh) ăn thêm tiền/XP và được tính vào 'Perfect Investigation'.",
-        "Ảnh chụp (Photo Camera) tính: Ma hiện hình, Xương, Xác đồng đội, Vân tay, Dấu chân, Vạch EMF, Nhiệt độ đóng băng, Nước bẩn, Thánh giá đã dùng, Chữ viết của ma, Đồ nguyền rủa.",
+        "Ảnh chụp (Photo Camera) tính: Ma hiện hình, Xương, Xác đồng đội, Vân tay, Vạch EMF, Nhiệt độ đóng băng, Thánh giá đã dùng, Chữ viết của ma, Đồ nguyền rủa. (Hệ sao 1-3, ảnh nước bẩn và ảnh dấu chân đã bị xóa từ Chronicle.)",
         "Từ 2026 Photo Camera có khung ngắm nhận diện mục tiêu (Target Indicator) hiện trực tiếp đối tượng đang bắt dính trước khi bấm chụp — canh khung rồi hãy chụp để ăn Unique.",
         "Xương (Bone) sau khi nhặt đã được lưu hình ảnh/thông tin vào Journal — không cần nhớ vị trí cũ nữa.",
-        "Ảnh Ma lúc hiện hình rõ ràng là loại giá trị cao nhất (ảnh 3 sao).",
+        "Ảnh Ma lúc hiện hình rõ ràng là loại giá trị cao nhất.",
         "Video (Video Camera): quay Ma, Ghost Orbs, D.O.T.S, đồ vật bay... nhớ bật night vision.",
         "Âm thanh (Sound Recorder): ghi 2 âm thanh kỳ lạ KHÁC NHAU để ăn tiền và hoàn thành Objective.",
         "Perfect Investigation = nhận đúng ma + đủ bằng chứng + chụp/nhặt sạch mục tiêu media + xong objective → thưởng tiền & XP lớn.",
@@ -94,7 +94,7 @@
       "title": "Bảng Thưởng Media ($ / XP)",
       "items": [
         "Cơ chế: lần đầu ghi một loại = 'Unique' (thưởng cao); ghi lại cùng loại = 'Duplicate' (thưởng thấp); Tier dụng cụ cao hơn thì thưởng thêm.",
-        "Từ v0.19.0 (08/2026) máy báo trùng trực tiếp: camera/máy quay/máy ghi âm Tier 1 hiện đèn LED vàng khi đối tượng đã trùng; Tier 2 & 3 hiện chữ/sóng âm bị mờ đi (thay vì trắng đậm như Unique) — thấy mờ/LED vàng thì đổi mục tiêu khác.",
+        "Từ v0.19.0 (08/2026) máy báo trùng trực tiếp: Photo Camera Tier 1 hiện đèn LED vàng khi trùng; Video Camera cả 3 Tier hiện chữ mờ kèm chấm than vàng; Sound Recorder Tier 1 làm mờ dải đèn âm lượng — thấy dấu trùng thì đổi mục tiêu khác.",
         "Bảng tên ma trên xe tải đã có icon giới tính Nam/Nữ (v0.19.0): thấy icon Nam thì gạch ngay Banshee và Dayan (2 con này 100% nữ).",
         "ẢNH — Ma / Bóng ma / Ma mờ: $15 & 15 XP (dup $3). Chữ viết của ma: $10 (dup $2). Đồ vật bay (tính là Interaction): $5 (dup $1).",
         "ẢNH — Đồ nguyền rủa (Gương, Tay Khỉ, Voodoo, Moon Totem, Shadow...): $5.",
@@ -110,7 +110,7 @@
       "items": [
         "Mỗi ván có ĐÚNG 1 đồ (Insanity: 0). Dùng đồ nào sẽ khoá các đồ khác, kết thúc setup ngay và có thể gây Cursed Hunt.",
         "Cầu Cơ: câu hỏi càng giá trị càng tốn sanity. BẮT BUỘC nói 'Goodbye' trước khi rời, không thì bàn vỡ + cursed hunt.",
-        "Gương Ma Ám: soi thấy trực tiếp phòng ma (tốn ~20% sanity/giây). Soi tới khi sanity cạn = gương vỡ + cursed hunt.",
+        "Gương Ma Ám: soi thấy trực tiếp phòng ma (tốn 7.5% sanity/giây, tối thiểu 20% mỗi lần soi). Soi tới khi sanity cạn = gương vỡ + cursed hunt.",
         "Hộp Nhạc: lên dây cho ma hát theo (lộ vị trí). Đến quá gần (<5m) / thả hộp vỡ / ma chạm vào = hiện hình + cursed hunt.",
         "Búp Bê Voodoo: mỗi cây kim -5% sanity và ép ma tương tác. Ghim trúng KIM TRÁI TIM = cursed hunt ngay.",
         "Vòng Triệu Hồi: thắp 5 nến (mỗi nến -16% sanity), ma đứng yên giữa vòng 5 giây rồi cursed hunt — thời điểm vàng chụp ma 3 sao.",
@@ -123,8 +123,8 @@
       "title": "Dụng Cụ — Mẹo Nâng Cao",
       "items": [
         "Thánh giá (Crucifix): T1 bán kính 3m/1 lần, T2 4m/2 lần, T3 5m/2 lần + chặn được cả Cursed Hunt. Đặt trong phòng ma để chặn hunt.",
-        "Nhang/Incense: PHẢI đốt SÁT ma mới tính. Khi hunt: mù ma 5s (T2 thêm -25% tốc, T3 khoá chân đứng im 5s). Ngoài hunt: chặn hunt 90s (Demon 60s, Spirit 180s).",
-        "Nhiệt kế: dùng T2/T3 đo nhanh. Phòng ma thường dưới 10°C; dưới 0°C là Freezing.",
+        "Nhang/Incense: PHẢI đốt SÁT ma mới tính. Khi hunt: mù ma 5s (T2 thêm -50% tốc, T3 khoá chân đứng im 5s; Moroi mù 7s, Gallu Enraged 4s / Weakened 6s). Ngoài hunt: chặn hunt 90s (Demon 60s, Spirit 180s). Nhang còn làm ma năng động hơn (+20 đến +29 activity).",
+        "Nhiệt kế: dùng T2/T3 đo nhanh. Phòng ma thường dưới 10°C; chốt Freezing ở ≤0°C (điện tử ≤0.9°C). Hơi thở trắng dưới ~5°C không phải bằng chứng.",
         "Đèn UV T3 đặt sàn toả 360° soi mọi dấu tự động — tiện nhất để bắt UV diện rộng.",
         "Muối T3 (vạch dài): ma dẫm qua bị làm chậm; muối cũng để lộ dấu chân (trừ Wraith) và mỗi đống quanh bàn loop làm chậm ~2s.",
         "Video Camera: bật night vision để bắt Orbs & D.O.T.S; đặt trên Tripod để rảnh tay làm việc khác.",
@@ -138,7 +138,7 @@
       "id": "money",
       "title": "Tiền / XP / Nhiệm Vụ",
       "items": [
-        "Chụp ảnh Ma lúc nó hiện hình (= ảnh 3 sao) ăn tiền & XP cao nhất.",
+        "Chụp ảnh Ma lúc nó hiện hình ăn tiền & XP cao nhất.",
         "Nên chụp: Xương (bone), xác đồng đội đã chết, đồ vật ma tương tác, cửa bị mở, Ghost Orbs... mỗi thứ đều có giá trị.",
         "Xương (Bone) KHÔNG phải bằng chứng nhưng vẫn nhặt + chụp để ăn tiền — có thể hỏi Ouija 'Where is the bone?' để định vị.",
         "Hoàn thành đủ Objective + thu 3/3 bằng chứng + dọn dẹp = 'Perfect Investigation' thưởng thêm.",
@@ -166,7 +166,7 @@
         "Amateur → Insanity: setup 5 phút → 0s, grace 5s → 2s, hunt ngắn → dài, số đèn / chỗ ẩn giảm dần.",
         "Số bằng chứng: Amateur/Inter/Pro = 3, Nightmare = 2, Insanity = 1.",
         "Nightmare & Insanity: cầu dao tắt và ẩn trên bản đồ; bảng Sanity/Activity ở xe bị HỎNG (báo số nhiễu).",
-        "Insanity: KHÔNG có đồ nguyền rủa, phòng ma đổi thường xuyên, hunt dài và giết người còn kéo dài hunt thêm.",
+        "Insanity: KHÔNG có đồ nguyền rủa, đổi phòng mức High (ngang Nightmare), hunt dài và giết người còn kéo dài hunt thêm.",
         "Insanity khởi đầu chỉ 75% sanity; Nightmare 100%."
       ]
     },
